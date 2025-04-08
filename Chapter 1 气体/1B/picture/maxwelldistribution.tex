@@ -1,0 +1,26 @@
+\documentclass{standalone}
+\usepackage{PhysicalChemistryNote}
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        width = 12cm,
+        height = 8cm,
+        legend pos = north east,
+        xlabel = {速率 $v/\left(\mathrm{m}\cdot\mathrm{s}^{-1}\right)$},
+        ylabel = {概率密度 $f(v)/10^{-3}$},
+        axis lines = left,
+        ymax = 3.5,
+        domain = 0:3000,
+        samples = 400
+    ]
+    \addplot [thick, blue] {(4 / sqrt(pi)) *0.0000133* x^2 * exp(-0.0000056*x^2)};
+    \addplot [thick, red] {(4 / sqrt(pi)) *0.000069* x^2 * exp(-0.0000168*x^2)};
+    \addplot [thick, yellow] {(4 / sqrt(pi)) *0.000000254* x^2 * exp(-0.0000004*x^2)};
+    \addplot [thick, cyan] {(4 / sqrt(pi)) *0.00000132* x^2 * exp(-0.0000012*x^2)};
+    \legend {$\text{N}_2\left(300\text{K}\right)$,
+        $\text{N}_2\left(100\text{K}\right)$,
+        $\text{H}_2\left(300\text{K}\right)$,
+        $\text{H}_2\left(100\text{K}\right)$,}
+    \end{axis}
+\end{tikzpicture}
+\end{document}

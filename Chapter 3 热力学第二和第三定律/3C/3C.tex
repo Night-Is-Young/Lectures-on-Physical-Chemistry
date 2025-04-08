@@ -1,0 +1,92 @@
+\documentclass{ctexart}
+\usepackage{PhysicalChemistryNote}
+
+\begin{document}\pagestyle{plain}
+\noindent\tbf{\LARGE 3C 特定过程熵变的计算}\vspace{15pt}\\
+\indent 熵不仅是一个抽象的衡量系统混乱度的状态函数,还是一个可以被度量的实际量.%
+由于熵是状态函数,因此对于任意过程,我们都可以设计一个与它的始态和终态相同的可逆过程以计算系统的熵变.\vspace{12pt}\\
+\Section{3C.1 气体的膨胀与压缩}
+\indent 理想气体的等温可逆过程中气体的熵变可以按如下方式推导.
+\begin{derivation}
+    设理想气体的物质的量为$n$,体积等温可逆地从$V_1$膨胀至$V_2$.\\
+    等温过程的理想气体热力学能不变,根据热力学第一定律有$Q+W=0$.\\
+    我们已经在\tbf{2A.3}中知道
+    \[W=-nRT\ln\dfrac{V_2}{V_1}\]
+    于是
+    \[\Delta S=\dfrac{Q}{T}=-\dfrac{W}{T}=nR\ln\dfrac{V_2}{V_1}=nR\ln\dfrac{p_1}{p_2}\]
+
+\end{derivation}
+由于熵是状态函数,因此有
+\begin{theorem}[3C.1.1 理想气体等温过程的熵变]
+    对于理想气体的等温过程,其熵变为
+    \[\Delta S=nR\ln\dfrac{V_2}{V_1}=nR\ln\dfrac{p_1}{p_2}\]
+    其中$p_1,V_1$和$p_2,V_2$分别为变化前后的压力和体积.
+\end{theorem}
+我们自然的可以想到一种简单的自发过程:气体的混合.这相当于各种组分的气体各自向真空膨胀.考虑下面的混合过程.
+\begin{problem}[3C.1.2]
+    设$m$种理想气体各自的压力都为$p$,物质的量为$n_i$,将其在温度为$T$时均匀混合,混合后各组分的摩尔分数为$x_i$,求此过程的熵变.
+\end{problem}
+\begin{solution}
+    均匀混合的过程相当于这$n$种气体各自向真空膨胀.\\
+    对于第$i$种气体,膨胀前压力为$p$,膨胀后压力为$px_i$,于是其熵变
+    \[\Delta S_i=n_iR\ln\dfrac{px_i}{p}=-n_iR\ln x_i\]
+    于是总体熵变为
+    \[\Delta S=\sum_{i=1}^m\Delta S_i=-\sum_{i=1}^mn_iR\ln x_i\]
+    如果总体物质的量为$n$,就有
+    \[\Delta S=-nR\sum_{i=1}^mx_i\ln x_i\]
+
+\end{solution}
+上面的结论也可以作为一个公式进行简单的记忆,不过更重要的是理解熵变的计算方式,即设计可逆过程后求算热温商.这在下面的其它情况中也是类似的.\vspace{12pt}\\
+\Section{3C.2 相变}
+\indent 当物质从液态转变为气态时,分子运动的更为分散,可以预计的是熵会显著增大.%
+同样地,当固体熔化为液体时也会产生显著的熵增.\\
+\indent 一般的相变都是等温等压的可逆相变(例如恒压下物体在沸点的沸腾,在熔点的熔化等).%
+如果这一过程不可逆(例如过热液体的暴沸,过冷液体的凝固等),那么应当设计适当的可逆过程以计算熵变.\\
+\indent 可逆相变,由于是等压变化,因此过程的热效应就等于其焓变.于是有
+\begin{theorem}[3C.2.1 可逆相变的熵变]
+    设可逆相变的焓变为$\Delta H$,相变温度为$T$,则有
+    \[\Delta S=\dfrac{\Delta H}{T}\]
+
+\end{theorem}
+人们测定了大量液体的摩尔蒸发熵,发现它们的值都接近于$85\JmK$.这一经验规则也被称作\tbf{Trouton}\footnote{音译为楚顿或特鲁顿.}\tbf{规则}.%
+不过,仍有一些明显偏离Trouton规则的物质,例如水.%
+水的摩尔蒸发熵为$109.1\JmK$,可能是由于液态水中的氢键使其变得更加有序.\vspace{12pt}\\
+\Section{3C.3 加热与冷却}
+\indent 物质的温度改变,显然也会引起熵的变化(毕竟温度变化一定会伴随热的吸收或放出).现在来简要推导可逆变温过程的熵变.
+\begin{derivation}
+    考虑我们在\tbf{2B.2.3}中提出的等压热容和等容热容的概念.\\
+    对于等压可逆变温过程有$\delta Q_p=C_p\di T$,于是其熵变
+    \[\di S=\dfrac{\delta Q}{T}=\dfrac{C_p\di T}{T}\]
+    假定温度从$T_1$变化至$T_2$并且热容与温度无关,对上式两端积分就有
+    \[\Delta S=C_p\ln\dfrac{T_2}{T_1}\]
+    同样地,对于等容可逆变温过程有
+    \[\Delta S=C_V\ln\dfrac{T_2}{T_1}\]
+
+\end{derivation}
+\begin{theorem}[3C.3.1 等容或等压变温过程的熵变]
+    物质以等容或等压过程由$T_1$变温至$T_2$的熵变分别为
+    \[\Delta S_p=C_p\ln\dfrac{T_2}{T_1}\ \ \ \ \ \Delta S_V=C_V\ln\dfrac{T_2}{T_1}\]
+    如果热容与温度有关,则有
+    \[\Delta S_p=\int_{T_1}^{T_2}\dfrac{C_p\di T}{T}\ \ \ \ \ \Delta S_V=\int_{T_1}^{T_2}\dfrac{C_V\di T}{T}\]
+
+\end{theorem}
+如果物质不能经由等容或等压变温过程从始态达到终态,则可以与\tbf{3C.1}结合.例如
+\begin{problem}[3C.3.2]
+    设物质的量为$n$的理想气体从状态$A\left(p_1,V_1,T_1\right)$变化至状态$B\left(p_2,T_2,V_2\right)$.求此过程的熵变.
+\end{problem}
+\begin{solution}
+    \tbf{Method I.}\\
+    令系统从$A$等温可逆变化至状态$C\left(p_3,V_2,T_1\right)$,然后再等容可逆变温至$B$,则有
+    \[\Delta S=nR\ln\dfrac{V_2}{V_1}+\int_{T_1}^{T_2}\dfrac{nC_{V,\m}\di T}{T}\]
+    \tbf{Method II.}\\
+    令系统从$A$等温可逆变化至状态$D\left(p_2,V_3,T_1\right)$,然后再等压可逆变温至$B$,则有
+    \[\Delta S=nR\ln\dfrac{p_1}{p_2}+\int_{T_1}^{T_2}\dfrac{nC_{p,\m}\di T}{T}\]
+    两种方法求得的熵变相等,这是由于对于理想气体恒有$C_{p,\m}-C_{V,\m}=R$,于是
+    \[\int_{T_1}^{T_2}\dfrac{nC_{p,\m}\di T}{T}-\int_{T_1}^{T_2}\dfrac{nC_{V,\m}\di T}{T}=nR\int_{T_1}^{T_2}\dfrac{\di T}{T}=nR\ln\dfrac{T_2}{T_1}\]
+    而
+    \[ln\dfrac{p_1}{p_2}+\ln\dfrac{T_2}{T_1}=\ln\dfrac{p_1T_2}{p_2T_1}=\ln\dfrac{V_2}{V_1}\]
+    于是
+    \[nR\ln\dfrac{V_2}{V_1}+\int_{T_1}^{T_2}\dfrac{nC_{V,\m}\di T}{T}=nR\ln\dfrac{p_1}{p_2}+\int_{T_1}^{T_2}\dfrac{nC_{p,\m}\di T}{T}\]
+    
+\end{solution}
+\end{document}

@@ -1,0 +1,31 @@
+\documentclass{standalone}
+\usepackage{PhysicalChemistryNote}
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        width = 8cm,
+        height = 8cm,
+        legend pos = north east,
+        xlabel = {$\Vm/\left(\text{cm}^{3}\cdot\text{mol}^{-1}\right)$},
+        ylabel = {$p/10^3\text{kPa}$},
+        axis lines = left,
+        ymin = 5,
+        ymax = 10,
+        samples = 400
+    ]
+    \addplot+ [black, only marks, point meta = explicit symbolic, nodes near coords, clip = false]
+        table [meta=name] {
+		x y name
+        89.533 6.1196 $\ \ A$
+		102.31 5.701 $B$
+        166.878 6.3292 $C$
+        211.83 6.1196 $D$
+		};
+    \addplot [thick, blue, domain = 50:89.53] {2395.68/(x-42.7)-361000/(x^2)};
+    \addplot [thick, blue, domain = 211.83:300] {2395.68/(x-42.7)-361000/(x^2)};
+    \addplot [thick, dashed, gray, domain = 89.53:211.83] {2395.68/(x-42.7)-361000/(x^2)};
+    \addplot [thick, blue, domain = 89.2:212] {6.1196};
+    \legend {,$T=15\tccentigrade$};
+    \end{axis}
+\end{tikzpicture}
+\end{document}

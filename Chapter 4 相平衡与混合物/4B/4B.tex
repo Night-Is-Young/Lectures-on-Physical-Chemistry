@@ -1,0 +1,334 @@
+\documentclass{ctexart}
+\usepackage{PhysicalChemistryNote}
+
+\begin{document}\pagestyle{plain}
+\noindent\tbf{\LARGE 4B 混合物的热力学}\vspace{15pt}\\
+\indent 我们在\tbf{4A}中已经简单探讨了单组分多相系统的热力学.%
+现在我们把目光转向另一种极为常见的体系,即混合物.\vspace{12pt}\\
+\Section{4B.1 混合物的分类与组成表示法}
+\Part{混合物的分类}
+\indent 我们首先来界定混合物的概念.
+\begin{definition}[4B.1.1 多组分系统与混合物]
+    系统中不同种类的物质称为\tbf{组分}.两种及以上组分构成的系统称为\tbf{多组分系统}.\\
+    多组分系统可以有多个相.称仅含一个相的系统为\tbf{均相}的.称均相的多组分系统为\tbf{混合物}.
+\end{definition}
+由此界定的混合物就是我们本章主要讨论的对象.由此可见,一定范围内的大气可以视作各种气体的混合物,%
+可溶物质的溶液也是混合物,诸如此类等.现在,我们对溶液这一概念做更严格的界定.
+\begin{definition}[4B.1.2 溶液]
+    称固相或液相的混合物为\tbf{溶液}(不包含气相混合物).\\
+    将溶液中的一种组分称为\tbf{溶剂},其余组分称为\tbf{溶质}.通常将含量高的称作溶剂,含量低的称作溶质.\\
+    如果溶质的含量足够小,就称这样的溶液为\tbf{稀溶液}.
+\end{definition}
+在热力学中将按照不同方法对溶质和溶剂进行处理,我们将会在后面的讨论中看到.%
+溶质又有电解质和非电解质之分,本章主要讨论非电解质溶液(电解质溶液将在\tbf{Chapter 6}中讨论).\vspace{4pt}\\
+\Part{混合物的组成表示法}
+\indent 对于一个混合物系统,除了像单组分系统那样用温度,压力和体积等参数描述其状态之外,还应表明各组分的相对含量(即浓度).%
+浓度的表示方法有很多种,下面给出了一些常见的表示方法.
+\begin{definition}[4B.1.3 混合物中组分浓度的表示方法]
+    对于混合物中某一组分X的浓度,有下面的表示方法.
+    \begin{enumerate}[label=\tbf{\arabic*.}]
+        \item \tbf{浓度}(又称\tbf{物质的量浓度})
+            \[c_{\text X}=\dfrac{n_{\text X}}{V}\]
+            其中$n_\text X$为X的物质的量,$V$为混合物的体积.$c_\text X$也可以用$[\text X]$表示,这在化学动力学中应用得较为广泛.
+        \item \tbf{摩尔分数}
+            \[x_\text X=\dfrac{n_\text X}{\displaystyle\sum_{A}n_\text A}\]
+            其中分母的求和项表示混合物中所有组分的总的物质的量.
+        \item \tbf{质量分数}
+            \[w_\text X=\dfrac{m_\text X}{\displaystyle\sum_{A}m_\text A}\]
+            其中$m_\text X$为X的质量,分母的求和项表示混合物的总质量.
+        \item \tbf{质量浓度}
+            \[\rho_\text X=\dfrac{m_\text X}{V}\]
+        \item \tbf{溶质的质量摩尔浓度}
+            \[m_{\text X}=\dfrac{n_\text X}{m_\text S}\]
+            其中$m_\text S$为溶剂$S$的物质的量.这一浓度表示方法仅限于描述溶液的组成.
+    \end{enumerate}
+\end{definition}\vspace{8pt}
+\Section{4B.2 偏摩尔量}
+\Part{偏摩尔体积}
+\indent 不论在什么系统中,质量总是具有加和性的.如果系统中的各组分不发生化学反应,那么%
+物质的量也是具有加和性的.然而,系统的某些广度性质却并不像这两个量一样有加和性.\\
+\indent 实验表明,向大量$\text H_2\text O$中加入$1\mol\ \text H_2\text O$后,系统的体积增加$18\text{ cm}^3$,%
+说明纯水的摩尔体积为$18\text{ cm}^3\cdot\text{mol}^{-1}$;%
+而向大量乙醇中加入$1\mol\ \text H_2\text O$后,系统的体积仅增加$14\text{ cm}^3$.%
+相应的,如果是向大量一定浓度的水和乙醇的溶液中加入$1\mol\ \text H_2\text O$,体积变化应当与溶液的浓度有关.%
+这说明体积并不在任何时候都具有加和性.
+\begin{hint}
+    造成上述情况的原因主要是少量的水在大量的乙醇中没有办法形成纯水那样的氢键网络,导致%
+    这些水实际上在乙醇中堆积地更加紧密,因此所占的体积更小.
+\end{hint}
+我们需要想办法求算这样的系统的体积.
+\begin{derivation}
+    假定系统中$k$中组分的物质的量为$\li n,k$,温度为$T$,压强为$p$.\\
+    系统的体积$V$应当可以由上述参数唯一确定,即有函数关系
+    \[V=V(T,p,\li n,k)\]
+    对$V$做全微分有
+    \[\di V=\pa VT{p,\li n,k}\di T+\pa Vp{T,\li n,k}\di p+\sum_{i=1}^{k}\pa V{n_i}{T,p,n_{j}(j\neq i)}\di n_i\]
+    在等温等压下假定向系统中加入第$i$种物质,加入的量为$\Delta n_i$,造成系统的体积改变为$\Delta V$.于是
+    \[\pa V{n_i}{T,p,n'}=\lim_{\Delta n_i\to0}\dfrac{\Delta V}{\Delta n_i}\]
+    其中下标的$n'$代表系统中其余组分的量不变.这一偏微分就是系统在该特定组成下,体积$V$对组分$i$的物质的量$n_i$的变化率.\\
+    从上面的式子中可以看出,如果令$\Delta n_i$为单位的物质的量,%
+    那么系统的规模足够大时$\Delta n_i$也可以视作无穷小量,因此上述偏微分的值就等于向大量的一定成分的系统中加入单位的物质的量的组分$i$造成的体积变化.%
+\end{derivation}
+我们在上面的推导中定义了一种新的与体积相关的量.
+\begin{definition}[4B.2.1 偏摩尔体积]
+    在等温等压下,在大量的系统中加入单位物质的量的组分$i$而保持其余组分的量不变而引起的系统的体积变化称为\tbf{偏摩尔体积},记作$V_{\m,i},V_{i}'$或$\overline{V_i}$.\\
+    偏摩尔体积等价于在等温等压下这样的系统中,体积$V$对组分$i$的物质的量$n_i$的变化率.\\
+    纯物质的(偏)摩尔体积记作$V_{\m}^\ast$,上标$\ast$表示纯物质.
+\end{definition}
+你可以发现,偏摩尔体积所规定的“保持其余组分的量不变”实际上就是保证系统中各组分的浓度不变.%
+因此,系统的偏摩尔体积与系统的规模大小无关,只要它们的组分浓度都相等.\\
+\indent 通过偏摩尔体积就能计算指定组成的系统的体积.
+\begin{derivation}
+    在等温等压下,系统的体积$V$的全微分为
+    \[\di V=\sum_{i=1}^{k}V_{\m,i}\di n_i\]
+    我们按照目标系统中各物质的比例同时加入组分$1,\cdots,k$.%
+    由于这一比例与终态(即目标系统)中各组分的比例相同,并且在过程中保持不变,因此各物质的偏摩尔体积在这一过程中是定值.\\
+    假定各组分在目标系统中的物质的量分别为$\li n,k$,则对上式积分就有
+    \[V=\sum_{i=1}^{k}\left(\int_0^{n_i}V_{\m,i}\di n_i\right)
+    =\sum_{i=1}^{k}\left(V_{\m,i}\int_0^{n_i}\di n_i\right)
+    =\sum_{i=1}^{k}V_{\m,i}n_i\]
+    由此可以发现,偏摩尔体积是有加和性的,系统的体积等于各物质的偏摩尔体积与其物质的量之积的加和.%
+    最终,我们找到了计算多组分系统的体积的方法.
+\end{derivation}
+需要说明的是,尽管看起来求和项中的$V_{\m,i}n_i$像是第$i$中组分对系统贡献的体积,但实则不然.%
+在纯水(或者你可以认为是无限稀的溶液)中,$\text{MgSO}_4$的偏摩尔体积为$-1.4\text{cm}^3\cdot\text{mol}^{-1}$.%
+显然在这一体系中$\text{MgSO}_4$所占的体积并不是负数,但向该体系中加入$\text{MgSO}_4$的确会导致系统体积的减小.
+\begin{hint}
+造成$\text{MgSO}_4$此时的偏摩尔体积为负数主要是因为$\text{Mg}^{2+}$和$\text{SO}_4^{2-}$水合后%
+破坏了水中原有的氢键结构,导致溶液体积减小.\\
+显然,在这样的体系中分别讨论水所占的体积和$\text{MgSO}_4$所占的体积是较为困难的.%
+不过,在热力学中我们更加关心体积的变化量而非各组分占的绝对的体积值,因此也就%
+无需单独考虑每个组分的情况.
+\end{hint}
+\Part{偏摩尔量}
+\indent 现在我们把偏摩尔体积的定义应用在系统的其它不具有加和性的广度性质上,就有了偏摩尔量的定义.
+\begin{definition}[4B.2.2 偏摩尔量]
+    在等温等压下,在大量的系统中加入单位物质的量的组分$i$而保持其余组分的量不变而引起的系统的某种广度性质$Z$的变化称为\tbf{偏摩尔量},记作$Z_{\m,i},Z_{i}'$或$\overline{Z_i}$.\\
+    偏摩尔量等价于在等温等压下这样的系统中,广度量$Z$对组分$i$的物质的量$n_i$的变化率.\\
+    纯物质的(偏)摩尔量记作$Z_{\m}^\ast$,上标$\ast$表示纯物质.
+\end{definition}
+系统的热力学能$U$,焓$H$,Gibbs自由能$G$等等都有相应的偏摩尔量.与偏摩尔体积相似的,所有偏摩尔量都遵循如下定理.
+\begin{theorem}[4B.2.3 偏摩尔量的加和公式]
+    系统的广度量$Z$满足
+    \[Z=\sum_{i=1}^kZ_{\m,i}n_i\]
+    其中$Z_{\m,i}$为组分$i$在此时系统组成下的偏摩尔量,$n_i$为组分$i$的物质的量.
+\end{theorem}
+具体推导过程和系统体积的求算是类似的.上面的定理告诉我们,系统的偏摩尔量之间满足一定的关系,并不是彼此无关的.%
+具体关系的推导如下.
+\begin{derivation}
+    假定我们向系统中随意地加入各种组分,此时$Z_{\m,i}$和$n_i$都成为了变量,但仍然满足\tbf{4B.2.3}中的等式.%
+    对该式做全微分可得
+    \[\di Z=\sum_{i=1}^{n}\di\left(Z_{\m,i}n_i\right)=\sum_{i=1}^k\left(n_i\di Z_{\m,i}+Z_{\m,i}\di n_i\right)\]
+    又根据等温等压下$Z$本身的全微分
+    \[\di Z=\sum_{i=1}^{n}Z_{\m,i}\di n_i\]
+    可知
+    \[\sum_{i=1}^{k}n_i\di Z_{\m,i}=0\]
+    对上式两边除以系统的总物质的量,就有
+    \[\sum_{i=1}^kx_i\di Z_{\m,i}=0\]
+    其中$x_i$为组分$i$的摩尔分数.
+\end{derivation}
+\begin{theorem}[4B.2.4 Gibbs$-$Duhem公式]
+    等温等压下,系统各组分的偏摩尔量满足
+    \[\sum_{i=1}^kn_i\di Z_{\m,i}=0\]
+    或写作
+    \[\sum_{i=1}^kx_i\di Z_{\m,i}=0\]
+
+\end{theorem}
+这表明系统中各组分的偏摩尔量互为盈亏关系,一个组分的偏摩尔量增加必将导致其余组分的偏摩尔量减少.\vspace{12pt}\\
+\Section{4B.3 化学势}
+\Part{化学势的定义}
+\indent 对于多组分系统,热力学基本方程还需考虑组成成分对系统的热力学函数的影响,%
+这也可以用偏摩尔量进行研究.%
+我们先以Gibbs自由能为例讨论多组分系统中热力学函数的变化.
+\begin{derivation}
+    多组分系统的Gibbs自由能$G$的全微分为
+    \[\di G=\pa GT{p,\li n,k}\di T+\pa Gp{T,\li n,k}\di p+\sum_{i=1}^{k}\pa G{n_i}{T,p,n_{j}(j\neq i)}\di n_i\]
+    当系统的组成不变时,有
+    \[\di G=\pa GT{p,n}\di T+\pa Gp{T,n}\di p\]
+    下标$n$表示所有组分的量保持一定.此时,系统仍然满足热力学基本方程,即
+    \[\pa GT{p,n}=-S\ \ \ \ \ \pa Gp{T,n}=V\]
+    从而$G$的全微分就可以写作
+    \[\di G=-S\di T+V\di p+\sum_{i=1}^{k}\pa G{n_i}{T,p,n_{j}(j\neq i)}\di n_i\]
+    为了方便考虑,我们将$\pa G{n_i}{T,p,n'}$记作$\mu_i$,这样就有
+    \[\di G=-S\di T+V\di p+\sum_{i=1}^k\mu_i\di n_i\]
+    这就是多组分系统的热力学基本方程(之一).
+\end{derivation}
+\begin{definition}[4B.3.1 偏摩尔Gibbs自由能与化学势]
+    定义多组分系统中组分$i$的偏摩尔Gibbs自由能$G_{\m,i}$为其\tbf{化学势},记作$\mu_i$.
+\end{definition}
+对于其它热力学函数,也可以通过相似的方法推出基于它们给出的化学势的定义.我们以热力学能$U$为例.
+\begin{derivation}
+    对于多组分系统的热力学能$U$,我们以$S,V$和$\li n,k$作为其独立变量,则$U$的全微分为
+    \[\di U=\pa US{V,\li n,k}\di S+\pa UV{S,\li n,k}\di V+\sum_{i=1}^{k}\pa U{n_i}{S,V,n_{j}(j\neq i)}\di n_i\]
+    类似地,对于组成一定的系统总有$\di U=T\di S-p\di V$,于是
+    \[\di U=T\di S-p\di V+\sum_{i=1}^{k}\pa U{n_i}{S,V,n_{j}(j\neq i)}\di n_i\]
+    我们知道$U=G+TS-pV$,对该式微分并代入$\di G$的全微分可得
+    \[\begin{aligned}
+        \di U
+        &= \di G+T\di S+S\di T-p\di V-V\di p \\
+        &= T\di S-p\di V+\sum_{i=1}^k\mu_i\di n_i
+    \end{aligned}\]
+    将上面的式子与$\di U$的全微分比较系数,就可以得到
+    \[\mu_i=\pa U{n_i}{S,V,n'}\]
+
+\end{derivation}
+一点奇怪而需要注意的是,我们在上述推导中的右边一项并非组分$i$的偏摩尔热力学能.%
+因为偏摩尔量的定义是定温定压的,而上式的右边一项是保持熵和体积恒定的,因此两者略有区别.\\
+\indent 对其余热力学函数进行相似的处理,就可以得到化学势的四个定义式.
+\begin{definition}[4B.3.2 化学势]
+    多组分系统中组分$i$的化学势$\mu_i$满足
+    \[\mu_i=\pa G{n_i}{T,p,n'}=\pa U{n_i}{S,V,n'}=\pa H{n_i}{S,p,n'}=\pa A{n_i}{T,V,n'}\]
+    其中常用的仍为第一个等式,因为大多数化学反应都是等温等压条件下进行的,在这样的过程中研究Gibbs自由能更加便捷.
+\end{definition}
+\Part{化学势与温度和压力的关系}
+\indent 根据简单的偏微分关系,就可以导出化学势与温度和压力的关系.
+\begin{derivation}
+    考虑多组分系统中组分$i$的化学势$\mu_i$,有
+    \[\pa{\mu_i}{p}{T,n}
+    =\left[\dfrac{\p}{\p p}\pa G{n_i}{T,p,n'}\right]_{T,n}
+    =\left[\dfrac{\p}{\p n_i}\pa Gp{T,n}\right]_{T,p,n'}
+    =\pa{V}{n_i}{T,p,n'}=V_{\m,i}\]
+    其中第二个等号用到了偏微分的可交换性,第三个等号是因为我们已经知道对于组成不变的系统有$\pa GpT=V$.\\
+    由此可见,对于多组分系统,每个组分的化学势$\mu_i$对压强$p$的变化率即为其偏摩尔体积,这与纯物质系统是一致的,%
+    只需把对应的广度性质改写为偏摩尔量即可.\\
+    对于化学势与温度的关系,类似地有
+    \[\pa{\mu_i}{T}{p,n}
+    =\left[\dfrac{\p}{\p T}\pa G{n_i}{T,p,n'}\right]_{p,n}
+    =\left[\dfrac{\p}{\p n_i}\pa GT{p,n}\right]_{T,p,n'}
+    =-\pa{S}{n_i}{T,p,n'}=-S_{\m,i}\]
+    考虑Gibbs-Helmholtz方程的推导过程,我们对$G=H-TS$两边对$n_i$微分可得
+    \[\pa G{n_i}{T,p,n'}=\pa H{n_i}{T,p,n'}-T\pa G{n_i}{T,p,n'}\]
+    于是
+    \[\mu_i=H_{\m,i}-TS_{\m,i}\]
+    于是同理地有
+    \[\left[\dfrac{\p}{\p T}\left(\dfrac{\mu_i}{T}\right)\right]_{p,n}
+    =\dfrac{T\pa{\mu_i}T{p,n}-\mu_i}{T^2}=-\dfrac{TS_{\m,i}+\mu_i}{T^2}=-\dfrac{H_{\m,i}}{T^2}\]
+    这也符合Gibbs-Helmholtz方程的结果.
+\end{derivation}
+于是我们可以得到如下定理.
+\begin{theorem}[4B.3.3 化学势与温度和压力的关系]
+    多组分系统中组分$i$的化学势$\mu_i$满足
+    \[\pa{\mu_i}{p}{T,n}=V_{\m,i}\ \ \ \ \ \pa{\mu_i}{T}{p,n}=-S_{\m,i}\ \ \ \ \ \left[\dfrac{\p}{\p T}\left(\dfrac{\mu_i}{T}\right)\right]_{p,n}=-\dfrac{H_{\m,i}}{T^2}\]
+
+\end{theorem}
+由此可见,多组分系统中的各种热力学性质与纯物质系统具有完全一致的形式,%
+只是把对应的广度性质换成偏摩尔量即可.\vspace{4pt}\\
+\Part{化学势的意义}
+\indent 与Gibbs自由能用于判断等温等压下系统自发变化的方向类似地,化学势可以判断多组分系统中某一组分自发“移动”的方向.
+\begin{derivation}
+    我们考虑多组分系统中某一组分$i$.假定$i$在这一系统中的不同部分$A,B$的化学势为$\mu_i^A,\mu_i^B$.\\
+    这里的$A$和$B$可以是不同的相,也可以是半透膜隔绝(但允许组分$i$通过)的两个部分,%
+    总之是可以直接或间接地使组分$i$在$A,B$之间发生物质交换的部分.\\
+    在等温等压下,假定有$\di n_i$的物质$i$从$A$转移至$B$,这一过程的Gibbs自由能变化
+    \[\di G=\di G^A+\di G^B=-\mu_i^A\di n_{i}+\mu_i^B\di n_i=\left(\mu_i^B-\mu_i^A\right)\di n_i\]
+    根据等温等压下系统自发变化方向的判据(即\tbf{3E.2.2}),如果$\mu_i^A>\mu_i^B$,那么这一转移过程就是自发的,%
+    直至$\mu_i^A=\mu_i^B$为止,此时组分$i$在$A,B$两个部分的转移达到平衡.从宏观上来讲,这时$A,B$两部分中组分$i$的量不再变化.
+\end{derivation}
+上面的推导实际上和我们在\tbf{4A.1.4}推导相平衡的条件是极为相似的,区别只在于把纯物质的摩尔Gibbs自由能换成某一组分$i$的化学势即可%
+\footnote{事实上我们在之后讨论混合物的相平衡时就要用到这一结论.}.\\
+\indent 由此,我们可以得到用化学势判断多组分体系中自发变化的方向的方法.
+\begin{theorem}[4B.3.4 多组分体系自发变化的方向]
+    等温等压下不做非体积功的多组分封闭体系中,任意组分总是从化学势大的地方转移至化学势小的地方,%
+    直到该组分在系统各处的化学势相等.
+\end{theorem}
+\vspace{8pt}
+\Section{4B.4 气体混合物中各组分的化学势}
+\indent 许多化学反应都是在气相中进行的,因此我们需要知道混合气体中各组分的化学势.%
+另外,由于气体混合物相对较为简单,从这样的体系入手也方便我们之后讨论溶液中各组分的化学势.\\
+\indent 我们先从理想气体混合物开始讨论.\vspace{4pt}\\
+\Part{理想气体及其混合物的化学势}
+\indent 我们现在来推导理想气体混合物的化学势.
+\begin{derivation}
+    考虑理想气体混合物中的某种气体组分$i$.\\
+    纯的$i$的化学势,实际上就是其摩尔Gibbs自由能,满足
+    \begin{equation}
+        \pa{\mu_i}{p}T=\dfrac{1}{n}\pa GpT=\dfrac{V}{n}=\dfrac{RT}{p}
+    \end{equation}
+    移项积分,在恒定温度$T$下从标准压力$p^\ominus$积分至任意压力$p$,则有
+    \[\mu_i(T,p)=\mu_i^\ominus\left(T,p^\ominus\right)+RT\ln\dfrac{p}{p^\ominus}\]
+    其中$\mu_i^\ominus$是压力为标准压力$p^\ominus\left(T,p^\ominus\right)$,给定温度为$T$纯的理想气体$i$的化学势.%
+    由于压力$p^\ominus$为定值,因此也常常简写为$\mu^\ominus(T)$.\\
+    现在我们考虑混合物中的所有组分.根据Dalton分压定律,$p_i=x_ip$对所有组分都成立.\\
+    为了求出这些气体混合后某一组分的化学势,考虑一个容器,其中一边装有要研究的理想气体混合物,%
+    另一边装有组分$i$的纯物质,中间有一层仅能通过组分$i$的半透膜,在平衡时$i$在两边的分压相同\footnotemark.\\
+    在等温等压下达到平衡后,%
+    两边组分$i$的压力和化学势都应当相等.于是在混合物中组分$i$的化学势与另一侧纯的$i$的化学势相同,即
+    \begin{equation}
+        \mu_i=\mu_i^\ominus(T)+RT\ln\dfrac{p_i}{p^\ominus}
+        =\mu_i^\ominus(T)+RT\ln\dfrac{p}{p^\ominus}+RT\ln x_i
+        =\mu_i^\ast(T,p)+RT\ln x_i
+    \end{equation}
+    其中$\mu_i^\ast(T,p)$为纯的气体$i$在温度为$T$,压力为$p$的化学势(实际上就是摩尔Gibbs自由能).
+\end{derivation}\footnotetext{虽然看起来符合直觉,但这一点实际上需要统计力学的知识来严格证明,在热力学的范畴内我们只能接受这一实验事实.}
+于是我们就得到了想要求的某一组分的化学势.
+\begin{theorem}[4B.4.1 理想气体混合物中各组分的化学势]
+    温度为$T$,压力为$p$的理想气体混合物中组分$i$的化学势$\mu_i$满足
+    \[\mu_i=\mu_i^{\ast}(T,p)+RT\ln x_i\]
+    其中$\mu_i^{\ast}(T,p)$为该条件下纯的气体$i$的化学势(实际上就是其摩尔Gibbs自由能),%
+    $x_i$为组分$i$的物质的量分数.
+\end{theorem}
+需要注意的是,$\mu^{\ast}(T,p)$显然不是气体$i$的标准态下的化学势.标准态要求压力为标准压力$p^\ominus$.\vspace{4pt}\\
+\Part{实际气体及其混合物的化学势,逸度}
+\indent 同样地,我们采取类似的步骤推导实际气体混合物的化学势.
+\begin{derivation}\setcounter{equation}{0}
+    为了方便考虑,依然先考虑纯的实际气体的情况.\\
+    我们采取变形的维里方程,即
+    \begin{equation}
+        pV_{\m}=RT+Bp+Cp^2+\cdots
+    \end{equation}
+    代入$\pa{\mu_i}pT=V_{\m}$后,在恒定温度$T$下做不定积分可得
+    \begin{equation}
+        \mu(T,p)=\int{V_\m}\di p=RT\ln p+Bp+\dfrac12Cp^2+\cdots+I(T)
+    \end{equation}
+    积分常数$I(T)$是$T$的函数.为了求得$I(T)$,考虑$p\to0$时(4)中所有$p$的幂次项相对$\ln p$都可以忽略,于是
+    \begin{equation}
+        \mu(T,p)=RT\ln p+I(T),p\to0
+    \end{equation}
+    理想气体的化学势为
+    \begin{equation}
+        \mu(T,p)=\mu^\ominus(T)+RT\ln\dfrac{p}{p^\ominus}
+    \end{equation}
+    实际气体的压力$p\to0$时就满足理想气体状态方程,于是对比(3)和(4)可得
+    \begin{equation}
+        I(T)=\mu^\ominus(T)-RT\ln p^\ominus
+    \end{equation}
+    将(5)代入(2)中可得
+    \begin{equation}
+        \mu(T,p)=\mu^\ominus(T)+RT\ln\dfrac{p}{p^\ominus}+Bp+\dfrac12Cp^2+\cdots
+    \end{equation}
+    为了更简单地表示该式,不妨令
+    \begin{equation}
+        RT\ln\gamma=Bp+\dfrac12Cp^2+\cdots
+    \end{equation}
+    则上式可以改写成
+    \begin{equation}
+        \mu(T,p)=\mu^\ominus(T)+RT\ln\dfrac{p\gamma}{p^\ominus}
+    \end{equation}
+    为了和理想气体的化学势保持一致,再令$p\gamma=f$,就有
+    \begin{equation}
+        \mu(T,p)=\mu^\ominus(T)+RT\ln\dfrac{f}{p^\ominus}
+    \end{equation}
+
+\end{derivation}
+为了更简单地表示实际气体的化学势,我们引入了一个新的变量.
+\begin{definition}[4B.4.2 逸度]
+    实际气体的\tbf{逸度}$f$是满足
+    \[\mu(T,p)=\mu^\ominus(T)+RT\ln\dfrac{f}{p^\ominus}\]
+    的变量,其物理意义是与实际气体具有相同化学势的理想气体的压力,%
+    也可以视为实际气体的压力的修正值.\\
+    \tbf{逸度因子}$\gamma$是实际气体逸度与压力的比值,即$\gamma=\dfrac{f}{p}$.
+\end{definition}
+有了逸度因子和逸度的概念,再同样地根据半透膜平衡原理(详见\tbf{4B.4.1}的推导),就可以给出实际气体混合物中各组分的化学势.
+\begin{theorem}[4B.4.2 实际气体混合物中各组分的化学势]
+    温度为$T$,压力为$p$的实际气体混合物中组分$i$的化学势$\mu_i$满足
+    \[\mu_i=\mu_i^{\ominus}(T,p)+RT\ln\dfrac{f_i}{p^\ominus}\]
+    其中$\mu_i^{\ominus}(T,p)$为该温度下处于标准态的纯的气体$i$的化学势,$f_i$为其逸度.
+\end{theorem}
+对于非理想气体混合物,Lewis-Randall给出了各组分逸度的近似计算方法.
+\begin{theorem}[4B.4.3 实际气体混合物中各组分逸度的近似计算]
+    对于一些常见的气体,在相当大的一部分压力范围内有
+    \[f=f^\ast x\]
+    其中$f^\ast$为纯物质的逸度,$x$为该物质在混合物中所占的摩尔分数.
+\end{theorem}
+
+\end{document}

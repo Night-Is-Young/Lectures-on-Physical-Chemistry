@@ -1,0 +1,25 @@
+\documentclass{standalone}
+\usepackage{PhysicalChemistryNote}
+\usetikzlibrary{decorations.markings}
+\begin{document}
+\tikzset{->-/.style={decoration={
+    markings,
+    mark=at position .5 with {\arrow{latex}}},postaction={decorate}}}
+    \begin{tikzpicture}
+        \draw[->] (0,0) -- (4,0) node[right]{$T$};
+        \draw[->] (0,0) -- (0,4) node[above]{$S$};
+        \draw[domain=0:4,thick] plot[smooth](\x,1.4^\x) node[above right]{$y_1$};
+        \draw[domain=0:4,thick] plot[smooth](\x,1.2^\x) node[above right]{$y_2$};
+        \coordinate[label=right:{$A$}] (1) at (3.5,3.2467);
+        \coordinate[label=below:{$B$}] (2) at (3.5,1.8929);
+        \coordinate[label=above:{$C$}] (3) at (1.8965,1.8929);
+        \coordinate[label=below:{$D$}] (4) at (1.8965,1.4131);
+        \draw[->-] (1) -- (2);
+        \draw[->-] (2) -- (3);
+        \draw[->-] (3) -- (4);
+        \node[circle,fill,inner sep=1pt] at (1) {};
+        \node[circle,fill,inner sep=1pt] at (2) {};
+        \node[circle,fill,inner sep=1pt] at (3) {};
+        \node[circle,fill,inner sep=1pt] at (4) {};
+    \end{tikzpicture}
+\end{document}

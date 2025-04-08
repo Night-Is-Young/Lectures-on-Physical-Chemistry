@@ -1,0 +1,168 @@
+\documentclass{ctexart}
+\usepackage{PhysicalChemistryNote}
+
+\begin{document}\pagestyle{plain}
+\noindent\tbf{\LARGE 4A 纯物质的相平衡}\vspace{15pt}\\
+\indent 一直以来,我们讨论的系统都是均一的流体系统,而忽略了事实上更常见的情形:%
+系统很可能不是均一的,而是由多个性质不同的部分组成.这就需要我们对这样的系统做出定义和研究.\vspace{12pt}\\
+\Section{4A.1 相,相变与相平衡}
+\Part{相}
+\indent 我们知道,大多数物质在不同的温度和压强下都会呈现出不同的形态.%
+关于实际气体的气态和液态的转变,我们已经在\tbf{1C.1}中进行了详细地讨论.%
+现在,我们需要对这样的同一物质的不同状态做一个定义.
+\begin{definition}[4A.1.1 相]
+    \tbf{相}是一种化学组成和物理状态都均匀的物质的存在形式.
+\end{definition}
+常见的相包括固相,液相,气相等.一般来说,无论系统中有多少种物质,都应当只有一个气相,但液相和固相则视情况而定.%
+同一种物质的固相也并非只有一种,典型的例如固态的碳单质有立方金刚石,六方金刚石和石墨三种(经典的)相.\vspace{4pt}\\
+\Part{相变与相平衡}
+\indent 施加一定的条件,相就可能发生变化.
+\begin{definition}[4A.1.2 相变]
+    物质在一定条件下发生不同相之间的转变称为\tbf{相变}.
+\end{definition}
+相变在生活中是很常见的,例如水的沸腾和凝固,冰的融化等等.%
+如果系统中相的组成不随时间发生变化,我们就认为系统在宏观上不再发生相变,这时系统的平衡称为相平衡.
+\begin{definition}[4A.1.3 相平衡]
+    如果系统的各相组成不随时间发生变化,就称系统达到了\tbf{相平衡}.
+\end{definition}
+相平衡也可以认为是相变过程达到极限后的状态.现在,我们来进一步地讨论相平衡的系统%
+除了热平衡和力平衡之外(对于一般的系统而言,这两点应当是显然的)应当满足的条件.%
+由于本节讨论的是纯物质组成的系统(又称单组分系统),因此不涉及化学平衡.
+\begin{derivation}
+    设系统由$\alpha$和$\beta$两相构成.\\
+    在定温定压下,假定有$\di n$(此处$n$为物质的量)的物质从$\alpha$相转移到$\beta$相.\\
+    对于纯物质的某一特定相而言,其性质是均一的.因此,可以假设在此温度和压强下$\alpha$相和$\beta$相的摩尔Gibbs自由能分别为$G_{\m,\alpha}$和$G_{\m,\beta}$.\\
+    于是该过程的Gibbs自由能变
+    \[\di G=G_{\m,\beta}\di n-G_{\m,\alpha}\di n=\left(G_{\m,\beta}-G_{\m,\alpha}\right)\di n\]
+    如果$G_{\m,\beta}<G_{\m,\alpha}$,则有$\di G<0$,于是根据\tbf{3E.2.2}可知物质从$\alpha$相转移到$\beta$相的过程是自发的.%
+    反之,如果$G_{\m,\beta}>G_{\m,\alpha}$,则这样的转移过程是非自发的.只有$G_{\m,\beta}=G_{\m,\alpha}$时,$\di G=0$,表示%
+    这样的相变过程是平衡的.
+\end{derivation}
+\begin{theorem}[4A.1.4 相平衡的条件]
+    纯物质在$\alpha$和$\beta$两相之间达到相平衡需满足
+    \begin{enumerate}[label=\tbf{\arabic*.}]
+        \item 热平衡,即$T_\alpha=T_\beta$.
+        \item 压力平衡,即$p_\alpha=p_\beta$.
+        \item 相平衡,即$G_{\m,\alpha}=G_{\m,\beta}$.
+    \end{enumerate}
+    总结来说,对于单组分多相平衡系统,平衡时系统的各相有共同的温度和压力,%
+    并且该物质的各相的摩尔Gibbs自由能\footnotemark 相等.
+\end{theorem}\footnotetext{对于多组分系统,这里的摩尔Gibbs自由能实际上应当由化学势来代替.我们将在本章之后的部分对化学势进行详细介绍.}
+关于相平衡,还有一些概念需要介绍.
+\begin{definition}[4A.1.5 相平衡中的概念]
+    在研究固相,液相和气相的相平衡中,我们会用到以下概念.
+    \begin{enumerate}[label=\tbf{\arabic*.}]
+        \item \tbf{(饱和)蒸气压}:在指定温度下,液相与气相达到平衡的压力.
+        \item \tbf{沸点}:蒸气压达到指定压强时的温度.
+        \item \tbf{熔点/凝固点}:在指定压强下,固相与液相达到平衡的温度.
+        \item \tbf{三相点}\footnotemark :物质的固相,液相和气相同时平衡时的温度和压强.
+    \end{enumerate}
+\end{definition}\footnotetext{我们一般所说的三相点都是固相,液相和气相.当然,它们也可以是其它的三个相.}
+\begin{definition}[4A.1.6 自由度]
+    确定平衡系统的状态所需要的独立的强度量\footnotemark 的数目称为系统的\tbf{自由度},记作$f$.
+\end{definition}\footnotetext{系统的广度性质和强度性质(详见\tbf{2A.1.5})又分别叫做广度量和强度量.}
+因此,我们采取压强$p$和温度$T$作为变量描述系统的状态(体积$V$是广度量,就不作为我们此处描述系统性质的变量了).%
+对于纯物质构成的系统,有如下的性质.
+\begin{theorem}[4A.1.7 单组分系统的相律\footnotemark]
+    单组分平衡系统的自由度$f$和相的数目$\Phi$满足
+    \[f+\Phi=3\]
+    当相数$\Phi=1$时$f=2$,此时(至少在一个范围内)$p$和$T$可以自由变动而不改变相的数目.\\
+    当相数$\Phi=2$时$f=1$,此时$p$和$T$中只有一个是独立变量,确定其中之一就确定了另一变量.\\
+    当相数$\Phi=3$时$f=0$,此时$p,T$是固定的,因而三相点的状态是确定的.\\
+    单组分系统不可能存在四相(及以上)平衡的状态.
+\end{theorem}\footnotetext{关于完整的相律(涉及到多组分系统)及其证明,我们将在本章之后的部分介绍.}
+\vspace{8pt}
+\Section{4A.2 单组分系统的相图}
+\Section{4A.3 相变热力学}
+\Part{Clapeyron方程}
+\indent 由\tbf{4A.1.7}可知,在相平衡时$p$和$T$中只有一个是独立变量,亦即它们存在一定的函数关系.%
+这在\tbf{4A.2}中的相图中可以观察地十分明显.现在我们着手通过数学推导求出它们的关系.
+\begin{derivation}\setcounter{equation}{0}
+    设在一定的压力$p$和温度$T$下,某物质的两个相$\alpha$和$\beta$呈平衡关系.当温度改变$\di T$,压力改变$\di p$后,系统仍呈现相平衡.%
+    此时,两相的摩尔Gibbs自由能发生变化,但仍保持相等.于是有
+    \begin{equation}G_{\m,\alpha}=G_{\m,\beta}\end{equation}
+    \begin{equation}G_{\m,\alpha}+\di G_{\m,\alpha}=G_{\m,\beta}+\di G_{\m,\beta}\end{equation}
+    由(1)(2)可得
+    \begin{equation}\di G_{\m,\alpha}=\di G_{\m,\beta}\end{equation}
+    根据热力学基本方程
+    \begin{equation}\di G=-S\di T+V\di p\end{equation}
+    可知
+    \begin{equation}-S_{\m,\alpha}\di T+V_{\m,\alpha}\di p=-S_{\m,\beta}\di T+V_{\m,\beta}\di p\end{equation}
+    整理后可得
+    \begin{equation}
+        \dfrac{\di p}{\di T}=\dfrac{S_{\m,\alpha}-S_{\m,\beta}}{V_{\m,\alpha}-V_{\m,\beta}}=\dfrac{\Delta S_{\m}}{\Delta V_{\m}}
+    \end{equation}
+    如果代入\tbf{3C.2}中关于相变的熵变的结论,就有
+    \begin{equation}
+        \dfrac{\di p}{\di T}=\dfrac{\Delta H_{\m}}{T\Delta V_\m}
+    \end{equation}
+
+\end{derivation}
+上面的(6)(7)两式就是Clapeyron方程.
+\begin{theorem}[4A.3.1 Clapeyron方程]
+    单组分系统两相平衡时满足
+    \[\dfrac{\di p}{\di T}=\dfrac{\Delta H_{\m}}{T\Delta V_\m}\]
+
+\end{theorem}
+对于特定过程的摩尔焓变和摩尔体积变化,我们有如下记号表示.
+\begin{definition}[4A.3.2 蒸发,熔化的符号表述]
+    蒸发用下标vap表示,熔化用下标fus表示.例如,摩尔蒸发焓可以记作$\Delta_\vap H_\m$.
+\end{definition}
+我们现在将\tbf{4A.3.1}应用于固液相的分界线.
+\begin{derivation}
+    通常假定融化过程的$\Delta_\fus H_\m$和$\Delta_\fus V_\m$随$p$和$T$变化很小,可以看作定值.因此对\tbf{4A.3.1}移项积分可得
+    \[\ln\dfrac{p}{p_0}=\dfrac{\Delta H_{\m}}{T\Delta V_\m}\ln\dfrac{T}{T_0}\]
+    其中$p_0,T_0$为固相和液相平衡时的某一已知状态.考虑到$\ln(1+x)$的Taylor展开
+    \[\ln(1+x)=x-o(x)\]
+    因此在$T$与$T_0$较为接近时有
+    \[\ln\dfrac{T}{T_0}=\ln\left(\dfrac{T-T_0}{T_0}+1\right)\sim\dfrac{T-T_0}{T_0}\]
+    对$\ln\dfrac{p}{p_0}$做同样近似,最后移项就有
+    \[p=p_0+\dfrac{\Delta H_{\m}}{T_0\Delta V_\m}\left(T-T_0\right)\]
+    因此通常纯物质的相图上固相和液相的分界线近似于一条直线(通常较为陡峭,这是因为$\Delta_\fus V_\m$较小而$\Delta_\fus H_\m$较大).
+\end{derivation}
+\vspace{4pt}
+\Part{Clausius$-$Clapeyron方程}
+\indent 我们将接下来讨论液相与气相之间的平衡条件.
+\begin{derivation}
+    由于气相的摩尔体积远大于液相的摩尔体积,因此$\Delta_\vap V_\m\sim V_{\m,\g}$.\\
+    再假定气相是理想气体,就有
+    \[V_{\m,g}=\dfrac{RT}{p}\]
+    代入\tbf{4A.3.1}中就有
+    \[\dfrac{\d p}{\d T}=\dfrac{\Delta_\vap H_\m}{T\cdot\frac{RT}{p}}=\dfrac{p\Delta_\vap H_\m}{RT^2}\]
+    又因为$\dfrac{\di p}{p}=\di\ln p$,于是移项后就有
+    \[\dfrac{\di\ln p}{\di T}=\dfrac{\Delta_\vap H_\m}{RT^2}\]
+    如果再假定$\Delta_\vap H_\m$与温度无关,对上式移项积分就有
+    \[\ln\dfrac{p_2}{p_1}=\dfrac{\Delta_\vap H_\m}{R}\left(\dfrac1{T_1}-\dfrac1{T_2}\right)\]
+
+\end{derivation}
+这就是Clausius$-$Clapeyron方程.
+\begin{theorem}[4A.3.3 Clausius$-$Clapeyron方程]
+    如果假定气相的摩尔体积远大于液相摩尔体积,并假定气相是理想气体,那么气相和液相平衡时就有
+    \[\dfrac{\di\ln p}{\di T}=\dfrac{\Delta_\vap H_\m}{RT^2}\]
+    如果再假定$\Delta_\vap H_\m$与温度无关(或者在一定温度范围内变化很小),就有
+    \[\ln\dfrac{p_2}{p_1}=\dfrac{\Delta_\vap H_\m}{R}\left(\dfrac1{T_1}-\dfrac1{T_2}\right)\]
+
+\end{theorem}
+固相和气相的平衡可以参照上述推导过程,只需把蒸发焓替换成升华焓.\vspace{4pt}\\
+\Part{外压对蒸气压的影响}
+\indent 我们在之前讨论的是单组分系统的液相和气相平衡,但是一般置于大气中的液体的蒸发并不满足单组分的条件.%
+现在假定空气是惰性而不溶于水的,我们来推导外界压力对蒸气压的影响.
+\begin{derivation}
+    设在一定温度$T$和一定外压$p_\e$下液体与其气相平衡,设此时的蒸气压为$p_\g$.\\
+    等温下假定外压改变了$\di p_\e$,蒸气压相应改变了$\di p_\g$.\\
+    由于改变前后都达到相平衡,于是与\tbf{4A.3.1}的推导同理有
+    \[\di G_{\m,\l}=\di G_{\m,\g}\]
+    在等温条件下有$\di G=V\di p$,于是就有
+    \[V_{\m,\l}\di p_\e=V_{\m,\g}\di p_\g\]
+    假定气相是理想气体,就有
+    \[V_{\m,\g}=\dfrac{RT}{p_\g}\]
+    代入上式有
+    \[\di\ln p_\g=\dfrac{V_{\m,\l}}{RT}\di p_\e\]
+    由于液体一般具有明显的不可压缩性,因此可认为$V_{\m,\l}$不受压力的影响,于是对上式积分就有
+    \[\ln\dfrac{p_\g}{p_0}=\dfrac{V_{\m,\l}}{RT}\left(p_\e-p_0\right)\]
+    其中$p_0$是纯物质的饱和蒸气压.
+\end{derivation}
+从上面的推导可以看出,外压越大$p_\e$越大则蒸气压$p_\g$越大.%
+不过,由于一般液体的$V_{\m,\l}$都较小,因此外压变化对蒸气压变化的影响%
+在大部分情况下可以忽略.
+\end{document}

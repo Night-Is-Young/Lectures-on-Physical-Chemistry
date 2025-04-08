@@ -1,0 +1,126 @@
+\documentclass{ctexart}
+\usepackage{PhysicalChemistryNote}
+
+\begin{document}\pagestyle{plain}
+\noindent\tbf{\LARGE 1A 理想气体$^\ast$\footnote{标$\ast$的内容表示你应该在第一次学习物理化学时(或者更应试地说,参加初赛之前)掌握.}}\vspace{15pt}\\
+%
+\indent 几百年前的人们在艰苦而简陋的实验室里通过日复一日的测定建立了一套定量描述气体的定律.%
+这些定律最终都指向我们所熟知的理想气体定律.不过在此之前,我们需要学习如何描述气体.\vspace{12pt}\\
+\Section{1A.1 状态函数}
+\indent 顾名思义,状态函数是以"状态"为自变量的函数\footnote{我们将在\tbf{2A}中给出更加明确的定义.}.如果两个物体具有相同的状态,那么它们的一些物理性质也应当相同.%
+因此,状态函数可以定量的描述系统的状态.我们将在后面的学习中更进一步地了解各种状态函数.\\
+\indent 在本章,我们只需知道表征气体系统状态的变量包括物质的量$n$,压强$p$,温度$T$和体积$V$.%
+如果气体是由多种物质混合而成的,那么我们还需要各个组分的物质的量.\\
+\indent 物质的量和体积都是我们熟知的,在这里我们主要对压强和温度进行简单的讨论.
+\begin{definition}[1A.1.1 压力与压强]
+    \tbf{压力(compressive force)}是物体间相互挤压而垂直作用在物体表面的一种弹性力,其作用效果用压力除以受力面积表示,称为\tbf{压强(pressure)},用字母$p$表示.\\
+    上述名词在不同地方略有不同.在研究气体时,我们提到气体的压力通常就指它的压强,是由于大量气体分子撞击器壁所产生的持续且稳定的力造成的.
+\end{definition}
+我们所说的器壁并非特指盛装气体的容器.它可以是任何限制气体运动的物体.%
+你感受不到大气对你的压力也许只是因为你的身体里也有气体,不是因为你不是器壁.
+\begin{definition}[1A.1.2 压力的单位,标准压力]
+    压力的SI(国际单位制)单位为帕斯卡(Pa),定义为$1\text{ Pa}=1\text{ N}\cdot\text{m}^{-2}$.\\
+    此外,常用的单位有kPa,bar等.我们有
+    \[1\text{ bar}=100\text{ kPa}=10^5\text{ Pa}\]
+    定义压力$1\text{ bar}$为\tbf{标准压力},记作$p^\ominus$.
+\end{definition}
+相比于压力,我们对温度的认识也许更粗浅一些.考虑我们感受温度或者温度计测定温度的方式,都是与被测物体直接接触,通过热交换判断物体的冷热程度.%
+因此,温度可以被简单地作为当两个物体接触时,热量传递方向的判据:总是从温度高的物体传向温度低的物体.
+\begin{definition}[1A.1.3 温度的单位,温标]
+    \tbf{温标}是标定温度大小的方式.\\
+    我们常用\tbf{摄氏温标}(单位为$\tccentigrade$)或\tbf{热力学温标}(单位为K)描述物体的温度.它们之间有如下换算关系
+    \[T/\text{K}=\theta/\tccentigrade+273.15\]
+    其中$T$和$\theta$分别表示同一温度在热力学温标和摄氏温标下的温度.
+\end{definition}
+\begin{hint}
+    在\tbf{2A.2}中,我们将基于热力学第零定律对温度和热的定义做更详细的讨论.\\
+    在\tbf{1B.1.4}中,我们将基于分子动理论提出第一种温标,即\tbf{理想气体温标}.%
+    在\tbf{3D.1.1}中,我们将基于热力学第二定律提出第二种温标,即上面所述的\tbf{热力学温标},%
+    并证明热力学温标和理想气体温标实际上是等价的.
+\end{hint}\vspace{8pt}
+\Section{1A.2 理想气体状态方程}
+\Part{状态方程}
+\indent 原则上,我们可以用\tbf{1A.1}中提到的四个量$n,p,T,V$表示组分单一的气体的状态.%
+然而,大量的实验表明,给定其中的三个量,第四个量也就随之确定了.也就是说,经验告诉我们这四个量之间存在一定的关系.我们把它称作\tbf{状态方程}.
+\begin{definition}[1A.2.1 状态方程]
+    状态方程是这样的一个方程,它描述了物质的各个状态函数之间存在的等量关系.%
+    例如,关于$n,p,T,V$四个状态函数的状态方程具有通式$p=f(n,T,V)$或$V=f(n,p,T)$,等等.
+\end{definition}
+\Part{描述气体的经验定律和理想气体状态方程}
+人们对于气体的研究由来已久,也提出了很多经验定律(如前言所说,多半是为了热气球旅行).你也许在普通化学的学习中已经见过它们,不过我们还是在此加以罗列(虽然,在你掌握理想气体状态方程后,你不记得其中的任何一个也没关系).
+\begin{theorem}[1A.2.2 描述气体的经验定律]
+    \begin{enumerate}[label=\tbf{\arabic*.}]
+        \item \tbf{Boyle$-$Mariotte定律}\\
+            定温定量下气体的体积与压力成反比,即
+            \[pV=C\]
+            其中$C$为常数,下同.
+        \item \tbf{Charles$-$Gay-Lussac定律}\\
+            定量定压下气体的体积和温度成正比,即
+            \[\dfrac VT=C\]
+            以及,定量定容下气体的压力和温度成正比,即
+            \[\dfrac pT=C\]
+        \item \tbf{Avogadro原理}\\
+            定温定压下气体的体积和物质的量成正比,即
+            \[\dfrac Vn=C\]
+
+    \end{enumerate}
+\end{theorem}
+\tbf{1A.2.2.1}和\tbf{1A.2.2.2}作为经验定律都是有限制的,它们在$p\to0$时才严格地成立.%
+不过,在一般条件下(例如大气压),它们也能很好地符合气体的行为.\\
+\indent 对上述几个式子进行适当的变换(尽管并不严谨)即可得到$\dfrac{pV}{nT}=C$.定义式中的常数为气体常数$R$,我们就得到了\tbf{理想气体状态方程}.
+\begin{theorem}[1A.2.3 理想气体状态方程]
+    当压力趋于$0$时,对所有气体都有状态方程
+    \[pV=nRT\]
+
+\end{theorem}
+\begin{proof}
+    我们刚才说的"并不严谨"是指把\tbf{1A.2.2.2}和\tbf{1A.2.2.3}直接相乘得到
+    \begin{equation}
+        \dfrac{pV}{nT}=C
+    \end{equation}
+    尽管这一步看似合理,但是却忽略了各个定律不同的使用范围.Charles定律要求定量定容,而Avogadro原理要求定温定压.(1)的得出自然有不合理之处.\\
+    这里,我们采用一种更加严谨的,也更加"数学"的方式进行推导.\\
+    对状态方程的一般式
+    \begin{equation}
+        V=f(n,p,T)
+    \end{equation}
+    全微分可得
+    \begin{equation}
+        \di V=\pa{V}{n}{p,T}\di n+\pa{V}{p}{n,T}\di T+\pa{V}{T}{n,p}\di V
+    \end{equation}
+    根据Avogadro原理,定温定压下气体的体积和物质的量成正比,即$V=C_1n$.于是
+    \begin{equation}
+        \pa{V}{n}{p,T}=C_1=\dfrac{V}{n}
+    \end{equation}
+    根据Boyle$-$Mariotte定律,定温定量下气体的体积与压力成反比,即$pV=C_2$,于是
+    \begin{equation}
+        \pa{V}{p}{n,T}=\dfrac{\p}{\p p}\left(\dfrac{C_2}p\right)=-\dfrac{C_2}{p^2}=-\dfrac{V}{p}
+    \end{equation}
+    根据Charles$-$Gay-Lussac定律,定量定压下气体的体积和温度成正比,即$V=C_3T$,于是
+    \begin{equation}
+        \pa{V}{T}{n,p}=C_3=\dfrac{V}{T}
+    \end{equation}
+    将(4)(5)(6)代入(3)中有
+    \begin{equation}
+        \di V=\dfrac{V}{n}\di n-\dfrac{V}{p}\di p+\dfrac{V}{T}\di T
+    \end{equation}
+    移项积分可得
+    \begin{equation}
+        \ln p+\ln V=\ln T+\ln n+C
+    \end{equation}
+    即
+    \begin{equation}
+        \dfrac{pV}{nT}=C'
+    \end{equation}
+    令积分常数$C'=R$,则有
+    \begin{equation}
+        pV=nRT
+    \end{equation}
+    
+\end{proof}
+\setcounter{equation}{0}
+由于实际气体只在$p\to0$时满足理想气体状态方程,因此我们可以对总是满足这方程的气体做一种理想化的定义(尽管它并不存在).
+\begin{definition}[1A.2.4]
+    在任何压力下都符合\tbf{1A.2.3}的气体称为\tbf{理想气体}.
+\end{definition}
+\end{document}

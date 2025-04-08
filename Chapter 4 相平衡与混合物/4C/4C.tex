@@ -1,0 +1,444 @@
+\documentclass{ctexart}
+\usepackage{PhysicalChemistryNote}
+
+\begin{document}\pagestyle{plain}
+\noindent\tbf{\LARGE 4C 溶液}\vspace{15pt}\\
+\indent 在系统地探讨了化学势和气体混合物中各组分的化学势后,我们将把目光放在一种更加复杂的体系——溶液上.%
+研究溶液,事实上包括系统中液相和气相的相平衡问题,因此这一节也将作为联系\tbf{4B}和\tbf{4D}的桥梁.%
+事实上,由于液相反应在化学中也十分广泛,因此研究溶液的热力学性质也是很有必要的.\vspace{12pt}\\
+\Section{4C.1 理想溶液和理想稀溶液}
+\Part{理想溶液与Raoult定律}
+\indent 我们从考虑多组分系统的液相与气相之间的相平衡开始.
+\begin{derivation}
+    假定多组分系统中有气液两相,假定组分$i$的蒸气为理想气体.\\
+    首先考虑纯的物质$i$的相平衡,根据\tbf{4B.4.1},其气相的化学势为
+    \[\mu_{i,\g}^\ast=\mu_{i,\g}^\ominus(T)+RT\ln\dfrac{p_i^\ast}{p^\ominus}\]
+    其中$p_i^\ast$即为纯物质$i$在此温度下的饱和蒸气压.又根据\tbf{4B.3.4},相平衡时有
+    \[\mu_{i,\l}^\ast=\mu_{i,\g}^\ast\]
+    现在考虑多组分系统,假定组分$i$的蒸气压变为$p_i$,在液相的化学势变为$\mu_{i,\l}$,则有
+    \[\mu_{i,\l}=\mu_{i,\g}=\mu_{i,\g}^\ominus(T)+RT\ln\dfrac{p_i}{p^\ominus}\]
+    联立上面三个式子可得
+    \[\mu_{i,\l}=\mu_{i,\l}^\ast+RT\ln\dfrac{p_i}{p_i^\ast}\]
+    
+\end{derivation}
+以上是我们基于气相是理想气体的假设所导出的结论.
+\begin{hint}
+    如无额外说明,我们都假定研究的理想溶液或理想稀溶液的蒸气是理想气体.\\
+    事实上,理想溶液和理想稀溶液并不要求气相是理想气体,相应地在相平衡时应当用逸度代替压力,%
+    并且仍需要运用Lewis-Randall定律进行进一步的简化.\\
+    由于这样会使得推导复杂化,因此我们做如上的假设,以得到更简洁的结果.
+\end{hint}
+显然,式中的最后一项$\dfrac{p_i}{p_i^\ast}$与溶液的组成有关.%
+1887年,在对一系列性质相近的液体混合物的蒸气压研究后,Francois Raoult发表了如下重要的实验事实.
+\begin{theorem}[4C.1.1 Raoult定律]
+    温度一定时,溶液中组分的蒸气压与该组分的纯物质的蒸气压之比等于该组分在液相中的摩尔分数,即
+    \[p_i=p_i^\ast x_i\]
+
+\end{theorem}
+我们把Raoult定律代入上述推导中,就能得到理想溶液的定义.
+\begin{definition}[4C.1.2 理想溶液]
+    如果溶液中的任意组分$i$都满足
+    \[\mu_{i,\l}=\mu_{i,\l}^\ast+RT\ln x_i\]
+    则称该溶液为\tbf{理想溶液}.换言之,任意组分都满足Raoult定律的溶液为理想溶液.
+\end{definition}
+需要注意的是,上述定义意味着Raoult定律的成立,而非来源于Raoult定律,你需要明确两者的因果关系.%
+这一定义也比用Raoult定律作为理想溶液的定义更好,因为它事实上并不依赖于理想气体模型.\\
+\indent Raoult定律的微观解释有两种:
+\begin{enumerate}[label=\tbf{(\arabic*)},leftmargin=41pt]
+    \item 从蒸发的微观过程考虑,理想溶液的组分之间相互作用的差异可以不计,%
+        而形成液体混合物将导致对于每个组分来说,其单位体积和单位表面积内的分子数目都将小于纯物质时的分子数目,%
+        因而单位时间内离开溶液的分子数目相较纯液体将减少,使得该组分在更低的蒸气压下就能达成气液平衡.
+    \item 从熵的角度考虑,蒸发是熵增过程,而溶液的熵相较纯液体应当更大,于是就有更小的趋势通过蒸发使系统获取最高的熵,%
+        因而各组分的蒸气压都将下降.
+\end{enumerate}
+
+\indent 尽管实际情况下大部分溶液都对Raoult定律有一定偏离,但是在溶质极稀的情况下,%
+溶剂总是满足Raoult定律的(对\tbf{4C.1.1}中取$x_i\to1$即可得知),因此Raoult定律也可以视作一种极限状态下的定律%
+(就和理想气体状态方程是所有气体在$p\to0$时的极限情况那样).不过,由于离子的库仑作用,强电解质的溶液%
+即使在很稀的情况下也与Raoult定律有所偏离.\vspace{4pt}\\
+\Part{理想稀溶液与Henry定律}
+\indent 对于低浓度的实际溶液,尽管溶剂是满足Raoult定律的,但William Henry却发现溶质的蒸气压与其摩尔分数虽然也成正比,%
+但比例系数并非纯溶质的饱和蒸气压.总结实验数据之后,他提出了以下定律%
+\footnote{尽管我们叙述上的逻辑如此,但事实上Henry定律的提出是在1803年,比Raoult定律早84年.}.
+\begin{theorem}[4C.1.3 Henry定律]
+    温度一定时,气体$i$在溶液中的摩尔分数(也就是气体的溶解度)与该气体的平衡分压成正比,比例系数记为\tbf{Henry常数}$k_i$,即
+    \[p_i=k_ix_i\]
+
+\end{theorem}
+以及,我们可以根据前面的两条经验定律给出理想稀溶液的定义.
+\begin{definition}[4C.1.4 理想稀溶液]
+    溶剂满足Raoult定律,溶质满足Henry定律的溶液称为理想稀溶液.
+\end{definition}
+对于溶剂和溶质的行为差异,我们给出一种定性的微观解释:对于理想稀溶液,溶剂分子附近仍然是大量的溶剂分子,%
+因此对溶剂分子的作用力实际上相当于纯溶剂液体并未改变多少,于是溶剂符合Raoult定律.%
+与之相反,溶质分子周围几乎全部都是溶剂分子,这使得其周围的环境与纯溶质时完全不同,%
+因此遵守Henry定律.如果溶剂分子和溶质分子足够相似,那么溶质就满足Raoult定律,%
+此时的Henry常数$k$就是纯溶质的饱和蒸气压.\\
+\indent 在实际应用中,Henry常数常常由以下方式给出.
+\begin{derivation}
+    对于稀溶液,设溶剂的物质的量为$n_\text s$\footnotemark,其余溶质的物质的量为$\li n,k$.对于溶质$i$,Henry定律可以化简如下
+    \[p_i=k_ix_i=k_i\dfrac{n_i}{n_\text s+\sum_{j=1}^k n_j}\xlongequal{n_\text s\gg n_j}
+    k_i\dfrac{n_i}{n_\text s}=k_i\dfrac{n_iM_\text s}{m_\text s}\]
+    令$k_{m,i}=k_iM_s$,于是就有
+    \[p_i=k_{m,i}m_i\]
+    其中$m_i$为$i$的质量摩尔浓度.实际应用常常用此种单位的$k_{m,i}$来给出Henry常数.
+\end{derivation}\footnotetext{下标s代表solvent,意为溶剂.}
+应用Henry定律,需要注意两相中的物质的存在形式应当相同.例如,如果考虑$\text{CO}_2$的稀溶液,%
+Henry定律给出的关系应为$\text{CO}_2$分子在溶液中的摩尔分数,而非各种存在形式(例如$\text{H}_2\text{CO}_3$等等)的和.\vspace{4pt}\\
+\Part{理想稀溶液的热力学性质的理论推导}
+\indent 现在我们用更加严谨的方法推导理想稀溶液的热力学性质.\footnote{这部分内容节选自《热力学与统计物理》,可能较为晦涩,请酌情考虑是否阅读.}
+\begin{derivation}\setcounter{equation}{0}
+    我们假定溶液中溶剂的物质的量为$n_\s$,各溶质的物质的量分别为$\li n,k$.\\
+    对于稀溶液,溶剂的量远大于各溶质的量,即$n_\s\gg\li n,k$.\\
+    现在考虑该稀溶液的热力学能$U$.由于内能是广度量,因此$\dfrac{U}{n_\s}$一定只是各$\dfrac{n_i}{n_\s}$的函数.\\
+    由于$n_i\ll n_\s$,于是$\dfrac{n_i}{n_\s}\to0$.我们对$\dfrac{U}{n_\s}$Taylor展开,并只保留一阶项,可得
+    \begin{equation}
+        \dfrac{U}{n_\s}=u_\s(T,p)+\sum_{i=1}^{k}u_i(T,p)\dfrac{n_i}{n_\s}
+    \end{equation}
+    其中$u_s(T,p)$和各$u_i(T,p)$是Taylor展开的系数.于是就有
+    \begin{equation}
+        U=u_\s(T,p)n_\s+\sum_{i=1}^{k}u_i(T,p)n_i
+    \end{equation}
+    事实上,上述$u_\s$和$u_i$就是各组分的偏摩尔内能(在溶液无限稀时的极限值).%
+    为了方便表示,我们将溶剂标号为$0$,这样就有
+    \begin{equation}
+        U=\sum_{i=0}^{k}u_i(T,p)n_i
+    \end{equation}
+    我们将各组分的偏摩尔内能当作极限情况下的定值,%
+    然后运用偏摩尔量的加和公式,也可以得到与上式一致的结果.\\
+    对体积$V$运用相同的过程,可以得到
+    \begin{equation}
+        V=\sum_{i=0}^{k}v_i(T,p)n_i
+    \end{equation}
+    于是,保持组分不变,我们就可以用热力学基本方程求解稀溶液的熵.它满足微分方程
+    \begin{equation}
+        T\di S=\di U+p\di V=\sum_{i=0}^{k}n_i\left(u_i+p\di v_i\right)
+    \end{equation}
+    我们可以将微分方程的解写作
+    \begin{equation}
+        S=\sum_{i=0}^{k}s_i^\ast n_i+I
+    \end{equation}
+    其中$I$为积分常数,而$s_i(T,p)$是微分方程
+    \begin{equation}
+        T\di s_i^\ast=\di u_i+p\di v_i
+    \end{equation}
+    的解.现在我们考虑积分常数$I$.它与温度和压力无关,但理论上可以与$n_\s,\li n,k$有关.为了寻找它们的关系,%
+    Planck假定在温度很高的情况下稀溶液经历连续的变化(绕过临界点)转变成理想气体.%
+    这一过程的各$n$不变,因此$I$也不变.对于混合理想气体,根据\tbf{3C.1.2}可知
+    \begin{equation}
+        I=\Delta S=-R\sum_{i=0}^{k}n_i\ln x_i
+    \end{equation}
+    从而根据(6)和(8)可知理想稀溶液的熵
+    \begin{equation}
+        S=\sum_{i=0}^{k}n_i\left(s_i^\ast-R\ln x_i\right)
+    \end{equation}
+    由理想稀溶液的热力学能,体积和熵可知其Gibbs自由能,即
+    \begin{equation}
+        G=\sum_{i=0}^{k}n_i\mu_i\ \ \ \ \ \mu_i=u_i(T,p)-Ts_i^\ast(T,p)+pv_i(T,p)+RT\ln x_i
+    \end{equation}
+    如果我们把蒸气看作理想气体,对于溶质$i$就有
+    \begin{equation}
+        \mu_i=g_i+RT\ln x_i=RT\left(\phi_i(T)+\ln p_i\right)
+    \end{equation}
+    其中$\phi_i(T)=\mu_{i,\g}^{\ominus}(T)-RT\ln p^\ominus$.稍作整理,就有
+    \begin{equation}
+        p_i=k_ix_i\ \ \ \ \ \ln k_i=\dfrac{g_i}{RT}-\phi_i(T)
+    \end{equation}
+    这就是Henry定律.对于溶剂来说,$x_\s\to1$,即有
+    \begin{equation}
+        g_\s=RT\left(\phi_i(T)+\ln p_\s^\ast\right)
+    \end{equation}
+    将(13)减去令$i=0$的(11)就有
+    \begin{equation}
+        \dfrac{p_\s^\ast-p_\s}{p_\s^\ast}=1-x_\s=\sum_{i=1}^{k}x_i
+    \end{equation}
+    这就是Raoult定律.
+
+\end{derivation}
+\vspace{8pt}
+\Section{4C.2 理想溶液的性质}
+\indent 基于\tbf{4C.1.2},我们可以推导出理想溶液的诸多热力学性质.
+\begin{derivation}\setcounter{equation}{0}
+    由化学势与温度,压强的关系(见\tbf{4B.3.3})有
+    \begin{equation}\pa{\mu_i}{p}{T,n}=V_{\m,i}\end{equation}
+    \begin{equation}\pa{\mu_i}{T}{p,n}=-S_{\m,i}\end{equation}
+    \begin{equation}\left[\dfrac{\p}{\p T}\left(\dfrac{\mu_i}{T}\right)\right]_{p,n}=-\dfrac{H_{\m,i}}{T^2}\end{equation}
+    以及理想溶液的定义
+    \begin{equation}\mu_{i,\l}=\mu_{i,\l}^\ast+RT\ln x_i\end{equation}
+    将(4)代入(1)有
+    \begin{equation}
+        V_{\m,i}=\pa{\mu_{i,\l}}{p}{T,n}=\pa{\mu_{i,\l}^\ast}{p}{T,n}=V_{\m,i}^\ast
+    \end{equation}
+    其中第二个等号是因为各组分的物质的量$n$一定时$x_i$是定值.\\
+    于是理想溶液中各组分的偏摩尔体积等于纯的该组分的摩尔体积.应用偏摩尔量加和公式有
+    \begin{equation}
+        V=\sum_{i=1}^{k}V_{\m,i}n_i=\sum_{i=1}^{k}V_{\m,i}^\ast n_i
+    \end{equation}
+    于是理想溶液的体积就等于混合前的各组分的体积之和,即混合过程中没有体积变化.\\
+    将(4)代入(2)有
+    \begin{equation}
+        -S_{\m,i}=\pa{\mu_{i,\l}}{T}{p,n}=\pa{\mu_{i,\l}^\ast}{T}{p,n}+R\ln x_i=-S_{\m,i}^\ast+R\ln x_i
+    \end{equation}
+    于是将各组分混合形成理想溶液的混合熵
+    \begin{equation}
+        \Delta S=\sum_{i=1}^{k}S_{\m,i}n_i-\sum_{i=1}^{k}S_{\m,i}^\ast n_i
+        =-R\sum_{i=1}^{k}n_i\ln x_i=-nR\sum_{i=1}^{k}x_i\ln x_i
+    \end{equation}
+    其中$n$为总物质的量.可以看出,理想溶液的混合熵与理想气体混合物的混合熵具有完全一致的形式.\\
+    将(4)代入(3)有
+    \begin{equation}
+        H_{\m,i}=-T^2\left[\dfrac{\p}{\p T}\left(\dfrac{\mu_i}{T}\right)\right]_{p,n}
+        =-T^2\left[\dfrac{\p}{\p T}\left(\dfrac{\mu_i^\ast}{T}\right)\right]_{p,n}
+        =H_{\m,i}^\ast
+    \end{equation}
+    与(6)同理有
+    \begin{equation}
+        H=\sum_{i=1}^{k}H_{\m,i}n_i=\sum_{i=1}^{k}H_{\m,i}^\ast n_i
+    \end{equation}
+    于是理想溶液的焓就等于纯的各组分的焓的和,混合过程的焓变$\Delta H$为零,不产生热效应.\\
+    将Gibbs自由能的定义与(8)和(10)相结合可得
+    \begin{equation}
+        \Delta G=\Delta H-T\Delta S=RT\sum_{i=1}^{k}n_i\ln x_i=nRT\sum_{i=1}^{k}x_i\ln x_i
+    \end{equation}
+    可见混合过程的$\Delta G>0$,因而是自发过程.
+\end{derivation}
+于是我们就得到了理想溶液的一些热力学性质.
+\begin{theorem}[4C.2.1 理想溶液的热力学性质]
+    由纯的组分混合得到理想溶液的过程满足
+    \[\Delta_{\text{mix}}V=\Delta_{\text{mix}}H=0\]
+    \[\Delta_{\text{mix}}S=-R\ln\sum_{i=1}^{k}n_i\ln x_i\]
+    \[\Delta_{\text{mix}}G=RT\ln\sum_{i=1}^{k}n_i\ln x_i\]
+
+\end{theorem}
+事实上,理想溶液并不仅仅满足Raoult定律,它其实也满足Henry定律.
+\begin{theorem}[4C.2.2 理想溶液的Henry定律与Raoult定律]
+    对于理想溶液,Henry定律和Raoult定律是等价的.
+\end{theorem}
+\begin{proof}\setcounter{equation}{0}
+    考虑理想溶液的组分$i$在气相和液相的平衡.根据\tbf{4B.4.1}和\tbf{4C.1.2}以及相平衡条件可得
+    \begin{equation}
+        \mu_{i,\l}^\ast(T,p)+RT\ln x_i=\mu_{i,\g}^\ominus(T)+RT\ln\dfrac{p_i}{p^\ominus}
+    \end{equation}
+    移项后可得
+    \begin{equation}
+        \dfrac{p_i}{x_i}=p^\ominus\exp\left[\dfrac{\mu_{i,\l}^\ast(T,p)-\mu_{i,\g}^\ominus(T)}{RT}\right]
+    \end{equation}
+    在等温等压下,(2)的右边是定值,不妨记为$k_i$,于是就有
+    \begin{equation}
+        p_i=k_ix_i
+    \end{equation}
+    这就是Henry定律.令$x_i\to1$,就可以得到$k_i=p_i^\ast$,代入(3)中有
+    \begin{equation}
+        p_i=p_i^\ast x_i
+    \end{equation}
+    这就是Raoult定律.这就表明,理想溶液组分的Henry系数与纯的该组分的饱和蒸气压一致.
+\end{proof}
+\vspace{8pt}
+\Section{4C.3 稀溶液的依数性}
+\indent 大量实验表明,非挥发双组分稀溶液的某些性质仅与溶质的摩尔分数有关,而与溶液的组成物质无关.%
+这些性质被称为稀溶液的\tbf{依数性}.\vspace{4pt}\\
+\Part{凝固点降低}
+\indent 我们知道向水中加入盐可以显著降低其凝固点,一些除雪剂就是根据这一原理工作的.%
+我们可以从理想稀溶液的定义来定量地确定溶液中溶剂的凝固点降低的程度.\\
+\indent 先从简单的情况入手,假定溶质和溶剂不形成固溶体,固相是纯的溶剂.
+\begin{derivation}\setcounter{equation}{0}
+    设在压力为$p$时,溶液的凝固点为$T_\f$,溶剂$A$的摩尔分数为$x_A$.此时固相和液相平衡,即
+    \begin{equation}
+        \mu_{A,\l}\left(T_\f,p,x_A\right)=\mu_{A,\s}(T,p)
+    \end{equation}
+    保持压强恒定,若使得溶液浓度变化$\di x_A$,则凝固点相应地变化$\di T$.%
+    与Clapeyron方程的推导过程类似地,可知此时有
+    \begin{equation}
+        \di\mu_{A,\l}=\di\mu_{A,\s}
+    \end{equation}
+    将$\mu_{A,\l}$和$\mu_{A,\s}$的全微分代入(2),并令$\di p=0$,就有
+    \begin{equation}\pa{\mu_{A,\l}}T{p,x_A}\di T+\pa{\mu_{A,\l}}{x_A}{T,p}=\pa{\mu_{A,\s}}{T}{p}\di T\end{equation}
+    对于理想稀溶液有
+    \begin{equation}\mu_{A,\l}=\mu_{A,\l}^\ast+RT\ln x_A\end{equation}
+    又根据化学势与温度的关系
+    \begin{equation}\pa{\mu_{\s}}{T}{p,x_A}=-S_{\m,A}\end{equation}
+    将(4)(5)代入(3)就有
+    \begin{equation}
+        -S_{\m,A,\l}\di T+\dfrac{RT}{x_A}\di x_\s=-S_{\m,A,\s}^\ast\di T
+    \end{equation}
+    又因为
+    \begin{equation}
+        S_{\m,A,\l}-S_{\m,A,\s}^\ast
+        =\dfrac{H_{\m,A,\l}-H_{\m,A,\s}^\ast}{T}
+        =\dfrac{\Delta H_{\m,A}}{T}
+    \end{equation}
+    式中$\Delta H_{\m,A}$是在凝固点时单位量的固态溶剂$A$熔化进入溶液所吸收的热.%
+    由于溶液是稀溶液,因此其性质与纯的液态$A$接近,$\Delta H_{\m,A}$也就近似地与纯的$A$的%
+    摩尔熔化焓$\Delta_{\fus}H_{\m,A}^\ast$相等.%
+    将这一近似关系和(7)一起代入(6)就有
+    \begin{equation}\dfrac{RT}{x_A}\di x_A=\dfrac{\Delta_{\fus}H_{\m,A}^\ast}{T}\di T\end{equation}
+    对于纯的$A$,即$x_A=1$,设此时的凝固点为$T_\f^\ast$.对(8)积分可得
+    \begin{equation}\int_{1}^{x_A}\dfrac{\di x_A}{x_A}=\int_{T_\f^\ast}^{T_\f}\dfrac{\Delta_{\fus}H_{\m,A}^\ast}{RT^2}\di T\end{equation}
+    由于溶液很稀,那么凝固点改变不大,于是再假设这一温度范围内$\Delta_{\fus}H_{\m,A}^\ast$为定值,于是由(9)可得
+    \begin{equation}
+        \ln x_A=\dfrac{\Delta_{\fus}H_{\m,A}^\ast}{R}\left(\dfrac{1}{T_\f^\ast}-\dfrac{1}{T_\f}\right)
+    \end{equation}
+    你可以发现(10)与Clausius$-$Clapeyron方程在形式上的一致.\\
+    现在我们进一步简化该式.令$\Delta T_\f=T_\f^\ast-T_\f$,又因为$T_\f$与$T_\f^\ast$接近,于是$T_\f T_\f^\ast\sim\left(T_\f^\ast\right)^2$.%
+    据此由(10)可得
+    \begin{equation}
+        -\ln x_A=\dfrac{\Delta_{\fus}H_{\m,A}^\ast}{R}\cdot\dfrac{T_\f^\ast-T_\f}{T_\f T_\f^\ast}
+        =\dfrac{\Delta_{\fus}H_{\m,A}^\ast}{R\left(T_\f^\ast\right)^2}\cdot\Delta T_\f
+    \end{equation}
+    设溶质的物质的量为$n_B$,并考虑函数$\ln(1+x)$在$0$处的一阶Taylor展开,于是
+    \begin{equation}
+        -\ln x_A=-\ln\left(1-x_B\right)\sim x_B\sim\dfrac{n_B}{n_A}
+    \end{equation}
+    于是(11)式可以改写为
+    \begin{equation}
+        \Delta T_\f=\dfrac{R\left(T_\f^\ast\right)^2}{\Delta_{\fus}H_{\m,A}^\ast}\cdot\dfrac{n_B}{n_A}
+    \end{equation}
+    将$\dfrac{n_B}{n_A}$继续改写如下
+    \begin{equation}
+        \dfrac{n_B}{n_A}=\dfrac{n_B}{m(A)}\cdot M_A=M_A m_B
+    \end{equation}
+    其中$m_B$为溶质的质量摩尔分数,$M_A$为溶剂分子的摩尔质量.将(14)代入(13)就有
+    \begin{equation}
+        \Delta T_\f=\dfrac{R\left(T_\f^\ast\right)^2}{\Delta_{\fus}H_{\m,A}^\ast}\cdot M_A\cdot m_B=k_\f m_B
+    \end{equation}
+    其中$k_\f=\dfrac{R\left(T_\f^\ast\right)^2}{\Delta_{\fus}H_{\m,A}^\ast}\cdot M_A$.
+\end{derivation}
+现在,我们得到了一个简洁的式子,以近似地确定稀溶液凝固点下降的程度.
+\begin{theorem}[4C.3.1 凝固点降低]
+    理想稀溶液凝固点降低的大小(即$T_\f^\ast-T_\f$)为
+    \[\Delta T_\f=k_\f m_B\]
+    其中$m_B$为所有溶质的质量摩尔分数,$k_\f=\dfrac{R\left(T_\f^\ast\right)^2}{\Delta_{\fus}H_{\m,A}^\ast}\cdot M_A$为\tbf{凝固点降低常数},%
+    其中$T_\f^\ast$为纯溶剂的凝固点,$\Delta_{\fus}H_{\m,A}^\ast$为纯溶剂的熔化焓(取正值),$M_A$为溶剂分子的摩尔质量.
+\end{theorem}
+可以看出,凝固点下降的程度与溶质的质量摩尔分数成正比.\\
+\indent 现在,你可以尝试推导固相和液相都是溶液(我们一般称固相的溶液为固溶体)的情形.%
+过程相较前面的推导也许会复杂一些,不过你应当已经有足够的知识以解决它.
+\begin{derivation}\setcounter{equation}{0}
+    现在假定压力为$p$时,溶液的凝固点为$T_\f$,溶剂$A$在液相和固相的摩尔分数分别为$x_{A,\l}$和$x_{A,\s}$.于是跟前面的推导类似地有
+    \begin{equation}
+        \di\mu_{A,\l}=\di\mu_{A,\s}
+    \end{equation}
+    代入化学势的全微分和理想稀溶液中溶剂的性质(这在固相和液相中都成立),就有
+    \begin{equation}
+        -S_{\m,A,l}\di T+\dfrac{RT}{x_{A,\l}}\di x_{A,\l}=-S_{\m,A,\s}\di T+\dfrac{RT}{x_{A,\s}}\di x_{A,\s}
+    \end{equation}
+    又因为
+    \begin{equation}
+        S_{\m,A,\l}-S_{\m,A,\s}
+        =\dfrac{H_{\m,A,\l}-H_{\m,A,\s}}{T}
+        =\dfrac{\Delta_{\fus}H_{\m,A}}{T}
+    \end{equation}
+    其中$\Delta_{\fus}H_{\m,A}$为此情况下单位物质的量$A$从固相进入液相的焓变.%
+    将(3)代入(2)即可得
+    \begin{equation}
+        \dfrac{\di x_{A,\l}}{x_{A,\l}}-\dfrac{\di x_{A,\s}}{x_{A,\s}}
+        =\dfrac{\Delta_{\fus}H_{\m,A}}{RT^2}\di T
+    \end{equation}
+    对上式从纯溶剂的情形(即$x_{A,\l}=x_{A,\s}=1$,$T=T_\f^\ast$)开始积分,可得
+    \begin{equation}
+        \int_{1}^{x_{A,\l}}\dfrac{\di x_{A,\l}}{x_{A,\l}}-
+        \int_{1}^{x_{A,\s}}\dfrac{\di x_{A,\s}}{x_{A,\s}}
+        =\int_{T_\f^\ast}^{T_\f}\dfrac{\Delta_{\fus}H_{\m,A}}{RT^2}\di T
+    \end{equation}
+    同样地,我们做出$\Delta_{\fus}H_{\m,A}$随温度变化不大的假设,就有
+    \begin{equation}
+        \ln\dfrac{x_{A,\l}}{x_{A,\s}}
+        =\dfrac{\Delta_{\fus}H_{\m,A}}{R}\left(\dfrac{1}{T_\f^\ast}-\dfrac{1}{T_\f}\right)
+    \end{equation}
+    在对$T_\f$和$T_\f^\ast$做近似后就有
+    \begin{equation}
+        -\ln\dfrac{x_{A,\l}}{x_{A,\s}}
+        =\dfrac{\Delta_{\fus}H_{\m,A}}{R\left(T_\f^\ast\right)^2}\cdot\Delta T_\f
+    \end{equation}
+    这就得到了两相均是理想稀溶液时的凝固点降低公式.我们也可以从上式推出凝固点下降或升高的情况.
+\end{derivation}
+\begin{theorem}[4C.3.2 固相为固溶体时的凝固点变化]
+    液相和固相都是稀溶液时,凝固点变化可由
+    \[-\ln\dfrac{x_{A,\l}}{x_{A,\s}}
+    =\dfrac{\Delta_{\fus}H_{\m,A}}{R\left(T_\f^\ast\right)^2}\cdot\Delta T_\f\]
+    近似地给出.\\
+    如果$x_{A,\l}>x_{A,\s}$,即液相中$A$的摩尔分数更高,则$\Delta T_\f<0$,凝固点升高.\\
+    如果$x_{A,\l}<x_{A,\s}$,即固相中$A$的摩尔分数更高,则$\Delta T_\f>0$,凝固点降低.
+\end{theorem}
+\Part{沸点升高}
+\indent Raoult定律告诉我们,理想稀溶液的溶剂的蒸气压会降低,于是达到沸点的温度就应当升高.%
+事实上,气液两相的平衡和液固两相的平衡具有诸多相似之处,%
+采用与上一节完全相同的方法就可以得到理想稀溶液的沸点升高的程度.
+\begin{theorem}[4C.3.3 沸点升高]
+    非挥发性溶质的理想稀溶液沸点升高的大小(即$T_\b-T_\b^\ast$)为
+    \[\Delta T_\b=k_\f m_B\]
+    其中$m_B$为所有溶质的质量摩尔分数,$k_\b=\dfrac{R\left(T_\b^\ast\right)^2}{\Delta_{\vap}H_{\m,A}^\ast}\cdot M_A$为\tbf{沸点升高常数},%
+    其中$T_\b^\ast$为纯溶剂的沸点,$\Delta_{\vap}H_{\m,A}^\ast$为纯溶剂的蒸发热,$M_A$为溶剂分子的摩尔质量.
+\end{theorem}
+同样地,如果溶质有挥发性,那么液相是稀溶液,气相则可以假定为理想气体混合物.%
+与前面对固溶体-溶液平衡的推导类似地有
+\begin{theorem}[4C.3.4 溶质和溶剂均可蒸发时的沸点变化]
+    液相是理想稀溶液,气相为理想气体混合物时,沸点变化可由
+    \[\ln\dfrac{x_{A,\g}}{x_{A,\l}}
+    =\dfrac{\Delta_{\vap}H_{\m,A}}{R\left(T_\f^\ast\right)^2}\cdot\Delta T_\b\]
+    近似地给出.\\
+    如果$x_{A,\g}>x_{A,\s}$,即液相中$A$的摩尔分数更高,则$\Delta T_\b<0$,沸点降低.\\
+    如果$x_{A,\g}<x_{A,\s}$,即气相中$A$的摩尔分数更高,则$\Delta T_\b>0$,沸点升高.
+\end{theorem}
+\Part{渗透压}
+\indent 我们知道理想稀溶液中溶剂的化学势为$\mu_\s=\mu_\s^\ast+RT\ln x_\s$.在恒定温度下,%
+$x_\s$越大(即越接近纯溶剂),化学势越大.这表明我们将同一溶剂形成的不同浓度的稀溶液用仅能通过溶剂分子的半透膜隔开时,%
+溶剂分子总是向溶质浓度高的地方移动(这也符合我们对浓度不同的溶液混合情况的直觉).\\
+\indent 如果想要阻止这一移动的过程,我们需要想办法提高更浓的一侧的$\mu_\s$.%
+最简单的办法就是提高对溶液的压力,以阻止另一侧的溶剂向此处扩散.
+\begin{definition}[4C.2.5 渗透压]
+    为了阻止溶剂从(溶质)浓度低的一侧经由半透膜扩散至浓度高的一侧而向高浓度溶液施加的最小压力即\tbf{渗透压}.
+\end{definition}
+同样地,利用化学势,我们也可以推出渗透压的大小.
+\begin{derivation}\setcounter{equation}{0}
+    我们假定半透膜两侧溶剂$A$的摩尔分数为$x_{A,\l}^{l}$和$x_{A,\l}^{r}$(上标$l$和$r$分别表示左右),于是
+    \begin{equation}\mu_{A,\l}^l(T,p)=\mu_{A,\l}^\ast(T,p)+RT\ln x_{A,\l}^l\end{equation}
+    \begin{equation}\mu_{A,\l}^r(T,p)=\mu_{A,\l}^\ast(T,p)+RT\ln x_{A,\l}^r\end{equation}
+    假定$x_{A,\l}^l<x_{A,\l}^r$,那么应当向右边的溶液施加压力$\Pi$使得两边化学势相等,即
+    \begin{equation}\mu_{A,\l}^l(T,p)=\mu_{A,\l}^r(T,p+\Pi)\end{equation}
+    考虑到恒定温度下化学势随压力的变化
+    \begin{equation}\pa{\mu_\s}p{T,n}=V_{\m,A}\end{equation}
+    于是
+    \begin{equation}
+        \begin{aligned}
+            \mu_{A,\l}^r(T,p+\Pi)
+            &= \mu_{A,\l}^\ast(T,p+\Pi)+RT\ln x_{A,\l}^r \\
+            &= \mu_{A,\l}^\ast(T,p)+\int_{p}^{p+\Pi}V_{\m,A}\di p+RT\ln x_{A,\l}^r \\
+            &= \mu_{A,\l}^\ast(T,p)+V_{\m,A}\Pi+RT\ln x_{A,\l}^r
+        \end{aligned}
+    \end{equation}
+    将(5)和(1)代入(3)有
+    \begin{equation}
+        \mu_{A,\l}^\ast(T,p)+RT\ln x_{A,\l}^l=\mu_{A,\l}^\ast(T,p)+V_{\m,A}\Pi+RT\ln x_{A,\l}^r
+    \end{equation}
+    对(6)移项化简可得
+    \begin{equation}
+        RT\ln\dfrac{x_{A,\l}^l}{x_{A,\l}^r}=V_{\m,A}\Pi
+    \end{equation}
+    考虑到两边都是稀溶液,因此$x_{A,\l}^l,x_{A,\l}^r\to1$.假定两边溶质的摩尔分数分别为$x_{B}^l,x_B^r$,%
+    利用近似$\ln(1+x)\sim x(x\to0)$就有
+    \begin{equation}RT\left(x_{B}^r-x_{B}^l\right)=V_{\m,A}\Pi\end{equation}
+    而稀溶液中有近似
+    \begin{equation}x_B=\dfrac{n_B}{n_A+n_B}\sim\dfrac{n_B}{n_A}\end{equation}
+    将(9)代入(8)并移项可得
+    \begin{equation}RT\left(n_B^r-n_B^l\right)=n_AV_{\m,A}\Pi=V_{A}\Pi\end{equation}
+    又因为稀溶液的体积可以近似地看作溶剂的体积,并且$c_B=\dfrac{n_B}{V}$,于是
+    \begin{equation}\Pi=\left(c_B^r-c_B^l\right)RT\end{equation}
+    或者可以写作
+    \begin{equation}
+        \Pi=\Delta cRT
+    \end{equation}
+    特别地,如果左侧是纯溶剂,就有$\Pi=cRT$.
+\end{derivation}
+这样,我们就得到了一个简洁的关于渗透压和溶质浓度的(近似的)等式,即
+\begin{theorem}[4C.2.6 van$'$t Hoff 公式]
+    理想稀溶液的渗透压$\Pi$满足
+    \[\Pi=cRT\]
+    其中$c$为溶质的浓度.
+\end{theorem}
+渗透压常常被用于测定大分子(例如蛋白质)的摩尔质量,%
+只需知道质量摩尔浓度和渗透压即可根据$M=\dfrac{m}{c}$求算摩尔质量.%
+不过,由于大分子溶液对van$'$t Hoff公式有明显偏差,因此我们可以对上式virial展开\footnote{多么令人熟悉的操作.},即
+\[\Pi=cRT\left(1+Ac+Bc^2+\cdots\right)\]
+一般取到$Ac$项即可,通过拟合数据得到virial系数$A$,就可以求得待测分子的摩尔质量.
+\end{document}

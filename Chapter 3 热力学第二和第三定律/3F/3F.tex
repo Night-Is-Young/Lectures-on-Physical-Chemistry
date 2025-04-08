@@ -1,0 +1,266 @@
+\documentclass{ctexart}
+\usepackage{PhysicalChemistryNote}
+
+\begin{document}\pagestyle{plain}
+\noindent\tbf{\LARGE 3F 热力学基本方程}\vspace{15pt}\\
+我们已经学过了热力学的所有基本定律,现在是时候将它们结合起来了.%
+通过一些数学推导,你将获得很多非常有用的结论.\vspace{12pt}\\
+\Section{3F.1 热力学基本方程}
+\indent 对于只做体积功的封闭系统有
+\[\delta W=-p_e\di V\]
+根据热力学第二定律,系统发生可逆变化时有
+\[\delta Q=T\di S\]
+假定系统的体积功是在准静态过程中做的(这也符合可逆变化的要求),就有$p=p_e$.%
+代入热力学第一定律的微分形式,就可以得到热力学的基本方程
+\[\di U=T\di S-p\di V\]
+尽管我们推出这个方程是在过程可逆的基础上而得,不过由于$U,T,S,p,V$均为状态函数,%
+因而这个式子在任何情况下都成立,但只有在可逆的情况下才有$\delta W=-p\di V$和$\delta Q=T\di S$.\\
+\indent 同样地,对于$H,A,G$进行相似的操作可得四个热力学基本方程.
+\begin{theorem}[3F.1.1 热力学基本方程]
+    对于组成不变且只做体积功的封闭系统有
+    \[\di U=T\di S-p\di V\]
+    \[\di H=T\di S+V\di p\]
+    \[\di A=-S\di T-p\di V\]
+    \[\di G=-S\di T+V\di p\]
+
+\end{theorem}\vspace{8pt}
+\Section{3F.2 Maxwell关系}
+\Part{Maxwell关系}
+\indent 我们首先讨论由简单的流体系统.假定系统只做体积功,那么根据热力学基本方程有
+\[\di U=T\di S-p\di V\]
+这个方程可以看作内能$U$以熵$S$和体积$V$为独立变量的全微分表达式.根据全微分的性质,可以得出
+\[\pa TVS=-\pa pSV\]
+这个关系被称为Maxwell关系,它是$U$的全微分的数学性质的体现.
+\begin{hint}
+    如果一个关于$x,y$的函数$z=f(x,y)$有全微分
+    \[\di z=\pa zxy\di x+\pa zyx\di y\]
+    那么令
+    \[A(x,y)=\pa zxy\ \ \ \ \ B(x,y)=\pa zyx\]
+    对$A,B$分别微分就有
+    \[\pa Ayx=\dfrac{\p^2 z}{\p y\p x}=\dfrac{\p^2 z}{\p x\p y}=\pa Bxy\]
+    其中中间的等号正是全微分性质的体现.于是就有
+    \[\pa Ayx=\pa Bxy\]
+
+\end{hint}
+类似地,我们还可以基于\tbf{3F.1.1}中其余式子得到对应的Maxwell关系,即
+\begin{theorem}[3F.2.1 Maxwell关系]
+    对于组成不变且只做体积功的封闭系统有
+    \[\pa TVS=-\pa pSV\ \ \ \ \ \pa TpS=\pa VSp\]
+    \[\pa pTV=\pa SVT\ \ \ \ \ \pa VTp=-\pa SpT\]
+
+\end{theorem}
+Maxwell关系的重要意义在于可以把一些难以测定的量(尤其是有关熵的偏微分)转化为容易测定的量%
+(例如与状态方程,热容等物理量相关的偏微分),从而起到重要作用.\vspace{4pt}\\
+\Part{Maxwell关系的应用}
+\indent 本节简单举一些应用Maxwell关系的例子以介绍其应用.
+\begin{problem}[3F.2.2]
+    将$U$写为关于$T,V$的微分方程.
+\end{problem}
+\begin{solution}
+    有关$U$的热力学基本方程为
+    \begin{equation}
+        \di U=T\di S-p\di V
+    \end{equation}
+    熵$S$关于$T,V$的全微分
+    \begin{equation}
+        \di S=\pa STV\di T+\pa SVT\di V
+    \end{equation}
+    将(2)代入(1)有
+    \begin{equation}
+        \di U=T\pa STV\di T+\left[T\pa SVT-p\right]\di V
+    \end{equation}
+    根据(3)就可以得到定容热容
+    \begin{equation}
+        C_V=\pa UTV=T\pa STV
+    \end{equation}
+    将\tbf{3F.2.1}代入(3),即可得等温情况下热力学能$U$随体积$V$的变化关系
+    \begin{equation}
+        \pa UVT=\pa SVT-p=T\pa pTV-p
+    \end{equation}
+    特别地,对于理想气体来说有$pV=nRT$,代入(5)中有
+    \begin{equation}
+        \pa UVT=T\pa{\left(\frac{nRT}{V}\right)}TV-p=T\cdot\dfrac{nR}{V}-p=0
+    \end{equation}
+    这也印证了\tbf{2C.1}中说明的理想气体的热力学能不随体积变化而变化.\\
+    对于其余实际气体,可以通过对应状态方程求算(5)而得到相应的结果.
+\end{solution}
+\begin{problem}[3F.2.3]
+    将$H$写为关于$T,p$的微分方程.
+\end{problem}
+\begin{solution}\setcounter{equation}{0}
+    采用与\tbf{3F.2.2}中一样的变换,可以得到
+    \begin{equation}
+        \di H=T\pa STp\di T+\left[T\pa SpT+V\right]\di p
+    \end{equation}
+    于是等温情况下焓$H$随压强$p$的变化关系
+    \begin{equation}
+        \pa HpT=T\pa SpT+V=V-T\pa VTp
+    \end{equation}
+    对于理想气体来说有$pV=nRT$,于是
+    \begin{equation}
+        \pa HpT=V-T\pa{\left(\frac{nRT}{p}\right)}Tp=V-T\cdot\dfrac{nR}{p}=0
+    \end{equation}
+    于是理想气体的焓不随体积变化而变化.
+\end{solution}
+\begin{problem}[3F.2.4]
+    求$S$随$p$或$V$的变化关系.
+\end{problem}
+\begin{solution}\setcounter{equation}{0}
+    由\tbf{3F.2.1}有
+    \begin{equation}
+        \pa SpT=-\pa VTp
+    \end{equation}
+    定义
+    \begin{equation}
+        \alpha=\dfrac1V\pa VTp
+    \end{equation}
+    则等温时有
+    \begin{equation}
+        \di S=\pa SpT\di p+\pa STp\di T=\pa SpT\di p
+    \end{equation}
+    代入(1)(2)并积分可得
+    \begin{equation}
+        \Delta S=-\int_{p_1}^{p_2}\alpha V\di p
+    \end{equation}
+    又由\tbf{3F.2.1}可得
+    \begin{equation}
+        \pa SVT=\pa pTV
+    \end{equation}
+    定义
+    \begin{equation}
+        \beta=\dfrac1p\pa pTV
+    \end{equation}
+    则等温时有
+    \begin{equation}
+        \di S=\pa SVT\di V+\pa STV\di T=\pa SVT\di V
+    \end{equation}
+    代入(5)(6)并积分可得
+    \begin{equation}
+        \Delta S=\int_{V_1}^{V_2}p\beta\di V
+    \end{equation}
+
+\end{solution}
+我们在推导中用到了两个参量$\alpha$和$\beta$.它们有明确的定义和物理含义.
+\begin{definition}[3F.2.5 等压热膨胀系数,等温压缩系数,等体压强系数]
+    定义等压热膨胀系数
+    \[\alpha=\dfrac1V\pa VTp\]
+    定义等温压缩系数
+    \[\kappa=-\dfrac1V\pa VpT\]
+    定义等体压强系数
+    \[\beta=\dfrac1p\pa pTV\]
+
+\end{definition}
+\begin{problem}[3F.2.6]
+    求$C_p$与$C_v$之差.
+\end{problem}
+\begin{solution}
+    由\tbf{3F.2.2}和\tbf{3F.2.3}可知
+    \[C_V=T\pa STV\ \ \ \ \ C_p=T\pa STp\]
+    将$S(T,V)$改写为$S(T,V(T,p))$,则有
+    \[\pa STp=\pa STV+\pa SVT\pa VTp\]
+    于是
+    \[C_p-C_V=T\pa SVT\pa TVp=T\pa pTV\pa TVp\]
+    对于理想气体有$pV=nRT$,于是
+    \[C_p-C_V=T\pa{\left(\frac{nRT}{V}\right)}TV\pa{\left(\frac{pV}{RT}\right)}Vp
+    =T\cdot\dfrac{nR}{V}\cdot\dfrac{p}{RT}=nR\]
+    这与我们在\tbf{2C.1.2}中推出的结论一致.\\
+    或者可以用$\alpha$和$\kappa$表示$C_p-C_V$,即
+    \[C_p-C_V=\dfrac{VR\alpha^2}{\kappa}\]
+
+\end{solution}
+最后,作为本节的结末,我们来讨论Gibbs自由能$G$随温度$T$的变化关系.
+\begin{derivation}
+    根据热力学基本公式有
+    \[\di G=-S\di T+V\di p\ \ \ \ \ \pa GTp=-S\]
+    又$G=H-TS$,于是
+    \[\pa GTp=\dfrac{G-H}{T}\]
+    对上式两边同除$T$并移项可得
+    \[\dfrac1T\pa GTp-\dfrac{G}{T^2}=-\dfrac{H}{T^2}\]
+    注意到
+    \[\left[\dfrac{\p}{\p T}\left(\dfrac{G}{T}\right)\right]_p=\dfrac1T\pa GTp-\dfrac{G}{T^2}\]
+    于是
+    \[\left[\dfrac{\p}{\p T}\left(\dfrac{G}{T}\right)\right]_p=-\dfrac{H}{T^2}\]
+    保持压强恒等,对上式移项积分可得
+    \[\dfrac{G}{T}=-\int\dfrac{H}{T^2}\di T+I\]
+    其中$I$是积分常数.\\
+    如果还知道体系的$C_p$,就有
+    \[H=H_0+\int C_p\di T\]
+    假定$C_p$作为$T$的函数可以写作$C_p=a+bT^2+cT^3+\cdots$,则有
+    \[H=H_0+aT+\dfrac12bT^2+\dfrac13cT^3+\cdots\]
+    最终代入上式可得
+    \[G=H_0-aT\ln T-\dfrac12bT^2-\dfrac16cT^3-\cdots+I\]
+
+\end{derivation}
+这就是Gibbs自由能关于温度的一个重要的定理.
+\begin{theorem}[3F.2.7 Gibbs$-$Helmholtz方程]
+    对于组成不变且只做非体积功的系统有
+    \[\left[\dfrac{\p}{\p T}\left(\dfrac{G}{T}\right)\right]_p=-\dfrac{H}{T^2}\]
+    或其积分形式
+    \[\dfrac{G}{T}=-\int\dfrac{H}{T^2}\di T+I\]
+
+\end{theorem}
+这在我们研究化学热力学的时候非常有用.\vspace{12pt}\\
+\Section{3F.3 特性函数}
+\indent 本节我们将讨论如何从一些基本的热力学性质(例如物态方程,热容等)出发%
+确定一个系统的重要的热力学函数(热力学能,熵等).我们先以焓$H$和熵$S$为例.
+\begin{derivation}\setcounter{equation}{0}
+    假定我们有系统的如下物态方程
+    \begin{equation}
+        V=V(T,p)
+    \end{equation}
+    由\tbf{3F.2.3}(1)可得
+    \begin{equation}
+        \di H=C_p\di T+\left[V-T\pa VTp\right]\di p
+    \end{equation}
+    对上式进行第二型曲线积分就有
+    \begin{equation}
+        H(p,T)=H_0+\int_{\left(p_0,T_0\right)}^{(p,T)}\left\{C_p\di T+\left[V-T\pa VTp\right]\di p\right\}
+    \end{equation}
+    由于$H$是状态函数,因此上式实际上与积分路径无关.我们可以任意采取一种路径求算$H$的值(例如先等压变温至$T$,再等温压缩或膨胀至$p$).%
+    只要规定某一基准点的焓和知道物态方程(1),就可以知道任意状态下焓的值.\\
+    事实上对于(3)式,我们并不需要知道所有压强下的定压热容,只需要知道某一压强下的定压热容即可.这是由于
+    \begin{equation}
+        \begin{aligned}
+            \pa{C_p}pT
+            &= T\dfrac{\p}{\p p}\left[\pa STp\right]_T=-T\dfrac{\p}{\p T}\left[\pa SpT\right]_p \\
+            &= -T\dfrac{\p}{\p T}\left[\pa VTp\right]=-T\left(\dfrac{\p^2 V}{\p T^2}\right)_p
+        \end{aligned}
+    \end{equation}
+    其中第二步交换了求偏导的顺序,第三步代入了Maxwell关系式.\\
+    于是对(4)积分就有
+    \begin{equation}
+        C_p(p,T)=C_p\left(p_0,T\right)-T\int_{p_0}^p\left(\dfrac{\p^2 V}{\p T^2}\right)_p\di p
+    \end{equation}
+    将(5)代入(3)中即可完全由物态方程和某一状态的等压热容确定$H$.\\
+    将熵$S$作为$p,T$的函数,对其全微分有
+    \begin{equation}
+        \di S=\pa SpT\di p+\pa STp\di T
+    \end{equation}
+    代入Maxwell关系和热容的定义可得
+    \begin{equation}
+        \di S=\dfrac{C_p}{T}\di T-\pa VTp\di p
+    \end{equation}
+    仿照与(3)相同的步骤即可得到$S$关于$p,T$的表达式.\\
+    这样,我们就由物态方程$V=V(T,p)$和某一状态$p_0,T_0$时的定压热容$C_{p_0}$得到任意状态下的焓和熵.\\
+    对于其余热力学函数,过程也是类似的.
+\end{derivation}
+1869间,Massieu证明如果独立变量选取地适当,那么只要知道一个热力学函数就可以完全确定%
+一个均匀且平衡的系统的热力学性质.这样的函数函数称为特性函数.
+\begin{definition}[3F.3.1 特性函数]
+    如果某个状态函数的独立变量选取适当,从而能通过此函数的偏微分求得系统的其余状态函数,%
+    进而确定系统的性质,就把这样的状态函数(和与之对应的独立变量)称为\tbf{特性函数}.
+\end{definition}
+我们以内能$U$为例.根据热力学基本方程\tbf{3F.1.1}有
+\[\di U=T\di S-p\di V\]
+将$S,V$作为$U$的独立变量,于是根据全微分的性质可得
+\[T=\pa USV\ \ \ \ \ p=-\pa UVS\]
+然后根据$H,G,A$与$U$的关系就可以得到
+\[H=U+pV=U-V\pa UVS\]
+\[G=H-TS=U-V\pa UVS-S\pa USV\]
+\[A=U-TS=U-S\pa USV\]
+进而确定系统的性质.可以证明,如果选取其它的状态函数作为独立变量(例如$p,V$)就不能将%
+所有状态函数表示为偏微分的形式,进而不能确定系统的性质.\\
+\indent 对于$U,H,A,G$作为特性函数的独立变量的选取,实际上只需关注其对应的热力学基本方程%
+的全微分的对应变量即可.例如,$U$的热力学基本方程是对$S,V$微分,这就是$U$对应的独立变量;%
+$G$的热力学基本方程是对$T,p$微分,这就是$G$对应的独立变量.
+\end{document}

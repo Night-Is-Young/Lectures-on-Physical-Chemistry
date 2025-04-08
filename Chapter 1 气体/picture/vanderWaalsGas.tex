@@ -1,0 +1,24 @@
+\documentclass{standalone}
+\usepackage{PhysicalChemistryNote}
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        width = 8cm,
+        height = 8cm,
+        legend pos = north east,
+        xlabel = {$\Vm/\left(\text{cm}^{3}\cdot\text{mol}^{-1}\right)$},
+        ylabel = {$p/10^3\text{kPa}$},
+        axis lines = left,
+        ymin = 5,
+        ymax = 10,
+        domain = 50:300,
+        samples = 400
+    ]
+    \addplot [thick, blue, domain = 55:300] {2395.68/(x-42.7)-361000/(x^2)};
+    \addplot [thick, red] {2493.31/(x-42.7)-361000/(x^2)};
+    \addplot [thick, cyan] {2520.39/(x-42.7)-361000/(x^2)};
+    \addplot [thick, violet] {2603.53/(x-42.7)-361000/(x^2)};
+    \legend {$T=15\tccentigrade$,$T=26.7\tccentigrade$,$T=30\tccentigrade$,$T=40\tccentigrade$}
+    \end{axis}
+\end{tikzpicture}
+\end{document}

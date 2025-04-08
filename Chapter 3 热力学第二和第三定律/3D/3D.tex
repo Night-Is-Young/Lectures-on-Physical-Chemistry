@@ -1,0 +1,165 @@
+\documentclass{ctexart}
+\usepackage{PhysicalChemistryNote}
+\usetikzlibrary{decorations.markings}
+\begin{document}\pagestyle{plain}
+\noindent\tbf{\LARGE 3D 热力学第三定律}\vspace{15pt}\\
+\indent 热力学第三定律像一位低调的温度守门员,为宇宙划定了低温的终极底线.%
+我们从未明确地讨论过温度的下限,也从未明确地规定熵的绝对值.在本节,我们就将为你解答这两个问题,并且给出温度的第二种定义.\vspace{12pt}\\
+\Section{3D.1 热力学温标}
+\indent 现在,抛开你对Carnot热机等一切以特定工作物质为基础的可逆机的一切想法,而从一个不依赖于理想气体的基础上来定义一种新的温标.%
+在我们的重新定义中,只需要用到Carnot定理,而它是由热力学第二定律推出的一条无关热机的具体工作物质和流程的定理.
+\begin{derivation}
+    按照Carnot定理,可逆机的热机效率仅与温度有关.我们考虑一个二元函数$\eta\left(\theta_1,\theta_2\right)$表示工作于%
+    某一温标下温度为$\theta_1,\theta_2\left(\theta_1>\theta_2\right)$之间的可逆机$C_{12}$的效率,于是就有
+    \[\eta\left(\theta_1,\theta_2\right)=1-\dfrac{Q_2}{Q_1}\]
+    其中$Q_1$和$Q_2$分别为从高温热源$\theta_1$吸收的热量\footnotemark 和向低温热源$\theta_2$放出的热量.\\
+    现在,考虑一个更高温的热源$\theta_3$,可逆机$C_{31}$工作于$\theta_3,\theta_1$之间,并且假定它向$\theta_1$放出的热量也为$Q_1$.%
+    再假定$C_{31}$此时从$\theta_3$吸收的热量为$Q_3$,就有
+    \[\eta\left(\theta_3,\theta_1\right)=1-\dfrac{Q_1}{Q_3}\]
+    考虑$C_{31}$和$C_{12}$联合工作,就构成了一个工作于$\theta_3,\theta_2$之间的可逆机$C_{32}$,于是有
+    \[\eta\left(\theta_3,\theta_2\right)=1-\dfrac{Q_2}{Q_3}\]
+    为了方便处理,我们令$F\left(\theta_1,\theta_2\right)=1-\eta\left(\theta_1,\theta_2\right)$,于是
+    \[F\left(\theta_1,\theta_2\right)=\dfrac{F\left(\theta_3,\theta_2\right)}{F\left(\theta_3,\theta_1\right)}\]
+    考虑到$\theta_3$是任取的,而上面的式子总是成立,因此只有取
+    \[F\left(\theta_1,\theta_2\right)=\dfrac{f\left(\theta_2\right)}{f\left(\theta_1\right)}\]
+    时才能成立,其中$f(\theta)$是关于温度的函数.
+\end{derivation}
+\footnotetext{为了方便考虑,在这里我们将热量都写成绝对值,其具体传递方向可以由上下文推定.}
+这样,我们可以自然地选取$T=f(\theta)$作为我们对温度的标定.
+\begin{definition}[3D.1.1 热力学温标]
+    定义热力学温度$T$使得在此温标下,工作于温度$T_1,T_2$的可逆机满足
+    \[\dfrac{Q_1}{T_1}=\dfrac{Q_2}{T_2}\]
+    其中$Q_1,Q_2$分别为从高温热源$\theta_1$吸收的热量和向低温热源$\theta_2$放出的热量,均取正值.\\
+    热力学温标的单位是开尔文,记为$\text K$.
+\end{definition}
+这恰好与我们从理想气体的性质推出的Carnot热机的热机效率结果相同.因此,%
+热力学温标实际上与理想气体温标是等价的(在\tbf{3F}中我们将进行更为严谨的理论推导).另外,你可以发现上面的定义式的值恰好就是系统的熵.%
+一切都是那么完美地形成了闭环.\vspace{12pt}\\
+\Section{3D.2 热力学第三定律}
+\indent 如果你有足够敏锐的直觉,你就会发现我们似乎并没有提到温度的下限在哪里.一个比较符合直觉的想法是,根据热力学温标下可逆机的热机效率
+\[\eta=1-\dfrac{T_2}{T_1}\]
+可知低温热源$T_2$的温度必须大于零(否则你将得到热机效率等于$1$的热机,这显然违反热力学第一和第二定律).或者,根据理想气体温标可知
+\[\dfrac12mu^2=\dfrac{3}{2}k_\text BT\]
+由于动能不能为负值,故其温度$T$必须非负.
+\begin{definition}[3D.2.1 绝对零度]
+    定义热力学温标下$T=0$时的温度为\tbf{绝对零度}.
+\end{definition}
+虽说如此,但这两种想法都是外推的结果.对于$T=0$的情况,%
+根据Clausius不等式有$\delta Q\leqslant T\di S=0$,因此热机不能与$T=0$的冷源进行热量交换,也就没有可逆循环一说;%
+根据理想气体状态方程,$pV=nRT=0$,这要求压强$p$和体积$V$至少有一个为$0$,这显然不符合我们对理想气体的假定,因此也是不正确的.\\
+\indent 因此,我们需要一个更严谨的定律来描述温度的下限以及有关的性质.%
+1906年,Nernst系统地研究了低温下的化学反应,得出了有关凝聚态系统的熵的理论.
+\begin{theorem}[3D.2.1 Nernst定理]
+    凝聚态系统在等温过程中的熵变随温度趋于零而趋于零,即
+    \[\lim_{T\to0}\left(\Delta S\right)_T=0\]
+    下标$T$表示过程为恒定温度为$T$的等温过程.
+\end{theorem}
+几年之后,Nernst又根据他的理论提出了一个重要的定律,即我们所熟知的热力学第三定律.
+\begin{theorem}[3D.2.2 热力学第三定律]
+    不可能用有限的步骤使得系统的热力学温度降低至热力学温标下的零度.
+\end{theorem}
+与热力学第一和第二定律相同,热力学第三定律也是无法从理论证明的,只能作为大量实验事实总结而成的结果.%
+这三条热力学定律,连同热力学第零定律,构成了热力学中的四条铁律,维持着热力学研究的基础.\\
+\indent 下面我们来证明热力学第三定律与Nernst定理等价.
+\begin{proof}
+    首先我们从热力学第三定律出发推出Nernst定理.考虑系统在两种状态$y_1$和$y_2$下%
+    熵随温度变化的$S-T$图.
+    \tikzset{->-/.style={decoration={
+    markings,
+    mark=at position .55 with {\arrow{latex}}},postaction={decorate}}}
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[->] (0,0) -- (4,0) node[right]{$T$};
+            \draw[->] (0,0) -- (0,4) node[above]{$S$};
+            \draw[domain=0:4,thick] plot[smooth](\x,1.4^\x) node[above right]{$y_1$};
+            \draw[domain=0:4,thick] plot[smooth](\x,1.2^\x) node[above right]{$y_2$};
+            \coordinate[label=right:{$A$}] (1) at (3.5,3.2467);
+            \coordinate[label=below:{$B$}] (2) at (3.5,1.8929);
+            \coordinate[label=above:{$C$}] (3) at (1.8965,1.8929);
+            \coordinate[label=below:{$D$}] (4) at (1.8965,1.4131);
+            \draw[->-] (1) -- (2);
+            \draw[->-] (2) -- (3);
+            \draw[->-] (3) -- (4);
+            \node[circle,fill,inner sep=1pt] at (1) {};
+            \node[circle,fill,inner sep=1pt] at (2) {};
+            \node[circle,fill,inner sep=1pt] at (3) {};
+            \node[circle,fill,inner sep=1pt] at (4) {};
+        \end{tikzpicture}
+    \end{center}
+    Nernst定理预言$y_1$和$y_2$的$S-T$图将在$T=0$时交于一点.%
+    若否,那么可以想象从$A$出发经历等温过程到$B$,然后通过绝热可逆过程到$C$,如此周而复始,%
+    只要两条曲线在$T=0$处不相交,就能通过有限的步骤使得系统达到$T=0$,这与热力学第三定律相悖.\\
+    现在从Nernst定理出发推出热力学第三定律.为简单考虑,设系统的状态可以用两个状态函数$T,y$表示.%
+    考虑某一系统在$T_1$时的状态为$A\left(T_1,y_1\right)$,则有
+    \[S_A=S\left(0,y_1\right)+\int_0^{T_1}\dfrac{C_{y_1}}{T}\di T\]
+    这是熵的定义式,其中$C_{y_1}$表示$y_1$固定时系统的热容.\\
+    现在将系统经绝热可逆过程变化至$B\left(T_2,y_2\right)$,同理有
+    \[S_A=S\left(0,y_2\right)+\int_0^{T_2}\dfrac{C_{y_2}}{T}\di T\]
+    由Nernst定理可知$S\left(0,y_1\right)=S\left(0,y_2\right)$,于是
+    \[\int_0^{T_1}\dfrac{C_{y_1}}{T}\di T=\int_0^{T_2}\dfrac{C_{y_2}}{T}\di T\]
+    当$T>0$时$C_{y_1},C_{y_2}>0$(否则系统将吸热而温度降低,这是荒谬的),所以上式的左边总是正值.这要求$T_2>0$,否则%
+    右边即为$0$,不能成立.于是不管起始温度$T_1$多小,只要$T_1>0$,就有$T_2>0$,因而不能通过有限的手段使得最终温度降至$0$\footnotemark.
+\end{proof}\footnotetext{事实上,绝热过程已经是降低温度效率最高的过程,因为其余过程会向系统引入额外的热.}
+这就证明了两种说法的等价性.需要注意的是,热力学第三定律并没有排斥人们向绝对零度的迈进,人们已经在实验室中实现了$10^{-14}\text{ K}$量级的低温,%
+也许还会向更低的温度前进,探明绝对零度附近下物质的性质.\vspace{12pt}\\
+\Section{3D.3 规定熵}
+\indent 也许你已经发现我们并没有定义熵的绝对值,而是在过程中定义了熵的变化值.%
+从之前的学习与论述来看,熵的绝对值并不重要,其变化值才是我们主要考虑的.%
+在1912年,M.Planck提出了以下假设(后来又经Lewis和Gibson的修改).
+\begin{theorem}[3D.3.1 完美晶体的熵]
+    温度为$0$时,完美晶体的熵值为$0$,即
+    \[\lim_{T\to0}S=0\]
+
+\end{theorem}
+所谓完美晶体即晶体中的分子或原子只有一种有序排列的形式(%
+例如NO在晶体中可以有NO和ON两种取向,所以不能认为是完美晶体).%
+这是符合Boltzmann公式的,因为这样的晶体在$0$\ K时微观状态数并不为$1$.
+\begin{exercise}[E.3D.1]
+    求$1\mol$\ NO在$0\text K$的熵.
+\end{exercise}
+\begin{solution}
+    考虑到每个NO在晶体中的取向只有两种形式(NO或者ON),于是
+    \[S=k_\text B\ln\Omega=k_\text B\ln 2^{\NA}=k_\text B\cdot\NA\ln2=R\ln2\]
+
+\end{solution}
+\begin{exercise}[E.3D.2]
+    求$1\mol$六方冰\footnotemark 在$0\text K$的熵.
+\end{exercise}\footnotetext{即自然界中最常见的冰的晶型.}
+\begin{solution}
+    考虑到六方冰中O原子做六方密堆积排列,因此O的位置就固定不动.\\
+    由于固态的冰中存在氢键网络,每个O原子都通过氢键和周围四个O原子连接,因此我们需要做一个假设,%
+    即每个O原子周围都有两个H与其距离较远,另外两个与其距离较近.这对应着O形成两根O$-$H化学键和两根O$\cdot\cdot$H氢键.\\
+    这样,我们只需要考虑H的位置即可.对于1\ mol冰中的2\ mol\ H原子,都有两种状态,即处于两个O原子之间离其中某个O原子更近的位置.%
+    这样的微观状态数一共有$2^{2\NA}$种.\\
+    考虑到O原子对H原子的位置,每个O原子周围恰好有两个H靠近,两个H远离.这样的概率为
+    \[P_O=\dfrac{C_4^2}{2^4}=\dfrac{3}{8}\]
+    于是总的微观状态数为
+    \[\Omega=2^{2\NA}\cdot\left(P_O\right)^{\NA}=\left(\dfrac32\right)^\NA\]
+    于是
+    \[S=k_\text B\ln\Omega=R\ln\dfrac32\]
+
+\end{solution}
+这些非完美晶体在0\ K时的熵还有一个名称.
+\begin{definition}[3D.3.2 残余熵]
+    非完美晶体在$0\text K$的熵称为\tbf{残余熵}.
+\end{definition}
+既然有0\ K下物质的熵,我们就可以通过\tbf{3C.3}中的方法计算物质在任意温度下的熵.
+\begin{theorem}[3D.3.3 规定熵]
+    物质在温度为$T$的熵值可以由下式计算
+    \[S(T)=S(0\text{ K})+\int_0^{T}\dfrac{C_p}{T}\di T\]
+    采取恒压热容是因为我们在之后的化学反应热力学中讨论恒压过程较多.\\
+    如果过程发生相变,那么依然可以根据\tbf{3C.2}中的方法计算熵变.
+\end{theorem}
+由于物质在低温时缺乏热容数据,因此可以通过Debye给出的公式\footnote{关于Debye公式的推导,可以参考https://zhuanlan.zhihu.com/p/467448964.}进行估算.
+\begin{theorem}[3D.3.4 Debye公式]
+    固体的等容热容可以由
+    \[C_V=9nR\left(\dfrac{T}{T_D}\right)^3\int_0^{\frac{T_D}{T}}\dfrac{x^4\e^x}{\left(\e^x-1\right)^2}\dx\]
+    推算.其中Debye温度$T_D=\dfrac{h\omega_D}{2\pi k_\text B}$,$\omega_D$为Debye频率.\\
+    在低温下,经过一系列近似与数学变换后可得
+    \[C_V\approx\dfrac{12\pi^4nR}{5}\left(\dfrac{T}{T_D}\right)^3\approx1943.8n\left(\dfrac{T}{T_D}\right)^3\]
+    一般来说,如果要求应用此公式,则会给出相对应的简正振动频率$\nu=\dfrac{\omega_D}{2\pi}$.
+\end{theorem}
+从上面的式子也可以看出低温下固体热容与$T$的三次方成正比.在低温下,等压热容近似地等于等容热容,于是就可以采用Debye公式辅助计算其规定熵.\\
+\indent 另外一点较为有趣的是,Debye公式在高温下将近似为$C_V=3nR$,即Dulong$-$Petit定律:大部分%
+固态物质在温度较高的情况下摩尔热容接近于$3R$.
+\end{document}

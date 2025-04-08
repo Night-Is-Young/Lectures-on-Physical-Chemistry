@@ -1,0 +1,78 @@
+\documentclass{ctexart}
+\usepackage{PhysicalChemistryNote}
+
+\begin{document}\pagestyle{plain}
+\noindent\tbf{\LARGE 3E 自由能}\vspace{15pt}\\
+\indent 衡量绝热系统中的变化是否自发可以用熵,那么衡量其它系统中的变化是否自发应当用什么状态函数呢?%
+你也许在普通化学中的学习中简单了解过自由能的概念,那么它到底为何如此定义,并被用作自发变化的判据呢?\vspace{12pt}\\
+\Section{3E.1 Helmholtz自由能}
+\indent 热力学第二定律要求自发和可逆变化满足$\di S\geqslant\dfrac{\delta Q}{T}$,%
+而热力学第一定律表明$\di U=\delta W+\delta Q$.%
+可以想见,如果我们把这两个式子联系在一起,就可以导出一些新的结论.
+\begin{derivation}
+    设系统从温度为$T_{env}$的热源吸热$\delta Q$,根据热力学第二定律有
+    \[\di S\geqslant\dfrac{\delta Q}{T_{env}}\]
+    由热力学第一定律
+    \[\di U=\delta Q+\delta W\]
+    可知
+    \[\delta W\geqslant \di U-T_{env}\di S\]
+    如果保持系统温度恒定为$T_{env}$,对上式积分可得
+    \[W\geqslant \Delta U-T_{env}\Delta S\]
+    于是,定义
+    \[A=U-TS\]
+    就有
+    \[W\geqslant \Delta A\]
+    如果过程是等容的且不做非体积功,就有$W=0$,此时有
+    \[\Delta A\leqslant0\]
+
+\end{derivation}
+\begin{definition}[3E.1.1 Helmholtz自由能\footnotemark]
+    定义系统的\tbf{Helmholtz自由能}$A=U-TS$,亦称\tbf{功函}.
+\end{definition}\footnotetext{近来根据IUPAC的规定应当称为Helmholtz能,但由于历史原因称Helmholtz自由能的仍不在少数,后面的Gibbs自由能同理.}
+\begin{theorem}[3E.1.2 Helmholtz自由能用于自发过程的判据]
+    根据我们前面的推导,可知等温(由于$U,T,S$都是状态函数,其实只需始态,终态的温度和环境温度一致即可)过程中,一个封闭系统能做的最大功%
+    等于其Helmholtz自由能的减少值.\\
+    系统在等温等容且没有做非体积功的情况下有
+    \[\Delta A\leqslant0\]
+    即等温等容的系统中的自发变化总是朝向Helmholtz自由能减少的方向进行,直至减小至%
+    允许的最小值,达到平衡为止.
+\end{theorem}
+你可以将上述判据与熵增加原理进行对比,从而发现两者的相似性,即都是判断在某种限制条件下的系统中自发变化的方向.\vspace{12pt}\\
+\Section{3E.2 Gibbs自由能}
+\Part{Gibbs自由能的定义}
+\indent 我们已经提到化学反应中更常见的是恒压条件下的变化.在这样的系统里,自发变化的判据可以类似地通过如下方式推导.
+\begin{derivation}
+    将功$\delta W$写成两部分,即体积功$\delta W_e=-p_e\di V$和非体积功$\delta W_f$.于是
+    \[\delta W_e+\delta W_f\geqslant \di U-T_{env}\di S\]
+    即
+    \[\delta W_f\geqslant \di U-T_{env}\di S+p_e\di V\]
+    如果保持系统温度恒定为$T_{env}$,压强恒定为$p_e$,就有
+    \[W_f\geqslant\Delta\left(U+p_eV-T_{env}S\right)\]
+    定义
+    \[G=u+pV-TS=H-TS\]
+    就有
+    \[W_f\geqslant\Delta G\]
+    如果过程等温等压且不做非体积功,就有$W_f=0$,此时有
+    \[\Delta G\leqslant0\]
+
+\end{derivation}
+\begin{definition}[3E.2.1 Gibbs自由能]
+    定义系统的\tbf{Gibbs自由能}$G=H-TS$.
+\end{definition}
+\begin{theorem}[3E.2.2 Gibbs自由能用于自发过程的判据]
+    等温等压过程中,一个封闭系统能做的最大非体积功%
+    等于其Gibbs自由能的减少值.\\
+    系统在等温等压且没有做非体积功的情况下有
+    \[\Delta G\leqslant0\]
+    即等温等压的系统中的自发变化总是朝向Gibbs自由能减少的方向进行,直至减小至%
+    允许的最小值,达到平衡为止.
+\end{theorem}
+一个非膨胀功的典型例子是等温等压的可逆电池反应中,非膨胀功即电功,故
+\[\Delta G=-nFE\]
+其中$n$是反应转移电子的物质的量,$F$为Faraday常数,$E$是电池的电动势\footnote{这些概念将在学习电化学时详细地解释}.\\
+\indent 系统在某一过程中是否做非膨胀功是与路径相关的.例如考虑置换反应
+\[\text{Zn}^{2+}+\text{Cu}\longrightarrow\text{Cu}^{2+}+\text{Zn}\]
+如果把这个反应放在电池中进行,那么就做电功;如果放在烧杯中直接进行反应,那么就不做非膨胀功.%
+显然,后者放出的热会更多.然而,Gibbs自由能是状态函数,它不与具体过程相关,$\Delta G$只给出了%
+获取非膨胀功的上限,却并不会指出具体方式.
+\end{document}

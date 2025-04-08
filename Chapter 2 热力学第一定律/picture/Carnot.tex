@@ -1,0 +1,20 @@
+\documentclass{standalone}
+\usepackage{PhysicalChemistryNote}
+\begin{document}
+\begin{tikzpicture}
+    \draw[->] (0,0) -- (5,0) node[right]{$V$};
+    \draw[->] (0,0) -- (0,5) node[above]{$p$};
+    \draw[domain=1.0400:2.6207] plot[smooth](\x,4/\x);
+    \draw[domain=2.6207:4.1602] plot[smooth](\x,{12*sqrt(2)/(\x^2.5)});
+    \draw[domain=1.6510:4.1602] plot[smooth](\x,2/\x);
+    \draw[domain=1.0400:1.6510] plot[smooth](\x,{3*sqrt(2)/(\x^2.5)});
+    \coordinate[label=above:{$A\left(p_1,V_1,T_\h\right)$}] (1) at (1.0400,3.8460);
+    \coordinate[label=above right:{$B\left(p_2,V_2,T_\h\right)$}] (2) at (2.6207,1.5263);
+    \coordinate[label=right:{$C\left(p_3,V_3,T_\c\right)$}] (3) at (4.1602,0.4807);
+    \coordinate[label={[xshift=-0.4cm,yshift=-0.85cm]$D\left(p_4,V_4,T_\c\right)$}] (4) at (1.6510,1.2114);
+    \node[circle,fill,inner sep=1pt] at (1) {};
+    \node[circle,fill,inner sep=1pt] at (2) {};
+    \node[circle,fill,inner sep=1pt] at (3) {};
+    \node[circle,fill,inner sep=1pt] at (4) {};
+\end{tikzpicture}
+\end{document}

@@ -1,5 +1,7 @@
 \documentclass{ctexart}
 \usepackage{PhysicalChemistryNote}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
 \begin{document}\pagestyle{plain}
 \noindent\tbf{\LARGE 4C 溶液}\vspace{15pt}\\
@@ -440,5 +442,235 @@ $x_\s$越大(即越接近纯溶剂),化学势越大.这表明我们将同一溶�
 只需知道质量摩尔浓度和渗透压即可根据$M=\dfrac{m}{c}$求算摩尔质量.%
 不过,由于大分子溶液对van$'$t Hoff公式有明显偏差,因此我们可以对上式virial展开\footnote{多么令人熟悉的操作.},即
 \[\Pi=cRT\left(1+Ac+Bc^2+\cdots\right)\]
-一般取到$Ac$项即可,通过拟合数据得到virial系数$A$,就可以求得待测分子的摩尔质量.
+一般取到$Ac$项即可,通过拟合数据得到virial系数$A$,就可以求得待测分子的摩尔质量.\vspace{12pt}\\
+\Section{4D Duhem-Margule公式}
+\indent 我们已经知道,偏摩尔量总是满足Gibbs-Duhem公式.在溶液中,我们可以对这一公式进行延伸,%
+以得到溶液中各个状态函数的关系.
+\begin{derivation}\setcounter{equation}{0}
+    当系统中气相和液相平衡时,对任意组分$i$在两相中都有
+    \begin{equation}\mu_{i,\l}=\mu_{i,\g}^\ominus+RT\ln\dfrac{p_i}{p^\ominus}\end{equation}
+    其中$p_i$是$i$在蒸气中的分压.对上式微分即可得
+    \begin{equation}\di\mu_{i,\l}=RT\dfrac{\di p_i}{p_i}\end{equation}
+    现在考虑液相.根据偏摩尔量的加和公式的微分形式有
+    \begin{equation}\di G_\l=\sum_{i=1}^k\left(n_{i,\l}\di\mu_{i,\l}+\mu_{i,\l}\di n_{i,\l}\right)\end{equation}
+    又因为
+    \begin{equation}\di G_\l=-S\di T+V_\l\di p+\sum_{i=1}^k\mu_{i,\l}\di n_{i,\l}\end{equation}
+    保持温度恒定,比较上面两式就有
+    \begin{equation}\sum_{i=1}^{k}n_{i,\l}\di\mu_{i,\l}=V_\l\di p\end{equation}
+    将(2)代入(5)就有
+    \begin{equation}RT\sum_{i=1}^kn_{i,\l}\dfrac{\di p_i}{p_i}={V_\l}\di p\end{equation}
+    在(6)式两边同除以液相总物质的量,移项后可得
+    \begin{equation}
+        \sum_{i=1}^kx_{i,\l}\dfrac{\di p_i}{p_i}=\dfrac{V_\l\di p}{RT\displaystyle\sum_{i=1}^kn_{i,\l}}
+        =\dfrac{V}{\displaystyle\sum_{i=1}^kn_{i,\l}}\cdot\dfrac{p}{RT}\cdot\dfrac{\di p}{p}
+        =\dfrac{V_{\m,l}}{V_{\m,g}}\dfrac{\di p}{p}
+    \end{equation}
+    一般情况下,气相的摩尔体积总是远大于液相,即$V_{\m,g}\gg V_{\m,l}$.于是略去上式中右边的项即可得
+    \begin{equation}\sum_{i=1}^kx_{i,\l}\dfrac{\di p_i}{p_i}=0\end{equation}
+    现在,对于只含有$A$和$B$的双组分系统,由上式有
+    \begin{equation}x_{A,\l}\dfrac{\di p_A}{p_A}+x_{B,\l}\dfrac{\di p_B}{p_B}=0\end{equation}
+    在恒定温度和压力下,分压的改变仅与液相的组成有关,即
+    \begin{equation}
+        x_{A,\l}\pa{\ln p_A}{x_{A,\l}}{T,p}\di x_{A,\l}+x_{B,\l}\pa{\ln p_B}{x_{B,\l}}{T,p}\di x_{B,\l}=0
+    \end{equation}
+    又因为$\di x_{A,\l}+\di x_{B,\l}=0$,于是可以将(10)写为
+    \begin{equation}
+        x_{A,\l}\pa{\ln p_A}{x_{A,\l}}{T,p}=x_{B,\l}\pa{\ln p_B}{x_{B,\l}}{T,p}
+    \end{equation}
+    或者可以对(11)变形得到
+    \begin{equation}
+        \pa{\ln p_A}{\ln x_{A,\l}}{T,p}=\pa{\ln p_B}{\ln x_{B,\l}}{T,p}
+    \end{equation}
+    和
+    \begin{equation}
+        \dfrac{x_{A,\l}}{p_A}\pa{p_A}{x_{A,\l}}{T,p}=\dfrac{x_{B,\l}}{p_B}\pa{p_B}{x_{B,\l}}{T,p}
+    \end{equation}
+
+\end{derivation}
+这样,我们就得到了具有气液两相的多组分系统的各组分分压与在液相中的含量应当遵守的关系.
+\begin{theorem}[4C.4.1 Duhem-Margule公式]
+    对于具有气液两相的多组分系统,如果把气相视作理想气体混合物,就有
+    \[\sum_{i=1}^kx_{i}\di\ln p_i=0\]
+    其中$x_i$为组分$i$在液相的摩尔分数,$p_i$为组分$i$在气相的分压.\\
+    特别地,对于由$A$和$B$组成的双组分系统有
+    \[\dfrac{x_{A}}{p_A}\pa{p_A}{x_{A}}{T,p}=\dfrac{x_{B}}{p_B}\pa{p_B}{x_{B}}{T,p}\]
+    其中各符号的意义与前面相同.并且,这式子还有其等价形式(11)与(13).
+\end{theorem}
+通过Duhem-Margule公式,我们也可以得到一些有用的推论.
+\begin{problem}[4C.4.2]
+    试通过Duhem-Margule公式证明:如果双组分溶液的组分$A$满足Raoult定律,那么另一组分$B$一定满足Henry定律.
+\end{problem}
+\begin{proof}
+    根据Raoult定律有$p_A=p_A^\ast x_A$,于是
+    \[\dfrac{x_{A}}{p_A}\pa{p_A}{x_{A}}{T,p}=\dfrac{1}{p_A^\ast}\cdot p_{A}^\ast=1\]
+    根据Duhem-Margule公式,就有
+    \[\pa{\ln p_B}{\ln x_{B,\l}}{T,p}=1\]
+    即
+    \[\di\ln p_B=\di\ln x_B\]
+    对上式两边积分可得
+    \[\ln p_B=\ln x_B+C\]
+    其中$C$为积分常数.再变形可得
+    \[p_B=k_{x,B}x_{B}\]
+    这就说明$B$满足Henry定律.
+\end{proof}
+以上这一点说明,如果稀溶液的溶剂满足Raoult定律,那么它就是理想稀溶液.
+\begin{theorem}[4C.4.3 科诺瓦洛夫规则]
+    在溶液的$p-x$图(或$T-x$图)上,如果有最高(或最低)点,则在该点时气液两相的组成相等.%
+    如果增加溶液的蒸气中一个组分的含量,能使溶液的总蒸气压增加,则该组分在气相中的含量要比在液相中的含量大.%
+\end{theorem}
+这是由俄国人亚历山大$\cdot$科诺瓦洛夫总结出的经验规则.%
+上述两条规则也被称作科诺瓦洛夫第一规则和科诺瓦洛夫第二规则.%
+根据Duhem-Margule公式,我们可以在理论上对其进行证明.
+\begin{proof}
+    现在考虑由$A$和$B$组成的双组分系统.假定气相仅由$A$和$B$组成,就有
+    \[p_A=px_{A,\g}\ \ \ \ \ p_B=px_{B,\g}=p\left(1-x_{A,\g}\right)\]根据Duhem-Margule公式有
+    \[x_{A,\l}\dfrac{\di\left(px_{A,\g}\right)}{px_{A,\g}}
+    +\left(1-x_{A,\l}\right)\dfrac{\di\left[p\left(1-x_{A,\g}\right)\right]}{p\left(1-x_{A,\g}\right)}
+    =\dfrac{V_{\m,l}}{V_{\m,g}}\dfrac{\di p}{p}\]
+    将微分项分离变量有
+    \[x_{A,\l}\left(\dfrac{\di p}{p}+\dfrac{\di x_{A,\g}}{x_{A,\g}}\right)+
+    \left(1-x_{A,\l}\right)\left(\dfrac{\di p}{p}-\dfrac{\di x_{A,\g}}{1-x_{A,\g}}\right)
+    =\dfrac{V_{\m,l}}{V_{\m,g}}\dfrac{\di p}{p}\]
+    移项可得
+    \[\left(\dfrac{x_{A,\l}}{x_{A,\g}}-\dfrac{1-x_{A,\l}}{1-x_{A,\g}}\right)\di x_{A,\g}
+    =\left(\dfrac{V_{\m,l}}{V_{\m,g}}-1\right)\dfrac{\di p}{p}\]
+    即有
+    \[\pa{\ln p}{x_{A,\g}}{T}
+    =\dfrac{x_{A,\g}-x_{A,\l}}{x_{A,\g}\left(1-x_{A,\g}\right)\left(\dfrac{V_{\m,l}}{V_{\m,g}}-1\right)}\]
+    由于$\dfrac{V_{\m,l}}{V_{\m,g}}\ll1$,于是上式可以写为
+    \[\pa{\ln p}{x_{A,\g}}{T}
+    =\dfrac{x_{A,\g}-x_{A,\l}}{x_{A,\g}\left(1-x_{A,\g}\right)}\]
+    因此,如果增加$x_{A,g}$时$p$也增加,说明$\pa{\ln p}{x_{A,\g}}{T}>0$,即$x_{A,\g}>x_{A,\l}$.%
+    反之如果增加$x_{A,g}$时$p$减小,说明$x_{A,\g}<x_{A,\l}$.\\
+    如果$p-x$图像上出现最高点,那么此时就有$\pa{\ln p}{x_{A,\g}}{T}=0$,这就要求$x_{A,\g}=x_{A,\l}$,于是两相的成分相同.
+\end{proof}
+\vspace{8pt}
+\Section{4C.5 非理想溶液的性质}
+\Part{活度与活度系数}
+\indent 在研究实际气体的性质时,我们曾经引入了逸度这一概念以计算实际气体的化学势,这里的逸度可以视作校准后的压力.%
+同样地,在面对偏离Raoult定律的非理想溶液时,我们也可以定义一个新的变量来校准各组分的浓度.\\
+\indent 考虑Raoult定律$\dfrac{p_i}{p_i^\ast}=x_i$.我们对摩尔分数$x_i$做校准,令
+\[\dfrac{p_i}{p_i^\ast}=\gamma_{x,i}x_i\]
+这样,组分$i$的化学势就可以改写为
+\[\mu_i=\mu_i^\ast(T,p)+RT\ln\left(\gamma_{x,i}x_i\right)\]
+为了方便考虑,我们不妨把$\gamma_{x,i}x_i$定义为一个新的变量以描述非理想溶液中各组分的化学势.
+\begin{definition}[4C.5.1 活度与活度系数]
+    非理想溶液中组分$i$的用摩尔分数表示的\tbf{活度}$a_i$是满足
+    \[\mu_i=\mu_{i}^\ast(T,p)+RT\ln a_{x,i}\]
+    的变量.用摩尔分数表示的\tbf{活度系数}$\gamma_{x,i}$定义为$\gamma_{x,i}=\dfrac{a_{x,i}}{x_i}$.\\
+    对于纯物质的情况,有
+    \[\lim_{x_i\to1}\gamma_{x,i}=1\]
+    这时纯物质的活度就与其浓度相同.
+\end{definition}
+需要注意的是,尽管我们仍然用Raoult定律引入活度的概念,但它的定义仍应基于化学势%
+\footnote{这和我们讨论理想溶液的热力学定义是同理的}.从上面的定义可以看出,%
+$\gamma_{x,i}$实际上也可以看作组分$i$对Raoult定律的偏离系数.\\
+\indent 可以看出,上述表达式和用逸度表示实际气体的化学势的式子具有相同的形式.%
+这再一次印证了两种体系具有某种程度上的相似性.\\
+\indent 可以想见的是,对于双组分系统,两个组分的活度应当存在一定的联系.
+\begin{derivation}
+    由Gibbs-Duhem公式可知,在双组分系统的液相中有
+    \[x_A\di\mu_A+x_B\di\mu_B=0\]
+    又因为
+    \[\di\mu=\di\left(\mu^\ast+RT\ln\gamma x\right)=RT\left(\dfrac{\di x}{x}+\dfrac{\di\gamma}{\gamma}\right)\]
+    代入上式有
+    \[x_A\left(\dfrac{\di x_A}{x_A}+\dfrac{\di\gamma_A}{\gamma_A}\right)+
+    x_B\left(\dfrac{\di x_B}{x_B}+\dfrac{\di\gamma_B}{\gamma_B}\right)=0\]
+    又因为$\di x_A+\di x_B=0$,于是
+    \[\dfrac{x_A}{\gamma_A}\di\gamma_A+\dfrac{x_B}{\gamma_B}\di\gamma_B=0\]
+    根据上式移项积分可得$\gamma$的值.
+\end{derivation}
+\begin{theorem}[4C.5.2 双组分系统中活度的关系]
+    在由$A$和$B$构成的双液系中,两者的(摩尔分数表示的)活度系数满足
+    \[\dfrac{x_A}{\gamma_A}\di\gamma_A+\dfrac{x_B}{\gamma_B}\di\gamma_B=0\]
+
+\end{theorem}
+\indent 对于理想稀溶液,由于其溶质多是固体或气体,很难找到实际存在的纯液相的溶质作为标准态.%
+此时,我们更常用物质的量浓度表示的活度系数$\gamma_{c,i}$,而它衡量的实际上是溶质对Henry定律的偏离程度.%
+在研究电解质溶液的性质时,我们会更加详细地讨论活度及其应用.\vspace{4pt}\\
+\Part{渗透因子}
+\indent 尽管看起来,我们已经找到了一个实用的参数——活度来描述非理想溶液,%
+并且活度对非理想稀溶液的溶质也能很好地描述.然而,用活度表示此时溶剂对理想情况的偏差时,%
+却会遇到活度与浓度差异很小的问题.例如,室温下水的$\text{KCl}$溶液(水的摩尔分数$x_\s=0.9328$)%
+中水的活度$a_\s=0.9364$,活度系数$\gamma_\s=1.004$,这几乎与理想溶液相似,因此偏差难以得到更加精确的衡量.%
+为此,我们定义一个新的变量描述此时溶剂对理想情况的偏离程度.
+\begin{definition}[4C.5.3 渗透因子]
+    定义非理想稀溶液中溶剂的\tbf{渗透因子}$\varphi$为满足
+    \[\mu_\s=\mu_{\s}^\ast+\varphi RT\ln x_\s\]
+    的参数,并且满足
+    \[\lim_{x_\s\to1}\varphi=1\]
+    不难看出$\phi$与$\gamma_\s$满足
+    \[\phi=1+\dfrac{\ln\gamma_\s}{\ln x_\s}\]
+    的关系.
+\end{definition}
+对于上述$\text{KCl}$溶液,水的渗透因子$\varphi=0.944$,这比用$\gamma$描述水对理想情况的偏离程度要显著得多.\vspace{4pt}\\
+\Part{超额函数}
+\indent 以上我们总体讨论了理想溶液和理想稀溶液中各组分的性质.如果要衡量整个溶液对理想情况的偏离,%
+可以通过观察由各个组分混合成溶液前后的热力学函数的变化,于是就引出了下面的定义.
+\begin{definition}[4C.5.4 超额函数]
+    实际溶液的热力学性质可以用\tbf{超额函数}$Z^\text E$衡量,定义为实际观察到的混合过程的热力学函数$Z$的变化值与%
+    形成理想溶液时$Z$的变化值,即
+    \[Z^\text E=\Delta_{\text{mix}}Z^{\text{real}}-\Delta_{\text{mix}}Z^{\text{ideal}}\]
+
+\end{definition}
+我们在\tbf{4C.2.1}已经讨论过混合得到理想溶液这一过程的各热力学函数的变化.类似地,我们也可以通过活度求得超额函数.
+\begin{derivation}\setcounter{equation}{0}
+    我们首先讨论超额Gibbs自由能$G^\text E$.利用活度和偏摩尔量的加和公式可得
+    \begin{equation}
+        \begin{aligned}
+            \Delta_{\text{mix}}G^{\text{real}}
+            &= G_{\text{after}}-G_{\text{before}} = \sum_{i=1}^{k}\mu_in_i-\sum_{i=1}^{k}\mu_i^\ast n_i \\
+            &= RT\sum_{i=1}^{k}n_i\ln a_i = RT\sum_{i=1}^{k}n_i\left(\ln x_i+\ln\gamma_i\right)
+        \end{aligned}
+    \end{equation}
+    又因为理想溶液混合时
+    \begin{equation}\Delta_{\text{mix}}G^{\text{ideal}}=RT\sum_{i=1}^{k}n_i\ln x_i\end{equation}
+    于是(1)减去(2)可以得到
+    \begin{equation}G^\text E=RT\sum_{i=1}^{k}n_i\ln\gamma_i\end{equation}
+    我们已经知道
+    \begin{equation}\pa GpT=V\end{equation}
+    \begin{equation}\pa GTp=S\end{equation}
+    \begin{equation}
+        \left[\dfrac{\p}{\p T}\left(\dfrac{G}{T}\right)\right]_p=-\dfrac{H}{T^2}
+    \end{equation}
+    理想溶液混合的体积变化$\Delta_{\text{mix}}V^{\text{ideal}}=0$,于是超额体积
+    \begin{equation}
+        \begin{aligned}
+            V^\text E
+            &= \Delta_{\text{mix}}V^{\text{real}}-\Delta_{\text{mix}}V^{\text{ideal}}=\Delta_{\text{mix}}V^{\text{real}} \\
+            &= \pa{G^\text E}pT=RT\sum_{i=1}^{k}n_i\pa{\ln\gamma_i}{p}T
+        \end{aligned}
+    \end{equation}
+    理想溶液混合的焓变$\Delta_{\text{mix}}H^{\text{ideal}}=0$,于是超额焓
+    \begin{equation}
+        \begin{aligned}
+            H^\text E
+            &= \Delta_{\text{mix}}H^{\text{real}}-\Delta_{\text{mix}}H^{\text{ideal}}=\Delta_{\text{mix}}H^{\text{real}} \\
+            &= -T^2\left[\dfrac{\p}{\p T}\left(\dfrac GT\right)\right]=-RT^2\sum_{i=1}^{k}\pa{\ln\gamma_i}Tp
+        \end{aligned}
+    \end{equation}
+    同理,超额熵
+    \begin{equation}
+        \begin{aligned}
+            S^{\text E}
+            &= \Delta_{\text{mix}}S^{\text{real}}-\Delta_{\text{mix}}S^{\text{ideal}} \\
+            &= -\pa{G^\text E}Tp \\
+            &= -R\sum_{i=1}^{k}n_i\ln\gamma_i-RT\sum_{i=1}^{k}n_i\pa{\ln\gamma_i}Tp
+        \end{aligned}
+    \end{equation}
+    由(3)(8)和(9)可以得到
+    \[G^\text E=H^\text E-TS^\text E\]
+    
+\end{derivation}
+这样我们就得到了用活度描述几个主要的超额函数的方法.
+\begin{theorem}[4C.5.5 混合得到非理想溶液的热力学函数变化]
+    混合得到非理想溶液的过程满足
+    \[G^\text E=RT\sum_{i=1}^{k}n_i\ln\gamma_i\]
+    \[V^\text E=RT\sum_{i=1}^{k}n_i\pa{\ln\gamma_i}{p}T\]
+    \[H^\text E=-RT^2\sum_{i=1}^{k}\pa{\ln\gamma_i}Tp\]
+    \[S^\text E=-R\sum_{i=1}^{k}n_i\ln\gamma_i-RT\sum_{i=1}^{k}n_i\pa{\ln\gamma_i}Tp\]
+    并且有
+    \[G^\text E=H^\text E-TS^\text E\]
+
+\end{theorem}
 \end{document}

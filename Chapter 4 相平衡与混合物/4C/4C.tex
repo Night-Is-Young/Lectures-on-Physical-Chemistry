@@ -563,7 +563,7 @@ $x_\s$越大(即越接近纯溶剂),化学势越大.这表明我们将同一溶�
     这时纯物质的活度就与其浓度相同.
 \end{definition}
 需要注意的是,尽管我们仍然用Raoult定律引入活度的概念,但它的定义仍应基于化学势%
-\footnote{这和我们讨论理想溶液的热力学定义是同理的}.从上面的定义可以看出,%
+\footnote{这和我们讨论理想溶液的热力学定义是同理的.}.从上面的定义可以看出,%
 $\gamma_{x,i}$实际上也可以看作组分$i$对Raoult定律的偏离系数.\\
 \indent 可以看出,上述表达式和用逸度表示实际气体的化学势的式子具有相同的形式.%
 这再一次印证了两种体系具有某种程度上的相似性.\\
@@ -646,7 +646,7 @@ $\gamma_{x,i}$实际上也可以看作组分$i$对Raoult定律的偏离系数.\\
         \begin{aligned}
             H^\text E
             &= \Delta_{\text{mix}}H^{\text{real}}-\Delta_{\text{mix}}H^{\text{ideal}}=\Delta_{\text{mix}}H^{\text{real}} \\
-            &= -T^2\left[\dfrac{\p}{\p T}\left(\dfrac GT\right)\right]=-RT^2\sum_{i=1}^{k}\pa{\ln\gamma_i}Tp
+            &= -T^2\left[\dfrac{\p}{\p T}\left(\dfrac{G^\text E}{T}\right)\right]=-RT^2\sum_{i=1}^{k}\pa{\ln\gamma_i}Tp
         \end{aligned}
     \end{equation}
     同理,超额熵
@@ -673,4 +673,32 @@ $\gamma_{x,i}$实际上也可以看作组分$i$对Raoult定律的偏离系数.\\
     \[G^\text E=H^\text E-TS^\text E\]
 
 \end{theorem}
+对于某些溶液,也许其不理想性的来源是比较单一的.我们考虑引起超额Gibbs自由能$G^\text E$的两项,可以得到以下的结果.
+\begin{derivation}
+    考虑
+    \[G^\text E=H^\text E-TS^\text E\]
+    如果$H^\text E\gg-TS^\text E$,说明溶液的非理想性主要由混合热引起.此时(近似地)有$S^\text E=0$.于是
+    \[S^\text E=\pa{G^\text E}{T}{p}=0\]
+    考虑各组分的超额化学势$\mu_i^\text E$,就有
+    \[\pa{\mu_i^\text E}{T}{p}=\dfrac{\p}{\p T}\pa{G^\text E}{n_i}{T,p,n'}
+    =\left(\dfrac{\p^2 G^\text E}{\p T\p n_i}\right)_p=\dfrac{\p}{\p n_i}\pa{G^\text E}{T}{p}=0\]
+    于是我们知道定压下$\mu_i^\text E$不随温度变化.又因为
+    \[\mu_i^\text E=RT\ln\gamma_i\]
+    于是
+    \[\ln\gamma_i\propto\dfrac{1}{T}\]
+    如果$H^\text E\ll-TS^\text E$,说明溶液的非理想性主要由混合熵引起.此时(近似地)有$H^\text E=0$.于是
+    \[H^\text E=-T^2\left[\dfrac{\p}{\p T}\left(\dfrac{G^\text E}{T}\right)\right]=0\]
+    于是
+    \[0=\dfrac{\p}{\p n_i}\left[\dfrac{\p}{\p T}\left(\dfrac{G^\text E}{T}\right)\right]_p
+    =\dfrac{\p}{\p T}\left(\dfrac{1}{T}\dfrac{\p G^\text E}{\p n_i}\right)_p=\dfrac{\p}{\p T}\left(\dfrac{\mu_i^\text E}{T}\right)_p=0\]
+    于是
+    \[\pa{\ln\gamma_i}{T}{p}=0\]
+    即此时活度不随温度变化.
+\end{derivation}
+我们讨论了超额Gibbs自由能(在某种程度上衡量了液体对理想情况的偏离程度)的主要来源,而上述两种情形各有对应的定义.
+\begin{definition}[4C.5.6 正规溶液和无热溶液]
+    满足$H^\text E\gg-TS^\text E$的溶液称为\tbf{正规溶液}.正规溶液的各组分的活度满足
+    \[\ln\gamma_i\propto\dfrac{1}{T}\]
+    满足$H^\text E\ll-TS^\text E$的溶液称为\tbf{无热溶液}.无热溶液的各组分的活度不随温度变化而变化.
+\end{definition}
 \end{document}

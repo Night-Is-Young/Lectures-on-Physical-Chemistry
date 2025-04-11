@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1743925840.34024 "d:/Work/Chemistry/物理化学讲义/Chapter 4 相平衡与混合物/4B/4B.tex" "4B.pdf" "4B" 1743925843.21733 0
-  "4B.aux" 1743925842 70 ce859c66a29e33e992675fd1e4d713a0 "pdflatex"
-  "4B.tex" 1743925839 22772 c9046bdcd70e93e996523fcabe6844bc ""
+["pdflatex"] 1744388452.15802 "d:/Work/Chemistry/Lectures on Physical Chemistry/Chapter 4 相平衡与混合物/4B/4B.tex" "4B.pdf" "4B" 1744388455.03405 0
+  "4B.aux" 1744388454 70 ce859c66a29e33e992675fd1e4d713a0 "pdflatex"
+  "4B.tex" 1744388451 22978 4f96dff9de09374ed04935ed1f594a98 ""
   "c:/Windows/Fonts/msyh.ttc" 1737734473 19704352 1e10e74402e59d54499af795caf0b135 ""
   "c:/Windows/Fonts/simhei.ttf" 1711630440 9755440 983b60188a8e5a7c29c06c674f428b3d ""
   "c:/Windows/Fonts/simsun.ttc" 1737734473 18070492 992f2bdc407dde6953c5ed83ceac9a91 ""
@@ -51,6 +51,7 @@
   "d:/LaTex/texlive/2024/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei62.tfm" 1721147105 1172 3b0f7c4bc785f23eefed0160e713cd09 ""
   "d:/LaTex/texlive/2024/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei64.tfm" 1721147105 1172 abd4be36b7787f9979caadfeef9cdae5 ""
   "d:/LaTex/texlive/2024/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei65.tfm" 1721147105 1172 c34b1545992ab0d7393a03f889ceeb86 ""
+  "d:/LaTex/texlive/2024/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei67.tfm" 1721147105 1172 127372bbba8b4f4a65a26e565c0c6a2e ""
   "d:/LaTex/texlive/2024/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei6c.tfm" 1721147105 1172 7dd7a6f05321dd25f399ebba47f53887 ""
   "d:/LaTex/texlive/2024/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei6d.tfm" 1721147105 1172 e5be6419407f0c8504254055afe6a633 ""
   "d:/LaTex/texlive/2024/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei6e.tfm" 1721147105 1172 bd56dfdf26ff6117dfce95c1a9273b69 ""
@@ -369,8 +370,8 @@
   "d:/LaTex/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1721147145 5529075 e4a46f3571a9aaa707f9e6782c5c52fe ""
   "d:/LaTex/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1721147279 8239196 8f2e407244481baa1dd440a6d0e5c80c ""
   "d:/LaTex/texlive/2024/texmf.cnf" 1721147121 713 e69b156964470283e0530f5060668171 ""
-  "d:/LaTex/texlive/texmf-local/tex/latex/local/PhysicalChemistryNote.sty" 1743918882 6946 a81912396530ef8fa6c0ea1ae15c8ce5 ""
-  "d:/Work/Chemistry/物理化学讲义/Chapter 4 相平衡与混合物/4B/4B.tex" 1743925839 22772 c9046bdcd70e93e996523fcabe6844bc ""
+  "d:/LaTex/texlive/texmf-local/tex/latex/local/PhysicalChemistryNote.sty" 1744028346 7000 18ca1c09c24996953c3753a4fab59f18 ""
+  "d:/Work/Chemistry/Lectures on Physical Chemistry/Chapter 4 相平衡与混合物/4B/4B.tex" 1744388451 22978 4f96dff9de09374ed04935ed1f594a98 ""
   (generated)
   "4B.aux"
   "4B.log"

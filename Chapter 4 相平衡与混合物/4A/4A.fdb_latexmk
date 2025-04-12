@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1743564744.08156 "d:/Work/Chemistry/物理化学讲义/Chapter 4 相平衡与混合物/4A/4A.tex" "4A.pdf" "4A" 1743564746.57146 0
-  "4A.aux" 1743564745 69 88b57fc91ff21c0efd8c2e4e8d0ad323 "pdflatex"
+["pdflatex"] 1744431793.5595 "d:/Work/Chemistry/Lectures on Physical Chemistry/Chapter 4 相平衡与混合物/4A/4A.tex" "4A.pdf" "4A" 1744431796.19653 0
+  "4A.aux" 1744431795 69 88b57fc91ff21c0efd8c2e4e8d0ad323 "pdflatex"
   "4A.tex" 1743564742 11292 0be92686fc846af0c24598233cb7ee72 ""
   "c:/Windows/Fonts/msyh.ttc" 1737734473 19704352 1e10e74402e59d54499af795caf0b135 ""
   "c:/Windows/Fonts/simhei.ttf" 1711630440 9755440 983b60188a8e5a7c29c06c674f428b3d ""
@@ -360,8 +360,8 @@
   "d:/LaTex/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1721147145 5529075 e4a46f3571a9aaa707f9e6782c5c52fe ""
   "d:/LaTex/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1721147279 8239196 8f2e407244481baa1dd440a6d0e5c80c ""
   "d:/LaTex/texlive/2024/texmf.cnf" 1721147121 713 e69b156964470283e0530f5060668171 ""
-  "d:/LaTex/texlive/texmf-local/tex/latex/local/PhysicalChemistryNote.sty" 1743515018 6920 9609409fcd07cda602964314c9fff90f ""
-  "d:/Work/Chemistry/物理化学讲义/Chapter 4 相平衡与混合物/4A/4A.tex" 1743564742 11292 0be92686fc846af0c24598233cb7ee72 ""
+  "d:/LaTex/texlive/texmf-local/tex/latex/local/PhysicalChemistryNote.sty" 1744028346 7000 18ca1c09c24996953c3753a4fab59f18 ""
+  "d:/Work/Chemistry/Lectures on Physical Chemistry/Chapter 4 相平衡与混合物/4A/4A.tex" 1743564742 11292 0be92686fc846af0c24598233cb7ee72 ""
   (generated)
   "4A.aux"
   "4A.log"

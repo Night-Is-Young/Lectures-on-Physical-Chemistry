@@ -1,8 +1,8 @@
-PWD d:/Work/Chemistry/物理化学讲义/Chapter 4 相平衡与混合物/4A
+PWD d:/Work/Chemistry/Lectures on Physical Chemistry/Chapter 4 相平衡与混合物/4A
 INPUT d:/LaTex/texlive/2024/texmf.cnf
 INPUT d:/LaTex/texlive/2024/texmf-dist/web2c/texmf.cnf
 INPUT d:/LaTex/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT d:/Work/Chemistry/物理化学讲义/Chapter 4 相平衡与混合物/4A/4A.tex
+INPUT d:/Work/Chemistry/Lectures on Physical Chemistry/Chapter 4 相平衡与混合物/4A/4A.tex
 OUTPUT 4A.log
 INPUT d:/LaTex/texlive/2024/texmf-dist/tex/latex/ctex/ctexart.cls
 INPUT d:/LaTex/texlive/2024/texmf-dist/tex/latex/ctex/ctexart.cls

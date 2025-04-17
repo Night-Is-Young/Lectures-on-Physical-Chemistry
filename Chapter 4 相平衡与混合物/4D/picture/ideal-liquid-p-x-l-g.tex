@@ -8,7 +8,7 @@
     \draw[-] (0,4) -- (4,4);
     \node[below] at (0,0) {$B$};
     \node[below] at (4,0) {$A$};
-    \node[below] at (2,0) {$x_{A,\l}$};
+    \node[below] at (2,0) {$x_{A}$};
     \draw[domain=0:4] plot[smooth](\x,{4*1.25*2.75/(11-1.5*\x)});
     \filldraw[fill=lightgray,opacity=0.25,domain=0:4] plot[smooth](\x,{4*1.25*2.75/(11-1.5*\x)}) -- (4,4) -- (0,4);
     \filldraw[fill=violet,opacity=0.05,domain=0:4] plot[smooth](\x,{4*1.25*2.75/(11-1.5*\x)}) -- (4,0) -- (0,0);

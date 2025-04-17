@@ -113,11 +113,25 @@ Gibbs相律是我们描述多组分系统的相图时所应当遵守的基本规
     \begin{center}
         \input{picture/ideal-liquid-T-x-l.tex}
     \end{center}
-    如果将$p_A+p_B=p$和$x_{A,\g}$代入(3)可得
+    现在我们仍尝试用$x_{A,\g}$来代替$x_{A,\l}$作出相图.在推导$p-x$图时我们已经知道
     \begin{equation}
-        x_{A,\g}\exp{\left[\dfrac{\Delta_\vap H_{\m,A}}{R}\left(\dfrac{1}{T_A^\ast}-\dfrac1T\right)\right]}
-        =\left(1-x_{A.,\g}\right)\exp{\left[\dfrac{\Delta_\vap H_{\m,B}}{R}\left(\dfrac{1}{T_B^\ast}-\dfrac1T\right)\right]}
+        p=\dfrac{p_A^\ast p_B^\ast}{p_A^\ast+\left(p_B^\ast-p_A^\ast\right)x_{A,\g}}
     \end{equation}
-\end{derivation}
+    将(3)代入(6)就有
+    \begin{equation}
+        \dfrac{1-x_{A,\g}}{\exp{\left[\dfrac{\Delta_\vap H_{\m,B}}{R}\left(\dfrac{1}{T_B^\ast}-\dfrac1T\right)\right]}}+
+        \dfrac{x_{A,\g}}{\exp{\left[\dfrac{\Delta_\vap H_{\m,A}}{R}\left(\dfrac{1}{T_A^\ast}-\dfrac1T\right)\right]}}=1
+    \end{equation}
+    这就给出了$T$与$x_{A,\g}$的函数关系,绘制出的相图如下所示.
+    \begin{center}
+        \input{picture/ideal-liquid-T-x-g.tex}
+    \end{center}
+    你可能觉得两张图看起来并没有什么区别.为了方便演示,我们将它们放在同一幅图中,即下面左边的相图.
+    \begin{center}
+        \input{picture/ideal-liquid-T-x-l-g-1.tex}
+    \end{center}
+    这和你以往见到的$T-x$图似乎有所不同.不要着急,我们再稍稍调整一下$A$与$B$的蒸发焓之比,就可以得到上面右边的相图.%
+    这就与我们常常见到的$T-x$图相一致了\footnotemark.我们将用此图来解释很多重要操作的原理.
+\end{derivation}\footnotetext{其实右图并不是精确绘制的,因为表达式太过冗长,于是笔者采取了一些小小的简化,至少形状看着像就行.}
 
 \end{document}

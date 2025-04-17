@@ -61,10 +61,63 @@ Gibbs相律是我们描述多组分系统的相图时所应当遵守的基本规
     \[p=p_A+p_B=p_B^\ast+\left(p_A^\ast-p_B^\ast\right)x_{A,\l}\]
     如果我们以$x_{A,\l}$为横轴,$p$为纵轴,就可以得到如下的相图.
     \begin{center}
-        \input{picture/ideal-liquid-p-x.tex}
+        \input{picture/ideal-liquid-p-x-l.tex}
     \end{center}
-    其中上面灰色的部分为气相,下面紫色的部分为液相.可以看到,选取某组分在液相中的摩尔分数$x_\l$和压力$p$,%
+    其中上面灰色的部分为液相,下面紫色的部分为气相.可以看到,选取某组分在液相中的摩尔分数$x_\l$和压力$p$,%
     作出的理想溶液相图中两相的分界线为直线.\\
-    显而易见的,两种组分在气相中的含量与它们在液相中的含量并不相同.
+    显而易见的,两种组分在气相中的含量与它们在液相中的含量并不相同.我们有
+    \[x_{A,\g}=\dfrac{p_A}{p}=\dfrac{p_A^\ast x_{A,\l}}{p_B^\ast+\left(p_A^\ast-p_B^\ast\right)x_{A,\l}}\]
+    于是
+    \[x_{A,\l}=\dfrac{p_B^\ast x_{A,\g}}{p_A^\ast+\left(p_B^\ast-p_A^\ast\right)x_{A,\g}}\]
+    从而
+    \[p=p_B^\ast+\dfrac{p_B^\ast x_{A,\g}\left(p_A^\ast-p_B^\ast\right)}{p_A^\ast+\left(p_B^\ast-p_A^\ast\right)x_{A,\g}}
+    =\dfrac{p_A^\ast p_B^\ast}{p_A^\ast+\left(p_B^\ast-p_A^\ast\right)x_{A,\g}}\]
+    我们以$x_{A,\g}$为横轴,$p$为纵轴,可以得到如下的相图.
+    \begin{center}
+        \input{picture/ideal-liquid-p-x-g.tex}
+    \end{center}
+    可以看到,以气相中$A$的摩尔分数作出的相图的分界线是一条下凹的曲线,总是处于液相线之下.如果我们把两条线画在同一张图中,就有
+    \begin{center}
+        \input{picture/ideal-liquid-p-x-l-g.tex}
+    \end{center}
+    根据相律,在两相平衡时系统的自由度为$f=C+n-\varPhi=2+2-0$,只要给定压强$p_0$和温度$T$就可以确定其组成和状态.因此,%
+    我们作一条直线$p=p_0$分别交两条分界线于$M,N$两点,就可以知道此时两相平衡时液相和气相的组成.\\
+    容易看出在平衡时,蒸气压大的组分在气相中的摩尔分数总是比在液相中的摩尔分数高.
 \end{derivation}
+通常来说,我们更常在恒定压力下对系统进行改变,例如蒸馏和精馏等操作.%
+因此,$T-x$图更为常用.
+\begin{derivation}\setcounter{equation}{0}
+    我们仍然讨论由组分$A$和组分$B$组成的理想溶液,并保持总压力为$p$不变.\\
+    根据Clausius-Clapeyron方程有
+    \begin{equation}
+        \dfrac{\di\ln p_{i}^\ast}{\di T}=\dfrac{\Delta_\vap H_{\m,i}}{RT^2}
+    \end{equation}
+    其中$i=A,B$.我们再假定摩尔蒸发焓随温度变化很小,设纯的$i$在$p$下的沸点为$T_i^\ast$,对(1)定积分有
+    \begin{equation}
+        \ln\dfrac{p_i^\ast}{p}=\dfrac{\Delta_\vap H_{\m,i}}{R}\left(\dfrac{1}{T_i^\ast}-\dfrac1T\right)
+    \end{equation}
+    移项并取指数就有
+    \begin{equation}
+        p_i^\ast=p\exp{\left[\dfrac{\Delta_\vap H_{\m,i}}{R}\left(\dfrac{1}{T_i^\ast}-\dfrac1T\right)\right]}
+    \end{equation}
+    根据Raoult定律有
+    \begin{equation}
+        p=p_{A}^\ast x_{A,\l}+p_B^\ast\left(1-x_{A,\l}\right)
+    \end{equation}
+    将(3)代入其中就有
+    \begin{equation}
+        x_{A,\l}\exp{\left[\dfrac{\Delta_\vap H_{\m,A}}{R}\left(\dfrac{1}{T_A^\ast}-\dfrac1T\right)\right]}
+        +\left(1-x_{A,\l}\right)\exp{\left[\dfrac{\Delta_\vap H_{\m,B}}{R}\left(\dfrac{1}{T_B^\ast}-\dfrac1T\right)\right]}=1
+    \end{equation}
+    这就给出了$T$与$x_{A,\l}$的函数关系,绘制出的相图如下所示.
+    \begin{center}
+        \input{picture/ideal-liquid-T-x-l.tex}
+    \end{center}
+    如果将$p_A+p_B=p$和$x_{A,\g}$代入(3)可得
+    \begin{equation}
+        x_{A,\g}\exp{\left[\dfrac{\Delta_\vap H_{\m,A}}{R}\left(\dfrac{1}{T_A^\ast}-\dfrac1T\right)\right]}
+        =\left(1-x_{A.,\g}\right)\exp{\left[\dfrac{\Delta_\vap H_{\m,B}}{R}\left(\dfrac{1}{T_B^\ast}-\dfrac1T\right)\right]}
+    \end{equation}
+\end{derivation}
+
 \end{document}

@@ -9,12 +9,11 @@
     \node[below] at (0,0) {$B$};
     \node[below] at (4,0) {$A$};
     \node[below] at (2,0) {$x_{A,\l}$};
-    \filldraw[fill=lightgray,opacity=0.5] (0,1.75) -- (4,3.25) -- (4,4) -- (0,4);
-    \filldraw[fill=violet,opacity=0.1] (0,1.75) -- (4,3.25) -- (4,0) -- (0,0);
-    \node[left] at (0,1.75) {$p_B^\ast$};
-    \node[right] at (4,3.25) {$p_A^\ast$};
-    \node[above] at (2,3) {\small{$p_B^\ast+\left(p_A^\ast-p_B^\ast\right)x_{A,\l}$}};
-    \draw[-] (0,1.75) -- (4,3.25);
+    \draw[domain=0:4] plot[smooth](\x,{1/ln(0.1967*(11.3117-\x))});
+    \filldraw[fill=lightgray,opacity=0.5,domain=0:4] plot[smooth](\x,{1/ln(0.1967*(11.3117-\x))}) -- (4,4) -- (0,4);
+    \filldraw[fill=violet,opacity=0.1,domain=0:4] plot[smooth](\x,{1/ln(0.1967*(11.3117-\x))}) -- (4,0) -- (0,0);
+    \node[left] at (0,1.25) {$T_B^\ast$};
+    \node[right] at (4,2.75) {$T_A^\ast$}; 
     
 \end{tikzpicture}
 \end{document}

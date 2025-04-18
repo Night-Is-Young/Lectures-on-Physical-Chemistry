@@ -14,6 +14,7 @@
     \filldraw[fill=violet,opacity=0.05,domain=0:4] plot[smooth](\x,{4*1.25*2.75/(11-1.5*\x)}) -- (4,0) -- (0,0);
     \filldraw[fill=lightgray,opacity=0.25] (0,1.25) -- (4,2.75) -- (4,4) -- (0,4);
     \filldraw[fill=violet,opacity=0.05] (0,1.25) -- (4,2.75) -- (4,0) -- (0,0);
+    \filldraw[fill=violet,opacity=0.15,domain=0:4] plot[smooth](\x,{4*1.25*2.75/(11-1.5*\x)})--(0,1.25);
     \node[left] at (0,1.25) {$p_B^\ast$};
     \node[left] at (0,2) {$p_0$};
     \node[right] at (4,2.75) {$p_A^\ast$};

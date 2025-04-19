@@ -1,0 +1,241 @@
+\documentclass{ctexart}
+\usepackage{PhysicalChemistryNote}
+
+\begin{document}\pagestyle{plain}
+\noindent\tbf{\LARGE 5A 热化学}\vspace{15pt}\\
+\indent 终于,在经历一百多页的物理学后,我们走向了与化学变化有关系的一部分——热化学.%
+化学反应常常伴有吸热或者放热现象,对这些热效应进行精密测定并做详尽的讨论,即\tbf{热化学}着重研究的方向.
+\begin{hint}
+    需要说明的是,我们在\tbf{Chapter 5}中所述的化学反应系统,大部分(除非特殊说明)是指等温等压且不做非体积功的系统.%
+    这和一般的化学反应进行的条件是一致的.
+\end{hint}\vspace{8pt}
+\Section{5A.1 反应进度与标准反应焓变}
+\Part{反应进度}
+\indent 为了方便讨论化学反应进行的程度,我们需要用一个统一的量对“反应进行了多少”进行衡量.%
+这一衡量方式应当与参与反应的物质的计量比无关,以具有更好的普适性.因此,我们定义了\tbf{反应进度}.
+\begin{definition}[5A.1.1 反应进度]
+    考虑反应
+    \[a\text{A}+b\text{B}\longrightarrow c\text{C}+d\text{D}\]
+    用$\nu_{\text X}$表示物质X的计量系数.对于反应物,$\nu$取负值;对于产物,$\nu$取正值.定义反应进度$\xi$为
+    \[n_\text X(\xi)\xlongequal{\text{def}}n_\text X(0)+\nu_\text B\xi\]
+    其中$n_\text X(0),n_\text X(\xi)$分别代表起始时和反应进度为$\xi$时X的物质的量.因此,$\xi$的单位是mol.
+\end{definition}
+对$\xi$的定义式微分可得
+\[\di\xi=\dfrac{\di n_\text X}{\nu_\text X}\]
+\indent 引入反应进度最大的优点在于你可以用任意一种反应物或者产物的物质的量的变化衡量反应进行的程度.例如,对于我们在\tbf{2D.1.1}提到的反应有
+\[\di\xi=-\dfrac{\di n_\text A}{a}=-\dfrac{\di n_\text B}{b}=\dfrac{\di n_\text C}{c}=\dfrac{\di n_\text D}{d}\]
+\indent 反应进度必须与具体的化学反应方程式相对应,否则我们无法得知各物质的计量数,也就不能定义反应进度.%
+例如下面的两个反应:
+\begin{tightcenter}
+    \ce{CO + 3H2 -> CH4 + H2O}\\
+    \ce{2CO + 6H2 -> 2CH4 + 2H2O}
+\end{tightcenter}
+虽然它们描述的是同一个反应,然而同样生成$1\mol$\ \ce{CH4}时,%
+两者的反应进度分别为$1\mol$和$0.5$\ mol.\vspace{4pt}\\
+\Part{等压热效应和等容热效应}
+\indent 系统发生化学反应后可能与环境有热的交换.%
+为了衡量反应的热的大小,进而研究化学反应系统的热力学性质,我们需要定义热效应.
+\begin{definition}[5A.1.2 热效应]
+    系统发生化学变化后,其温度回到反应前始态的温度,系统放出或吸收的热量称为该反应的\tbf{热效应}.
+\end{definition}
+需要注意的是,系统的温度一定要回复反应前始态的温度.热效应可以通过各种量热计进行\footnote{在普通化学书中有详细介绍.}.%
+热效应的正负仍采取热力学惯例,系统吸热为正值,放热为负值.\\
+\indent 通常如果不特别注明,反应热都是指等压热效应.然而,常用的量热计都是测定的热效应都是等容的.%
+因此,有必要知道等容热效应$Q_V$(根据热力学第一定律,即等容情况下反应的内能变化$\Delta_\r U$\footnote{这里的下标$\r$代表reaction,意为“反应”.})%
+和等压热效应$Q_V$(同理,即反应在等压情况下的焓变$\Delta_\r H$)的差值.
+\begin{derivation}
+    我们假定反应可以通过等压和等容两种方式进行.考虑体系的三种状态,即
+    \[A:\text{反应物},T,p_1,V_1\]
+    \[B:\text{产物},T,p_1,V_2\]
+    \[C:\text{产物},T,p_2,V_1\]
+    那么$A\to B$即为等压反应,$A\to C$即为等容反应.由于焓是状态函数,于是
+    \[\Delta_\r H_{A\to B}=\Delta_\r H_{A\to C}+\Delta_\r H_{C\to B}=\left(\Delta_\r U_{A\to C}+\Delta(pV)_{A\to C}\right)+\Delta_\r H_{C\to B}\]
+    又反应的等压热效应和等容热效应分别为
+    \[Q_p=\Delta_\r H_{A\to B}\ \ \ \ \ Q_V=\Delta_\r U_{A\to C}\]
+    于是
+    \[Q_p-Q_V=\Delta(pV)_{A\to C}+\Delta_\r H_{C\to B}\]
+    先考虑$A\to C$过程中系统的$pV$的变化.对于凝聚态(即液相和固相),其体积较小,$\Delta(pV)$可忽略不计.%
+    再假定气相是理想气体,就有
+    \[\Delta(pV)=RT\Delta n\]
+    其中$\Delta n$是反应前后气体的物质的量之差.\\
+    对于$C\to B$,焓随压力和体积的变化相比于化学反应的热效应是微不足道的,因此$\Delta H_{C\to B}$可以被忽略.%
+    这样,我们就得到了如下结论
+    \[Q_p-Q_V=RT\Delta n\]
+
+\end{derivation}
+\begin{theorem}[5A.1.3 等压热效应与等容热效应之差]
+    一般而言,同一化学反应的等压热效应和等容热效应(近似地)满足
+    \[Q_p-Q_V=RT\Delta n\]
+    其中$\Delta n$为反应前后气体的物质的量之差.这个等式也可以写作
+    \[\Delta_\r H=\Delta_\r U+RT\Delta n\]
+
+\end{theorem}
+在只有等容热效应的数值时,可以用此式求出等压热效应.\vspace{4pt}\\
+\Part{标准摩尔焓变}
+\indent 一个显而易见的事实是,反应的热效应一定随着反应进度的变化而变化,%
+毕竟它们都是广度性质.如果我们需要一个更为普适的强度性质描述反应的热效应,就可以定义摩尔焓变.
+\begin{definition}[5A.1.4 摩尔焓变]
+    定义化学反应的\tbf{摩尔焓变}为
+    \[\Delta_\r H_\m=\dfrac{\Delta_\r H}{\Delta\xi}\]
+    即每进行$1\mol$反应时体系的焓变.
+\end{definition}
+\begin{hint}
+    事实上,在我们学过偏摩尔量的概念之后应当知道,反应体系中各物质的焓会随着含量的变化而变化,%
+    因此焓变$\Delta_\r H$也会随着反应的发生而变化.于是,上述定义最好写作
+    \[\Delta_\r H_\m=\dfrac{\di\left(\Delta_\r H\right)}{\di\xi}=\sum_{i=1}^{k}\nu_i\pa{H}{n_i}{T,p}\]
+    其中$\nu_i$为体系中物质在反应方程式中的计量数.
+\end{hint}
+可以看出,反应的摩尔焓变不仅与系统的压力和温度有关,还有可能与系统的组成变化有关.%
+即使是完全相同的反应,在不同条件下进行也会导致不同的焓变.\\
+\indent 为此,我们可以规定物质的标准状态,让反应物和产物都处于这一标准状态下进行反应.
+\begin{definition}[5A.1.5 标准态]
+    标准态要求压力为$100\text{ kPa}$,即$1\text{ bar}$,用符号$p^\ominus$表示(这与我们在\tbf{4B.4}中的表示方法一致).\\
+    标准态并没有给定温度,因此在每个温度下物质都有相应的标准态.\\
+    习惯上,如果没有注明温度,则默认温度为$298.15$ K.\\
+    一般来说,标准态总是要求物质为纯物质.溶液中的标准态则有所不同,我们将在后面提到.
+\end{definition}
+再次强调,标准态是没有给定温度的,这一点很容易与\tbf{标准状况}混淆.这里我们给出标准状况的定义供你参考.
+\begin{definition}[5A.1.6 标准状况]
+    \tbf{标准状况}(简称为\tbf{标况})是指物质处于温度为$273.15\text{ K}$,压力为$101325\text{ Pa}$的状态,%
+    也即温度为$0\ \tccentigrade$,压力为$1\text{ atm}$(即一个标准大气压)的状态.
+\end{definition}
+给定标准态之后,我们就可以给出标准反应焓变的定义.
+\begin{definition}[5A.1.7 标准摩尔焓变]
+    由标准态的反应物完全转变为标准态的产物这一过程的焓变即为\tbf{标准反应焓变}.\\
+    在此基础上规定$\xi=1\mol$,则这一过程的焓变即为\tbf{标准摩尔(反应)焓变},记为$\Delta_\r H_\m^\ominus$.
+\end{definition}
+上面的定义中还强调了\tbf{完全转变}这一点.例如
+\begin{tightcenter}
+    \ce{H2(g) + I2(g) -> 2HI(g)}\ \ \ \ \ $\Delta_\r H_\m(298.15\ \text K)=53.0\ \text{kJ}\cdot\text{mol}^{-1}$
+\end{tightcenter}
+这一反应在$298.15\ \text{K}$下的标准摩尔焓变为$53.0\kJm$意味着在此温度和$p^\ominus$下,%
+纯的$1\mol$ \ce{H2(g)}和纯的$1\mol$ \ce{I2(g)}完全转变为纯的$2\mol$ \ce{HI(g)}这一过程的焓变为$53.0$ kJ.%
+需要注意的是这里的\ce{H2}和\ce{I2}并没有混合,因此这是一个假想的过程.%
+我们将在\tbf{5B}中用van't Hoff平衡箱间接地实现这一过程.
+\begin{hint}
+    直接将$1\mol$ \ce{H2(g)}和$1\mol$ \ce{I2(g)}在此条件下混合,实际上会由于反应并不能进行地很彻底,%
+    从而反应的焓变小于$53.0\kJm$.\\
+    如果在恒定温度为$298.15\ \text{K}$和压强为$p^\ominus$的大容器中将足量\ce{H2}和\ce{I2}混合,%
+    并测定反应进度为$1\mol$时系统的焓变$\Delta_\r H'$,这一焓变从定义上来说也不是标准摩尔焓变(我们要求所有反应物和产物都处于标准态,而这里显然发生了混合).\\
+    不过,如果把\ce{H2},\ce{I2}和\ce{HI}都视作理想气体,由于理想气体混合或改变压强时焓变为零,因此$\Delta_\r H'$与$\Delta_\r H_\m$应当相同.%
+    这也是我们有时并不严格要求反应物和产物都保持纯态的原因(尽管定义要求如此).
+\end{hint}
+\vspace{8pt}
+\Section{5A.2 Hess定律与标准摩尔生成焓}
+\Part{Hess定律\footnote{音译为“盖斯”,这就是我们所熟知的盖斯定律.}}
+\indent 在你学习普通化学时,一定学习过Hess定律,它可以很好地用成语“殊途同归”来概括.
+\begin{theorem}[5A.2.1 Hess定律]
+    在等容或等压条件下发生的反应的热效应与反应的途径无关.
+\end{theorem}
+Hess是根据实验数据总结出此规律的,而我们在高中化学书上也仅仅是在直觉上认为这一点正确.%
+现在,我们知道等容或等压过程的热效应分别等于反应的内能变化$\Delta_\r U$和焓变$\Delta_\r H$,%
+而在\tbf{2B.1.2}和\tbf{2B.2.1}中我们已经知道系统的$U$和$H$都是状态函数,%
+其变化值仅与始态和终态相关,与变化的途径无关.\\
+\indent 利用Hess定律,我们可以间接地测量很多难以发生(或难以测准)的反应的焓变.例如
+\begin{tightcenter}
+    (1) \ce{2C(s) + O2(g) -> 2CO(g)}\ \ \ \ \ $\Delta_\r H_{\m,1}$
+\end{tightcenter}
+由于\ce{C}与\ce{O2}反应会不可避免地生成\ce{CO2},因此上面反应的焓变很难测准.因此,我们考虑下面两个反应:
+\begin{tightcenter}
+    (2) \ce{C(s) + O2(g) -> CO2(g)}\ \ \ \ \ $\Delta_\r H_{\m,2}$\\
+    (3) \ce{2CO(g) + O2(g) -> 2CO2(g)}\ \ \ \ \ $\Delta_\r H_{\m,3}$
+\end{tightcenter}
+这样就有$(2)-\dfrac12(3)=(1)$,于是$\Delta_\r H_{\m,1}=\Delta_\r H_{\m,2}-\dfrac12\Delta_\r H_{\m,3}$.%
+只要测定在相同条件下后两个反应的焓变,就可以得出反应(1)的焓变.\\
+\indent 利用Hess定律,我们将在接下来做出一个重要的定义.\vspace{4pt}\\
+\Part{标准摩尔生成焓}
+\indent 从标准反应焓变的定义可以看出,等温等压下反应的标准摩尔焓变$\Delta_\r H_\m^\ominus$的值就等于%
+标准态下产物的总焓与反应物的总焓的差值.\\
+\indent 如果我们想知道任意一个反应的焓变,一种直接的想法是罗列一张表写出所有可能发生的反应的焓变以供查找.%
+但显然,由于化学反应数量众多,这样的方式太过繁琐.另一种想法是给出所有物质的焓的值,%
+这样计算焓变就可以用产物的焓减去反应物的焓而得.\\
+\indent 由于我们无法获知焓的绝对值,因此合适的方法是规定某些物质为基准,然后其余物质以这些基准为起点规定其焓.%
+由于焓是状态函数,并且我们主要关心在各种变化的焓变而非焓的绝对值,因此这样的处理是合适的.\\
+\indent 由于化学反应不涉及原子的变化,保持元素守恒,因此我们可以选取各元素的单质作为基准.
+\begin{definition}[5A.2.2 标准摩尔生成焓]
+    在标准压力下和给定的温度$T$下,由单质生成物质\ce{X}的标准摩尔焓变即\ce{X}的\tbf{标准摩尔生成焓},%
+    用符号$\Delta_\f H_\m^\ominus(\text{X,物态,}T)$表示%
+    \footnotemark.
+\end{definition}\footnotetext{这里的下标$\f$代表formation,意为“形成”.}
+一般来说,选取的单质是该元素最稳定的单质,其标准摩尔生成焓即为$0$;不过也有例外,%
+例如\ce{P}选取的单质是白磷而非红磷(这可能是由于白磷更容易重复制取).%
+在物态明确的情况下,有时也省去物态的描述.\\
+\indent 规定标准摩尔生成焓后,我们就可以通过Hess定律计算任意反应的标准摩尔焓变,即按照
+\begin{tightcenter}
+    反应物$\longrightarrow$稳定单质$\longrightarrow$产物
+\end{tightcenter}
+的步骤计算,这样就有
+\[\Delta_\r H_\m^\ominus(T)=\sum_{i=1}^{k}\nu_i\Delta_\f H_\m^\ominus(i,T)\]
+注意计量数$\nu_i$的正负.\vspace{4pt}\\
+\Part{标准摩尔离子生成焓}
+\indent 在溶液中,相当一部分反应是有离子参与的.如果知道每种离子的生成焓,就同样可以知道有离子参与的反应的焓变.%
+然而,我们无法制备出只含阳离子或只含阴离子的溶液,因此可以额外规定
+\[\Delta_\f H_\m^\ominus(\ce{H+},\text{aq}^\infty)=0\]
+其中$\text{aq}^\infty$表示无限稀溶液.\\
+\indent 如果我们想据此知道\ce{Cl-}的标准生成焓,只需考虑\ce{HCl}的溶解热(稀释至无限稀)即可.我们有
+\begin{tightcenter}
+    $\Delta_\f H_\m^\ominus(\ce{HCl},\g,298.15\text{ K})=-92.31\kJm$\\
+    \ce{HCl -> H+(aq) + Cl-(aq)}\ \ \ \ \ $\Delta_\text{sol} H_{\m}^\ominus(298.15\text{ K})=-74.85\kJm$
+\end{tightcenter}
+于是
+\[\begin{aligned}
+    \Delta_\f H_\m^\ominus(\ce{Cl-},\text{aq}^\infty)
+    &= \Delta_\text{sol} H_{\m}^\ominus(298.15\text{ K})+\Delta_\f H_\m^\ominus(\ce{HCl},\g,298.15\text{ K})-\Delta_\f H_\m^\ominus(\ce{H+},\text{aq}^\infty) \\
+    &= (-92.31)+(-74.85)-0\kJm \\
+    &= -167.16\kJm
+\end{aligned}\]
+同样地,根据\ce{KCl}的摩尔溶解热和标准摩尔生成焓可以得出\ce{K+}的标准摩尔生成焓.%
+运用相似的方法,就可以得出所有离子的标准摩尔生成焓,进而为溶液中反应的焓变的衡量提供了标准.\vspace{4pt}\\
+\Part{标准摩尔燃烧焓}
+\indent 由于大部分焓变数据都来源于量热计中物质的燃烧热,因此我们专门为燃烧过程定义对应的焓变.
+\begin{definition}[5A.2.3 标准摩尔燃烧焓]
+    在标准状态下物质\ce{X}完全燃烧生成指定稳定产物时的摩尔焓变记为\ce{X}(在此条件下的)\tbf{标准摩尔燃烧焓}%
+    记作$\Delta_\c H_\m^\ominus(\ce{X},\text{相态},T)$\footnotemark.%
+    燃烧产物一般指定如下:\ce{X}中的\ce{C}变为\ce{CO2(g)},\ce{H}变为\ce{H2O(l)}(需要着重注意的是这里是液态水),%
+    \ce{N}变为\ce{N2(g)},\ce{S}变为\ce{SO2(g)}等等.
+\end{definition}\footnotetext{这里的下标$\c$代表combustion,意为“燃烧”.}
+一般的燃烧反应都是放热的,因此燃烧焓一般为负值.由Hess定律和燃烧焓数据可以求得很多物质的生成焓,方法是类似的,这里就不再赘述了.\vspace{12pt}\\
+\Section{5A.3 Kirchhoff 定律}
+\indent 测定各个温度下的反应焓变是相当麻烦的,并且在某些温度下反应也并不能发生.%
+实际给出的标准生成焓和反应焓大多都是$298.15$ K下的,因此我们需要一些间接的方法求得任意温度$T$下反应的焓变.
+\begin{derivation}
+    假定等压下某反应的$\Delta_\r H_\m^\ominus\left(T_1\right)$已知,现在要求$T_2$下反应的标准摩尔焓变.\\
+    我们考虑如下四个状态(假定反应进度$\xi=1\mol$).
+    \[A:\text{反应物},T_1,p^\ominus\ \ \ \ \ B:\text{产物},T_1,p^\ominus\]
+    \[C:\text{反应物},T_2,p^\ominus\ \ \ \ \ D:\text{产物},T_2,p^\ominus\]
+    于是
+    \[\begin{aligned}
+        \Delta_\r H_\m^\ominus(T_2)=\Delta H_{C\to D}
+        &= \Delta H_{C\to A}+\Delta H_{A\to B}+\Delta H_{B\to D} \\
+        &= \Delta H_{C\to A}+\Delta H_{B\to D}+\Delta_\r H_\m^\ominus(T_1)
+    \end{aligned}\]
+    在\tbf{2B.2.3}中我们知道等压下组成不变的系统的焓变可以由等压热容对温度积分得到,即
+    \[\begin{aligned}
+        \Delta H_{C\to A}
+        &= \int_{T_2}^{T_1}C_{p,\text{反应物,tot}}^\ominus\di T \\
+        &= \int_{T_1}^{T_2}\sum_{\text{反应物}}\nu_iC_{p,\m,i}^\ominus\di T
+    \end{aligned}\]
+    注意到对于反应物,$\nu_i$为负值,因此需要交换积分的上下限.\\
+    同理,对于产物有
+    \[\begin{aligned}
+        \Delta H_{B\to D}
+        &= \int_{T_1}^{T_2}C_{p,\text{产物,tot}}^\ominus\di T \\
+        &= \int_{T_1}^{T_2}\sum_{\text{产物}}\nu_iC_{p,\m,i}^\ominus\di T
+    \end{aligned}\]
+    这样对于所有$k$种反应物和产物就有
+    \[\Delta_\r H_\m^\ominus(T_2)-\Delta_\r H_\m^\ominus(T_1)=\int_{T_1}^{T_2}\Delta C_p^\ominus\di T
+    =\int_{T_1}^{T_2}\sum_{i=1}^{k}\nu_iC_{p,\m,i}^\ominus\di T\]
+    应当注意的是,如果在$C\to A$或$B\to D$的过程中有物态的变化,应当单独考虑相变过程的焓变.
+\end{derivation}
+\begin{theorem}[5A.3.1 Kirchhoff 定律]
+    同一反应在不同温度$T_1$和$T_2$下的标准摩尔焓变满足
+    \[\Delta_\r H_\m^\ominus(T_2)-\Delta_\r H_\m^\ominus(T_1)=\int_{T_1}^{T_2}\Delta C_p^\ominus\di T
+    =\int_{T_1}^{T_2}\sum_{i=1}^{k}\nu_iC_{p,\m,i}^\ominus\di T\]
+    如果有各物质的标准摩尔热容的具体数值或其与温度的函数关系,就可以通过积分求出标准摩尔焓变的差值,%
+    进而根据某一给定温度下的$\Delta_\r H_\m^\ominus$计算任意温度下的$\Delta_\r H_\m^\ominus$.
+\end{theorem}
+\vspace{8pt}
+\Section{5A.4 绝热反应}
+\indent 在某些特殊的反应体系中,并不能保持体系等温.%
+如果反应发生的速度很快,系统来不及与环境进行热交换,就会使得系统的温度发生变化.绝热反应的温度变化可由如下方式求出.
+\end{document}

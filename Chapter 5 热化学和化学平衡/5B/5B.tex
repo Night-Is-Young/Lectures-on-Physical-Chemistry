@@ -1,0 +1,284 @@
+\documentclass{ctexart}
+\usepackage{PhysicalChemistryNote}
+
+\begin{document}\pagestyle{plain}
+\noindent\tbf{\LARGE 5B 化学平衡}\vspace{15pt}\\
+\indent 正如我们在\tbf{3E.2.2}中讲的那样,等温等压下系统自发变化的方向总是向着%
+Gibbs自由能$G$减小的方向进行,直到系统平衡为止.这一原理自然也可以用于发生化学反应的系统,%
+我们需要通过$G$的变化来研究系统达到平衡的条件.\vspace{12pt}\\
+\Section{5B.1 平衡常数与标准摩尔Gibbs自由能变}
+\Part{化学反应的Gibbs自由能变}
+\indent 显然的,达到化学平衡的体系必然是混合物,因此我们需要用化学势代替纯物质的Gibbs自由能以对体系进行研究.%
+我们不妨从最简单的平衡反应\ce{$A$ <=> $B$}开始研究.
+\begin{derivation}
+    在等温等压下,含有上述$A$和$B$物质的系统的Gibbs自由能的微分
+    \[\di G=\mu_{A}\di n_A+\mu_B\di n_B\]
+    依照反应进度的定义,如果反应进行了$\di\xi$,那么$\di n_A=-\di\xi,\di n_{B}=\di\xi$.这样就有
+    \[\di G=\left(\mu_B-\mu_A\right)\di\xi\]
+    亦即
+    \[\pa{G}{\xi}{T,p}=\left(\mu_B-\mu_A\right)\]
+    回顾化学势的定义,$\mu_B-\mu_A$不仅代表$B$与$A$在这样的系统组成下的化学势的差值,也等于在大量(该组成的)系统中反应进行$1\mol$上述反应的Gibbs自由能变.%
+    这就是摩尔Gibbs自由能变的定义.
+\end{derivation}
+\begin{definition}[5B.1.1 反应摩尔Gibbs自由能变]
+    发生化学反应的系统的\tbf{反应摩尔Gibbs自由能变}$\Delta_\r G_\m$定义为
+    \[\Delta_\r G_\m=\pa G\xi{T,p}=\sum_{i=1}^{k}\nu_i\mu_i\]
+    在系统的组成一定时,$\Delta_\r G_\m$既可以定义为单位物质的量的产物与反应物的化学势之差,也可以定义为系统的Gibbs自由能$G$对反应进度$\xi$的变化率.%
+    这两种定义是等价的.
+\end{definition}
+我们仍然以上述反应为例讨论系统的Gibbs自由能何时达到最小值.
+\begin{derivation}
+    等温等压下,系统的Gibbs自由能$G$只与$\xi$有关,可以作图如下.
+    \begin{tightcenter}
+        \input{picture/G-xi.tex}
+    \end{tightcenter}
+    当$\pa G\xi{T,p}<0$时,$G$随$\xi$的增大而减小,系统自发地向$\xi$增大的方向变化,这时有$\mu_B<\mu_A$.\\
+    当$\pa G\xi{T,p}<0$时,$G$随$\xi$的增大而增大,系统自发地向$\xi$减小的方向变化,这时有$\mu_B>\mu_A$.\\
+    当$\pa G\xi{T,p}=0$时,$G$达到最小值,即系统达到平衡,这时有$\mu_B=\mu_A$.
+\end{derivation}
+这和我们在相平衡用到的判据是一致的,只不过把达成平衡的两相改成达成平衡的两种物质.\vspace{4pt}\\
+\Part{理想气体混合物的平衡}
+\indent 如果我们知道体系中各种物质的化学势的表达式,就可以得出平衡的条件.%
+现在我们从最简单的情况,假定$A$和$B$都是理想气体开始.
+\begin{derivation}\setcounter{equation}{0}
+    我们已经知道理想气体混合物的化学势
+    \begin{equation}
+        \mu_{i}=\mu_i^\ominus(T)+RT\ln\dfrac{p_i}{p^\ominus}
+    \end{equation}
+    我们需要根据$\mu_B-\mu_A$的值判断反应是否平衡(或者自发地向哪个方向移动).将(1)代入,则有
+    \begin{equation}
+        \begin{aligned}
+            \mu_B-\mu_A
+            &= \left(\mu_B^\ominus(T)+RT\ln\dfrac{p_B}{p^\ominus}\right)-\left(\mu_A^\ominus(T)+RT\ln\dfrac{p_A}{p^\ominus}\right) \\
+            &= \left(\mu_B^\ominus(T)-\mu_A^\ominus(T)\right)+RT\ln\dfrac{p_B}{p_A}
+        \end{aligned}
+    \end{equation}
+
+    我们知道$\mu_i^\ominus(T)$实际上就是纯的$i$在压力为$p^\ominus$时的摩尔Gibbs自由能,于是可以将(2)改写为
+    \begin{equation}
+        \Delta_\r G_\m=\left(G_{\m,B}^\ominus(T)-G_{\m,A}^\ominus(T)\right)+RT\ln\dfrac{p_B}{p_A}
+    \end{equation}
+    现在,我们把$G_{\m,B}^\ominus(T)-G_{\m,A}^\ominus(T)$记为$\Delta_\r G_\m^\ominus$,这就是我们接下来要定义的\tbf{标准反应Gibbs自由能变};%
+    把分压之比$\dfrac{p_B}{p_A}$记为$Q$,这就是我们接下来将要定义的\tbf{反应商}.当$\Delta_\r G_\m=0$时,反应达到平衡,%
+    又因为$G_{\m,A}^\ominus(T)$和$G_{\m,B}^\ominus(T)$在等温条件下都是常数,因此平衡时的$Q$满足
+    \[Q=\exp\left(-\dfrac{\Delta_\r G_\m}{RT}\right)\]
+    在等温条件下也是常数,这就是我们接下来要定义的\tbf{平衡常数}.
+\end{derivation}
+\Part{标准反应Gibbs自由能变}
+\indent 在前面的推导中首先出现了一个量,即纯的$i$在压力为$p^\ominus$时的摩尔Gibbs自由能$G_{\m,i}^\ominus(T)$.%
+与焓相同,我们无法确定$G_{\m,i}^\ominus$的绝对数值.但因为我们只需知道$G_{\m,i}^\ominus$的差值,%
+因此我们可以采用与定义标准焓变相似的办法定义一个类似的量,即标准反应Gibbs自由能变.%
+\begin{definition}[5B.1.3 标准反应Gibbs自由能变]
+    由标准态的反应物完全转变为标准态的产物这一过程的Gibbs自由能的变化即为\tbf{标准反应Gibbs自由能变}.%
+    如果令$\xi=1\mol$,则这一过程的焓变即为\tbf{标准摩尔(反应)Gibbs自由能变},记为$\Delta_\r G_\m^\ominus$.
+\end{definition}
+这样,对于反应\ce{A <=> B}就有
+\[\Delta_\r G_{\m}^\ominus=G_{\m,A}^\ominus(T)-G_{\m,B}^\ominus(T)\]
+\indent 可以看出,标准反应Gibbs自由能变(\tbf{5B.1.3})与反应Gibbs自由能变(\tbf{5B.1.1})的定义完全不同.%
+前者强调完全转化(因此也是假想的情况),是处于标准态的所有产物与反应物的Gibbs自由能之差(或者更准确地说是它们的化学势之差);%
+后者则是一个微分量,与系统的组成相关,并且当$\Delta_\r G=0$时系统就达到平衡.\\
+\indent 由于Gibbs自由能也是状态函数,因此Hess定律对它仍然适用.于是为了方便计算所有反应的$\Delta_\r G_{\m}^\ominus$,%
+我们可以定义各物质的标准生成Gibbs自由能.
+\begin{definition}[5B.1.4 标准生成Gibbs自由能]
+    在标准压力下和给定的温度$T$下,由稳定单质生成物质\ce{X}的标准摩尔Gibbs自由能变即\ce{X}的\tbf{标准摩尔生成Gibbs自由能},%
+    用符号$\Delta_\f G_\m^\ominus(\text{X,物态,}T)$表示.
+\end{definition}
+这样,就可以通过标准生成Gibbs自由能来推算各个反应的标准反应Gibbs自由能变.\vspace{4pt}\\
+\Part{反应商与平衡常数}
+\indent 前面我们已经知道了理想气体混合物的化学平衡存在平衡常数.%
+那么,是否所有化学反应都如此呢?答案是肯定的.
+\begin{derivation}\setcounter{equation}{0}
+    我们考虑一个具有$k$种物质系统,并假定它们由一个化学反应联系.\\
+    在等温等压下,系统的Gibbs自由能的微分为
+    \begin{equation}
+        \di G=\sum_{i=1}^{k}\mu_i\di n_i=\sum_{i=1}^{k}\mu_i\left(\nu_i\di\xi\right)=\left(\sum_{i=1}^{k}\nu_i\mu_i\right)\di\xi
+    \end{equation}
+    于是
+    \begin{equation}
+        \Delta_\r G_\m=\pa G\xi{T,p}=\sum_{i=1}^{k}\nu_i\mu_i
+    \end{equation}
+    根据\tbf{4B.4.1},理想气体混合物中各组分的化学势
+    \begin{equation}
+        \mu_i=\mu_i^\ominus+RT\ln\dfrac{p_i}{p^\ominus}
+    \end{equation}
+    根据\tbf{4B.4.2},实际气体混合物中各组分的化学势
+    \begin{equation}
+        \mu_i=\mu_i^\ominus+RT\ln\dfrac{f_i}{p^\ominus}
+    \end{equation}
+    根据\tbf{4C.1.2}和\tbf{4C.1.5},理想溶液和理想稀溶液中各组分的化学势
+    \begin{equation}
+        \mu_i=\mu_i^\ominus+RT\ln x_i
+    \end{equation}
+    需要注意的是$\mu_i^\ominus$可能因为选取的标准态满足Henry定律还是满足Raoult定律而有所不同.\\
+    根据\tbf{4C.6.1},非理想溶液中各组分的化学势
+    \begin{equation}
+        \mu_i=\mu_i^\ominus+RT\ln a_i
+    \end{equation}
+    观察上述所有化学势的计算公式,我们都可以把它们写作
+    \begin{equation}
+        \mu_i=\mu_i^\ominus+RT\ln a_i
+    \end{equation}
+    其中$a_i$即为组分$i$(广义的)活度.将(7)代入(2)就有
+    \begin{equation}
+        \begin{aligned}
+            \Delta_\r G_\m
+            &= \sum_{i=1}^k\nu_i\mu_i = \sum_{i=1}^k\nu_i\mu_i^\ominus+RT\sum_{i=1}^k\left(\nu_i\ln a_i\right) \\
+            &= \Delta_\r G_\m^\ominus+RT\ln\left(\prod_{i=1}^k a_i^{\nu_i}\right)
+        \end{aligned}
+    \end{equation}
+    前面一项即为标准反应Gibbs自由能变的定义.现在,定义后面括号内的一项为\tbf{反应商}$Q$.%
+    由于反应物的计量系数为负数,因此它们的活度将自然地出现在分母上,而产物的活度将出现在分子上.于是可以将(8)改写为
+    \begin{equation}
+        \Delta_\r G_\m=\Delta_\r G_\m^\ominus+RT\ln Q
+    \end{equation}
+    当$\Delta_\r G_\m=0$时反应达到平衡,记此时的反应商$Q$为\tbf{标准平衡常数}$K^\ominus$,于是平衡时就有
+    \begin{equation}
+        \prod_{i=1}^k a_i^{\nu_i}=K^\ominus=\exp\left(-\dfrac{\Delta_\r G_\m^\ominus}{RT}\right)
+    \end{equation}
+    亦即
+    \begin{equation}
+        \Delta_\r G_\m^\ominus=-RT\ln K^\ominus
+    \end{equation}
+    一般来说,出现在(7)式中的活度$a_i$和标准态时的$\mu_i^\ominus$将按照如下方式进行替换.
+    \begin{enumerate}[label=\tbf{\alph*.}]
+        \item 对于气相物质,活度$a_i=\dfrac{f_i}{p^\ominus}$,其中$f_i$为组分$i$的逸度.\\
+            一般而言,我们总是近似地假定气相为理想气体混合物,这样就有$a_i=\dfrac{p_i}{p^\ominus}$.\\
+            选取的标准态即为纯的气体$i$在指定温度$T$和标准压力$p^\ominus$下的状态.
+        \item 对于溶液(不管是液相还是固相),我们一般讨论稀溶液的溶质,并有$a_i=\dfrac{a_{i,c}}{c^\ominus}$.\\
+            如果假定溶液是理想的,就有$a_i=\dfrac{c_i}{c^\ominus}$,其中$c_i$为$i$的物质的量浓度,$c^\ominus=1\mol\cdot\text L^{-1}$.\\
+            选取的标准态即为物质的量活度$a_{i,c}=1\mol\cdot\text L^{-1}$(非理想情况)或浓度$c_i=1\mol\cdot\text L^{-1}$(理想情况).
+        \item 对于纯的液相或固相,化学势不变,其活度就恒定为$1$,标准态即为纯的液相或固相.\\
+            一般的稀溶液的溶剂(例如水溶液中的水)$x_\s$几乎恒定为$1$,根据Raoult定律
+            \[\mu_\s=\mu_\s^\ast+RT\ln x_\s\]
+            其化学势变化很小且几乎与纯态一致,%
+            因此这时也可以将溶剂视为纯液相,活度恒定为$1$,标准态即为纯溶剂.
+    \end{enumerate}
+    这样,所有的活度的量纲\footnotemark 为$1$,因而平衡常数$K^\ominus$的量纲也为$1$.
+\end{derivation}\footnotetext{通俗地说,物理量的量纲就是它的单位.}
+现在我们可以说,任意的反应都存在反应商和平衡常数.
+\begin{definition}[5B.1.5 反应商与平衡常数]
+    对于一个化学反应,其\tbf{反应商}$Q$定义为
+    \[Q=\prod_{i=1}^k a_i^{\nu_i}\]
+    其中$\nu_i$为物质$i$的化学计量数,$a_i$为选定标准态后的活度.\\
+    \tbf{标准平衡常数}$K^\ominus$(亦称为\tbf{热力学平衡常数})定义为反应平衡(即$\Delta_\r G_\m=0$)时的反应商,满足
+    \[\Delta_\r G_\m^\ominus=-RT\ln K^\ominus\]
+
+\end{definition}
+需要注意,如果选定的标准态不同,那么活度和标准反应Gibbs自由能都会发生变化.\\
+\indent 上述定义中的最后一个式子是非常重要的,它将处于标准态的各物质与平衡时的体系联系在了一起,%
+成为沟通理想和现实的桥梁.从今往后,只要知道反应在某一温度下的$\Delta_\r G_\m^\ominus$,我们就能知道该温度下%
+的平衡常数,进而方便地计算平衡时系统的组成.\vspace{4pt}\\
+\Part{由反应焓变和熵变求算反应Gibbs自由能变}
+\indent Gibbs自由能$G$是难以测定的状态函数,因而反应的$\Delta_\r G_\m^\ominus$也是难以直接测定的.%
+因此,我们需要考虑以容易测定的量来计算$\Delta_\r G_\m^\ominus$.
+\begin{derivation}
+    在恒定温度$T$下,首先有
+    \[\Delta_\r G_\m^\ominus=\sum_{i=1}^{k}\nu_i\mu_i^\ominus=\sum_{i=1}^{k}\nu_i G_{\m,i}^\ominus\]
+    又根据Gibbs自由能的定义
+    \[G_{\m,i}^\ominus=H_{\m,i}^\ominus-TS_{\m,i}^\ominus\]
+    其中$H_{\m,i}^\ominus$和$S_{\m,i}^\ominus$分别为纯的$i$在标准态下的摩尔焓和摩尔熵.\\
+    采取我们在\tbf{3D.3.3}中已经给出的物质的规定熵作为其标准摩尔熵,代入上式就有
+    于是我们就有
+    \[\Delta_\r G_{\m}^\ominus
+    =\sum_{i=1}^{k}\nu_i G_{\m,i}^\ominus
+    =\sum_{i=1}^k\nu_i\left(H_{\m,i}^\ominus-TS_{\m,i}^\ominus\right)
+    =\Delta_\r H_{\m}^\ominus-T\Delta_\r S_{\m}^\ominus\]
+    其中$\Delta_\r H_{\m}^\ominus$和$\Delta_\r S_{\m}^\ominus$分别为反应的标准摩尔焓变和标准摩尔熵变.
+\end{derivation}
+\begin{theorem}[5B.1.6 由$\Delta_\r H_{\m}^\ominus$和$\Delta_\r S_{\m}^\ominus$求算$\Delta_\r G_{\m}^\ominus$]
+    我们有
+    \[\Delta_\r G_{\m}^\ominus=\Delta_\r H_{\m}^\ominus-T\Delta_\r S_{\m}^\ominus\]
+    这样就可以由反应的标准摩尔焓变和熵变求算标准摩尔Gibbs自由能变.需要注意的是,所使用的数据要求温度为$T$.%
+\end{theorem}
+我们将在下一节讨论温度对$\Delta_\r G_\m^\ominus$的影响.\vspace{12pt}\\
+\Section{5B.2 条件对化学平衡的影响}
+\Part{Le Chatelier原理\footnote{音译为“勒夏特列”,这就是我们所熟知的勒夏特列原理.}}
+\indent 除了Hess定律之外,我们在普通化学中学到的另一个重要的经验定律就是Le Chatelier原理.%
+\begin{theorem}[5B.2.1 Le Chatelier原理]
+    化学平衡是动态平衡,如果改变影响平衡的一个因素,平衡就向能够减弱(或消除)这种改变的方向移动,以抗衡该改变.
+\end{theorem}
+需要注意的是,如果反应体系的多个条件同时发生了改变,Le Chatelier原理可能失效.\\
+\indent 如果你学习过楞次定律,就会发现它们实际上都是负反馈调节的经典的例子%
+\footnote{笔者曾经读过一篇名为《勒夏特列原理与老庄思想》的文章,其中提到了《道德经》中“反者,道之动”与该原理的相似性.}.%
+我们将在接下来的几小节中用严谨的推导说明这一原理的正确性,并定量地衡量条件变化对化学平衡的影响.\vspace{4pt}\\
+\Part{温度对化学平衡的影响——van't Hoff公式}
+\indent 温度对化学平衡的影响是很常见的.恒压条件下装有\ce{N2O4}的容器,随着温度升高其颜色会变浅;%
+抽成真空的容器放入\ce{CaCO3},容器内气体的压力随着温度升高而增大,等等.究其原因,是因为各物质的标准摩尔Gibbs自由能会随温度变化而变化.%
+现在我们来具体推导温度对平衡的影响.
+\begin{derivation}\setcounter{equation}{0}
+    根据\tbf{3F.2.7}(或\tbf{4B.3.3}),纯物质$i$的标准摩尔Gibbs自由能满足
+    \begin{equation}
+        \left[\dfrac{\p}{\p T}\left(\dfrac{G_{\m,i}^\ominus}{T}\right)\right]_{p}=-\dfrac{H_{\m,i}^\ominus}{T^2}
+    \end{equation}
+    又因为
+    \begin{equation}
+        \Delta_\r G_\m^\ominus=\sum_{i=1}^{k}\nu_i G_{\m,i}^\ominus
+    \end{equation}
+    将(2)代入(1)中有
+    \begin{equation}
+        \begin{aligned}
+            \left[\dfrac{\p}{\p T}\left(\dfrac{\Delta_\r G_\m^\ominus}{T}\right)\right]_{p}
+            &= \left[\dfrac{\p}{\p T}\left(\dfrac{1}{T}\sum_{i=1}^{k}\nu_i G_{\m,i}^\ominus\right)\right]_{p} = \sum_{i=1}^{k}\nu_i\left[\dfrac{\p}{\p T}\left(\dfrac{G_{\m,i}^\ominus}{T}\right)\right]_{p} \\
+            &= \sum_{i=1}^{k}\nu_i\left(-\dfrac{H_{\m,i}^\ominus}{T^2}\right) = -\dfrac{\Delta_\r H_{\m}^\ominus}{T^2}
+        \end{aligned}
+    \end{equation}
+    又因为标准平衡常数$K^\ominus$满足
+    \begin{equation}
+        \Delta_\r G_\m^\ominus=-RT\ln K^\ominus
+    \end{equation}
+    将(4)代入(3)中有
+    \begin{equation}
+        \pa{\ln K^\ominus}{T}{p}=\dfrac{\Delta_{\r}H_{\m}^\ominus}{RT^2}
+    \end{equation}
+    这就是van't Hoff公式.\\
+    将此式在等压条件下移项积分就有
+    \begin{equation}
+        \ln\dfrac{K^\ominus\left(T_2\right)}{K^\ominus\left(T_1\right)}
+        =\int_{T_1}^{T_2}\dfrac{\Delta_{\r}H_{\m}^\ominus}{RT^2}\di T
+    \end{equation}
+    或其不定积分形式
+    \begin{equation}
+        \ln K^\ominus(T)=\int\dfrac{\Delta_\r H_\m^\ominus}{RT^2}+I
+    \end{equation}
+    积分常数可以由给定的数据求得(例如给出的$298.15$ K下的各标准数据).\\
+    如果假定反应的标准摩尔焓变$\Delta_{\r}H_{\m}^\ominus$随温度变化不大,就有
+    \begin{equation}
+        \ln\dfrac{K^\ominus\left(T_2\right)}{K^\ominus\left(T_1\right)}
+        =\dfrac{\Delta_\r H_\m^\ominus}{R}\left(\dfrac{1}{T_1}-\dfrac{1}{T_2}\right)
+    \end{equation}
+    你可以发现此式与Clausius-Clapeyron方程是极其相似的.事实上.如果你愿意的话,可以把所有相平衡都当作化学平衡处理,%
+    这在物理上是等价的.\\
+    如果已知反应的标准等压热容变化$\Delta C_{p,\m}$,根据\tbf{5A.3.1}Kirchhoff定律
+    \begin{equation}
+        \Delta_\r H_\m^\ominus(T)=\Delta_\r H_\m^\ominus\left(T_0\right)+\int_{T_0}^{T}\Delta C_{p,\m}\di T
+    \end{equation}就有
+    不妨对$\Delta C_{p,\m}$做Taylor展开(一般展开两到三项即可满足精度需求),就有
+    \begin{equation}
+        \Delta C_{p,\m}=a+bT+cT^2+\cdots
+    \end{equation}
+    然后将(10)代入(9)并写成不定积分形式,就有
+    \begin{equation}
+        \Delta_\r H_\m^\ominus(T)=\Delta H_0+\int\Delta C_{p,\m}\di T=\Delta H_0+aT+\dfrac12bT^2+\dfrac13cT^3+\cdots
+    \end{equation}
+    理论上,(11)式中的积分常数$\Delta H_0$为该反应在$0$ K时的标准焓变,不过在温度接近近绝对零度时(10)的Taylor展开将失效,因此最好只把它当作一个常数,不去深究其物理意义.%
+    这一常数亦可以通过给定温度下的标准焓变得出.\\
+    由此,我们将(11)代入(7)可得
+    \begin{equation}
+        \begin{aligned}
+            \ln K^\ominus(T)
+            &= \int\dfrac{\Delta_\r H_\m^\ominus}{RT^2}+I \\
+            &= \int\dfrac{1}{RT^2}\left(\Delta H_0+aT+\dfrac12bT^2+\dfrac13cT^3+\cdots\right)\di T+I \\
+            &= \dfrac{1}{R}\left(-\dfrac{\Delta H_0}{T}+a\ln T+\dfrac12 bT+\dfrac16cT^2+\cdots\right)+I
+        \end{aligned}
+    \end{equation}
+    这样,只需要知道某一给定温度$T_0$下反应的标准平衡常数$K^\ominus\left(T_0\right)$和标准焓变%
+    $\Delta_\r H_\m^\ominus\left(T_0\right)$就可以根据(7)式求出积分常数$I$,%
+    再由$\Delta C_{p}$对$T$的级数展开式和$\Delta_\r H_\m^\ominus\left(T_0\right)$%
+    就可以根据(11)求得另一积分常数$\Delta H_0$,进而根据(12)式求出任意温度$T$下反应的标准平衡常数.
+\end{derivation}
+\begin{theorem}[5B.2.2 van't Hoff公式]
+    等压条件下有
+    \[\pa{\ln K^\ominus}{T}{p}=\dfrac{\Delta_{\r}H_{\m}^\ominus}{RT^2}\]
+    van't Hoff公式的积分形式和各种近似计算的方式已经在前面的推导中给出.
+\end{theorem}
+\end{document}

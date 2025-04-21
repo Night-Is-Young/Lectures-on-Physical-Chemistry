@@ -142,10 +142,10 @@ Gibbs自由能$G$减小的方向进行,直到系统平衡为止.这一原理自�
     一般来说,出现在(7)式中的活度$a_i$和标准态时的$\mu_i^\ominus$将按照如下方式进行替换.
     \begin{enumerate}[label=\tbf{\alph*.}]
         \item 对于气相物质,活度$a_i=\dfrac{f_i}{p^\ominus}$,其中$f_i$为组分$i$的逸度.\\
-            一般而言,我们总是近似地假定气相为理想气体混合物,这样就有$a_i=\dfrac{p_i}{p^\ominus}$.\\
+            一般而言,我们总是近似地\tbf{假定气相为理想气体混合物},这样就有$a_i=\dfrac{p_i}{p^\ominus}$.\\
             选取的标准态即为纯的气体$i$在指定温度$T$和标准压力$p^\ominus$下的状态.
         \item 对于溶液(不管是液相还是固相),我们一般讨论稀溶液的溶质,并有$a_i=\dfrac{a_{i,c}}{c^\ominus}$.\\
-            如果假定溶液是理想的,就有$a_i=\dfrac{c_i}{c^\ominus}$,其中$c_i$为$i$的物质的量浓度,$c^\ominus=1\mol\cdot\text L^{-1}$.\\
+            如果\tbf{假定溶液是理想的},就有$a_i=\dfrac{c_i}{c^\ominus}$,其中$c_i$为$i$的物质的量浓度,$c^\ominus=1\mol\cdot\text L^{-1}$.\\
             选取的标准态即为物质的量活度$a_{i,c}=1\mol\cdot\text L^{-1}$(非理想情况)或浓度$c_i=1\mol\cdot\text L^{-1}$(理想情况).
         \item 对于纯的液相或固相,化学势不变,其活度就恒定为$1$,标准态即为纯的液相或固相.\\
             一般的稀溶液的溶剂(例如水溶液中的水)$x_\s$几乎恒定为$1$,根据Raoult定律
@@ -153,6 +153,7 @@ Gibbs自由能$G$减小的方向进行,直到系统平衡为止.这一原理自�
             其化学势变化很小且几乎与纯态一致,%
             因此这时也可以将溶剂视为纯液相,活度恒定为$1$,标准态即为纯溶剂.
     \end{enumerate}
+    事实上,为了方便考虑,在无特殊说明的情况下总是假定我们的反应体系是理想混合物(气相为理想气体混合物,溶液相为理想溶液或理想稀溶液).\\
     这样,所有的活度的量纲\footnotemark 为$1$,因而平衡常数$K^\ominus$的量纲也为$1$.
 \end{derivation}\footnotetext{通俗地说,物理量的量纲就是它的单位.}
 现在我们可以说,任意的反应都存在反应商和平衡常数.
@@ -281,4 +282,42 @@ Gibbs自由能$G$减小的方向进行,直到系统平衡为止.这一原理自�
     \[\pa{\ln K^\ominus}{T}{p}=\dfrac{\Delta_{\r}H_{\m}^\ominus}{RT^2}\]
     van't Hoff公式的积分形式和各种近似计算的方式已经在前面的推导中给出.
 \end{theorem}
+如果将$\Delta_\r H_\m^\ominus$视作常数,就可以得出以下经验定律.
+\begin{theorem}[5B.2.3 温度对平衡的影响]
+    如果一个反应是放热反应(即$\Delta_\r H_\m^\ominus<0$),那么温度升高会使得$K^\ominus$减小,平衡逆向移动.\\
+    如果一个反应是吸热反应(即$\Delta_\r H_\m^\ominus>0$),那么温度升高会使得$K^\ominus$增大,平衡正向移动.
+\end{theorem}
+这里的逆向或正向移动对应$\di\xi<0$或$\di\xi>0$.这是符合Le Chatelier原理的,即温度升高会使得平衡向吸热的方向移动,%
+以期阻止温度升高带来的影响.\vspace{4pt}\\
+\Part{压力对化学平衡的影响}
+\indent 尽管标准平衡常数$K^\ominus$与压力$p$无关,但在特定的系统中以特定的手段改变压力$p$仍然会导致平衡移动.%
+我们从最简单的改变压力的方式,即等温压缩体积开始.
+\begin{derivation}\setcounter{equation}{0}
+    设系统的总压力为$p$,组分$i$的摩尔分数$x_i=\dfrac{p_i}{p}$.\\
+    于是有
+    \begin{equation}
+        K^\ominus=\prod_{i=1}^{k}\left(\dfrac{p_i}{p^\ominus}\right)^{\nu_i}
+        =\prod_{i=1}^{k}x_i^{\nu_i}\cdot\left(\dfrac{p}{p^\ominus}\right)^{\sum_{i=1}^{k}\nu_i}
+    \end{equation}
+    如果我们令$K_x=\displaystyle\prod_{i=1}^{k}x_i^{\nu_i}$,就有
+    \begin{equation}
+        \ln K^\ominus=\ln K_x+\dfrac{p}{p^\ominus}\sum_{i=1}^{k}\nu_i
+    \end{equation}
+    在恒定温度下,$K^\ominus$是常数.将(2)式对$p$求偏微分可得
+    \begin{equation}
+        \pa{\ln K_x}{p}{T}=-\dfrac{1}{p}\sum_{i=1}^{k}\nu_i
+    \end{equation}
+    考虑到各组分都是理想气体,因此
+    \begin{equation}
+        \Delta_{\r}V_\m=\sum_{i=1}^{k}\nu_i V_{\m,i}=\dfrac{RT}{p}\sum_{i=1}^{k}\nu_i
+    \end{equation}
+    代入(3)式可得
+    \begin{equation}
+        \pa{\ln K_x}{p}{T}=-\dfrac{\Delta_\r V_{\m}}{RT}
+    \end{equation}
+    通过$K_x$可以相对地衡量体系的组成.从(5)可以看出,%
+    如果$\Delta_\r V_\m<0$,则$K_x$随$p$的增大而增大,反之则$K_x$随$p$的增大而减小.\\
+    总结地说,压力增大会使得平衡向体积减小的方向移动.
+\end{derivation}
+
 \end{document}

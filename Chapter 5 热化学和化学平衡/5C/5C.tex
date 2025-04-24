@@ -3,10 +3,59 @@
 
 \begin{document}\pagestyle{plain}
 \noindent\tbf{\LARGE 5C 化学平衡的应用}\vspace{15pt}\\
-\indent 尽管化学平衡在理论上不过是化学势的简单应用,但它在实验与工业过程中的广泛应用%
+\indent 尽管化学平衡在理论上不过是化学势的简单推论,但它在实验与工业过程中的广泛应用%
 以及由此衍生的诸多问题却构成了物理化学中的一块重要的内容.%
-如何使用除了标准平衡常数以外的其它经验平衡常数,如何处理更为复杂的体系中的平衡,%
-如何对系统做合理的近似$\cdots$都是我们需要在本节探讨的问题.\vspace{12pt}\\
+如何使用除了标准平衡常数以外的其它经验平衡常数,如何用标准Gibbs自由能变粗略判断反应的可行性$\cdots$都是我们需要在本节探讨的问题.\vspace{12pt}\\
 \Section{5C.1 经验平衡常数}
-\indent 我们
+\indent 标准平衡常数是精确的,但由于实际上我们一般测量的是溶液中组分的浓度或气相混合物中气体的分压,%
+由此也引出了各类经验平衡常数.\\
+\indent 首先考虑气相反应.我们尝试将$K^\ominus$中的标准项分离以得到以各组分压力$p_i$表示的平衡常数.
+\begin{derivation}
+    我们有
+    \[K^\ominus = \prod_{i=1}^k \left(\dfrac{f_i}{p^\ominus}\right)^{\nu_i}\]
+    其中$f_i$为平衡时各组分的逸度.将$p^\ominus$项分离,就有
+    \[K^\ominus\left(p^\ominus\right)^{\sum\nu_i}=\prod_{i=1}^{k}f_i^{\nu_i}\]
+    其中上标中的求和项省略了从$i=1$到$i=k$.\\
+    鉴于逸度难以直接测量,因此我们将逸度$f_i$改写为分压与逸度系数之积$f_i=\gamma_ip_i$.这样就有
+    \[K^\ominus\left(p^\ominus\right)^{\sum\nu_i}=\prod_{i=1}^{k}\gamma_i^{\nu_i}\cdot\prod_{i=1}^{k}p_i^{\nu_i}\]
+    令$K_\gamma=\displaystyle\prod_{i=1}^{k}\gamma_i^{\nu_i}$,$K_p=\displaystyle\prod_{i=1}^{k}p_i^{\nu_i}$,就有
+    \[K^\ominus\left(p^\ominus\right)^{\sum\nu_i}=K_\gamma K_p\]
+    活度系数必须在系统的组成给定时才能知道,这可能引起复杂的计算,因为我们在计算前并不知道系统的平衡组成.%
+    在实际应用中,我们常常假定各组分的活度系数$\gamma_i=1$,从而$K_\gamma=1$,然后由此开始进行迭代计算.\\
+    鉴于这样带来的困难,在基础的应用中(你遇见的绝大部分问题都属于此范畴)我们总是假定$K_\gamma=1$,即各组分组成的混合物为理想气体混合物,从而就有
+    \[K^\ominus\left(p^\ominus\right)^{\sum\nu_i}=K_p\]
+
+\end{derivation}
+\begin{definition}[5C.1.1 压力平衡常数$K_p$]
+    在平衡时,气相混合物中各物种以分压计的平衡常数
+    \[K_p=\prod_{i=1}^{k}p_i^{\nu_i}\]
+    称为\tbf{压力平衡常数}.如果忽略活度的影响,就有
+    \[K_p=K^\ominus\left(p^\ominus\right)^{\sum\nu_i}\]
+    当$\displaystyle\sum_{i=1}^{k}\nu_i\neq0$时,$K_p$的量纲就不再为$1$,而是压力单位的指数(或负指数).
+\end{definition}
+同样地,对于溶液中的反应(事实上对气相反应也成立),我们也可以给出浓度平衡常数$K_c$.
+\begin{definition}[5C.1.2 浓度平衡常数$K_c$]
+    在平衡时,溶液中各物种以分压计的平衡常数
+    \[K_p=\prod_{i=1}^{k}c_i^{\nu_i}\]
+    称为\tbf{浓度平衡常数}.如果忽略活度的影响,就有
+    \[K_c=K^\ominus\left(c^\ominus\right)^{\sum\nu_i}\]
+    当$\displaystyle\sum_{i=1}^{k}\nu_i\neq0$时,$K_c$的量纲就不再为$1$,而是浓度单位的指数(或负指数).
+\end{definition}
+我们在\tbf{5B.2.5}的推导中定义了以摩尔分数表示的“平衡常数”$K_x$.%
+由于我们已经知道在改变压强时$K_x$就会变化,因此它不是真正意义上的常数.\vspace{12pt}\\
+\Section{5C.2 估计反应进行的方向}
+\Part{估计反应进行的有利温度}
+\indent 系统的Gibbs自由能$G$可以看作由$H$和$TS$两项构成.由于$G=H-TS$,%
+因此焓的减少(即放热)和熵的增加(即混乱度增大)都有利于$G$的减小,从而使得反应能自发进行的程度更大.\\
+\indent 对于$\Delta_\r H_\m^\ominus<0$和$\Delta_\r S_{\m}^\ominus>0$符号相同的反应,焓变和熵变对于$\Delta_\r G_\m^\ominus$的影响恰好相反.%
+这时,反应的进行方向就取决于温度.定性地来说,如果反应吸热且熵增,那么高温对反应有利;如果反应放热且熵减,那么低温对反应有利.\\
+\indent 为了知道这两类反应在怎样的温度范围内进行时比较合适,我们引入\tbf{转折温度}这一概念.
+\begin{definition}[5C.2.1 转折温度]
+    对于$\Delta_\r H_\m^\ominus<0$和$\Delta_\r S_{\m}^\ominus>0$符号相同的反应,转折温度$T$定义为$\Delta_\r G_\m^\ominus=0$时的温度.%
+    如果忽略温度对$\Delta_\r H_\m^\ominus$的影响,就有
+    \[T=\dfrac{\Delta_\r H_\m^\ominus}{\Delta_\r S_\m^\ominus}\]
+
+\end{definition}
+选取$\Delta_\r G_\m^\ominus=0$即使得$K^\ominus=1$,这(大体上)能表明正反应和负反应进行的程度近似相同.%
+对于吸热反应,高于转折温度时正反应有利;对于放热反应,低于转折温度时反应有利.
 \end{document}

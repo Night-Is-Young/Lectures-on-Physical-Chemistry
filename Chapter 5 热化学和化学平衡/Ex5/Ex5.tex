@@ -1,0 +1,426 @@
+\documentclass{ctexart}
+\usepackage{PhysicalChemistryNote}
+
+\begin{document}\pagestyle{plain}
+\noindent\tbf{\LARGE Ex5 习题}\vspace{15pt}\\
+\indent 在开始本章的习题之前,应当说明的是本章的习题应该是这几章以来最多的.%
+掌握热力学与平衡计算对你的化学无疑十分重要,因此笔者希望这些习题能为你带来启发.
+\newcounter{Pcounter}
+\setcounter{Pcounter}{0}
+\stepcounter{Pcounter}
+\begin{problem}[P.5.\arabic{Pcounter}]
+    在恒定压力为$p^\ominus$和$298.15\K$时将\ce{CH4(g)}与理论量的空气($n\left(\ce{N2}\right):n\left(\ce{O2}\right)=4:1$)混合后点燃.求火焰能达到的最高温度.%
+    各物质(均为气体)的热力学数据如下:
+    \vspace{-5pt}\begin{table}[H]\centering
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        物质&$\Delta_\f H_\m^\ominus/\left(\text{kJ}\cdot\text{mol}^{-1}\right)$&%
+        物质&$a/\left(\text{J}\cdot\text{mol}^{-1}\cdot\text{K}^{-1}\right)$&%
+        $b/\left(10^{-3}\text{J}\cdot\text{mol}^{-1}\cdot\text{K}^{-2}\right)$    \\ \hline
+        \ce{CO2} & $-393.51$ & \ce{CO2} & $44.22$ & $8.79$ \\ \hline
+        \ce{H2O} & $-241.82$ & \ce{H2O} & $30.00$ & $10.7$ \\ \hline
+        \ce{CH4} & $-74.6$   & \ce{N2} & $28.58$ & $3.77$ \\ \hline
+        \end{tabular}
+    \end{table}\vspace{-15pt} 
+    其中$a,b$为定压摩尔热容$C_{p,\m}$的级数展开的前两项,有$C_{p,\m}=a+bT$.
+\end{problem}
+\begin{solution}
+    在开始求解之前,我们需要说明一点:求火焰能达到的最高温度等价于求恒压绝热反应体系能达到的最高温度.%
+    因为物质燃烧是迅速的,完成反应后其热量来不及与外界交换,因而体系可以近似地看作绝热的.如果是在密闭容器内进行的爆炸过程,应当采取定容热容和反应的内能变进行计算.\\
+    现在我们来考虑该体系.不妨假定发生反应之前$n(\ce{CH4})=1\mol$(这里系统的规模与火焰温度无关,因此我们可以任意地指定一个值以方便计算),发生反应
+    \[\ce{CH4 + 2O2 -> CO2 + 2H2O}\]
+    因此反应前$n(\ce{O2})=2\mol,n(\ce{N2})=8\mol$.先假定系统在恒温下反应,该过程的焓变
+    \[\begin{aligned}
+        \Delta_\r H_1
+        &= \sum_i n_i\Delta_\f H_{\m,i}^\ominus \\
+        &= 1\cdot\left((-393.51)+2\times(-241.82)-(-74.6)+0\right)\kJm \\
+        &= -802.55\kJm
+    \end{aligned}\]
+    反应后,系统的组成为$1\mol$ \ce{CO2},$2\mol$ \ce{H2O},$8\mol$ \ce{N2}.系统的定压热容为
+    \[\begin{aligned}
+        C_{p,\text{tot}}
+        &= \sum_in_iC_{p,\m,i} \\
+        &= \left[(44.22+2\times30.00+8\times28.58)+(8.79+2\times10.7+8\times3.77)\times10^{-3}\right]\text{J}\cdot\text K^{-1} \\
+        &= \left(332.86+60.35\times10^{-3}T\right)\text{J}\cdot\text K^{-1}
+    \end{aligned}\]
+    假定最终系统的温度为$T_1\K$,那么升温过程的焓变
+    \[\begin{aligned}
+        \Delta H_2
+        &= \int_{298.15\K}^{T_1\K}C_{p,\text{tot}}\di T \\
+        &= \int_{298.15\K}^{T_1\K}\left(332.86+60.35\times10^{-3}T\right)\di T \\
+        &= \left(-101924.57+332.86T_1+30.18T_1^2\right)\text J
+    \end{aligned}\]
+    由于该过程是等压绝热过程,因此$\Delta H_{\text{tot}}=Q_p=0$,于是$\Delta_\r H_1+\Delta H_2=0$.于是
+    \[\left(-101924.57+332.86T_1+30.18T_1^2\right)\text J=-802.55\text{ kJ}\]
+    解得$T_1=2256$.于是火焰温度最高为$2256\K$.
+\end{solution}
+\begin{hint}
+    解答此类题目,首先需要考虑是等压绝热过程还是等容绝热过程.两者的反应热和热容都有所不同,需要予以区分.%
+    一般来说,燃烧反应总是进行得很完全,因此不用考虑反应物的剩余.\\
+    此外,体系的升温需要考虑到所有产物和不参与反应的物质,而后者十分容易忘记.%
+    例如上题中的\ce{N2},虽然不反应,但是最终温度也升高,计算总热容时需要一并考虑在内.
+\end{hint}
+\stepcounter{Pcounter}
+\begin{problem}[P.5.\arabic{Pcounter}]
+    考虑反应\ce{C2H5OH(g) <=> C2H4(g) + H2O(g)}.%
+    该反应的热力学数据为$\Delta_\r H_\m^\ominus(298.15\K)=45.78\kJm$,%
+    $\Delta_\r S_\m^{\ominus}=126.19\JmK$.标准压力$p^\ominus=100\kPa$.\footnotemark
+    \begin{enumerate}[label=\tbf{\arabic{Pcounter}-\arabic*},topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt]
+        \item 计算$T=298.15\K$时该反应的$K^\ominus$.
+        \item 忽略$\Delta_\r H_\m^{\ominus}$随温度的变化,计算$T=500\K$时该反应的$K^\ominus$.
+        \item 将$1.0\mol$ \ce{C2H5OH(g)},$3.0\mol$ \ce{C2H4(g)}和$1.0\mol$ \ce{H2O}混合,形成总压力$p=p^\ominus$的理想气体混合物.%
+            通过计算判断该反应在$500\K$时进行的方向.
+    \end{enumerate}
+\end{problem}\footnotetext{我们在\tbf{5A.1.5}中规定了标准压力$p^\ominus=1\text{ bar}$,%
+这也是GB 3102.8之规定.不过,在国外仍有认为$p^\ominus=1\text{ atm}$的说法,因此这里为了严谨考虑仍标注了标准压力.%
+此后,如果没有说明标准压力的值,你应当默认其为$1\text{ bar}$.}
+\begin{solution}
+    \begin{enumerate}[label=\tbf{\arabic{Pcounter}-\arabic*},topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt]
+        \item 既然给出了$\Delta_\r H_\m^\ominus$和$\Delta_\r S_{\m}^\ominus$,就可以根据\tbf{5B.1.6}计算反应的$\Delta_\r G_\m$.我们有
+            \[\begin{aligned}
+                \Delta_\r G_\m^\ominus
+                &= \Delta_\r H_\m^\ominus-T\Delta_\r S_{\m}^\ominus \\
+                &= \left(45.78-298.15\times126.19\times10^{-3}\right)\kJm \\
+                &= 8.156\kJm
+            \end{aligned}\]
+            需要注意的是,一般\footnotemark$H_\m$和$G_\m$的单位为$\text{kJ}\cdot\text{mol}^{-1}$,%
+            $S_\m$的单位为$\text{J}\cdot\text{mol}^{-1}\cdot\text{K}^{-1}$.因此,在计算%
+            $T\Delta_\r S_{\m}^\ominus$一项时,需要将$\text J$与$\text{kJ}$进行换算,即乘以$10^{-3}$.\\
+            另外,这里的有效数字保留可以比修约规则多一位,以保证计算的精度.笔者更建议你将结果存储在计算器中,需要用到时直接调用.\\
+            求出$\Delta_\r G_\m^\ominus$后,我们就可以根据\tbf{5B.1.5}求出$K^\ominus$,即
+            \[K^\ominus=\exp\left(-\dfrac{\Delta_\r G_\m^\ominus}{RT}\right)
+            =\exp\left(-\dfrac{8.156\times10^3}{8.314\times298.15}\right)=0.0372\]
+            这里仍然需要注意$R$的单位为$\text{J}\cdot\text{mol}^{-1}\cdot\text{K}^{-1}$,因此$\Delta_\r G_\m^\ominus$的数值应当乘以$10^3$.\\
+            于是$K^\ominus=0.0372$.\footnotemark
+        \item 保持$\Delta_\r H_\m^\ominus$为定值,就根据\tbf{5B.2.2}运用van't Hoff方程的近似情形
+            \[\ln\dfrac{K^\ominus\left(T_2\right)}{K^\ominus\left(T_1\right)}
+            =\dfrac{\Delta_\r H_\m^\ominus}{R}\left(\dfrac{1}{T_1}-\dfrac{1}{T_2}\right)\]
+            代入题中的数据就有
+            \[\ln\dfrac{K^\ominus(500\K)}{K^\ominus(298.15\K)}
+            =\dfrac{45.78\times10^3}{8.314}\left(\dfrac{1}{298.15}-\dfrac{1}{500}\right)\]
+            这就可以解得
+            \[K^\ominus(500\K)=64.4\]
+            或者再次计算$\Delta_\r G_\m^{\ominus}(500\K)$后得出平衡常数,这种方法也是可行的(尤其是你不大记得van't Hoff方程的时候).
+        \item 判断反应进行的方向,最简单的方法是计算此时系统的反应商$Q$并和标准平衡常数比较.因此,我们先计算各组分的分压.
+            \[p\left(\ce{C2H5OH}\right)=p\left(\ce{H2O}\right)=\dfrac{1}{5}p^\ominus\ \ \ \ \ 
+            p\left(\ce{C2H4}\right)=\dfrac{3}{5}p^\ominus\ \ \ \ \ \]
+            于是
+            \[Q=\dfrac{\frac{p\left(\ce{C2H4}\right)}{p^\ominus}\cdot\frac{p\left(\ce{H2O}\right)}{p^\ominus}}{\frac{p\left(\ce{C2H5OH}\right)}{p^\ominus}}
+            =\dfrac{\frac35\cdot\frac15}{\frac15}=\frac35<K^\ominus(500\K)\]
+            于是此时反应正向进行.
+    \end{enumerate}
+\end{solution}
+\footnotetext[2]{总是有例外的.因此,你需要在开始计算之前首先注意各热力学数据的单位.\tbf{保证量纲统一非常重要!}}
+\footnotetext[3]{在现行的竞赛规定中,一般会在试题的提示部分指明有效数字保留的位数.如果没有,并且你并不熟练有效数字修约规则,那么最简单的办法是视情况保留两到三位.}
+\stepcounter{Pcounter}
+\begin{problem}[P.5.\arabic{Pcounter}]
+    通过热力学计算可以预言许多含氧酸盐的分解产物.以下是关于\ce{Mg(ClO3)2}分解产物的热力学数据.%
+    我们假定\ce{Mg(ClO3)2}总是完全分解.
+    \vspace{-5pt}\begin{table}[H]\centering
+        \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            &\ce{MgO(s)}&\ce{MgCl2(s)}&\ce{O2(g)}&\ce{Cl2(g)} \\ \hline
+            $\Delta_\f H_\m^\ominus/\left(\text{kJ}\cdot\text{mol}^{-1}\right)$ & $-601.83$ & $-641.83$ & $0$ & $0$ \\ \hline
+            $S_{\m}^\ominus/\left(\text{J}\cdot\text{mol}^{-1}\cdot\text{K}^{-1}\right)$ & $26.8$ & $89.5$ & $205.0$ & $223.0$ \\ \hline
+        \end{tabular}
+    \end{table}\vspace{-15pt}
+    \begin{enumerate}[label=\tbf{\arabic{Pcounter}-\arabic*},topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt]
+        \item 求\ce{Mg(ClO3)2}在$700\K$下分解的产物中\ce{MgCl2}与\ce{MgO}的比例,假设压力恒定为$20p^\ominus$.
+        \item 求\ce{Mg(ClO3)2}在$700\K$下分解的产物,假设压力恒定为$p^\ominus$.
+        \item 如果系统内同时存在\ce{MgCl2}与\ce{MgO},求此时压力可能达到的最小值.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    首先,我们应当列出\ce{Mg(ClO3)2}分解反应的方程式.
+    \begin{tightcenter}
+        \tbf{(1)}\ \ce{Mg(ClO3)2(s) <=> MgCl2(s) + 3O2(g)}\\
+        \tbf{(2)}\ \ce{2Mg(ClO3)2(s) <=> 2MgO(s) + 5O2(g) + 2Cl2(g)}
+    \end{tightcenter}
+    \begin{enumerate}[label=\tbf{\arabic{Pcounter}-\arabic*},topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt]
+        \item 为了获知分解产物的比例,我们应当先知道气相中两种气体的比例,然后根据反应方程与元素守恒计算两种固相产物的比例.\\
+            一种朴实简单的想法是计算上面两个反应的平衡常数,然后设\ce{Cl2}和\ce{O2}的分压并联立求解方程.%
+            然而,你会发现题中并没有给出\ce{Mg(ClO3)2}的热力学数据,并且体系中也不存在\ce{Mg(ClO3)2},因此上述两个反应很可能就不处于平衡态.这需要我们另寻它法.\\
+            由于此时固相物质仅有\ce{MgO}与\ce{MgCl2},而它们也通过下面的反应
+            \begin{tightcenter}
+                \ce{2MgO(s) + 2Cl2(g) <=> 2MgCl2(s) + O2(g)}
+            \end{tightcenter}
+            相联系.根据这一反应也可求出平衡时\ce{Cl2}与\ce{O2}的比例,从而绕过\ce{Mg(ClO3)2}.于是
+            \[\begin{aligned}
+                \Delta_\r H_\m^\ominus
+                &= \sum_i\nu_i\Delta_\f H_\m^\ominus \\
+                &= \left[2\times(-641.83)+0-2\times(-601.83)-2\times0\right]\text{kJ}\cdot\text{mol}^{-1} \\
+                &= -80.00\kJm
+            \end{aligned}\]
+            \[\begin{aligned}
+                \Delta_\r S_\m^\ominus
+                &= \sum_i\nu_iS_\m^\ominus \\
+                &= \left[2\times89.5+205.0-2\times26.8-2\times223.0\right]\text{J}\cdot\text{mol}^{-1}\cdot\text{K}^{-1} \\
+                &= -115.6\JmK
+            \end{aligned}\]
+            于是$T=700\K$时有
+            \[\begin{aligned}
+                K^\ominus
+                &=\exp\left(-\dfrac{\Delta_\r G_\m^\ominus}{RT}\right)
+                =\exp\left(-\dfrac{\Delta_\r H_\m^\ominus-T\Delta_\r S_\m^\ominus}{RT}\right) \\
+                &= \exp\left(\dfrac{80.00\times10^3-700\times115.6}{8.314\times700}\right)=0.854
+            \end{aligned}\]
+            平衡时有
+            \[\left\{\begin{array}{l}
+                p_{\ce{O2}}+p_{\ce{Cl2}}=20p^\ominus\\
+                \dfrac{p_{\ce{O2}}p^\ominus}{\left(p_{\ce{Cl2}}\right)^2}=K^\ominus
+            \end{array}\right.\]
+            解得
+            \[p_{\ce{O2}}=15.71\text{ bar}\ \ \ \ \ p_{\ce{Cl2}}=4.29\text{ bar}\]
+            我们假定反应\tbf{(1)}和反应\tbf{(2)}的反应进度分别为$\xi_1$与$\xi_2$.于是
+            \[\dfrac{p_{\ce{O2}}}{p_{\ce{Cl2}}}
+            =\dfrac{n_{\ce{O2}}}{n_{\ce{Cl2}}}
+            =\dfrac{3\xi_1+5\xi_2}{2\xi_2}\]
+            解得
+            \[\dfrac{\xi_2}{\xi_1}=1.29\]
+            因而
+            \[\dfrac{n_{\ce{MgCl2}}}{n_{\ce{MgO}}}=\dfrac{\xi_1}{2\xi_2}=0.387\]
+            这说明分解产物中仍以\ce{MgCl2}为主.
+        \item 如果我们继续沿用\tbf{\arabic{Pcounter}-1}中的方法,就有
+            \[p_{\ce{O2}}=0.355\text{ bar}\ \ \ \ \ p_{\ce{Cl2}}=0.645\text{ bar}\]
+            进而解得
+            \[\dfrac{\xi_2}{\xi_1}=-0.769\]
+            这显然是荒诞不经的.因此这个体系内很有可能某些物质已经不存在了.只有这样,我们的反应商才不必严格与$K^\ominus$相等.\\
+            如果我们假设\ce{MgO}不存在,那么体系内仅有\ce{O2}与\ce{MgCl2}.显然这是不成立的,%
+            因为这时转化反应的反应商$Q=\dfrac{p_{\ce{O2}}p^\ominus}{\left(p_{\ce{Cl2}}\right)^2}\to+\infty>K^\ominus$,反应必然逆向进行.\\
+            如果我们假设\ce{MgCl2}不存在,那么体系内有$n_{\ce{O2}}:n_{\ce{Cl2}}=5:2$,进而
+            \[p_{\ce{O2}}=\dfrac57\text{ bar}\ \ \ \ \ p_{\ce{Cl2}}=\dfrac{2}{7}\text{ bar}\]
+            此时$Q=\dfrac{p_{\ce{O2}}p^\ominus}{\left(p_{\ce{Cl2}}\right)^2}=\dfrac{35}{4}>K^\ominus$,反应理论上仍应逆向进行.但由于已经没有\ce{MgCl2},%
+            因此反应事实上无法继续进行,进而系统达到平衡.于是此时分解产物全部为\ce{MgO}.\\
+            事实上,这里出现的情况和\ce{CaCO3}在低压下的分解有一定相似性,都是反应继续到尽头后反应商仍与平衡常数不等的情形.%
+            笔者在之前已经说过,这种情况由于某些反应物已经消失,因而反应无法继续进行,应当与一般的平衡做区分.
+        \item 结合前面两小题的叙述,我们应当知道\ce{MgO}和\ce{MgCl2}应达到平衡.%
+            考虑反应\tbf{(1)}和\tbf{(2)}的气体产物的计量比,我们知道体系内必须满足
+            \[\dfrac{x_{\ce{O2}}}{x_{\ce{Cl2}}}\geqslant\dfrac{5}{2}\]
+            即$x_{\ce{O_2}}\geqslant\dfrac{5}{7}$.假定系统的总压为$p$,为了满足平衡条件,就有
+            \[K^\ominus=\dfrac{p_{\ce{O2}}p^\ominus}{\left(p_{\ce{Cl2}}\right)^2}
+            =\dfrac{x_{\ce{O2}}p^\ominus}{\left(x_{\ce{Cl2}}\right)^2p}
+            =\dfrac{x_{\ce{O2}}}{\left(1-x_{\ce{O2}}\right)^2}\cdot\dfrac{p^\ominus}{p}\]
+            于是
+            \[\dfrac{p}{p^\ominus}=\dfrac{1}{K^\ominus}\cdot\dfrac{x_{\ce{O2}}}{\left(1-x_{\ce{O2}}\right)^2}\geqslant10.25\]
+            于是如果要求\ce{MgCl2}与\ce{MgO}同时存在时有
+            \[p\geqslant10.25p^\ominus\]
+            如果高于此压力,我们就能像\tbf{\arabic{Pcounter}-1}一样求出\ce{MgCl2}与\ce{MgO}的比例;%
+            如果低于此压力,结果就同\tbf{\arabic{Pcounter}-2}一样,系统内的含\ce{Mg}物质均为\ce{MgO}.
+    \end{enumerate}
+\end{solution}
+\stepcounter{Pcounter}
+\begin{problem}[P.5.\arabic{Pcounter}]
+    通过计算给出\ce{AgNO3}热分解的含\ce{Ag}的主要产物.假定所有气体的分压均为$p^\ominus$.可能用到的热力学数据如下.
+    \vspace{-5pt}\begin{table}[H]\centering
+        \begin{tabular}{|c|c|c|c|c|c|}
+            \hline
+            &\ce{AgNO3(s)}&\ce{Ag2O(s)}&\ce{NO2(g)}&\ce{Ag(s)}&\ce{O2(g)} \\ \hline
+            $\Delta_\f H_\m^\ominus/\left(\text{kJ}\cdot\text{mol}^{-1}\right)$ & $-123.14$ & $-30.57$ & $33.85$ & $0$ & $0$ \\ \hline
+            $S_{\m}^\ominus/\left(\text{J}\cdot\text{mol}^{-1}\cdot\text{K}^{-1}\right)$ & $140.9$ & $121.7$ & $240.5$ & $42.7$ & $205.0$\\ \hline
+        \end{tabular}
+    \end{table}\vspace{-15pt}
+\end{problem}
+\begin{solution}
+    我们仍然写出\ce{AgNO3}发生分解的可能途径,即
+    \begin{tightcenter}
+        \tbf{(1)}\ \ce{4AgNO3(s) <=> 2Ag2O(s) + O2(g) + 4NO2(g)}\\
+        \tbf{(2)}\ \ce{2AgNO3(s) <=> 2Ag(s) + 2NO2(g) + O2(g)}
+    \end{tightcenter}
+    \tbf{Method I.}\\
+    由于各气体的分压均为$p^\ominus$,因此$Q=1$.因此,一种朴实简单的想法(这句话好像在哪里见过)是计算上面两个反应的转折温度,%
+    转折温度时就有$K^\ominus=Q=1$,体系恰好平衡.由于这两个分解反应都是吸热熵增的,因此在升温的过程中,%
+    首先发生转折温度较低的反应,对应的含\ce{Ag}产物就是\ce{AgNO3}分解的主要产物.\\
+    对于反应\tbf{(1)},我们有
+    \[\begin{aligned}
+        \Delta_\r H_{\m,1}^\ominus
+        &= \sum_i\nu_i\Delta_\f H_\m^\ominus \\
+        &= \left[2\times(-30.57)+0+4\times33.85-4\times(-123.14)\right]\text{kJ}\cdot\text{mol}^{-1} \\
+        &= 566.82\kJm
+    \end{aligned}\]
+    \[\begin{aligned}
+        \Delta_\r S_{\m,1}^\ominus
+        &= \sum_i\nu_iS_\m^\ominus \\
+        &= \left[2\times121.7+205.0+4\times240.5-4\times140.9\right]\text{J}\cdot\text{mol}^{-1}\cdot\text{K}^{-1} \\
+        &= 846.8\JmK
+    \end{aligned}\]
+    于是该反应的转折温度
+    \[T_1=\dfrac{\Delta_\r H_{\m,1}^\ominus}{\Delta_\r S_{\m,1}^\ominus}
+    =\dfrac{566.82\times10^3}{846.8}=669.4\K\]
+    对于反应\tbf{(1)},我们有
+    \[\begin{aligned}
+        \Delta_\r H_{\m,2}^\ominus
+        &= \sum_i\nu_i\Delta_\f H_\m^\ominus \\
+        &= \left[2\times0+0+2\times33.85-2\times(-123.14)\right]\text{kJ}\cdot\text{mol}^{-1} \\
+        &= 313.98\kJm
+    \end{aligned}\]
+    \[\begin{aligned}
+        \Delta_\r S_{\m,2}^\ominus
+        &= \sum_i\nu_iS_\m^\ominus \\
+        &= \left[2\times42.7+205.0+2\times240.5-2\times140.9\right]\text{J}\cdot\text{mol}^{-1}\cdot\text{K}^{-1} \\
+        &= 489.6\JmK
+    \end{aligned}\]
+    于是该反应的转折温度
+    \[T_2=\dfrac{\Delta_\r H_{\m,2}^\ominus}{\Delta_\r S_{\m,2}^\ominus}
+    =\dfrac{313.98\times10^3}{489.6}=641.3\K\]
+    由于$T_2<T_1$,因此发生反应\tbf{(2)}为主,即分解产物主要是\ce{Ag}.\\
+    \tbf{Method II.}\\
+    你也许会想,判断\ce{Ag2O}何时向\ce{Ag}转化就可以知道固相产物.如果反应
+    \begin{tightcenter}
+        \tbf{(3)}\ \ce{2Ag2O(s) <=> 4Ag(s) + O2(g)}
+    \end{tightcenter}
+    发生的温度低于我们在\tbf{Method I.}中计算出的分解温度,就可以认为在\ce{AgNO3}分解时不应当出现\ce{Ag2O}.%
+    对于反应\tbf{(3)},我们有
+    \[\begin{aligned}
+        \Delta_\r H_{\m,3}^\ominus
+        &= \sum_i\nu_i\Delta_\f H_\m^\ominus \\
+        &= \left[4\times0+0-2\times(-30.57)\right]\text{kJ}\cdot\text{mol}^{-1} \\
+        &= 61.14\kJm
+    \end{aligned}\]
+    \[\begin{aligned}
+        \Delta_\r S_{\m,3}^\ominus
+        &= \sum_i\nu_iS_\m^\ominus \\
+        &= \left[4\times42.7+205.0-2\times121.7\right]\text{J}\cdot\text{mol}^{-1}\cdot\text{K}^{-1} \\
+        &= 132.4\JmK
+    \end{aligned}\]
+    于是该反应的转折温度
+    \[T_3=\dfrac{\Delta_\r H_{\m,3}^\ominus}{\Delta_\r S_{\m,3}^\ominus}
+    =\dfrac{61.14\times10^3}{132.4}=461.8\K\]
+    因此这一反应的转折温度远低于$T_1$或$T_2$.于是在\ce{AgNO3}分解时\ce{Ag2O}也分解,因此含\ce{Ag}产物为\ce{Ag}.
+\end{solution}
+\stepcounter{Pcounter}
+\begin{problem}[P.5.\arabic{Pcounter}]
+    白炽灯在通电时,灯丝会被加热到$2000\sim3300\K$,稳定发光后灯泡壁的温度约为$200\sim260\tccentigrade$.
+    \begin{enumerate}[label=\tbf{\arabic{Pcounter}-\arabic*},topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt]
+        \item 已知钨的升华焓$\Delta_{\text{sub}}H_\m=851\kJm$,$T=3477\K$时钨的饱和蒸气压$p^\ast=1\text{ Pa}$.%
+            试计算灯丝附近和灯泡内壁附近\ce{W}的饱和蒸气压(本问取温度的最小值即可).据此,解释白炽灯使用过久后变黑的原因.
+        \item 为了避免上述现象,可以向灯泡内充入一定量的卤素,例如\ce{Br2}.为了达到效果,灯泡壁处的温度应被提高至$250\tccentigrade$.相关的热力学数据如下.
+            \vspace{-5pt}\begin{table}[H]\centering
+                \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                    \hline
+                    &\ce{W(s)}&\ce{Br2(g)}&\ce{Br(g)}&\ce{WBr6(g)}&\ce{F2(g)}&\ce{F(g)}&\ce{WF6(g)} \\ \hline
+                    $\Delta_\f H_\m^\ominus/\left(\text{kJ}\cdot\text{mol}^{-1}\right)$%
+                    &$0$&$30.91$&$111.87$&$-348.5$&$0$&$79.38$&$-1721.7$\\\hline
+                    $S_{\m}^\ominus/\left(\text{J}\cdot\text{mol}^{-1}\cdot\text{K}^{-1}\right)$%
+                    &$32.6$&$245.47$&$175.02$&$314$&$272.91$&$158.75$&$341.1$ \\ \hline
+                \end{tabular}
+            \end{table}\vspace{-15pt}
+            \begin{enumerate}[label=\tbf{\arabic{Pcounter}-2-\arabic*},topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt,leftmargin=10pt]
+                \item 试计算灯泡内壁附近生成\ce{WBr6(s)}的$\Delta_\r G_\m^\ominus$.\\
+                    \tbf{注}:此处由于\ce{WBr6}本身含量很少,因此不会在灯泡壁上沉积.
+                \item 灯丝附近发生了分解反应,且溴的分压较低,忽略\ce{WBr6}升华的焓变和熵变,试近似计算该分解反应的标准平衡常数$K^\ominus$.
+                \item 如果用\ce{F2}代替\ce{Br2},试计算灯丝附近能否发生类似的分解反应.
+            \end{enumerate}
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{enumerate}[label=\tbf{\arabic{Pcounter}-\arabic*},topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt]
+        \item 这是一个纯物质的相变问题,可以用Clausius-Clapeyron方程求解.根据\tbf{4A.3.3}有
+            \[\ln\dfrac{p\left(T_i\right)}{p(T)}=\dfrac{\Delta_{\text{sub}}H_\m}{R}\left(\dfrac{1}{T}-\dfrac{1}{T_i}\right)\]
+            分别将$T_1=2000\K$,$T_2=473\K$代入即可得
+            \[p_1=3.6\times10^{-10}\text{ Pa}\ \ \ \ \ p_2=6.4\times10^{-82}\text{ Pa}\]
+            可以看出,灯丝附近的\ce{W}的饱和蒸气压远大于灯泡壁处的蒸气压.%
+            因此长时间使用后灯丝的\ce{W}升华后在灯泡壁上沉积,使其变黑.
+        \item \begin{enumerate}[label=\tbf{\arabic{Pcounter}-2-\arabic*},topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt,leftmargin=10pt]
+                \item 生成\ce{WBr6}的反应方程式为
+                    \begin{tightcenter}
+                        \ce{W(s) + 3Br2(g) <=> WBr6(s)}
+                    \end{tightcenter}
+                    对于这一反应有
+                    \[\begin{aligned}
+                        \Delta_\r H_{\m}^\ominus
+                        &= \sum_i\nu_i\Delta_\f H_\m^\ominus \\
+                        &= \left[-348.5-3\times30.91\right]\text{kJ}\cdot\text{mol}^{-1} \\
+                        &= -441.2\kJm
+                    \end{aligned}\]
+                    \[\begin{aligned}
+                        \Delta_\r S_{\m}^\ominus
+                        &= \sum_i\nu_iS_\m^\ominus \\
+                        &= \left[314-3\times175.02-32.6\right]\text{J}\cdot\text{mol}^{-1}\cdot\text{K}^{-1} \\
+                        &= -445\JmK
+                    \end{aligned}\]
+                    于是
+                    \[\begin{aligned}
+                        \Delta_\r G_\m^\ominus
+                        &=\Delta_\r H_{\m}^\ominus-T\Delta_\r S_{\m}^\ominus \\
+                        &=\left[(-441.2)-(250+273.15)\times(-445)\times10^{-3}\right]\kJm \\
+                        &=-208\kJm
+                    \end{aligned}\]
+                \item 既然题目中说此时溴的分压较低,那么系统中应当以\ce{Br(g)}为主.此时发生反应
+                    \begin{tightcenter}
+                        \ce{WBr6(s) <=> W(s) + 6Br(g)}
+                    \end{tightcenter}
+                    对于这一反应有
+                    \[\begin{aligned}
+                        \Delta_\r H_{\m}^\ominus
+                        &= \sum_i\nu_i\Delta_\f H_\m^\ominus \\
+                        &= \left[6\times111.87-(-348.5)\right]\text{kJ}\cdot\text{mol}^{-1} \\
+                        &= 1019.7\kJm
+                    \end{aligned}\]
+                    \[\begin{aligned}
+                        \Delta_\r S_{\m}^\ominus
+                        &= \sum_i\nu_iS_\m^\ominus \\
+                        &= \left[32.6+6\times175.02-314\right]\text{J}\cdot\text{mol}^{-1}\cdot\text{K}^{-1} \\
+                        &= 769\JmK
+                    \end{aligned}\]
+                    焓变和熵变都是相当大的值,因此我们可以忽略\ce{WBr6(s)}的升华带来的影响.于是
+                    \[\begin{aligned}
+                        \Delta_\r G_\m^\ominus
+                        &=\Delta_\r H_{\m}^\ominus-T\Delta_\r S_{\m}^\ominus \\
+                        &=\left[1019.7-2000\times769times10^{-3}\right]\kJm \\
+                        &=-518\kJm
+                    \end{aligned}\]
+                    于是
+                    \[K^\ominus=\exp\left(-\dfrac{\Delta_\r G_\m^{\ominus}}{RT}\right)
+                    =\exp\left(-\dfrac{-518\times10^3}{2000\times8.314}\right)=3.4\times10^{13}\]
+                    这两问的结果共同表明,加入\ce{Br2}可以有效地减少\ce{W}在灯泡壁上的沉积,并将\ce{W}带回灯丝让其重新在灯丝上生成,%
+                    从而减少\ce{W}的损耗.
+                \item 类似地,我们考虑下面两个反应.
+                    \begin{tightcenter}
+                        \tbf{(1)}\ \ce{WF6(s) <=> W(s) + 6F(g)}\\
+                        \tbf{(2)}\ \ce{W(s) + 3F2(g) <=> WF6(s)}
+                    \end{tightcenter}
+                    对于反应\tbf{(1)}有
+                    \[\begin{aligned}
+                        \Delta_\r H_{\m,1}^\ominus
+                        &= \sum_i\nu_i\Delta_\f H_\m^\ominus \\
+                        &= \left[6\times79.38-(-1721.7)\right]\text{kJ}\cdot\text{mol}^{-1} \\
+                        &= 2198.0\kJm
+                    \end{aligned}\]
+                    \[\begin{aligned}
+                        \Delta_\r S_{\m,1}^\ominus
+                        &= \sum_i\nu_iS_\m^\ominus \\
+                        &= \left[32.6+6\times158.75-341.1\right]\text{J}\cdot\text{mol}^{-1}\cdot\text{K}^{-1} \\
+                        &= 644.0\JmK
+                    \end{aligned}\]
+                    于是在灯泡壁附近有
+                    \[\begin{aligned}
+                        \Delta_\r G_{\m,1}^\ominus
+                        &=\Delta_\r H_{\m,1}^\ominus-T_1\Delta_\r S_{\m,1}^\ominus \\
+                        &=\left[2198-2000\times(644.0)\times10^{-3}\right]\kJm \\
+                        &=910\kJm
+                    \end{aligned}\]
+                    对于反应\tbf{(2)}有
+                    \[\begin{aligned}
+                        \Delta_\r H_{\m,2}^\ominus
+                        &= \sum_i\nu_i\Delta_\f H_\m^\ominus \\
+                        &= 1721.7\kJm
+                    \end{aligned}\]
+                    \[\begin{aligned}
+                        \Delta_\r S_{\m,2}^\ominus
+                        &= \sum_i\nu_iS_\m^\ominus \\
+                        &= \left[32.6+3\times272.91-341.1\right]\text{J}\cdot\text{mol}^{-1}\cdot\text{K}^{-1} \\
+                        &= 510.2\JmK
+                    \end{aligned}\]
+                    焓变和熵变都是相当大的值,因此我们可以忽略\ce{WBr6(s)}的升华带来的影响.于是
+                    \[\begin{aligned}
+                        \Delta_\r G_{\m,2}^\ominus
+                        &=\Delta_\r H_{\m,2}^\ominus-T_2\Delta_\r S_{\m,2}^\ominus \\
+                        &=\left[1721.7-(250+273.15)\times510.2times10^{-3}\right]\kJm \\
+                        &=701\kJm
+                    \end{aligned}\]
+                    可以看到$\Delta_\r G_{\m,1}^\ominus$和$\Delta_\r G_{\m,2}^\ominus$均为较大的正值,说明这两个反应在各自条件下很难进行,%
+                    于是\ce{F2}就不能发挥和\ce{Br2}相同的作用.
+            \end{enumerate}
+    \end{enumerate}
+\end{solution}
+\end{document}

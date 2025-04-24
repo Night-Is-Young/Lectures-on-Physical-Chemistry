@@ -88,7 +88,7 @@ Gibbs自由能$G$减小的方向进行,直到系统平衡为止.这一原理自�
 \indent 前面我们已经知道了理想气体混合物的化学平衡存在平衡常数.%
 那么,是否所有化学反应都如此呢?答案是肯定的.
 \begin{derivation}\setcounter{equation}{0}
-    我们考虑一个具有$k$种物质系统,并假定它们由一个化学反应联系.\\
+    我们考虑一个具有$k$种物质的系统,并假定它们由一个化学反应联系.\\
     在等温等压下,系统的Gibbs自由能的微分为
     \begin{equation}
         \di G=\sum_{i=1}^{k}\mu_i\di n_i=\sum_{i=1}^{k}\mu_i\left(\nu_i\di\xi\right)=\left(\sum_{i=1}^{k}\nu_i\mu_i\right)\di\xi
@@ -202,7 +202,7 @@ Gibbs自由能$G$减小的方向进行,直到系统平衡为止.这一原理自�
 \indent 如果你学习过楞次定律,就会发现它们实际上都是负反馈调节的经典的例子%
 \footnote{笔者曾经读过一篇名为《勒夏特列原理与老庄思想》的文章,其中提到了《道德经》中“反者,道之动”与该原理的相似性.}.%
 我们将在接下来的几小节中用严谨的推导说明这一原理的正确性,并定量地衡量条件变化对化学平衡的影响.\vspace{4pt}\\
-\Part{温度对化学平衡的影响——van't Hoff公式}
+\Part{温度对化学平衡的影响——van't Hoff方程}
 \indent 温度对化学平衡的影响是很常见的.恒压条件下装有\ce{N2O4}的容器,随着温度升高其颜色会变浅;%
 抽成真空的容器放入\ce{CaCO3},容器内气体的压力随着温度升高而增大,等等.究其原因,是因为各物质的标准摩尔Gibbs自由能会随温度变化而变化.%
 现在我们来具体推导温度对平衡的影响.
@@ -231,7 +231,7 @@ Gibbs自由能$G$减小的方向进行,直到系统平衡为止.这一原理自�
     \begin{equation}
         \pa{\ln K^\ominus}{T}{p}=\dfrac{\Delta_{\r}H_{\m}^\ominus}{RT^2}
     \end{equation}
-    这就是van't Hoff公式.\\
+    这就是van't Hoff方程.\\
     将此式在等压条件下移项积分就有
     \begin{equation}
         \ln\dfrac{K^\ominus\left(T_2\right)}{K^\ominus\left(T_1\right)}
@@ -277,10 +277,10 @@ Gibbs自由能$G$减小的方向进行,直到系统平衡为止.这一原理自�
     再由$\Delta C_{p}$对$T$的级数展开式和$\Delta_\r H_\m^\ominus\left(T_0\right)$%
     就可以根据(11)求得另一积分常数$\Delta H_0$,进而根据(12)式求出任意温度$T$下反应的标准平衡常数.
 \end{derivation}
-\begin{theorem}[5B.2.2 van't Hoff公式]
+\begin{theorem}[5B.2.2 van't Hoff方程]
     等压条件下有
     \[\pa{\ln K^\ominus}{T}{p}=\dfrac{\Delta_{\r}H_{\m}^\ominus}{RT^2}\]
-    van't Hoff公式的积分形式和各种近似计算的方式已经在前面的推导中给出.
+    van't Hoff方程的积分形式和各种近似计算的方式已经在前面的推导中给出.
 \end{theorem}
 如果将$\Delta_\r H_\m^\ominus$视作常数,就可以得出以下经验定律.
 \begin{theorem}[5B.2.3 温度对平衡的影响]

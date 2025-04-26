@@ -1,0 +1,31 @@
+\documentclass{ctexart}
+\usepackage{PhysicalChemistryNote}
+
+\begin{document}\pagestyle{plain}
+\noindent\tbf{\LARGE 7A 化学反应的速率与速率方程}\vspace{15pt}\\
+\indent 通常,化学反应的进行总是需要一定时间.有些反应总是进行得很快(例如炸药的爆炸),%
+而有些反应的速度却相当让人着急(比如无催化剂下\ce{N2}与\ce{H2}反应生成\ce{NH3}).%
+于是,我们希望用一种普适的量描述化学反应的速率,并且想办法求出速率与各个反应物的浓度的关联.\vspace{12pt}\\
+\Section{7A.1 化学反应的速率}
+\indent 我们先从速率如何定义入手学习描述反应速率的方法.
+\begin{derivation}
+    朴素地来看,如果单位时间内产生的产物(或消耗的反应物)越多,那么反应的速率应当越快.%
+    不过,由于物质的量$n$是广度量,因此如果用它的变化衡量速率,就会出现与系统规模有关的问题.%
+    因此,我们采用一定时间内某组分浓度的变化衡量反应速率是相对合理的.\\
+    于是组分$i$的反应速率$v_i$就满足
+    \[v_i=\dfrac{\di[i]}{\di t}=\dfrac{1}{V}\dfrac{\di n_i}{\di t}\]
+    由于反应中各物质的计量数可能并不相同,因此用上面的方法得出的速率也各有差别.%
+    回忆我们在热力学中消除这一影响的方法(见\tbf{5A.1.1}),我们可以用反应进度$\xi$代替$n_i$.这样就有
+    \[v_i=\dfrac{1}{V}\dfrac{\di n_i}{\di t}=\nu_i\cdot\dfrac{1}{V}\dfrac{\di\xi}{\di t}\]
+    这样,我们可以得到一个统一的速率$v=\dfrac{1}{V}\dfrac{\di\xi}{\di t}$.结合计量数$\nu_i$,就可以得出任意组分的反应速率$v_i$.
+\end{derivation}
+\begin{definition}[7A.1.1 化学反应的速率]
+    (体积不变的均相系统中的)\tbf{化学反应的速率}$r$定义为反应进度$\xi$对时间$t$的变化率与系统体积$V$的比值,即
+    \[v\xlongequal{\text{def}}\dfrac{1}{V}\dfrac{\di\xi}{\di t}\]
+    对于非均相系统,常常
+\end{definition}
+从上面的推导中很容易得出速率与各物质产生/消耗的速率的关系.
+\begin{theorem}[7A.1.2 反应速率与各物质生成/消耗速率的关系]
+    
+\end{theorem}
+\end{document}

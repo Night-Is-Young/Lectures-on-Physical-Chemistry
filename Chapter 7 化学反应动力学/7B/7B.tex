@@ -156,7 +156,48 @@
     \end{enumerate}
 \end{theorem}
 一般而言,掌握前四个就已经足够.我们现在给出\tbf{5.}和\tbf{6.}的证明.
+\begin{problem}[P.7B.1]
+    求$n$级反应\ce{A -> P}的积分速率方程.
+\end{problem}
 \begin{proof}
-    
+    我们有
+    \[v=-\dfrac{\di\con{A}}{\di t}=k\con{A}^n\]
+    移项可得
+    \[\dfrac{\di\con{A}}{\con{A}^n}=-kt\]
+    由于$\displaystyle\int\dfrac{\di x}{x^n}=-\dfrac{1}{(n-1)x^{n-1}}$,于是对上式两端求定积分可得
+    \[\dfrac{1}{n-1}\left(\dfrac{1}{\con{A}^{n-1}}-\dfrac{1}{\con{A}_0^{n-1}}\right)=kt\]
+
 \end{proof}
+\begin{problem}[P.7B.1]
+    求三级反应\ce{A + 2B -> P}的积分速率方程.
+\end{problem}
+\begin{proof}
+    设$x=\dfrac{\xi}{V}$,于是
+    \[v=\dfrac{\di x}{\di t}=k\con{A}\con{B}^2\]
+    将$\con{A}=\con{A}_0-x,\con{B}=\con{B}_0-2x$代入可得
+    \[\dfrac{\di x}{\left(\con{A}_0-x\right)\left(\con{B}_0-2x\right)^2}=k\di t\]
+    若$\con{B}_0=2\con{A_0}$,那么这与单反应物的三级反应一致.否则,不妨设
+    \[\dfrac{1}{\left(\con{A}_0-x\right)\left(\con{B}_0-2x\right)^2}
+    =\dfrac{a}{\con{A}_0-x}+\dfrac{b}{\con{B}_0-2x}+\dfrac{c}{\left(\con{B}_0-2x\right)^2}\]
+    比较系数可得
+    \[a=\dfrac{1}{\left(2\con{A}_0-\con{B}_0\right)^2}\ \ \ \ \ 
+    b=-\dfrac{2}{\left(2\con{A}_0-\con{B}_0\right)^2}\ \ \ \ \ 
+    c=\dfrac{2}{2\con{A}_0-\con{B}_0}\]
+    于是对原式两边积分可得
+    \[a\ln\dfrac{\con{A}_0}{\con{A}_0-x}
+    +\dfrac{b}{2}\ln\dfrac{\con{B}_0}{\con{B}_0-2x}
+    +\dfrac{c}{2}\left(\dfrac{1}{\con{B}_0}-\dfrac{1}{\con{B}_0-2x}\right)=kt\]
+    将$a,b,c$代入上式即可得
+    \[\dfrac{1}{\left(2\con{A}_0-\con{B}_0\right)^2}
+    \left(\ln\dfrac{\con{A}_0}{\con{A}_0-x}-\ln\dfrac{\con{B}_0}{\con{B}_0-2x}\right)
+    +\dfrac{1}{2\con{A}_0-\con{B}_0}\left(\dfrac{1}{\con{B}_0}-\dfrac{1}{\con{B}_0-2x}\right)=kt\]
+    考虑到$x=\con{P}$,于是代入并整理可得
+    \[\dfrac{2\con{P}}{\left(2\con{A}_0-\con{B}_0\right)\left(\con{B}_0-2\con{P}\right)\con{B}_0}
+    +\dfrac{1}{\left(2\con{A}_0-\con{B}_0\right)^2}\ln\dfrac{\con{A}_0\left(\con{B}_0-2\con{P}\right)}
+    {\left(\con{A}_0-\con{P}\right)\con{B}_0}\]
+
+\end{proof}
+看到这里,你应当发现所有与此类似的整数级反应实际上不过是有理因式的积分罢了.%
+这样的积分都可以通过待定系数法得出解析解.我们不希望你与这样枯燥乏味的数学做过多纠缠,%
+而应当把精力放在与化学关系更大的地方,所以这一节的内容仅作为参考.
 \end{document}

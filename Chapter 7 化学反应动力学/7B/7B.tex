@@ -1,0 +1,27 @@
+\documentclass{ctexart}
+\usepackage{PhysicalChemistryNote}
+
+\begin{document}\pagestyle{plain}
+\noindent\tbf{\LARGE 7B 积分速率方程}\vspace{15pt}\\
+\indent 如我们前面所述,速率方程事实上是一个关于物质浓度的微分方程,因而可以通过数学方法求解各物质浓度与时间的关系.%
+在大多数情形下,这些微分方程都有精确的解析解\footnote{即有明确函数表达式的解.}.%
+我们将在本节讨论常见速率方程及其解,并由此介绍其应用.\vspace{12pt}\\
+\Section{7B.1 简单整数级反应}
+\Part{零级反应}
+\indent 我们从最简单的零级反应入手.零级反应的积分速率方程可以推导如下.
+\begin{derivation}
+    考虑反应\ce{A -> P},其速率方程为
+    \[v=-\dfrac{\di\con{A}}{\di t}=k\]
+    这是一个再简单不过的微分方程,我们移项可得
+    \[\di\con{A}=-k\di t\]
+    考虑起始时间为$0$,\ce{A}的起始浓度为$\con{A}_0$,对上式两边积分可得
+    \[\con{A}-\con{A}_0=-kt\]
+    即
+    \[\con{A}=\con{A}_0-kt\]
+    这表明$\con{A}$与时间$t$成一次函数关系.我们在下图中给出了\ce{A}的浓度随时间变化的图像.
+    \begin{tightcenter}
+        \input{picture/zero-order-reaction.tex}
+    \end{tightcenter}
+    在\ce{A}反应完全后,反应便不再进行,保持$\con{A}=0$.
+\end{derivation}
+\end{document}

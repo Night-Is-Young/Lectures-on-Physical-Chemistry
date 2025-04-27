@@ -3,18 +3,18 @@
 \begin{document}
 \begin{tikzpicture}
     \draw[->] (0,0)--(5.5,0) node[right] {$t$};
-    \draw[->] (0,-0.5)--(0,3.5) node[above] {$\ln\con{A}$};
-    \draw[-] (0,3)--(21/4,-0.5);
-    \draw[-] (0,3)--(1.75,-0.5);
-    \fill (0,3) circle (1.5pt) node[left] {$\ln\con{A}_0$};
+    \draw[->] (0,0)--(0,3.5) node[above] {$\dfrac{1}{\con{A}}$};
+    \draw[-] (0,0.5)--(21/4,3);
+    \draw[-] (0,0.5)--(1.75,3);
+    \fill (0,0.5) circle (1.5pt) node[left] {$\dfrac{1}{\con{A}_0}$};
     \node[right] at (0.8,1.5) {$k_1$};
     \node[right] at (2.5,1.5) {$k_2$};
 \end{tikzpicture}
 \begin{tikzpicture}
     \draw[->] (0,0)--(5,0) node[right] {$t$};
     \draw[->] (0,0)--(0,3.5) node[above] {$\con{A}$};
-    \draw[domain=0:5] plot[smooth](\x,{3*e^(-\x)});
-    \draw[domain=0:5] plot[smooth](\x,{3*e^(-\x/3)});
+    \draw[domain=0:5] plot[smooth](\x,{3/(1+1.5*\x)});
+    \draw[domain=0:5] plot[smooth](\x,{3/(1+\x/2)});
     \fill (0,3) circle (1.5pt) node[left] {$\con{A}_0$};
     \node[right] at (0.8,1.5) {$k_1$};
     \node[right] at (2.5,1.5) {$k_2$};

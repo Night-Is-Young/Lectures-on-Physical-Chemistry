@@ -4,8 +4,12 @@
 \begin{document}\pagestyle{plain}
 \noindent\tbf{\LARGE 7D 反应机理示例}\vspace{15pt}\\
 \indent 在这一节中,我们将综合运用你的数学与化学知识来推导各种反应的速率方程,%
-并加深你对\tbf{7C}中学习的理论知识的印象与实用的技巧.\vspace{12pt}\\
-\Section{7D.1 链反应}
+并加深你对\tbf{7C}中学习的理论知识的印象与实用的技巧.
+\begin{hint}
+    需要说明的是,一般我们给出的复杂反应的反应机理中的各步骤都是基元反应.%
+    因此你可以大胆地将基元反应的性质与速率方程应用于它们.
+\end{hint}\vspace{8pt}
+\Section{7D.1 链反应动力学}
 \Part{链反应的基本概念}
 \indent 在化学动力学中有一类特殊的反应,只需用热,光或辐射等方法使反应引发,%
 体系就能通过活性组分(通常是自由基或原子)相继发生一系列的连续反应,%
@@ -35,17 +39,16 @@
     可以产生两个或多个新的活性中间体的反应称为\tbf{支链反应}.
 \end{definition}
 我们将在接下来对这些链反应的速率方程进行详细地讨论.\vspace{4pt}\\
-\Part{直链反应——\ce{H2}与卤素单质的自由基反应}
-\indent 对中间体的研究表明,\ce{H2}与\ce{X2}(其中$\ce{X}=\ce{Cl},\ce{Br},\ce{I}$)在光照或加热下的化合反应%
-的机理是不同的.我们先从最简单的\ce{H2}与\ce{Cl2}的反应开始.
+\Part{简单直链反应——\ce{H2}与卤素单质的自由基反应}
+\indent 对中间体与总反应速率的研究表明,\ce{H2}与\ce{X2}(其中$\ce{X}=\ce{Cl},\ce{Br}$)在光照或加热下的化合反应%
+的机理是不同的.我们先从最简单的\ce{H2}与\ce{Cl2}的反应开始.\ce{H2}与\ce{Cl2}通过自由基反应生成\ce{HCl}的反应机理如下.
+\begin{tightcenter}
+    \ce{Cl2 <=>T[$k_1$][$k_{-1}$] 2Cl.}\\
+    \ce{Cl. + H2 ->T[$k_2$] HCl + H.}\\
+    \ce{H. + Cl2 ->T[$k_3$] HCl + Cl.}
+\end{tightcenter}
+由于产物\ce{HCl}十分稳定,因此忽略后两个反应的逆反应.现在我们来推导该体系的反应速率方程.
 \begin{derivation}\setcounter{equation}{0}
-    \ce{H2}与\ce{Cl2}通过自由基反应生成\ce{HCl}的反应机理如下.
-    \begin{tightcenter}
-        \ce{Cl2 <=>T[$k_1$][$k_{-1}$] 2Cl.}\\
-        \ce{Cl. + H2 ->T[$k_2$] HCl + H.}\\
-        \ce{H. + Cl2 ->T[$k_3$] HCl + Cl.}
-    \end{tightcenter}
-    由于产物\ce{HCl}十分稳定,因此忽略后两个反应的逆反应.\\
     体系中的不稳定中间体为\ce{H.}与\ce{Cl.},分别对它们稳态近似有
     \begin{equation}
         \dfrac{\di\con{H.}}{\di t}=k_2\con{Cl.}\con{H2}-k_3\con{H.}\con{Cl2}=0
@@ -71,5 +74,340 @@
     \end{equation}
     因此反应对\ce{H2}为一级,对\ce{Cl2}为二分之一级.
 \end{derivation}
-
+而\ce{H2}与\ce{Br2}的反应就略微复杂一些.两者通过自由基反应生成\ce{HBr}的反应机理如下.
+\begin{tightcenter}
+    \ce{Br2 <=>T[$k_1$][$k_{-1}$] 2Br.}\\
+    \ce{Br. + H2 <=>T[$k_2$][$k_{-2}$] HBr + H.}\\
+    \ce{H. + Br2 ->T[$k_3$] HBr + Br.}
+\end{tightcenter}
+由于\ce{HBr}相对不那么稳定,并且\ce{H.}的能量很高,因此相比\ce{HCl}需要额外考虑%
+\ce{HBr}与\ce{H.}的反应.
+\begin{derivation}\setcounter{equation}{0}
+    体系中的不稳定中间体为\ce{H.}与\ce{Br.},分别对它们稳态近似有
+    \begin{equation}
+        \dfrac{\di\con{H.}}{\di t}=k_2\con{Br.}\con{H2}-k_{-2}\con{H.}\con{HBr}-k_3\con{H.}\con{Br2}=0
+    \end{equation}
+    \begin{equation}
+        \dfrac{\di\con{Br.}}{\di t}=2k_1\con{Br2}-2k_{-1}\con{Br.}^2-k_2\con{Br.}\con{H2}+k_{-2}\con{H.}\con{HBr}+k_3\con{H.}\con{Br2}=0
+    \end{equation}
+    将(2)减去(1)可得
+    \begin{equation}
+        2k_1\con{Br2}-2k_{-1}\con{Br.}^2=0
+    \end{equation}
+    于是
+    \begin{equation}
+        \con{Br.}=\sqrt{\dfrac{k_1}{k_{-1}}\con{Br2}}
+    \end{equation}
+    将(4)代入(1)可得
+    \begin{equation}
+        \con{H.}=\dfrac{k_2\con{Br.}\con{H2}}{k_{-2}\con{HBr}+k_3\con{Br2}}=\dfrac{k_2\sqrt{\dfrac{k_1}{k_{-1}}}\con{H2}\con{Br2}^{\frac12}}{k_{-2}\con{HBr}+k_3\con{Br2}}
+    \end{equation}
+    将(4)(5)代入$\dfrac{\di\con{HBr}}{\di t}$可得
+    \begin{equation}
+        \dfrac{\di\con{HBr}}{\di t}=k_2\con{Br.}\con{H2}+k_3\con{H.}\con{Br2}-k_{-2}\con{HBr}\con{H.}=\dfrac{2k_2k_3\sqrt{\dfrac{k_1}{k_{-1}}}\con{H2}\con{Br2}^{\frac32}}{k_3\con{Br2}+k_{-2}\con{HBr}}
+    \end{equation}
+    令$k_a=2k_3\sqrt{\dfrac{k_1}{k_{-1}}},k_b=\dfrac{k_{-2}}{k_2}$,就有
+    \begin{equation}
+        \dfrac{\di\con{HBr}}{\di t}=\dfrac{k_a\con{H2}\con{Br2}^{\frac32}}{\con{Br2}+k_b\con{HBr}}
+    \end{equation}
+    这就是我们在\tbf{7A.2}中给出的速率方程.
+\end{derivation}
+而\ce{H2}与\ce{F2}或\ce{I2}的反应则比较复杂,我们在这里就不叙述了.如果你感兴趣,可以自行查阅相关资料.\vspace{4pt}\\
+\Part{复杂直链反应——自由基氧化}
+\indent 脂类物质的氧化是油脂保存过程中广泛存在的问题.如果反应物记作\ce{RH},那么总反应方程式如下.
+\begin{tightcenter}
+    \ce{RH + O2 -> ROOH}
+\end{tightcenter}
+产生的过氧化物\ce{ROOH}可以进一步催化体系中其余\ce{RH}被\ce{O2}氧化.%
+反应的机理如下.
+\begin{tightcenter}
+    \ce{2ROOH ->T[$k_1$] 2R. + \text{副产物}}\\
+    \ce{R. + O2 ->T[$k_2$] ROO.}\\
+    \ce{ROO. + RH ->T[$k_3$] ROOH + R.}\\
+    \ce{2R. ->T[$k_4$] R2}\\
+    \ce{R. + ROO. ->T[$k_5$] ROOR}\\
+    \ce{2ROO. ->T[$k_6$] ROOR + O2}
+\end{tightcenter}
+实验表明有近似关系$4k_4k_6=k_5^2$.%
+现在我们来考察这一自催化体系的速率方程(以\ce{O2}的消耗速率计).如果同时考虑三种链终止的方式,%
+那么这对我们来说有些复杂,因此我们先从简单的情形入手.\\
+\indent \tbf{Case I.} \ce{O2}浓度较低.
+\begin{derivation}\setcounter{equation}{0}
+    这时,体系中主要存在的自由基为\ce{R.},链终止步骤主要为\ce{2R. -> R2}.对体系中的两种自由基\ce{R.}和\ce{ROO.}做稳态近似可得
+    \begin{equation}
+        \dfrac{\di\con{R.}}{\di t}=2k_1\con{ROOH}^2-k_2\con{R.}\con{O2}+k_3\con{ROO.}\con{RH}-2k_4\con{R.}^2=0
+    \end{equation}
+    \begin{equation}
+        \dfrac{\di\con{ROO.}}{\di t}=k_2\con{R.}\con{O2}-k_3\con{ROO.}\con{RH}=0
+    \end{equation}
+    $(1)-(2)$可得
+    \begin{equation}
+        2k_1\con{ROOH}^2-2k_4\con{R.}^2=0
+    \end{equation}
+    于是
+    \begin{equation}
+        \con{R.}=\sqrt{\dfrac{k_1}{k_4}}\con{ROOH}
+    \end{equation}
+    于是
+    \begin{equation}
+        -\dfrac{\di\con{O2}}{\di t}=k_2\con{R.}\con{O2}=k_2\sqrt{\dfrac{k_1}{k_4}}\con{ROOH}\con{O2}
+    \end{equation}
+    此时,反应对\ce{ROOH}和\ce{O2}均为一级.可以看到,%
+    反应的速率随着产物\ce{ROOH}的增加而增加,因此随着反应进行,速率会逐渐加快.
+\end{derivation}
+\tbf{Case II.} \ce{O2}浓度较高.
+\begin{derivation}\setcounter{equation}{0}
+    这时,体系中主要存在的自由基为\ce{ROO.},链终止步骤主要为\ce{2ROO. -> ROOR + O2}.对体系中的两种自由基\ce{R.}和\ce{ROO.}做稳态近似可得
+    \begin{equation}
+        \dfrac{\di\con{R.}}{\di t}=2k_1\con{ROOH}^2-k_2\con{R.}\con{O2}+k_3\con{ROO.}\con{RH}=0
+    \end{equation}
+    \begin{equation}
+        \dfrac{\di\con{ROO.}}{\di t}=k_2\con{R.}\con{O2}-k_3\con{ROO.}\con{RH}-2k_6\con{ROO.}^2=0
+    \end{equation}
+    $(1)+(2)$可得
+    \begin{equation}
+        2k_1\con{ROOH}^2-2k_6\con{ROO.}^2=0
+    \end{equation}
+    于是
+    \begin{equation}
+        \con{ROO.}=\sqrt{\dfrac{k_1}{k_6}}\con{ROOH}
+    \end{equation}
+    由(2)亦可得
+    \begin{equation}
+        -\dfrac{\di\con{O2}}{\di t}=k_2\con{R.}\con{O2}-k_6\con{ROO.}^2=k_3\con{ROO.}\con{RH}+k_6\con{ROO.}^2
+    \end{equation}
+    由于自由基\ce{ROO.}的浓度很低,链终止的速率远小于链增长的速率,因此可以近似地忽略后一项.于是有
+    \begin{equation}
+        -\dfrac{\di\con{O2}}{\di t}=k_3\sqrt{\dfrac{k_1}{k_6}}\con{ROOH}\con{RH}
+    \end{equation}
+    此时,反应对\ce{ROOH}和\ce{RH}均为一级.可以看到,%
+    反应的速率同样随着产物\ce{ROOH}的增加而增加,因此随着反应进行,速率会逐渐加快.
+\end{derivation}
+在前面两种情况的推导过程中,我们都由稳态近似得出了一个重要的结论.
+\begin{theorem}[7D.1.4 直链反应的性质]
+    一般而言,如果对反应采取稳态近似处理,那么直链反应中链引发和链终止的速率相等.
+\end{theorem}
+这是因为我们总是假设体系内所有自由基的浓度随时间变化都不大,因而自由基的总浓度可以近似看作不变.%
+对于直链反应而言,链转移不改变自由基数目,只有链引发和链终止可以改变,因而这两个反应的速率近似相同.\\
+\indent \tbf{Case III. }一般情形.
+\begin{derivation}\setcounter{equation}{0}
+    我们仍然对\ce{R.}和\ce{ROO.}稳态近似可得
+    \begin{equation}
+        \dfrac{\di\con{R.}}{\di t}=2k_1\con{ROOH}^2-k_2\con{R.}\con{O2}+k_3\con{ROO.}\con{RH}-2k_4\con{R.}^2-k_5\con{R.}\con{ROO.}=0
+    \end{equation}
+    \begin{equation}
+        \dfrac{\di\con{ROO.}}{\di t}=k_2\con{R.}\con{O2}-k_3\con{ROO.}\con{RH}-k_5\con{R.}\con{ROO.}-2k_6\con{ROO.}^2=0
+    \end{equation}
+    $(1)+(2)$可得
+    \begin{equation}
+        k_1\con{ROOH}^2=k_4\con{R.}^2+k_5\con{R.}\con{ROO.}+k_6\con{ROO.}^2
+    \end{equation}
+    这也与\tbf{7D.1.4}的结论符合.\\
+    体系内的变量仍然太多,因此我们需要进一步做一些合理的近似.%
+    考虑到链引发和链终止的速率应当远小于链转移的速率,于是对于(1)或(2)有
+    \begin{equation}
+        k_2\con{R.}\con{O2}=k_3\con{ROO.}\con{RH}
+    \end{equation}
+    即
+    \begin{equation}
+        \con{ROO.}=\dfrac{k_2\con{O2}}{k_3\con{RH}}\con{R.}
+    \end{equation}
+    将(5)代入(3)可得
+    \begin{equation}
+        k_1\con{ROOH}^2=\left(k_4+\dfrac{k_2\con{O2}}{k_3\con{RH}}k_5+\left(\dfrac{k_2\con{O2}}{k_3\con{RH}}\right)^2k_6\right)\con{R.}^2
+    \end{equation}
+    我们迫切地希望大括号内也是完全平方式,这样就可以将两边开方以极大地化简.考虑该式地形式,将$k_5=2\sqrt{k_4k_6}$代入(6)可得
+    \begin{equation}
+        k_1\con{ROOH}^2=\left(k_4+\dfrac{k_2\con{O2}}{k_3\con{RH}}2\sqrt{k_4k_6}+\left(\dfrac{k_2\con{O2}}{k_3\con{RH}}\right)^2k_6\right)\con{R.}^2
+    \end{equation}
+    这恰好可以改写为完全平方式,即
+    \begin{equation}
+        k_1\con{ROOH}^2=\left(\sqrt{k_4}+\dfrac{k_2\con{O2}}{k_3\con{RH}}\sqrt{k_6}\right)^2\con{R.}^2
+    \end{equation}
+    开方后整理可得
+    \begin{equation}
+        \con{R.}=\dfrac{\sqrt{k_1}\con{ROOH}}{\sqrt{k_4}+\dfrac{k_2\con{O2}}{k_3\con{RH}}\sqrt{k_6}}
+    \end{equation}
+    于是消耗\ce{O2}的速率
+    \begin{equation}
+        -\dfrac{\di\con{O2}}{\di t}=k_2\con{R.}\con{O2}=\dfrac{\sqrt{k_1}k_2\con{ROOH}\con{RH}\con{O2}}{\sqrt{k_4}+\dfrac{k_2\con{O2}}{k_3\con{RH}}\sqrt{k_6}}
+    \end{equation}
+    令$k=k_3\sqrt{\dfrac{k_1}{k_6}},\lambda=\dfrac{k_2}{k_3}\sqrt{\dfrac{k_4}{k_6}}$,就有
+    \begin{equation}
+        -\dfrac{\di\con{O2}}{\di t}=k\con{ROOH}\dfrac{\con{O2}\con{RH}}{\con{O2}+\lambda\con{RH}}
+    \end{equation}
+    这也与实验测得的速率方程相符合.
+\end{derivation}
+\vspace{8pt}
+\Section{7D.2 聚合反应动力学}
+\Section{7D.3 酶促反应动力学}
+\indent 迄今为止,我们还没有系统地讨论有催化剂参与时反应的动力学特征.%
+尽管在前面,我们已经讨论了一类自催化反应,但大多数时候催化剂都是额外加入的,在总反应中不会被消耗的物质.\\
+\indent 我们在本节要讨论的催化剂,\tbf{酶},就是一种高效专一的生物均相催化剂.关于酶的基本概念与特性,你可以查阅生物化学书.%
+我们在这里主要关注酶催化的反应,即\tbf{酶促反应}的动力学特性.\vspace{4pt}\\
+\Part{简单酶促反应与米氏方程}
+\indent 最简单的酶催化反应的机理可由以下基元反应描述.
+\begin{tightcenter}
+    \ce{E + S <=>T[$k_1$][$k_{-1}$] ES ->T[$k_2$] E + P}
+\end{tightcenter}
+其中\ce{E}即参与催化的酶,\ce{S}为底物(即反应物),\ce{ES}为酶-底物复合中间体,\ce{P}为产物.%
+我们现在来推导该反应的速率方程.
+\begin{derivation}
+    对中间体\ce{ES}做稳态近似可得
+    \[\dfrac{\di\con{ES}}{\di t}=k_1\con{E}\con{S}-k_{-1}\con{ES}-k_2\con{ES}=0\]
+    于是有
+    \[\con{ES}=\dfrac{k_1\con{E}\con{S}}{k_{-1}+k_2}\]
+    根据催化剂的物料守恒可得
+    \[\con{E}+\con{ES}=\con{E}_0\]
+    于是
+    \[\con{E}=\dfrac{\con{E}_0}{1+\dfrac{k_1\con{S}}{k_{-1}+k_2}}\ \ \ \ \ 
+    \con{ES}=\dfrac{k_1\con{E}_0\con{S}}{k_{-1}+k_2+k_1\con{S}}\]
+    于是反应的速率即为
+    \[\dfrac{\di\con{P}}{\di t}=k_2\con{ES}=\dfrac{k_1k_2\con{E}_0\con{S}}{k_{-1}+k_2+k_1\con{S}}\]
+    为了简化上式,我们不妨定义$K_M=\dfrac{k_{-1}+k_2}{k_1}$,这样就有
+    \[\con{ES}=\dfrac{\con{E}\con{S}}{K_M}\]
+    同理,最后可以得出
+    \[\dfrac{\di\con{P}}{\di t}=\dfrac{k_2\con{E}_0}{1+\dfrac{K_M}{\con{S}}}\]
+    如果底物\ce{S}大大过量,那么就有$\dfrac{K_M}{\con{S}}\sim0$,于是
+    \[\dfrac{\di\con{P}}{\di t}=\dfrac{k_2\con{E}_0}{1+\dfrac{K_M}{\con{S}}}\approx k_2\con{E}_0\]
+    这就是酶的总浓度一定时反应的最大速率,记作$v_{\max}$.如此,速率方程亦可以写作
+    \[v=\dfrac{v_{\max}}{1+\dfrac{K_M}{\con{S}}}\]
+    
+\end{derivation}
+这就是Leonor Michaelis和Maud Menten提出的\tbf{米氏方程}.
+\begin{theorem}[7D.3.1 米氏方程]
+    对于符合
+    \begin{tightcenter}
+        \ce{E + S <=>T[$k_1$][$k_{-1}$] ES ->T[$k_2$] E + P}
+    \end{tightcenter}
+    机理的酶促反应,其速率方程为
+    \[v=\dfrac{v_{\max}}{1+\dfrac{K_M}{\con{S}}}\]
+    其中\tbf{米氏常数}$K_M=\dfrac{k_{-1}+k_2}{k_1}$.$v_{\max}=k_2\con{E}_0$,是该反应在酶的总浓度$\con{E}_0$一定时能达到的最大速率.
+\end{theorem}
+以下是$v$对$\con{S}$作图的结果.可以看出,当$\con{S}\ll K_M$时近似地有$v=\dfrac{v_{\max}}{K_M}\con{S}$,反应对\ce{S}为准一级.%
+当$\con{S}\gg K_M$时,反应速率趋近于$v_{\max}$,反应对$\con{S}$为准零级.
+\begin{tightcenter}
+    \input{picture/Michaelis-Menten-kinetics.tex}
+\end{tightcenter}
+\indent 反应速率常数$k_1,k_{-1},k_2$是较难直接获取的,但米氏方程为我们提供了线性回归测定它们的方式.
+\begin{derivation}
+    将米氏方程变形可得
+    \[\dfrac{1}{v}=\dfrac{1}{v_{\max}}+\left(\dfrac{K_M}{v_{\max}}\right)\dfrac{1}{\con{S}}\]
+    可以看到,$\dfrac{1}{v}$与$\dfrac{1}{\con{S}}$成一次函数关系.测定\ce{S}在不同起始浓度$\con{S}_0$及其对应的速率$v_0$,%
+    就可以通过线性回归的方式求出斜率$\dfrac{K_M}{v_{\max}}$和截距$\dfrac{1}{v_{\max}}$.
+\end{derivation}
+上面的这种方式就是\tbf{Lineweaver-Burk作图法}.
+\begin{theorem}[7D.3.2 Lineweaver-Burk作图法]
+    在符合米氏方程的酶促反应中,反应速率的倒数$\dfrac1v$和底物浓度$\dfrac{1}{\con{S}}$成倒数关系,根据实验数据作图就可以求得米氏常数$K_M$.%
+    因此,这一方法也被称作\tbf{双倒数法}.
+\end{theorem}
+下面是由Lineweaver-Burk作图法给出\tbf{7D.3.1}的图像.
+\begin{tightcenter}
+    \input{picture/Lineweaver-Burk.tex}
+\end{tightcenter}
+不过,这一方法仍然不能给出$k_1$和$k_{-1}$的具体值.%
+我们需要更复杂的手段进行测量,这里就不再赘述了.\vspace{4pt}\\
+\Part{竞争性抑制剂和非竞争性抑制剂}
+\indent 酶对反应体系是敏感的.一些物质可以与酶发生反应,进而降低其活性或使其完全失效.这就是\tbf{抑制剂}.
+\begin{definition}[7D.3.3 抑制剂]
+    \tbf{酶抑制剂}是一类特异性作用于或影响酶的活性中心或必需基团,导致酶活性下降或丧失,进而降低酶促反应速率的物质.
+\end{definition}
+按照抑制剂作用的机理不同,酶抑制剂可以简单地被分为如下两类.
+\begin{definition}[7D.3.4 抑制剂的分类]
+    \tbf{竞争性抑制剂}在结构上通常与底物相似。它和底物不能同时与酶结合，通常是由于它对酶的活性位点具有亲和力，而底物也与该位点结合，故底物和抑制剂竞争结合酶的活性位点。
+\end{definition}
+\Part{多底物酶促反应——单置换反应与双置换反应}
+\indent 实际情况中超过60\%的酶促反应都涉及两个及以上的底物.对双底物酶促反应的研究表明有以下几种机理.\\
+\indent 如果两种底物\ce{A}和\ce{B}需要按照顺序与\ce{E}结合,然后生成产物,那么这样的机理被称为\tbf{单置换反应}.%
+我们可以将机理表述如下.
+\begin{tightcenter}
+    \ce{E + A <=>T[$k_1$][$k_{-1}$] EA}\\
+    \ce{EA + B <=>T[$k_2$][$k_{-2}$] EAB}\\
+    \ce{EAB ->T[$k_3$] E + P + Q}
+\end{tightcenter}
+现在我们来推导单置换反应的速率方程.
+\begin{derivation}\setcounter{equation}{0}
+    仿照米氏方程的推导方式,对\ce{EA}和\ce{EAB}稳态近似可得
+    \begin{equation}
+        \dfrac{\di\con{EA}}{\di t}=k_1\con{E}\con{A}-k_{-1}\con{EA}-k_2\con{EA}\con{B}+k_{-2}\con{EAB}=0
+    \end{equation}
+    \begin{equation}
+        \dfrac{\di\con{EAB}}{\di t}=k_2\con{EA}\con{B}-k_{-2}\con{EAB}-k_3\con{EAB}=0
+    \end{equation}
+    不妨令$K_{M,\ce{B}}=\dfrac{k_{-2}+k_3}{k_2}$为该反应对\ce{B}的米氏常数.由(2)可得
+    \begin{equation}
+        \con{EAB}=\dfrac{k_2\con{B}}{k_{-2}+k_3}\con{EA}=\dfrac{\con{B}}{K_{M,\ce{B}}}\con{EA}
+    \end{equation}
+    由(1)和(3)可得
+    \begin{equation}
+        \begin{aligned}
+            \con{E}
+            &= \dfrac{\left(k_{-1}+k_2\con{B}\right)\con{EA}-k_{-2}\con{EAB}}{k_1\con{A}} \\
+            &= \dfrac{k_{-1}+k_2\con{B}-\dfrac{k_{-2}\con{B}}{K_{M,\ce{B}}}}{k_1\con{A}}\con{EA} \\
+            &= \dfrac{k_{-1}+\dfrac{k_3}{K_{M,\ce{B}}}\con{B}}{k_1\con{A}}\con{EA}
+        \end{aligned}
+    \end{equation}
+    这里由中间量$\con{EA}$统一变量可以降低计算的难度.\\
+    这样,由(3)和(4),以及\ce{E}的物料守恒$\con{E}+\con{EA}+\con{EAB}=\con{E_0}$可得
+    \begin{equation}
+        \con{EA}
+        =\dfrac{\con{E}}{\con{E}+\con{EA}+\con{EAB}}\con{E}_0
+        =\dfrac{1}{\dfrac{k_{-1}+\dfrac{k_3}{K_{M,\ce{B}}}\con{B}}{k_1\con{A}}+1+\dfrac{\con{B}}{K_{M,\ce{B}}}}\con{E}_0
+    \end{equation}
+    于是反应的速率即为
+    \begin{equation}
+        \begin{aligned}
+            v
+            &= \dfrac{\di\con{P}}{\di t}=k_3\con{EAB}=\dfrac{k_2k_3\con{B}}{k_{-2}+k_3}\con{EA} \\
+            &= \dfrac{1}{\dfrac{K_{M,\ce{B}}}{k_3\con{B}}}\cdot\dfrac{\con{E}_0}{\dfrac{k_{-1}+\dfrac{k_3}{K_{M,\ce{B}}}\con{B}}{k_1\con{A}}+1+\dfrac{\con{B}}{K_{M,\ce{B}}}} \\
+            &= \dfrac{\con{E}_0}{\left(\dfrac{1}{k_3}+\dfrac{1}{k_1\con{A}}\right)+\dfrac{K_{M,\ce{B}}}{k_3}\left(1+\dfrac{k_{-1}}{k_1\con{A}}\right)\dfrac{1}{\con{B}}}
+        \end{aligned}
+    \end{equation}
+    我们按照Lineweaver-Burk作图法的形式对(6)整理可得
+    \begin{equation}
+        \dfrac{1}{v}
+        =\dfrac{1}{\con{E}_0}\left[\left(\dfrac{1}{k_3}+\dfrac{1}{k_1\con{A}}\right)+\dfrac{K_{M,\ce{B}}}{k_3}\left(1+\dfrac{k_{-1}}{k_1\con{A}}\right)\dfrac{1}{\con{B}}\right]
+    \end{equation}
+    以$\dfrac{1}{v}$对$\dfrac{1}{\con{B}}$作图,将得到斜率为$\dfrac{K_{M,\ce{B}}}{k_3\con{E}_0}\left(1+\dfrac{k_{-1}}{k_1\con{A}}\right)$,截距为$\dfrac{1}{\con{E}_0}\left(\dfrac{1}{k_3}+\dfrac{1}{k_1\con{A}}\right)$的直线.%
+    因此,改变$\con{A}$,直线的斜率和截距将发生变化.这是单置换反应的特征.
+\end{derivation}
+如果底物\ce{A}与酶\ce{E1}反应后生成修饰形式的酶\ce{E2},然后与另一种底物\ce{B}反应生成原先的酶,如此循环往复,%
+那么这样的机理被称为\tbf{双置换反应}.我们可以将机理表述如下.
+\begin{tightcenter}
+    \ce{E1 + A <=>T[$k_1$][$k_{-1}$] E1A ->T[$k_2$] E2 + P}\\
+    \ce{E2 + B <=>T[$k_3$][$k_{-3}$] E2B ->T[$k_4$] E1 + Q}
+\end{tightcenter}
+现在我们来推导双置换反应的速率方程.
+\begin{derivation}\setcounter{equation}{0}
+    这一反应由两个相关的米氏反应构成.我们先对\ce{E1A}和\ce{E2B}稳态近似可得
+    \begin{equation}
+        \dfrac{\di\con{E1A}}{\di t}=k_1\con{E1}\con{A}-\left(k_{-1}+k_2\right)\con{E1A}=0\ \ \ \ \ \con{E1A}=\dfrac{\con{E1}\con{A}}{K_{M,\ce{A}}}
+    \end{equation}
+    \begin{equation}
+        \dfrac{\di\con{E2B}}{\di t}=k_3\con{E2}\con{B}-\left(k_{-3}+k_4\right)\con{E2B}=0\ \ \ \ \ \con{E2B}=\dfrac{\con{E2}\con{B}}{K_{M,\ce{B}}}
+    \end{equation}
+    其中$K_{M,\ce{A}}$和$K_{M,\ce{B}}$分别为两步的米氏常数.\\
+    体系处于稳态时,\ce{E1}和\ce{E2}的浓度也应当变化不大(否则就不满足\ce{E1A}和\ce{E2B}的稳态近似).于是有
+    \begin{equation}
+        \dfrac{\di\con{E1}}{\di t}=k_4\con{E_2B}+k_{-1}\con{E1A}-k_1\con{E1}\con{A}
+    \end{equation}
+    $(1)+(3)$可得
+    \begin{equation}
+        k_4\con{E2B}=k_2\con{E1A}
+    \end{equation}
+    结合(1)(2)和(4)和物料守恒$\con{E1}+\con{E1A}+\con{E2}+\con{E2B}=\con{E}_0$可得
+    \begin{equation}
+        \con{E1A}=\dfrac{\con{E}_0}{\dfrac{K_{M,\ce{A}}}{\con{A}}+1+\dfrac{k_2}{k_4}\left(\dfrac{K_{M,\ce{B}}}{\con{B}}+1\right)}
+    \end{equation}
+    于是反应的速率即为
+    \begin{equation}
+        v=k_2\con{E1A}=\dfrac{\con{E}_0}{\dfrac{1}{k_2}+\dfrac{1}{k_4}+\dfrac{K_{M,\ce{A}}}{k_2\con{A}}+\dfrac{K_{M,\ce{B}}}{k_4\con{B}}}
+    \end{equation}
+    我们按照Lineweaver-Burk作图法的形式对(6)整理可得
+    \begin{equation}
+        \dfrac{1}{v}=\dfrac{1}{\con{E}_0}\left[\dfrac{K_{M,\ce{B}}}{k_4}\dfrac{1}{\con{B}}+\left(\dfrac{1}{k_2}+\dfrac{1}{k_4}+\dfrac{K_{M,\ce{A}}}{k_2\con{A}}\right)\right]
+    \end{equation}
+    以$\dfrac1v$对$\dfrac{1}{\con{B}}$作图,将得到斜率为$\dfrac{K_{M,\ce{B}}}{k_4\con{E}_0}$,截距为$\dfrac{1}{\con{E}_0}\left(\dfrac{1}{k_2}+\dfrac{1}{k_4}+\dfrac{K_{M,\ce{A}}}{k_2\con{A}}\right)$的一条直线.%
+    因此,改变\ce{A},直线的斜率不变而截距变化.这是双置换反应的特征.
+\end{derivation}
 \end{document}

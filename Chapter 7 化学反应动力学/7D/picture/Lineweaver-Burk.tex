@@ -1,0 +1,13 @@
+\documentclass{standalone}
+\usepackage{PhysicalChemistryNote}
+\begin{document}
+\begin{tikzpicture}
+    \draw[->] (-2.5,0)--(4,0) node[right]{$\dfrac{1}{\con{S}}$};
+    \draw[->] (0,0)--(0,3.5) node[left]{$\dfrac{1}{v}$};
+    \draw[dashed] (-2,0)--(1,1.5);
+    \draw[-] (1,1.5)--(4,3);
+    \fill (0,1) circle (1.5pt) node[above left]{\small{$\dfrac{1}{v_{\max}}$}};
+    \fill (-2,0) circle (1.5pt) node[below]{\small{$-\dfrac{1}{K_M}$}};
+    \node at (2,0.5) {\small{$\dfrac{1}{v}=\dfrac{1}{v_{\max}}+\left(\dfrac{K_M}{v_{\max}}\right)\dfrac{1}{\con{S}}$}};
+\end{tikzpicture}
+\end{document}

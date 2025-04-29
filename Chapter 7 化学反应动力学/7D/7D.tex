@@ -314,8 +314,40 @@
 \end{definition}
 按照抑制剂作用的机理不同,酶抑制剂可以简单地被分为如下两类.
 \begin{definition}[7D.3.4 抑制剂的分类]
-    \tbf{竞争性抑制剂}在结构上通常与底物相似。它和底物不能同时与酶结合，通常是由于它对酶的活性位点具有亲和力，而底物也与该位点结合，故底物和抑制剂竞争结合酶的活性位点。
+    \tbf{竞争性抑制剂}在结构上通常与底物相似.它和底物不能同时与酶结合,通常是由于它和底物对酶的同一活性位点都具有亲和力,故底物和抑制剂竞争结合该位点,从而使得反应减缓.\\
+    \tbf{非竞争性抑制剂}通常与酶的非活性部位结合,改变酶的结构,从而降低酶的活性,但不影响酶与底物结合.\\
+    \tbf{反竞争性抑制剂}仅与酶-底物复合物结合,导致其不能正常发生分解而生成产物.\\
+    \tbf{复合抑制剂}可以与酶或酶-底物复合物结合,使得反应的速率减缓.\\
+    以上四种抑制剂的结合都是可逆的.\tbf{不可逆抑制剂}通过与酶形成共价键,彻底改变其性质,从而使得反应减缓,并且这一作用是不可逆的.
 \end{definition}
+我们现在来推导竞争性抑制剂存在下反应的速率方程.这一反应的机理可以表述如下.
+\begin{tightcenter}
+    \ce{E + S <=>T[$k_1$][$k_{-1}$] ES ->T[$k_2$] E + P}\\
+    \ce{E + I <=>T[$k_3$][$k_{-3}$] EI}
+\end{tightcenter}
+\begin{derivation}
+    对\ce{ES}稳态近似,可知仍然满足米氏方程给出的关系
+    \[\con{ES}=\dfrac{\con{E}\con{S}}{K_{M,\ce{S}}}\]
+    另一方面,对\ce{EI}稳态近似可得
+    \[\dfrac{\di\con{EI}}{\di t}=k_3\con{E}\con{I}-k_{-3}\con{EI}=0\]
+    令$K_{\ce{I}}=\dfrac{k_3}{k_{-3}}$为抑制反应的平衡常数,则有
+    \[\con{EI}=\dfrac{\con{E}\con{I}}{K_{\ce{I}}}\]
+    由\ce{E}的物料守恒有
+    \[\left(1+\dfrac{\con{S}}{K_{M,\ce{S}}}+\dfrac{\con{I}}{K_{\ce{I}}}\right)\con{E}=\con{E}_0\]
+    于是反应的速率即为
+    \[\begin{aligned}
+        v
+        &= \dfrac{\di\con{P}}{\di t}=k_2\con{ES}=\dfrac{k_2\con{E}\con{S}}{K_{M,\ce{S}}} \\
+        &= \dfrac{k_2\con{S}}{K_{M,\ce{S}}}\cdot\dfrac{\con{E}_0}{1+\dfrac{\con{S}}{K_{M,\ce{S}}}+\dfrac{\con{I}}{K_{\ce{I}}}} \\
+        &= \dfrac{k_2\con{E}_0\con{S}}{\con{S}+\left(1+\dfrac{\con{I}}{K_{\ce{I}}}\right)K_{M,\ce{S}}}
+    \end{aligned}\]
+    我们按照Lineweaver-Burk作图法的形式对上式整理可得
+    \[\dfrac{1}{v}=\dfrac{1}{v_{\max}}+\dfrac{K_{M,\ce{S}}}{v_{\max}}\left(1+\dfrac{\con{I}}{K_{\ce{I}}}\right)\dfrac{1}{\con{S}}\]
+    令$\alpha=1+\dfrac{\con{I}}{K_{\ce{I}}}$,则上式可以写作
+    \[\dfrac{1}{v}=\dfrac{1}{v_{\max}}+\dfrac{\alpha K_{M,\ce{S}}}{v_{\max}}\dfrac{1}{\con{S}}\]
+    可见竞争性抑制剂不改变直线的截距,只改变直线的斜率.这表明它不改变$v_{\max}$,只是使得达到相同速率时\ce{S}的浓度更高.
+\end{derivation}
+
 \Part{多底物酶促反应——单置换反应与双置换反应}
 \indent 实际情况中超过60\%的酶促反应都涉及两个及以上的底物.对双底物酶促反应的研究表明有以下几种机理.\\
 \indent 如果两种底物\ce{A}和\ce{B}需要按照顺序与\ce{E}结合,然后生成产物,那么这样的机理被称为\tbf{单置换反应}.%

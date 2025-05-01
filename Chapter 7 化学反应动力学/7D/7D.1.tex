@@ -231,4 +231,61 @@
     \end{equation}
     这也与实验测得的速率方程相符合.
 \end{derivation}
+\Part{支链反应——\ce{H2}与\ce{O2}的自由基反应}
+\indent 我们知道,一定浓度的\ce{H2}与\ce{O2}混合后点燃,有时可以稳定地燃烧,%
+有时则会发生剧烈的爆炸.两者的反应通过支链反应进行,其机理可以表述如下.
+\begin{tightcenter}
+    \ce{H2 ->T[$k_1$] 2H.}\\
+    \ce{H. + O2 ->T[$k_2$] HO. + O.}\\
+    \ce{O. + H2 ->T[$k_3$] HO. + H.}\\
+    \ce{HO. + H2 ->T[$k_4$] H2O + H.}\\
+    \ce{H. + M ->T[$k_5$] \text{销毁}}\\
+    \ce{H. + O2 + M ->T[$k_6$] \text{销毁}}
+\end{tightcenter}
+销毁主要是自由基与撞击器壁\ce{M}所致.反应中,\ce{O.}和\ce{HO.}可以作为不稳定中间体,%
+而\ce{H.}的浓度则随着反应条件不同而有着不同的变化趋势.%
+据此,我们来推导不同条件时反应的速率方程.
+\begin{derivation}\setcounter{equation}{0}
+    对\ce{O.}和\ce{HO.}稳态近似可得
+    \begin{equation}
+        \dfrac{\di\con{O.}}{\di t}=k_2\con{H.}\con{O2}-k_3\con{O.}\con{H2}=0
+    \end{equation}
+    \begin{equation}
+        \dfrac{\di\con{HO.}}{\di t}=k_2\con{H.}\con{O2}+k_3\con{O.}\con{H2}-k_4\con{HO.}\con{H2}=0
+    \end{equation}
+    于是分别可得
+    \begin{equation}
+        \con{O.}=\dfrac{k_2\con{H.}\con{O2}}{k_3\con{H2}}
+    \end{equation}
+    \begin{equation}
+        \con{HO.}
+        =\dfrac{k_2\con{H.}\con{O2}+k_3\con{O.}\con{H2}}{k_4\con{H2}}
+        =\dfrac{2k_2\con{H.}\con{O2}}{k_4\con{H2}}
+    \end{equation}
+    于是可以写出\ce{H.}的生成速率,即
+    \begin{equation}
+        \begin{aligned}
+            \dfrac{\di\con{H.}}{\di t}
+            &= 2k_1\con{H2}-k_2\con{H.}\con{O2}+k_3\con{O.}\con{H2}+k_4\con{HO.}\con{H2}-k_5\con{H.}-k_6\con{H.}\con{O2} \\
+            &= 2k_1\con{H2}+2k_2\con{H.}\con{O2}-k_5\con{H.}-k_6\con{H.}\con{O2} \\
+            &= 2k_1\con{H2}+\left(2k_2\con{O2}-k_5-k_6\con{O2}\right)\con{H.}
+        \end{aligned}
+    \end{equation}
+    可以看到,$\con{H.}$前的项各有正负.不难理解,正项代表\ce{H.}增多的支链增长反应,负项代表\ce{H.}减少的链终止反应.\\
+    令$v_i=2k_1\con{H2}$为链引发速率,$k_b=2k_2\con{O2}$为支链化速率常数,$k_t=k_5+k_6\con{O2}$为链终止速率常数,则有
+    \begin{equation}
+        \dfrac{\di\con{H.}}{\di t}=v_i+\left(k_b-k_t\right)\con{H.}
+    \end{equation}
+    在反应的初始阶段,\ce{H2}与\ce{O2}的浓度变化都不大,可以将$v_0,k_b$和$k_t$都视作常数.对(6)移项积分可得
+    \begin{equation}
+        \con{H.}=\dfrac{v_i}{k_b-k_t}\left(\e^{\left(k_b-k_t\right)t}-1\right)
+    \end{equation}
+    这就是反应初期$\con{H.}$与时间$t$的关系.
+\end{derivation}
+显然,上面的(7)式会由于$k_b-k_t$的大小显现出不同的关系.我们将图像绘制如下.
+\begin{figure}[H]
+    \centering\input{picture/H2-O2-reaction.tex}
+\end{figure}
+可以看到,当$k_b>k_t$时,\ce{H.}的浓度随时间指数增长,反应将在很短的时间发生,最终表现为爆炸.%
+当$k_b<k_t$时,\ce{H.}的浓度随着时间增长趋于平稳,反应的速率为一常数,最终表现为稳定燃烧.
 \end{document}

@@ -4,7 +4,49 @@
 \begin{document}\pagestyle{plain}
 \noindent\tbf{\LARGE 7E 温度对反应速率的影响}\vspace{15pt}\\
 \indent 实验表明,大多数化学反应的速率总是随着温度升高而增加.我们将从理论上对此给出解释,%
-并说明速率常数与温度满足的关系.在本节的最后,我们也将介绍一种测定速率常数的重要办法.\vspace{12pt}
+并说明速率常数与温度满足的关系.在本节的最后,我们也将介绍一种测定速率常数的重要办法.\vspace{12pt}\\
 \Section{7E.1 Arrhenius方程}
+\indent Arrhenius研究了许多气相反应的速率,由此揭示了反应的速率常数与温度的关系.
+\begin{theorem}[7E.1.1 Arrhenius方程]
+    反应速率常数$k$与温度$T$满足
+    \[k=A\exp\left(-\dfrac{E_a}{RT}\right)\]
+    其中$A$为\tbf{指前因子},$E_a$为\tbf{表观活化能}.
+\end{theorem}
+尽管Arrhennius得出的$A$和$E_a$是完全经验性的,但他还是对此做出了一些合理的解释.%
+他认为,并不是反应分子的每次接触都能发生反应,只有那些能量足够高的分子之间的角度合适的碰撞才能发生反应.%
+这些分子被称为\tbf{活化分子},而由非活化分子变为活化分子所需要的平均能量即为\tbf{(表观)活化能}.\\
+\indent 我们可以简单地推导Arrhenius方程.
+\begin{derivation}
+    假定能量不低于$E_{\min}$的分子才能发生反应.根据\tbf{1B.3.3},这样的分子占总体的比例为
+    \[p=\exp\left(-\dfrac{E_{\min}}{k_\text{B}T}\right)\]
+    令$E_a=\NA E_{\min}$.如果活化能$E_a=0$,那么每一次碰撞都会发生反应.%
+    不妨记此时$k=A$,这样指前因子$A$就代表每次碰撞都发生反应时对应的速率常数.%
+    当$E_a>0$时,能发生反应的分子数的比例变为$p$,那么就有
+    \[k=Ap=A\exp\left(-\dfrac{E_a}{RT}\right)\]
+    这个推导过程相当粗糙,因而(几乎)只起到定性的作用.
+\end{derivation}
+对Arrhenius方程取对数后可得
+\[\ln k=\ln A-\dfrac{E_a}{RT}\]
+如果$A$与$T$无关,就可以通过$\ln k$对$\dfrac1T$作图的方式确定$A$与$E_a$.我们将上式对$T$微分可得
+\[\left(\dfrac{\di\ln k}{\di T}\right)=\dfrac{E_a}{RT^2}\]
+这可以作为活化能的正式定义.
+\begin{definition}[7E.1.2 表观活化能]
+    表观活化能$E_a$可以定义为
+    \[E_a=RT^2\left(\dfrac{\di\ln k}{\di T}\right)\]
+
+\end{definition}
+对于$E_a$不随$T$变化的情形,这就与前面给出的直线等价.%
+而$E_a$随$T$变化则可能暗示着反应机理的改变.\\
+\indent 对于复杂反应而言,总的表观活化能可以根据反应的速率方程和各基元反应的表观活化能得出.%
+例如我们在前面提到的\ce{H2}与\ce{Cl2}的反应,其速率方程为
+\[v=\dfrac{1}{2}\dfrac{\di\con{HCl}}{\di t}=k_2\sqrt{\dfrac{k_1}{k_{-1}}}\con{H2}\con{Cl2}^{\frac12}\]
+因此表观速率常数$k_{\text{obs}}=k_2\sqrt{\dfrac{k_1}{k_{-1}}}$.于是
+\[E_{a,\text{obs}}=A_2\sqrt{\dfrac{A_1}{A_{-1}}}\left(E_{a,2}+\dfrac12E_{a,1}-\dfrac12E_{a,-1}\right)\]
+需要注意的是,两个自由基反应形成分子的活化能几乎为$0$,因为自由基本来就是活泼的,只要相遇几乎都能发生反应,%
+因此$E_{a,-1}\approx0$.这样,上式也可以改写为
+\[E_{a,\text{obs}}=A_2\sqrt{\dfrac{A_1}{A_{-1}}}\left(E_{a,2}+\dfrac12E_{a,1}\right)\]
+\begin{theorem}[7E.1.3 自由基偶联反应的表观活化能]
+    两个自由基偶联的反应的表观活化能$E_a$近似为$0$.
+\end{theorem}
 
 \end{document}

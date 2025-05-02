@@ -1,0 +1,15 @@
+\documentclass{standalone}
+\usepackage{PhysicalChemistryNote}
+\begin{document}
+\begin{tikzpicture}
+    \draw[->] (0,0)--(6.5,0) node[right] {$t$};
+    \draw[->] (0,0)--(0,4.5) node[above] {$\con{A}$};
+    \draw[-] (0,4)--(6,0);
+    \draw[-] (0,4)--(2,0);
+    \fill (0,4) circle (1.5pt) node[left] {$\con{A}_0$};
+    \fill (2,0) circle (1.5pt) node[below] {$t_1$};
+    \fill (6,0) circle (1.5pt) node[below] {$t_2$};
+    \node[right] at (1,2) {$k_1$};
+    \node[right] at (3.1,2) {$k_2$};
+\end{tikzpicture}
+\end{document}

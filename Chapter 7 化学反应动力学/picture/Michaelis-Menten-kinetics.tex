@@ -1,0 +1,11 @@
+\documentclass{standalone}
+\usepackage{PhysicalChemistryNote}
+\begin{document}
+\begin{tikzpicture}
+    \draw[->] (0,0)--(6,0) node[right]{$\con{S}$};
+    \draw[->] (0,0)--(0,4.5) node[above]{$v$};
+    \draw[domain=0.0001:6] plot[smooth](\x,{4/(1+0.5/\x)});
+    \draw[dashed] (0,4)--(6,4);
+    \fill (0,4) circle (1.5pt) node[left]{$v_{\max}$};
+\end{tikzpicture}
+\end{document}

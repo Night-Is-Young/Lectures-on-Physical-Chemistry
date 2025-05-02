@@ -1,0 +1,58 @@
+\documentclass{ctexart}
+\usepackage{PhysicalChemistryNote}
+
+\begin{document}\pagestyle{plain}
+\noindent\tbf{\LARGE Ex7 习题}\vspace{15pt}\\
+\indent 我们将在本章的习题中给出更多的例题以供你巩固动力学知识.
+\setcounter{Pcounter}{0}
+\stepcounter{Pcounter}
+\begin{problem}[P.7.\arabic{Pcounter}]
+    Heck偶联反应为代表的过渡金属催化的偶联反应.这一反应的通式如下.
+    \begin{tightcenter}
+        \ce{ArBr + RCH=CH2 ->T[Pd catalyst][AcONa] ArCH=CHR + AcOH + NaBr}
+    \end{tightcenter}
+    这一反应的机理可以简化如下.
+    \begin{tightcenter}
+        \ce{E + A <=>T[$k_1$][$k_{-1}$] EA} \\
+        \ce{EA + B ->T[$k_2$] E + P}
+    \end{tightcenter}
+    其中\ce{E}为\ce{Pd}催化剂,\ce{A}为溴代物,\ce{B}为原料烯烃,\ce{P}为产物烯烃.
+    \begin{enumerate}[label=\tbf{\arabic{Pcounter}-\arabic*},topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt]
+        \item 推导总反应速率$r$(以生成产物\ce{P}的速率记)的表达式.
+        \item 记$\con{ex}=\con{B}_0-\con{A}_0$为两种底物的起始浓度之差,$\con{E}_0$为催化剂的总浓度.
+        \item 将$1.0\mol$ \ce{C2H5OH(g)},$3.0\mol$ \ce{C2H4(g)}和$1.0\mol$ \ce{H2O}混合,形成总压力$p=p^\ominus$的理想气体混合物.%
+            通过计算判断该反应在$500\K$时进行的方向.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    在开始求解之前,我们需要说明一点:求火焰能达到的最高温度等价于求恒压绝热反应体系能达到的最高温度.%
+    因为物质燃烧是迅速的,完成反应后其热量来不及与外界交换,因而体系可以近似地看作绝热的.如果是在密闭容器内进行的爆炸过程,应当采取定容热容和反应的内能变进行计算.\\
+    现在我们来考虑该体系.不妨假定发生反应之前$n(\ce{CH4})=1\mol$(这里系统的规模与火焰温度无关,因此我们可以任意地指定一个值以方便计算),发生反应
+    \[\ce{CH4 + 2O2 -> CO2 + 2H2O}\]
+    因此反应前$n(\ce{O2})=2\mol,n(\ce{N2})=8\mol$.先假定系统在恒温下反应,该过程的焓变
+    \[\begin{aligned}
+        \Delta_\r H_1
+        &= \sum_i n_i\Delta_\f H_{\m,i}^\ominus \\
+        &= 1\cdot\left((-393.51)+2\times(-241.82)-(-74.6)+0\right)\kJm \\
+        &= -802.55\kJm
+    \end{aligned}\]
+    反应后,系统的组成为$1\mol$ \ce{CO2},$2\mol$ \ce{H2O},$8\mol$ \ce{N2}.系统的定压热容为
+    \[\begin{aligned}
+        C_{p,\text{tot}}
+        &= \sum_in_iC_{p,\m,i} \\
+        &= \left[(44.22+2\times30.00+8\times28.58)+(8.79+2\times10.7+8\times3.77)\times10^{-3}\right]\text{J}\cdot\text K^{-1} \\
+        &= \left(332.86+60.35\times10^{-3}T\right)\text{J}\cdot\text K^{-1}
+    \end{aligned}\]
+    假定最终系统的温度为$T_1\K$,那么升温过程的焓变
+    \[\begin{aligned}
+        \Delta H_2
+        &= \int_{298.15\K}^{T_1\K}C_{p,\text{tot}}\di T \\
+        &= \int_{298.15\K}^{T_1\K}\left(332.86+60.35\times10^{-3}T\right)\di T \\
+        &= \left(-101924.57+332.86T_1+30.18T_1^2\right)\text J
+    \end{aligned}\]
+    由于该过程是等压绝热过程,因此$\Delta H_{\text{tot}}=Q_p=0$,于是$\Delta_\r H_1+\Delta H_2=0$.于是
+    \[\left(-101924.57+332.86T_1+30.18T_1^2\right)\text J=-802.55\text{ kJ}\]
+    解得$T_1=2256$.于是火焰温度最高为$2256\K$.
+\end{solution}
+
+\end{document}

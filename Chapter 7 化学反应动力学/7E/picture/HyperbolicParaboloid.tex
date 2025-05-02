@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{PhysicalChemistryNote}
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        hide axis,
+        width=6cm,
+        height=6cm,
+        colormap/cool
+    ]
+    \addplot3[
+        mesh,
+        samples=20,
+        domain=-1:1,
+    ]
+    {x^2-y^2};
+    \end{axis}
+\end{tikzpicture}
+\end{document}

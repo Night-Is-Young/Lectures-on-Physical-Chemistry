@@ -19,40 +19,193 @@
     其中\ce{E}为\ce{Pd}催化剂,\ce{A}为溴代物,\ce{B}为原料烯烃,\ce{P}为产物烯烃.
     \begin{enumerate}[label=\tbf{\arabic{Pcounter}-\arabic*},topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt]
         \item 推导总反应速率$r$(以生成产物\ce{P}的速率记)的表达式.
-        \item 记$\con{ex}=\con{B}_0-\con{A}_0$为两种底物的起始浓度之差,$\con{E}_0$为催化剂的总浓度.
-        \item 将$1.0\mol$ \ce{C2H5OH(g)},$3.0\mol$ \ce{C2H4(g)}和$1.0\mol$ \ce{H2O}混合,形成总压力$p=p^\ominus$的理想气体混合物.%
-            通过计算判断该反应在$500\K$时进行的方向.
+        \item 记$\con{ex}=\con{B}_0-\con{A}_0$为两种底物的起始浓度之差,$\con{E}_0$为催化剂的总浓度.试证明反应速率$r$可以写成如下形式
+            \[r=a\dfrac{\con{ex}\con{A}+\con{A}^2}{1+b\con{A}}\con{E}_0\]
+            并求出系数$a,b$的表达式.
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    在开始求解之前,我们需要说明一点:求火焰能达到的最高温度等价于求恒压绝热反应体系能达到的最高温度.%
-    因为物质燃烧是迅速的,完成反应后其热量来不及与外界交换,因而体系可以近似地看作绝热的.如果是在密闭容器内进行的爆炸过程,应当采取定容热容和反应的内能变进行计算.\\
-    现在我们来考虑该体系.不妨假定发生反应之前$n(\ce{CH4})=1\mol$(这里系统的规模与火焰温度无关,因此我们可以任意地指定一个值以方便计算),发生反应
-    \[\ce{CH4 + 2O2 -> CO2 + 2H2O}\]
-    因此反应前$n(\ce{O2})=2\mol,n(\ce{N2})=8\mol$.先假定系统在恒温下反应,该过程的焓变
-    \[\begin{aligned}
-        \Delta_\r H_1
-        &= \sum_i n_i\Delta_\f H_{\m,i}^\ominus \\
-        &= 1\cdot\left((-393.51)+2\times(-241.82)-(-74.6)+0\right)\kJm \\
-        &= -802.55\kJm
-    \end{aligned}\]
-    反应后,系统的组成为$1\mol$ \ce{CO2},$2\mol$ \ce{H2O},$8\mol$ \ce{N2}.系统的定压热容为
-    \[\begin{aligned}
-        C_{p,\text{tot}}
-        &= \sum_in_iC_{p,\m,i} \\
-        &= \left[(44.22+2\times30.00+8\times28.58)+(8.79+2\times10.7+8\times3.77)\times10^{-3}\right]\text{J}\cdot\text K^{-1} \\
-        &= \left(332.86+60.35\times10^{-3}T\right)\text{J}\cdot\text K^{-1}
-    \end{aligned}\]
-    假定最终系统的温度为$T_1\K$,那么升温过程的焓变
-    \[\begin{aligned}
-        \Delta H_2
-        &= \int_{298.15\K}^{T_1\K}C_{p,\text{tot}}\di T \\
-        &= \int_{298.15\K}^{T_1\K}\left(332.86+60.35\times10^{-3}T\right)\di T \\
-        &= \left(-101924.57+332.86T_1+30.18T_1^2\right)\text J
-    \end{aligned}\]
-    由于该过程是等压绝热过程,因此$\Delta H_{\text{tot}}=Q_p=0$,于是$\Delta_\r H_1+\Delta H_2=0$.于是
-    \[\left(-101924.57+332.86T_1+30.18T_1^2\right)\text J=-802.55\text{ kJ}\]
-    解得$T_1=2256$.于是火焰温度最高为$2256\K$.
+    \begin{enumerate}[label=\tbf{\arabic{Pcounter}-\arabic*},topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt]
+        \item 这事实上不过是米氏方程的变形.我们对\ce{EA}稳态近似可得
+            \[\dfrac{\di\con{EA}}{\di t}=k_1\con{E}\con{A}-k_{-1}\con{EA}-k_2\con{EA}\con{B}=0\]
+            于是
+            \[\con{EA}=\dfrac{k_1\con{E}\con{A}}{k_{-1}+k_2\con{B}}\]
+            由物料守恒$\con{E}+\con{EA}=\con{E}_0$可得
+            \[\con{EA}\left(1+\dfrac{k_{-1}+k_2\con{B}}{k_1\con{A}}\right)=\con{E}_0\]
+            于是
+            \[r=k_2\con{EA}\con{B}=\dfrac{k_1k_2\con{E}_0\con{A}\con{B}}{k_{-1}+k_1\con{A}+k_2\con{B}}\]
+        \item 根据计量数有$\con{ex}=\con{B}_0-\con{A}_0=\con{B}-\con{A}$.代入第一问的结果可得
+            \[r=\dfrac{k_1k_2\con{E}_0\con{A}\left(\con{A}+\con{ex}\right)}{k_{-1}+k_1\con{A}+k_2\left(\con{A}+\con{ex}\right)}
+            =\dfrac{k_1k_2}{k_{-1}+k_2\con{ex}}\cdot\dfrac{\con{ex}\con{A}+\con{A}^2}{1+\dfrac{k_1+k_2}{k_{-1}+k_2\con{ex}}\con{A}}\con{E}_0\]
+            于是有
+            \[a=\dfrac{k_1k_2}{k_{-1}+k_2\con{ex}}\ \ \ \ \ b=\dfrac{k_1+k_2}{k_{-1}+k_2\con{ex}}\]
+            这样,由于$\con{ex}$和$\con{E}_0$都是已知的量,我们就可以通过测定$\con{A}$得出反应速率$r$.
+    \end{enumerate}
 \end{solution}
-
+\stepcounter{Pcounter}
+\begin{problem}[P.7.\arabic{Pcounter}]
+    铁卟啉(\ce{FeP})是细胞色素(P-450)的活性中心,具有将各种氧供体的氧原子活化并转移至底物的能力.%
+    研究人员为模拟活体内的加氧酶催化$\beta$-胡萝卜素(\ce{$\beta$})分解为维生素\ce{A}(\ce{VA})的反应,%
+    以\ce{FeP}为催化剂,间氯过氧化苯甲酸(\ce{CPBA})为氧化剂,研究了$\beta$-胡萝卜素的分解反应动力学.%
+    研究中\ce{FeP}和\ce{CPBA}的浓度可视为不变.无论是否存在催化剂\ce{FeP},该分解反应对$\beta$-胡萝卜素均为一级反应.\\
+    \tbf{实验A}.在无\ce{FeP}的情况下,$\beta$-胡萝卜素-间氯过氧化苯甲酸反应体系($\beta-\ce{CPBA}$)的反应机理$1$如下%
+    (其中$\beta\ast\ce{CPBA}$为反应中间物,\ce{CBA}为间氯苯甲酸):
+    \begin{tightcenter}
+        \ce{$\beta$ + CPBA <=>T[$K_i'$] $\beta\ast\ce{CPBA}$}\\
+        \ce{$\beta\ast\ce{CPBA}$ ->T[$k_2'$] VA + CBA}
+    \end{tightcenter}
+    \tbf{实验B}.以\ce{FeP}为催化剂,$\beta$-胡萝卜素-间氯过氧化苯甲酸-铁卟啉反应体系($\beta-\ce{CPBA}-\ce{FeP}$)的反应机理$2$如下%
+    (其中$\ce{FeOP}\ast\ce{CBA},\beta\ast\ce{FeOP}\ast\ce{CBA},\beta\ast\ce{CPBA}$为反应中间物):
+    \begin{tightcenter}
+        \ce{FeP + CPBA <=>T[$K_1$] $\ce{FeOP}\ast\ce{CBA}$}\\
+        \ce{$\ce{FeOP}\ast\ce{CBA}$ + $\beta$ <=>T[$K_2$] $\beta\ast\ce{FeOP}\ast\ce{CBA}$}\\
+        \ce{$\beta\ast\ce{FeOP}\ast\ce{CBA}$ ->T[$k_1$] VA + FeP + CBA}\\
+        \ce{$\beta$ + CPBA <=>T[$K_i$] $\beta\ast\ce{CPBA}$}\\
+        \ce{$\beta\ast\ce{CPBA}$ ->T[$k_2$] VA + CBA}
+    \end{tightcenter}
+    对该体系的实验结果进行曲线拟合,可得以下数据(其中$k_{\text{obs}}$为反应的表观速率常数).
+    \vspace{-5pt}\begin{table}[H]\centering
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+                $T/\text{K}$ & $k_1/\text{s}^{-1}$ & $k_2/\text{s}^{-1}$ & $k_{\text{obs}}/\text{s}^{-1}$ \\ \hline
+                $293.2$ & $4.869\times10^{-3}$ & $1.350\times10^{-4}$ & $5.865\times10^{-4}$ \\ \hline
+                $301.2$ & $7.731\times10^{-3}$ & $2.398\times10^{-4}$ & $9.795\times10^{-4}$ \\ \hline
+        \end{tabular}
+    \end{table}\vspace{-15pt}
+    \begin{enumerate}[label=\tbf{\arabic{Pcounter}-\arabic*},topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt]
+        \item 对$\beta-\ce{CPBA}$体系,测得
+            \[k_{\text{obs}}'(293.2\K)=4.795\times10^{-4}\text{ s}^{-1}\ \ \ \ \ k_{\text{obs}}'(301.2\K)=8.285\times10^{-4}\text{ s}^{-1}\]
+            求反应的表观活化能$E_{a,\text{obs}}'$.
+        \item 根据反应机理$2$,推导$\beta\ast\ce{CPBA}\ast\ce{FeP}$体系中$-\dfrac{\di[\beta]}{\di t}$与$[\beta]$间关系的速率方程,并给出$k_{\text{obs}}$的表达式.
+        \item 已知$\beta\ast\ce{CPBA}\ast\ce{FeP}$体系反应的表观活化能$E_{\text{obs}}=47.07\kJm$和机理$2$中第三步的活化能$E_{a,1}=42.43\kJm$,计算机理$2$中第五步的活化能$E_{a,2}$.
+        \item 分别根据以下条件,说明$\beta-\ce{CPBA}$和$\beta\ast\ce{CPBA}\ast\ce{FeP}$中哪一个体系的反应更有利.
+            \begin{enumerate}[label=\tbf{\arabic{Pcounter}-4-\arabic*},topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt,leftmargin=10pt]
+                \item $E_{a,1}$与$E_{a,2}$的结果.
+                \item $E_{a,\text{obs}}$与$E_{a,\text{obs}}'$的结果.
+            \end{enumerate}
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{enumerate}[label=\tbf{\arabic{Pcounter}-\arabic*},topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt]
+        \item 根据Arrhenius方程有
+            \[\ln\dfrac{k_{\text{obs}}'\left(T_1\right)}{k_{\text{obs}}'\left(T_2\right)}=\dfrac{E_{a,\text{obs}}'}{R}\left(\dfrac{1}{T_2}-\dfrac{1}{T_1}\right)\]
+            代入题中数据可得
+            \[\ln\dfrac{4.795\times10^{-4}}{8.285\times10^{-4}}=\dfrac{E_{a,\text{obs}}'}{8.314\JmK}\left(\dfrac{1}{293.2\K}-\dfrac{1}{301.2\K}\right)\]
+            解得
+            \[E_{a,\text{obs}}=50.19\kJm\]
+        \item 我们在\tbf{7D}的酶促反应的示例中大多是推导产物的生成速率,而这道题则有些不同.我们要求反应物$\beta$的消耗速率$-\dfrac{\di[\beta]}{\di t}$.%
+            并且,由于题目中已经说明酶\ce{FeP}的浓度可视为不变,因此我们并不能使用一般的酶的物料守恒求解.\\
+            我们遇到的最大的困难在于有关$\beta$的反应全部出现在快速平衡中,而题目并未给出快速平衡的速率常数,这使得我们无法直接写出$-\dfrac{\di[\beta]}{\di t}$的显式表达式.\\
+            因此,我们需要采取一些间接的方法.如果我们用另一物质的浓度表示$[\beta]$,然后将这一表达式对时间$t$求导,即可用这一物质的消耗或生成速率表达$-\dfrac{\di[\beta]}{\di t}$.\\
+            由于这一体系的净反应为\ce{$\beta$ + CPBA -> VA + CBA},因此$\beta$的物料守恒为
+            \[[\beta]_0=\con{VA}+[\beta]+[\beta\ast\ce{FeOP}\ast\ce{CBA}]+[\beta\ast\ce{CBA}]\]
+            直接对此式求导仍然是不可行的,因为后两个中间体的浓度也会随着$[\beta]$的变化而变化.我们需要写出这一关系.%
+            根据平衡态假设可知
+            \[[\beta\ast\ce{FeOP}\ast\ce{CBA}]=K_1K_2\con{FeP}\con{CPBA}[\beta]\]
+            \[[\beta\ast\ce{CBA}]=K_i\con{CPBA}[\beta]\]
+            代入上述物料守恒可得
+            \[[\beta]_0=\con{VA}+\left(1+K_1K_2\con{FeP}\con{CPBA}+K_i\con{CPBA}\right)[\beta]\]
+            我们将上式对时间$t$求导可得
+            \[-\dfrac{\di[\beta]}{\di t}=\dfrac{1}{1+K_1K_2\con{FeP}\con{CPBA}+K_i\con{CPBA}}\dfrac{\di\con{VA}}{\di t}\]
+            又因为
+            \[\begin{aligned}
+                \dfrac{\di\con{VA}}{\di t}
+                &= k_1[\beta\ast\ce{FeOP}\ast\ce{CBA}]+k_2[\beta\ast\ce{CBA}] \\
+                &= \left(k_1K_1K_2\con{FeP}\con{CPBA}+k_2K_i\con{CPBA}\right)[\beta]
+            \end{aligned}\]
+            于是
+            \[-\dfrac{\di[\beta]}{\di t}=\dfrac{k_1K_1K_2\con{FeP}\con{CPBA}+k_2K_i\con{CPBA}}{1+K_1K_2\con{FeP}\con{CPBA}+K_i\con{CPBA}}[\beta]\]
+            于是
+            \[k_{\text{obs}}=\dfrac{\left(k_1K_1K_2\con{FeP}+k_2K_i\right)\con{CPBA}}{1+\left(K_1K_2\con{FeP}+K_i\right)\con{CPBA}}\]
+            如果你认为一个$\beta$可以变成一个\ce{VA},从而认为$-\dfrac{\di[\beta]}{\di t}=\dfrac{\con{VA}}{\di t}$,那就大错特错了.这道题最重要的地方就在于%
+            中间体的浓度也会随时间而变化,并且其浓度都与$[\beta]$成正比关系,因此需要统一代入.
+        \item 这一小问的做法与\tbf{\arabic{Pcounter}-1}是完全一致的,我们代入数据即可得
+            \[\ln\dfrac{1.350\times10^{-4}}{2.398\times10^{-4}}=\dfrac{E_{a,2}}{8.314\JmK}\left(\dfrac{1}{293.2\K}-\dfrac{1}{301.2\K}\right)\]
+            解得
+            \[E_{a,2}=52.73\kJm\]
+        \item 这一小问要求我们从两个角度分析\ce{FeP}对$\beta$氧化为\ce{VA}的反应是否有利.比较两个不同的反应机理,%
+            既可以从具体决速步的活化能判断,也可以从有无催化剂时反应的表观活化能判断.
+            \begin{enumerate}[label=\tbf{\arabic{Pcounter}-4-\arabic*},topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt,leftmargin=10pt]
+                \item 从反应机理来看,机理$1$的步骤与机理$2$的后两步完全相同,这意味着这两个反应的速率常数和活化能相同(我们的计算确实支持这一点).%
+                    但对于机理$2$有$E_{a,1}<E_{a,2}$,这意味着反应可以经过一个活化能更小的步骤进行,因此\ce{FeP}对这一反应是有利的.
+                \item 从表观活化能来看有$E_{a,\text{obs}}<E_{a,\text{obs}}'$,这意味着通过机理$2$进行的反应的总体的活化能更小,这也可以得出\ce{FeP}对这一反应是有利的.
+            \end{enumerate}
+    \end{enumerate}
+\end{solution}
+\stepcounter{Pcounter}
+\begin{problem}[P.7.\arabic{Pcounter} 岩石变化动力学]
+    斜方辉石\ce{[(Mg,Fe)2Si2O6]}是地壳和上地幔的主要组成矿物之一,在其晶体结构中包含有两种不同的硅氧四面体\ce{(SiO3)2-}链,%
+    分别称作\ce{A}链和\ce{B}链,基于这两种链的排布而形成了两种结构有差异的八面体空隙M1和M2,二者比例相同.%
+    \ce{Mg^2+}和\ce{Fe^2+}便分布在这些八面体空隙中.由于M1和M2的空隙性质不同,%
+    导致\ce{Mg^2+}和\ce{Fe^2+}对其占据的选择性不同,\ce{Fe^2+}倾向于占据M2位置.%
+    一定条件下,两种离子可以发生不同位置的交换反应:
+    \begin{tightcenter}
+        \ce{Fe^2+({M1}) + Mg^2+({M2}) <=> Fe^2+({M2}) + Mg^2+({M1})}
+    \end{tightcenter}
+    为简便起见,\ce{Fe^2+({M1})},\ce{Mg^2+({M2})},\ce{Fe^2+({M2})}和\ce{Mg^2+({M1})}分别写作Fe(1),Fe(2),Mg(1)和Mg (2).%
+    上述反应达平衡时,分配系数$K_D$为
+    \[K_D=\dfrac{\chi_{\ce{Fe(2)}}\chi_{\ce{Mg(1)}}}{\chi_{\ce{Fe(1)}}\chi_{\ce{Mg(2)}}}\]
+    其中,$\chi$为各离子占据相应位置的摩尔分数,例如:$\chi_{\ce{Fe(2)}}$为\ce{Fe^2+}离子占据M2位置的摩尔分数,其他同理.\\
+    选择某一矿物样品,在$873\K$下进行处理,利用X射线衍射结合穆斯堡尔谱监测反应进行过程中上述物种占据不同位置情况随时间的变化,数据列入下表中.
+    \vspace{-5pt}\begin{table}[H]\centering
+        \begin{tabular}{|c|c|c|c|c|c|}
+            \hline
+                编号 & $t/\text{min}$ & $\chi_{\ce{Fe(1)}}$ & $\chi_{\ce{Mg(2)}}$ & $\chi_{\ce{Fe(2)}}$ & $\chi_{\ce{Mg(1)}}$ \\ \hline
+                1   & 0     & 0.00450   & 0.9807    & 0.0174    & 0.9769 \\ \hline
+                2	& 600   & 0.00420   & 0.9804    & 0.0176    & 0.9771 \\ \hline
+                3	& 1920  & 0.00380   & 0.9801	& 0.0179	& 0.9774 \\ \hline
+                4	& 3720	& 0.00361	& 0.9798	& 0.0183	& 0.9778 \\ \hline
+                5	& 6000	& 0.00335	& 0.9795	& 0.0185	& 0.9780 \\ \hline
+                6	& 11760	& 0.00281	& 0.9790	& 0.0191	& 0.9786 \\ \hline
+                7	& 20300	& 0.00261	& 0.9788	& 0.0193	& 0.9788 \\ \hline
+                8	& 29700	& 0.00233	& 0.9785	& 0.0195	& 0.9790 \\ \hline
+                9	& 48165	& 0.00232	& 0.9785	& 0.0195	& 0.9790 \\ \hline
+        \end{tabular}
+    \end{table}\vspace{-15pt}
+    \begin{enumerate}[label=\tbf{\arabic{Pcounter}-\arabic*},topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt]
+        \item 计算分配系数$K_D$.(提示:合理判断并选择表中的数据.)
+        \item 记上述反应的正,逆反应的速率常数分别为$k_1$和$k_{-1}$.假设正,逆反应速率表达形式均与基元反应类似,即反应速率分别与占据相应位置的各离子的摩尔分数$\chi$成正比.%
+            据此,写出$K_D$与$k_1$和$k_{-1}$的关系式。
+        \item 利用上表中起始阶段的数据(采用编号1到4的数据进行处理),计算$k_1$和$k_{-1}$的值.%
+            (提示:可将\ce{Mg^2+}的摩尔分数视作常数,取0.9780.)
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{enumerate}[label=\tbf{\arabic{Pcounter}-\arabic*},topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt]
+        \item 我们需要寻找平衡状态的数据以计算$K_D$.观察编号为8和9的数据,可以发现各物种的摩尔分数已经近似地不再变化,即达到平衡状态.%
+            选取编号$9$的数据,可得
+            \[K_D=\dfrac{\chi_{\ce{Fe(2)}}\chi_{\ce{Mg(1)}}}{\chi_{\ce{Fe(1)}}\chi_{\ce{Mg(2)}}}
+            =\dfrac{0.9795\cdot0.0195}{0.9785\cdot0.00232}=8.41\]
+            若选取编号$8$的数据得到$K_D=8.44$,亦可.
+        \item 平衡时,正逆反应速率相等,即有
+            \[k_1\chi_{\ce{Fe(2)}}\chi_{\ce{Mg(1)}}=k_{-1}\chi_{\ce{Fe(1)}}\chi_{\ce{Mg(2)}}\]
+            又因为分配系数的定义为
+            \[K_D=\dfrac{\chi_{\ce{Fe(2)}}\chi_{\ce{Mg(1)}}}{\chi_{\ce{Fe(1)}}\chi_{\ce{Mg(2)}}}\]
+            结合上述两式可得
+            \[K_D=\dfrac{k_1}{k_{-1}}\]
+            事实上,这和一般的基元反应的平衡常数与正逆反应速率常数的关系是完全一致的.%
+            在本题中,我们只不过不使用浓度,转而使用摩尔分数来表示反应速率.
+        \item 为了求出摩尔分数随时间的关系,我们需要求出反应体系的积分速率方程.\\
+            首先,体系的微分速率方程为
+            \[\dfrac{\di\chi_{\ce{Fe(2)}}}{\di t}=-k_1\chi_{\ce{Fe(2)}}\chi_{\ce{Mg(1)}}+k_{-1}\chi_{\ce{Fe(1)}}\chi_{\ce{Mg(2)}}\]
+            这一方程具有四个变量,难以进行进一步的积分运算,因此我们需要尽量减少和统一变量.%
+            为此,首先将\ce{Mg^2+}的摩尔分数视作常数(不妨记作$\chi_{\ce{Mg}}$)后就有
+            \[\dfrac{\di\chi_{\ce{Fe(2)}}}{\di t}=-k_1\chi_{\ce{Fe(2)}}\chi_{\ce{Mg}}+k_{-1}\chi_{\ce{Fe(1)}}\chi_{\ce{Mg}}
+            =0.9780\left(-k_1\chi_{\ce{Fe(2)}}+k_{-1}\chi_{\ce{Fe(1)}}\right)\]
+            随后,在\tbf{\arabic{Pcounter}-2}中我们知道$k_1$与$k_{-1}$的等量关系.将\tbf{\arabic{Pcounter}-1}中的$K_D$代入可得
+            \[k_1=8.41 k_{-1}\]
+            将此式代入速率方程可得
+            \[\dfrac{\di\chi_{\ce{Fe(2)}}}{\di t}=0.9780k_{-1}\left(\chi_{\ce{Fe(1)}}-8.41\chi_{\ce{Fe(2)}}\right)\]
+            现在我们来思考$\chi_{\ce{Fe(1)}}$和$\chi_{\ce{Fe(2)}}$的关系.体系中的\ce{Fe^2+}的总量是守恒的,即有
+            \[n(\ce{Fe(1)})+n(\ce{Fe(2)})=n_0(\ce{Fe^2+})\]
+            我们将两种空隙的数目,以及\ce{Fe^2+}占两种空隙的比例代入可得
+            \[n(\ce{{M1}})\chi_{\ce{Fe(1)}}+n(\ce{{M2}})\chi_{\ce{Fe(2)}}=n_0(\ce{Fe^2+})\]
+            由于题目中给出M1与M2的比例相同,因此有$n(\ce{{M1}})=n(\ce{{M2}})$.于是有
+            \[\chi_{\ce{Fe(1)}}+\chi_{\ce{Fe(2)}}=\dfrac{n_0(\ce{Fe^2+})}{n(\ce{{M1}})}=2\chi_{\ce{Fe}}\]
+            我们将$t=0$时的摩尔分数代入上式可得
+            \[\chi_{\ce{Fe(1)}}+\chi_{\ce{Fe(2)}}=0.0219\]
+            将这一等量关系代入速率方程以消去$\chi_{\ce{Fe(1)}}$,即可得到
+            \[\dfrac{\di\chi_{\ce{Fe(2)}}}{\di t}=k_{-1}\left(\right)\]
+    \end{enumerate}
+\end{solution}
 \end{document}

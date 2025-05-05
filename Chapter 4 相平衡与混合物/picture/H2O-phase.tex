@@ -1,0 +1,22 @@
+\documentclass{standalone}
+\usepackage{PhysicalChemistryNote}
+\begin{document}
+\begin{tikzpicture}
+    \draw[->] (0,0)--(6,0) node[right]{$T/\text{K}$};
+    \draw[->] (0,0)--(0,6) node[above]{$p/\text{Pa}$};
+    \draw[blue,thick,domain=0.2:1.5] plot[smooth](\x,{0.8*(e^(2*\x/3)-e)+1.5});
+    \draw[blue,thick,domain=1.5:5] plot[smooth](\x,{3*(e^(\x/6)-e^0.25)+1.5});
+    \draw[blue,thick,domain=0.7:1.5] plot[smooth](\x,{-5*(\x-1.5)+1.5});
+    \draw[dashed] (1.5,1.5)--(1.5,0) node[below]{\small{$273.16$}};
+    \draw[dashed] (5,4.552)--(5,0) node[below]{\small{$647.096$}};
+    \draw[dashed] (1.5,1.5)--(0,1.5) node[left]{\small{$610.75$}};
+    \draw[dashed] (5,4.552)--(0,4.552) node[left]{\small{$2.206\times10^{7}$}};
+    \draw[blue,thick] (5,4.552)--(5,5.5);
+    \draw[blue,thick] (6,4.552)--(5,4.552);
+    \fill (1.5,1.5) circle (1.5pt);
+    \fill (5,4.552) circle (1.5pt);
+    \node at (3,1.25) {gas};
+    \node at (2.5,3.5) {liquid};
+    \node at (0.75,2) {solid};
+\end{tikzpicture}
+\end{document}

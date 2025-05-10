@@ -2,7 +2,7 @@
 \usepackage{PhysicalChemistryNote}
 
 \begin{document}\pagestyle{plain}
-\noindent\tbf{\LARGE 6A 氧化还原反应与可逆电池}\vspace{15pt}\\
+\noindent\tbf{\LARGE 6A 氧化还原反应与化学电池}\vspace{15pt}\\
 \indent 不同于我们在\tbf{Chapter 5}中主要讨论的反应,在现实情况中,反应体系做非膨胀功(或者对体系做非膨胀功)也十分常见,%
 这一非膨胀功即电功.为此,我们先需要了解氧化还原反应的基本概念.\vspace{12pt}\\
 \Section{6A.1 氧化还原反应}
@@ -104,6 +104,56 @@
 \indent 我们可以对上述电池稍加改进.在我们的设计中,锌片直接与\ce{CuSO4}溶液接触,%
 因此即使用导线将其与铜片相连,仍然不能完全防止\ce{Zn}直接与溶液中的\ce{Cu^2+}反应.%
 为此,我们可以把锌片放在\ce{ZnSO4}溶液中,把铜片放在\ce{CuSO4}溶液中,然后将两种溶液用多孔陶瓷板(或半透膜)隔开,%
-亦可以用充满\ce{KCl}溶液的琼脂(即我们所说的\tbf{盐桥})进行连接.%
+亦可以用\tbf{盐桥}进行连接.%
 这样,\ce{Cu^2+}就不会进入与\ce{Zn}相接的电解液,也就避免了上面的情形的发生.
+\begin{hint}
+    通常,盐桥琼脂以及其中含有的饱和\ce{KCl}溶液或饱和\ce{KNO3}溶液构成.%
+    这两种盐的溶解度都较大,且阴阳离子迁移速率差别不大,因此可以有效减小液接电势\footnotemark.%
+    此外,使用盐桥还可以防止某些离子进入阴极或阳极的溶液造成副反应.
+\end{hint}\footnotetext{我们将在\tbf{6B}讨论液接(液体接界)电势的成因.现在,你只需要知道它是由两种相接溶液的离子浓度不同所致即可.}
+\Part{电池的表示方法}
+\indent 表示电池涉及到阴阳极顺序的问题以及各相界面的表示方法.依惯例,电池应当依据以下规则进行书写.
+\begin{theorem}[6A.2.3 电池的书写方法]
+    一般而言,书写电池需要遵守的规则有
+    \begin{enumerate}[topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt,label=\tbf{\arabic*.},leftmargin=*]
+        \item 阳极写在左边,阴极写在右边.
+        \item 用单垂线$\vert$表示不同物相的界面.
+        \item 用双垂线$\vert\vert$表示盐桥等不产生液接电势的界面.
+        \item 用竖虚线\hspace{1.5pt}\dashrule{0.5}{2 1.5 2 1.5 2}\hspace{1.5pt}表示半透膜等产生液接电势的界面.
+        \item 一般而言,要注明温度和压力(如不写明,一般指温度为$298.15\K$,压力为$p^\ominus$);要标明电极的物态;气体需要标明压力和依附的不活泼金属;%
+            电解质溶液则要标明活度.
+    \end{enumerate}
+\end{theorem}
+例如,我们在前面提到的电池可以按照此方法表示为
+\begin{tightcenter}
+    \ce{Zn(s)}$\vert$\ce{ZnSO4(aq)}$\vert\vert$\ce{CuSO4(aq)}$\vert$\ce{Cu(s)}
+\end{tightcenter}
+其它电池也可以通过相似的方式表示.\vspace{4pt}\\
+\Part{电极的种类}
+\indent 只要能发生氧化还原半反应并且向导体传递电子,就可以构成一个电极.常见的电极有以下几类.
+\begin{theorem}[6A.2.4 电极的种类]
+    根据电极材料和发生半反应的不同,我们可以将电极分为以下几类.
+    一般而言,书写电池需要遵守的规则有
+    \begin{enumerate}[topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt,label=\tbf{(\arabic*)},leftmargin=*]
+        \item \tbf{金属/金属离子电极}\\
+            由金属浸入含该金属离子的溶液构成,%
+            表示为$\ce{M(s)}\vert\ce{M^n+(aq)}$,氧化还原对为\ce{M^n+/M},半反应为\ce{M^n+(aq) + n e^- -> M(s)}.\\
+            我们在前面提到的\ce{Zn-Cu}电池的两个电极就属于此类.
+        \item \tbf{气体电极}\\
+            由气体单质通入含对应离子的溶液构成.由于气体不导电,因此需借助\ce{Pt},石墨等惰性物质进行导电.%
+            根据所用气体的不同有不同的表现形式.对于还原性气体,例如\ce{H2-Pt}电极,可以表示为%
+            $\ce{Pt(s)}\vert\ce{H2(g)}\vert\ce{H^+(aq)}$,氧化还原对为\ce{H^+/H2},半反应为\ce{2H^+(aq) + 2e^- -> H2(g)}.%
+            对于氧化性气体,如\ce{Cl2},\ce{O2}等,书写方法是类似的.\\
+            标准氢电极(我们将在介绍标准电极电势时提到)就属于此类.
+        \item \tbf{难溶盐电极}\\
+            由金属及其表面覆盖一薄层该金属的难溶盐后进入含对应阴离子的溶液构成,%
+            可以表示为$\ce{M(s)}\vert\ce{MX(s)}\vert\ce{X^-(aq)}$,氧化还原对为\ce{MX(s)/M(s)},半反应为\ce{MX(s) + e^- -> M(s) + X^-(aq)}.\\
+            甘汞电极就属于此类.
+        \item \tbf{氧化还原电极}\\
+            由惰性导体(如\ce{Pt}等)浸入含某种离子的不同氧化态的溶液中构成.%
+            以\ce{Pt-Fe^2+ -Fe^3+}电极为例,可以表示为$\ce{Pt(s)}\vert\ce{Fe^2+(aq)},\ce{Fe^3+(aq)}$,氧化还原对为\ce{Fe^3+(aq)/Fe^2+(aq)},半反应为\ce{Fe^3+(aq) + e^- -> Fe^2+(aq)}.\\
+            醌-氢醌电极就属于此类.
+    \end{enumerate}
+\end{theorem}
+现在,我们已经了解了电池的基本构造和表示方法.在下一节,我们将把目光转向另一个问题:原电池的电势差从何而来,又受到哪些因素的影响.
 \end{document}

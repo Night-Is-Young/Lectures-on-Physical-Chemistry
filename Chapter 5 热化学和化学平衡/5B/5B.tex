@@ -9,15 +9,15 @@ Gibbs自由能$G$减小的方向进行,直到系统平衡为止.这一原理自�
 \Section{5B.1 平衡常数与标准摩尔Gibbs自由能变}
 \Part{化学反应的Gibbs自由能变}
 \indent 显然的,达到化学平衡的体系必然是混合物,因此我们需要用化学势代替纯物质的Gibbs自由能以对体系进行研究.%
-我们不妨从最简单的平衡反应\ce{$A$ <=> $B$}开始研究.
+我们不妨从最简单的平衡反应\ce{A <=> B}开始研究.
 \begin{derivation}
-    在等温等压下,含有上述$A$和$B$物质的系统的Gibbs自由能的微分
-    \[\di G=\mu_{A}\di n_A+\mu_B\di n_B\]
-    依照反应进度的定义,如果反应进行了$\di\xi$,那么$\di n_A=-\di\xi,\di n_{B}=\di\xi$.这样就有
-    \[\di G=\left(\mu_B-\mu_A\right)\di\xi\]
+    在等温等压下,含有上述\ce{A}和\ce{B}物质的系统的Gibbs自由能的微分
+    \[\di G=\mu_{\ce{A}}\di n_{\ce{A}}+\mu_{\ce{B}}\di n_{\ce{B}}\]
+    依照反应进度的定义,如果反应进行了$\di\xi$,那么$\di n_{\ce{A}}=-\di\xi,\di n_{\ce{B}}=\di\xi$.这样就有
+    \[\di G=\left(\mu_{\ce{B}}-\mu_{\ce{A}}\right)\di\xi\]
     亦即
-    \[\pa{G}{\xi}{T,p}=\left(\mu_B-\mu_A\right)\]
-    回顾化学势的定义,$\mu_B-\mu_A$不仅代表$B$与$A$在这样的系统组成下的化学势的差值,也等于在大量(该组成的)系统中反应进行$1\mol$上述反应的Gibbs自由能变.%
+    \[\pa{G}{\xi}{T,p}=\mu_{\ce{B}}-\mu_{\ce{A}}\]
+    回顾化学势的定义,$\mu_{\ce{B}}-\mu_{\ce{A}}$不仅代表\ce{B}与\ce{A}在这样的系统组成下的化学势的差值,也等于在大量(该组成的)系统中反应进行$1\mol$上述反应的Gibbs自由能变.%
     这就是摩尔Gibbs自由能变的定义.
 \end{derivation}
 \begin{definition}[5B.1.1 反应摩尔Gibbs自由能变]
@@ -68,7 +68,7 @@ Gibbs自由能$G$减小的方向进行,直到系统平衡为止.这一原理自�
 \indent 在前面的推导中首先出现了一个量,即纯的$i$在压力为$p^\ominus$时的摩尔Gibbs自由能$G_{\m,i}^\ominus(T)$.%
 与焓相同,我们无法确定$G_{\m,i}^\ominus$的绝对数值.但因为我们只需知道$G_{\m,i}^\ominus$的差值,%
 因此我们可以采用与定义标准焓变相似的办法定义一个类似的量,即标准反应Gibbs自由能变.%
-\begin{definition}[5B.1.3 标准反应Gibbs自由能变]
+\begin{definition}[5B.1.2 标准反应Gibbs自由能变]
     由标准态的反应物完全转变为标准态的产物这一过程的Gibbs自由能的变化即为\tbf{标准反应Gibbs自由能变}.%
     如果令$\xi=1\mol$,则这一过程的焓变即为\tbf{标准摩尔(反应)Gibbs自由能变},记为$\Delta_\r G_\m^\ominus$.
 \end{definition}
@@ -79,7 +79,7 @@ Gibbs自由能$G$减小的方向进行,直到系统平衡为止.这一原理自�
 后者则是一个微分量,与系统的组成相关,并且当$\Delta_\r G=0$时系统就达到平衡.\\
 \indent 由于Gibbs自由能也是状态函数,因此Hess定律对它仍然适用.于是为了方便计算所有反应的$\Delta_\r G_{\m}^\ominus$,%
 我们可以定义各物质的标准生成Gibbs自由能.
-\begin{definition}[5B.1.4 标准生成Gibbs自由能]
+\begin{definition}[5B.1.3 标准生成Gibbs自由能]
     在标准压力下和给定的温度$T$下,由稳定单质生成物质\ce{X}的标准摩尔Gibbs自由能变即\ce{X}的\tbf{标准摩尔生成Gibbs自由能},%
     用符号$\Delta_\f G_\m^\ominus(\text{X,物态,}T)$表示.
 \end{definition}
@@ -157,7 +157,7 @@ Gibbs自由能$G$减小的方向进行,直到系统平衡为止.这一原理自�
     这样,所有的活度的量纲\footnotemark 为$1$,因而平衡常数$K^\ominus$的量纲也为$1$.
 \end{derivation}\footnotetext{通俗地说,物理量的量纲就是它的单位.}
 现在我们可以说,任意的反应都存在反应商和平衡常数.
-\begin{definition}[5B.1.5 反应商与平衡常数]
+\begin{definition}[5B.1.4 反应商与平衡常数]
     对于一个化学反应,其\tbf{反应商}$Q$定义为
     \[Q=\prod_{i=1}^k a_i^{\nu_i}\]
     其中$\nu_i$为物质$i$的化学计量数,$a_i$为选定标准态后的活度.\\
@@ -186,7 +186,7 @@ Gibbs自由能$G$减小的方向进行,直到系统平衡为止.这一原理自�
     =\Delta_\r H_{\m}^\ominus-T\Delta_\r S_{\m}^\ominus\]
     其中$\Delta_\r H_{\m}^\ominus$和$\Delta_\r S_{\m}^\ominus$分别为反应的标准摩尔焓变和标准摩尔熵变.
 \end{derivation}
-\begin{theorem}[5B.1.6 由$\Delta_\r H_{\m}^\ominus$和$\Delta_\r S_{\m}^\ominus$求算$\Delta_\r G_{\m}^\ominus$]
+\begin{theorem}[5B.1.5 由$\Delta_\r H_{\m}^\ominus$和$\Delta_\r S_{\m}^\ominus$求算$\Delta_\r G_{\m}^\ominus$]
     我们有
     \[\Delta_\r G_{\m}^\ominus=\Delta_\r H_{\m}^\ominus-T\Delta_\r S_{\m}^\ominus\]
     这样就可以由反应的标准摩尔焓变和熵变求算标准摩尔Gibbs自由能变.需要注意的是,所使用的数据要求温度为$T$.%
@@ -261,7 +261,7 @@ Gibbs自由能$G$减小的方向进行,直到系统平衡为止.这一原理自�
     \begin{equation}
         \Delta_\r H_\m^\ominus(T)=\Delta H_0+\int\Delta C_{p,\m}\di T=\Delta H_0+aT+\dfrac12bT^2+\dfrac13cT^3+\cdots
     \end{equation}
-    理论上,(11)式中的积分常数$\Delta H_0$为该反应在$0$ K时的标准焓变,不过在温度接近近绝对零度时(10)的Taylor展开将失效,因此最好只把它当作一个常数,不去深究其物理意义.%
+    理论上,(11)式中的积分常数$\Delta H_0$为该反应在$0$ K时的标准焓变,不过在温度接近绝对零度时(10)的Taylor展开将失效,因此最好只把它当作一个常数,不去深究其物理意义.%
     这一常数亦可以通过给定温度下的标准焓变得出.\\
     由此,我们将(11)代入(7)可得
     \begin{equation}

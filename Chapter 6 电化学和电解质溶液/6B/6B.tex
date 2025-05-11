@@ -1,0 +1,82 @@
+\documentclass{ctexart}
+\usepackage{PhysicalChemistryNote}
+
+\begin{document}\pagestyle{plain}
+\noindent\tbf{\LARGE 6B 可逆电池的电动势}\vspace{15pt}\\
+\indent 带电粒子会在电场的作用下做定向运动.对于电子而言,它总是从电势低的地方流向电势高的地方,因而形成电流.%
+我们将从简单的电学和热力学出发推导电池的电动势.\\
+\indent 在此之前,我们先简要介绍电势,电动势等电学中的基本概念.
+\begin{definition}[6B.0.1 电势]
+    电势(electric potential,简记为ePtntl)又称电位,是描述电场中某一点之能量高低性质的物理标量.%
+    电场中某处的电势等于处于电场中该位置的单位电荷所具有的电势能,单位为伏特(Volt,符号为V).
+\end{definition}
+\begin{definition}[6B.0.2 电压]
+    电压(Voltage,符号为$U$)是两点之间的电势差,也就将单位电荷从一点移动到另一点所需要的能量.
+\end{definition}
+\begin{definition}[6B.0.3 电动势]
+    在电路学中用电动势(electromotive force,简记为emf,符号为$\mathcal{E}$或$E$)表示电源将其它形式的能量(如化学能)转化成电能的能力.%
+    在电源内部,正电荷从负极被搬运至正极,电源的电动势就定义为从单位正电荷从负极移动到正极时电源提供的能量.
+\end{definition}
+\begin{hint}
+    如果把一个闭合的电路比喻成一个循环的水流,那么电动势就是把水从低处泵到高处的水泵,%
+    电动势越高就意味着水泵越有力,而电压则是水泵出水口和进水口压力差的一个表征数值.电动势表示能力属性,电压表示状态属性.
+\end{hint}
+电动势和电池正负极的电压由闭合电路欧姆定律关联.
+\begin{theorem}[6B.0.4 闭合电路欧姆定律]
+    在闭合电路中有$E=U+Ir$,其中$I$为回路电流,$r$为电池内阻,$U$为电池两极的电压.
+\end{theorem}
+因此,只有在回路电流$I=0$时,电池两极的电压才与电动势相等.这也是电动势测定的依据.\vspace{12pt}\\
+\Section{6B.1 可逆电池}
+\indent 我们在\tbf{3E.2.2}中指出,等温等压过程中系统能做的最大非体积功$W_f$等于其Gibbs自由能的减少值$\Delta G$.%
+对于电池而言,这一非体积功就是电功$W_e$,Gibbs自由能的减少值就是电池反应的Gibbs自由能$\Delta_\r G$.%
+由于最大功是在可逆过程中达到的,因此为了将电功与电池反应相联系,我们需要保证电池在可逆的条件下进行工作,即电池是\tbf{可逆电池}.
+\begin{definition}[6B.1.1 可逆电池]
+    \tbf{可逆电池}需要满足如下条件.
+    \begin{enumerate}[topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt,label=\tbf{\arabic*.},leftmargin=*]
+        \item 在无限缓慢的充放电过程中(电流趋近于零),电极反应可正向和逆向进行,电池在近平衡态的状态下工作,且能量转换可逆.
+        \item 电解质中的离子迁移过程可逆.
+        \item 电极反应可以逆向进行,没有不可逆的副反应(如气体析出,腐蚀等).
+    \end{enumerate}
+    可逆电池的电极被称作\tbf{可逆电极}.
+\end{definition}
+上述第一条需要外加电压才能做到,这可以与我们在\tbf{2A.3}中讨论的准静态膨胀类比.%
+如果外加电压$U_\e$总是比电池电动势$\mathcal{E}$小一个无穷小量,电池就将以无穷小的电流向外放电;%
+反之,如果$U_\e$总是比$\mathcal{E}$大一个无穷小量,电池就将被无穷小的电流充电.\\
+\indent 如果$U_\e$与$\mathcal{E}$的差是不可忽略的常值,那么电池就将以一定的电流进行充放电.%
+由于电池总是存在内阻,因此会引起发热.%
+如果是向电池充电,就要向电池额外做功;如果是电池向外放电,电池向外做的功就会减少.\\
+\indent 我们在\tbf{6A.2}中所说的改进版的\ce{Zn-Cu}电池就可以视作可逆电池.\vspace{12pt}\\
+\Section{6B.2 Nernst方程}
+\indent 现在,我们来推导可逆电池的电动势.
+\begin{derivation}
+    假定反应体系的组成一定.根据\tbf{5B.1.1},反应的摩尔Gibbs自由能变$\Delta_\r G_\m=\pa{G}{\xi}{T,p}$.%
+    于是在等温等压和该组成下,反应进行$\di\xi$时,系统的Gibbs自由能的变化为$\di G$,满足$\dfrac{\di G}{\di\xi}=\Delta_\r G_\m$.\\
+    根据\tbf{3E.2.2},体系能做的最大非膨胀功(在此时即电功)为系统Gibbs自由能的变化$\di G$,于是
+    \[\delta W_e=\di G=\Delta_\r G_\m\di\xi\]
+    并且要求系统以可逆电池的方式完成此过程.\\
+    假定半反应中电子的计量系数为$n$,那么就有物质的量为$n\di\xi$的电子从阳极转移到阴极.%
+    由于一个电子的电荷量为$-e$,因此转移电子的总电荷量$\di Q=-ne\NA\di\xi$.%
+    这一过程需要对电子做的功为
+    \[\delta W_e=E\di Q=-nEe\NA\di\xi=-nFE\di\xi\]
+    其中Faraday常数$F=e\NA$,即$1\mol$电子的电荷的绝对值.\\
+    结合上述两式,我们就有
+    \[\Delta_\r G_\m=-nFE\]
+    这就联系了反应Gibbs自由能变和电池的电动势.\\
+    我们再考虑\tbf{5B.1.2}中标准反应Gibbs自由能变$\Delta_\r G^\ominus$和$\Delta_\r G$的关系,即
+    \[\Delta_\r G_\m=\Delta_\r G^\ominus_\m+RT\ln Q\]
+    代入上式可得
+    \[E=-\dfrac{\Delta_\r G_\m^\ominus}{nF}-\dfrac{RT}{nF}\ln Q\]
+    将有关标准反应Gibbs自由能变$\Delta_\r G_\m^\ominus$的一项定义为\tbf{标准电池电动势}$E^\ominus$,即
+    \[E^\ominus=-\dfrac{\Delta_\r G_\m^\ominus}{nF}\]
+    就有
+    \[E=E^\ominus-\dfrac{RT}{nF}\ln Q\]
+    这就是著名的Nernst方程.
+\end{derivation}
+\begin{theorem}[6B.2.1 Nernst方程]
+    在等温等压下,某一组成时电池的电动势满足
+    \[E=E^\ominus-\dfrac{RT}{nF}\ln Q\]
+    其中\tbf{标准电池电动势}$E^\ominus$定义为
+    \[E^\ominus=-\dfrac{\Delta_\r G_\m^\ominus}{nF}\]
+    其中$\Delta_\r G_\m^\ominus$为电池反应的标准摩尔反应Gibbs自由能变.
+\end{theorem}
+\end{document}

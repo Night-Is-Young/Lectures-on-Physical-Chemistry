@@ -149,12 +149,36 @@ Nernst方程揭示了电池电动势与反应商$Q$之间的关联.需要注意�
 为了表示接触电势,将与\ce{Zn}相连的\ce{Cu}写在最左边.这样,电池的电动势$E$就满足
 \[E=\varphi_{\text{接触}}+\varphi_{\text{液接}}+\ep_-+\ep_+\]
 虽然$\ep_-$和$\ep_+$的值难以测量,但我们在\tbf{6C}中将介绍电极电势,以此将$\ep$转化为一个可测的常量.\vspace{12pt}\\
-\Section{6B.4 电动势的测定}
-\Part{Poggendorff 对消法测电动势}
+\Section{6B.4 电动势的测定\footnote{本节内容仅需了解即可,不必掌握.}}
+\Part{Poggendorff对消法测电动势}
 \indent 可逆电池的电动势不能直接用电压表来测定.使用电压表读数时,回路中有一定的电流,%
 这使得此时的电池并不是可逆电池,并且测得的也只是电池的正负极电压而非其电动势.%
 因此,测定可逆电池的电动势需要在几乎没有电流通过的情况下进行.
 \begin{center}
     \input{picture/Poggendorff.tex}
 \end{center}
+Poggendorff对消法就是依据上述条件设计的测定电源电动势的方法,其电路图如上所示.%
+我们现在来介绍其具体步骤.
+\begin{solution}
+    工作电源$E_w$在均匀的电阻丝$AB$上产生均匀的压降(这可以由欧姆定律得出).\\
+    首先将开关$K$打到上端,使得待测电源$E_x$接入电路.调节$AB$上的滑动点,使得灵敏电流计$G$的示数为$0$.%
+    记此时滑动点的位置为$X$,则由于电流$I=0$而$E_x$的电动势与$AX$上的电压相等.\\
+    现在将开关$K$打到下端,使得标准电源$E_{\text{s.c.}}$接入电路.同样调节滑动电使$G$的实数为$0$,%
+    记此时滑动点的位置为$P$.这样,$E_{\text{s.c.}}$的电动势与$AP$上的电压相等.\\
+    考虑上半部分电路的欧姆定律,有
+    \[E_x=U_{AX}=I_wR_{AX}=I_w\rho\dfrac{\overline{AX}}{S}\]
+    \[E_{\text{s.c.}}=U_{AP}=I_wR_{AP}=I_w\rho\dfrac{\overline{AP}}{S}\]
+    其中$\rho$为电阻丝的电阻率,$S$为其横截面积.这样就有
+    \[E_x=\dfrac{\overline{AX}}{\overline{AP}}E_{\text{s.c.}}\]
+    测定相关的长度,就可以由标准电池的电动势得到待测电池的电动势.
+\end{solution}
+\Part{Weston标准电池}
+\indent 我们在Poggendorff对消法中需要一个电势已知的标准电池.常用的标准电池是\tbf{Weston标准电池},%
+可以表示如下.
+\[\ce{Cd(Hg)}\vert\ce{CdSO4.8/3H2O(s)}\vert\ce{CdSO4(aq)}\vert\ce{CdSO4.8/3H2O(s)}\vert\ce{Hg,Hg2SO4}\vert\ce{Hg}\]
+电池的负极为镉汞齐,正极是\ce{Hg}与\ce{Hg2SO4}的混合糊状物.为了正极与导线更好接触,在正极下再置入一层\ce{Hg}单质.%
+正极和负极表面均覆盖有$\displaystyle\ce{CdSO4.8/3H2O(s)}$,然后用\ce{CdSO4}饱和溶液连接两极.\\
+\indent 电池的电动势是稳定的,并且只与镉汞齐中\ce{Cd}的活度有关,%
+而\ce{Cd}的活度在一定温度下是定值.因此,Weston标准电池的电动势只与温度$T$有关.%
+根据温度查阅相关数据即可得出其电动势.
 \end{document}

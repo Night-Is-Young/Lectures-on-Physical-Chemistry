@@ -36,27 +36,120 @@
 \end{definition}
 我们现在再次考虑两种金属接触时产生接触电势的现象.尽管我们已经知道,%
 两种金属的界面两侧确实存在电势差,但电压表测得的数据却是$0$.对于这一点,我们给出以下结论.
-\begin{theorem}[6C.1.3 电压表的实际测定值]
-    电压表实际上测定的是两点之间电子的电化学势之差.
+\begin{theorem}[6C.1.3 电压的实际测定值]
+    电压表(包括其它用电路方法测定电压的手段)实际上测定的是两点之间电子的电化学势之差,%
+    两者之间成正比例关系,比例系数为Faraday常数$F$.
 \end{theorem}
+\begin{proof}
+    如果我们希望用电压表测定$a,b$两点之间的“电压”,就会把电压表接在$a,b$两点之间.%
+    由于我们使用的是导线,因此电压表实际上接受的是两端导线内的电势差.\\
+    在导线分别与两点的界面上,电子的电化学势相等,即
+    \[\overline{\mu}_\e^a=\overline{\mu}_\e^{a'}\ \ \ \ \ 
+    \overline{\mu}_\e^b=\overline{\mu}_\e^{b'}\]
+    其中$\overline{\mu}_\e^{a'}$为电压表所连导线的电子的电化学势,$\overline{\mu}_\e^{b'}$同理.根据电化学势的定义有
+    \[\overline{\mu}_\e^{a'}=\mu^{a'}_\e-F\phi^a\ \ \ \ \ 
+    \overline{\mu}_\e^{b'}=\mu^{b'}_\e-F\phi^b\]
+    而导线的材料相同,即$\mu^{a'}_\e=\mu^{b'}_\e$,因此
+    \[\phi^b-\phi^a
+    =\dfrac{\left(\mu^{b'}_\e-\overline{\mu}_\e^{b'}\right)-\left(\mu^{a'}_\e-\overline{\mu}_\e^{a'}\right)}{F}
+    =\dfrac{\overline{\mu}_\e^{a'}-\overline{\mu}_\e^{b'}}{F}
+    =\dfrac{\overline{\mu}_\e^a-\overline{\mu}_\e^b}{F}\]
+    由此,我们可以知道尽管电压表理论上测定的是两点的电压,%
+    但由于材料不同而造成的接界电势存在,电压表实际上测定的是两点电子的电化学势之差.\\
+    由于相同的原因,其它使用电路学原理测定电压的方法事实上都是测定电子的电化学势之差.%
+    只不过在物理的范畴中,通常不考虑电子在不同材料中的化学势之差.%
+    此时,电化学势差与电势差成正比例关系,因此我们说电压表测定的是两点的电压.
+\end{proof}
 我们以\ce{Ti}和\ce{Au}接触为例.电子在两种金属中的化学势,%
 可以由其逸出功\footnote{源于Albert Einstein对光电效应的解释,即电子从固体内部移到固体外部所必需的最小能量.%
-固体的逸出功与其Fermi能级密切相关.}衡量.%
-\ce{Ti}的逸出功为$4.33\text{ eV}$,即电子在\ce{Ti}中的化学势为$-418\kJm$,%
-而\ce{Au}的逸出功为$5.10\text{ eV}$,电子在\ce{Au}中的化学势为$-492\kJm$.%
-显然,电子在\ce{Au}中的化学势更低.%
+固体的逸出功与其Fermi能级密切相关.}定性判断.%
+\ce{Ti}的逸出功为$4.33\text{ eV}$,而\ce{Au}的逸出功为$5.10\text{ eV}$.%
+由于\ce{Au}中的电子更难被移出,因此电子在\ce{Au}中的化学势更低.%
 当两者接触时,电子发生转移,直至各处的$\overline{\mu}_\e$相同.%
 此时尽管$\phi^{\ce{Ti}}<\phi^{\ce{Au}}$,电压表却无法给出这一电势的具体值,%
 而只能给出电子的电化学势之差.\\
-\indent 由此,我们可以更明确地定义电极电势的概念.\vspace{4pt}\\
-\Part{电极电势}
-\indent 类比电子在两种不同的金属形成的界面附近的分布,%
-我们可以考虑电极和电解质溶液之间各种带电粒子的电化学势.
-\begin{derivation}
-    我们先考虑氧化还原电极.假定电极半反应为\ce{Ox(aq) + $\nu$e^- <=> Red(aq)}.\\
+\indent 由此,我们可以更明确地定义电极电势的概念.\vspace{12pt}\\
+\Section{6C.2 电极电势}
+\Part{标准电极电势}
+\indent 正如\tbf{6C.1.3}所述,只要知道电极的电化学势,%
+就可以知道它们组合形成的电池的电动势,进而与我们在\tbf{6B}的内容联系起来.\\
+\indent 然而,化学势和电势的绝对值都是无法得知的,这意味着电化学势亦不能被直接量度,%
+只能通过具体电池的电动势间接地推定.如果确定一个\tbf{标准电极},%
+就能由电极与这一标准电极所组成电池的电动势衡量其电极的电化学势,即\tbf{电极电势}.
+\begin{definition}[6C.2.1 标准电极电势]
+    电极的\tbf{标准电极电势}即与标准电极组成电池的电动势.%
+    以标准电极为阳极,该电极的标准电极电势与组成电池电动势符号一致.
+\end{definition}
+按照IUPAC于1953年的建议,采用\tbf{标准氢电极(SHE)}作为标准电极,这一建议得到了广泛地承认和应用.%
+SHE的由镀铂黑的铂完全浸入活度$a=1$的\ce{H^+}溶液,然后不断向其表面鼓入分压为$p^\ominus$的\ce{H2}所制成的电极%
+\footnote{选择铂黑是因为\ce{H2}不导电,需要用合适的金属将其吸附后再建立\ce{2H^+ + 2e^- <=> H2}的平衡,%
+而最佳的材料为镀有铂黑的铂.}.\\
+\indent 以\ce{Cu^2+/Cu}电极为例,电极由\ce{Cu}单质浸入活度$a=1$的\ce{Cu^2+}溶液,其标准电极电势
+\[\varphi_{\ce{Cu^2+/Cu}}=0.334\text{ V}\]
+即用此电极与SHE构成的电池的电动势为$0.334\text{ V}$.\\
+\indent 对于任意两个电极形成的电池,其电动势即两个电极的标准电极电势之差.\vspace{4pt}\\
+\Part{电极反应的Nernst方程}
+\indent 既然电动势能被写作两个电极的电极电势之差,那么电动势的Nernst方程也应当对应电极电势的Nernst方程.%
+这可以从电化学势的概念进行推导.
+\begin{derivation}\setcounter{equation}{0}
+    我们考虑氧化还原电极.假定电极半反应为\ce{Ox(aq) + $\nu$e^- <=> Red(aq)}.\\
     由于电荷总是守恒的,因此半反应前后粒子的电势能不变,因此电化学势仅与化学势有关.%
     于是在发生上述半反应时,我们可以将化学平衡的条件应用于此,%
     即平衡时反应两边的物质的电化学势相同.这就有
-    \[\]
+    \begin{equation}
+        \overline{\mu}_{\ce{Ox}}^\l+\nu\overline{\mu}_{\e}^\l=\overline{\mu}_{\ce{Red}}^\l
+    \end{equation}
+    即
+    \begin{equation}
+        \overline{\mu}_{\e}^\l=\dfrac{\overline{\mu}_{\ce{Red}}^\l-\overline{\mu}_{\ce{Ox}}^\l}{\nu}
+    \end{equation}
+    上标$\l$表示溶液.虽然单独的电子在溶液中实际上并不存在,但引入上述定义作为状态函数是合理的%
+    (我们只不过是把总的平衡拆写为上述形式).进一步改写上式,假定溶液的电势为$\phi^\l$,就有
+    \begin{equation}
+        \overline{\mu}_{\ce{Red}}^\l=\mu_{\ce{Red}}^\l+z_{\ce{Red}}F\phi^\l\ \ \ \ \ \overline{\mu}_{\ce{Ox}}^\l=\mu_{\ce{Ox}}^\l+z_{\ce{Ox}}F\phi^\l
+    \end{equation}
+    又因为电荷守恒,于是可得$z_{\ce{Ox}}-\nu=z_{\ce{Red}}$,于是
+    \begin{equation}
+        \overline{\mu}_{\e}^\l=\dfrac{\mu_{\ce{Red}}^\l-\mu_{\ce{Ox}}^\l}{\nu}-F\phi^\l
+    \end{equation}
+    我们考虑将化学势与标准状态的化学势联系起来,则有
+    \begin{equation}
+        \overline{\mu}_{\e}^\l=\dfrac{\mu_{\ce{Red}}^{\ominus}-\mu_{\ce{Ox}}^\ominus}{\nu}
+        +\dfrac{RT}{\nu}\ln\dfrac{a_{\ce{Red}}}{a_{\ce{Ox}}}-F\phi^\l
+    \end{equation}
+    同时,电子在溶液相和电极的固相也应当达到平衡,即
+    \begin{equation}
+        \overline{\mu}_{\e}^\s=\overline{\mu}_{\e}^\l=\dfrac{\mu_{\ce{Red}}^{\ominus}-\mu_{\ce{Ox}}^\ominus}{\nu}
+        +\dfrac{RT}{\nu}\ln\dfrac{a_{\ce{Red}}}{a_{\ce{Ox}}}-F\phi^\l
+    \end{equation}
+    上标$\s$代表固相电极.根据\tbf{6C.1.3},该电极的标准电极电势$\varphi_{\ce{Ox/Red}}$(即与SHE形成电池的电动势)满足
+    \begin{equation}
+        \varphi_{\ce{Ox/Red}}
+        =\phi^{\ce{Ox/Red},\s}-\phi^{\ce{SHE},\s}
+        =\dfrac{\overline{\mu}_{\e}^{\ce{SHE},\s}-\overline{\mu}_{\e}^{\ce{Ox/Red},\s}}{F}
+    \end{equation}
+    由于我们一般使用盐桥连接两种溶液以消除液接电势,于是
+    \begin{equation}
+        \phi^{\ce{SHE},\l}=\phi^{\ce{Ox/Red},\l}
+    \end{equation}
+    将(6)(8)代入(7)中可得
+    \begin{equation}
+        \varphi_{\ce{Ox/Red}}
+        =\dfrac{1}{F}\left(\dfrac{\mu_{\ce{H2}}-2\mu_{\ce{H^+}}}{2}+\dfrac{\mu_{\ce{Red}}^{\ominus}-\mu_{\ce{Ox}}^\ominus}{\nu}+\dfrac{RT}{\nu}\ln\dfrac{a_{\ce{Ox}}}{a_{\ce{Red}}}\right)
+    \end{equation}
+    由于SHE的\ce{H2}和\ce{}
 \end{derivation}
+\Part{电极电势}
+\indent 类比电子在两种不同的金属形成的界面附近的分布,%
+我们可以考虑电极和电解质溶液之间各种带电粒子的电化学势.
+可以看到,电极与电解质溶液之间总是存在一定的电势$\varphi$,它与氧化还原电对\ce{Ox/Red}中各物质的化学势有关,%
+也与电子在电极中的化学势$\mu_\e^\s$有关.\\
+\indent 显然,我们更关心氧化还原电对\ce{Ox/Red}对这一电势的贡献,而不希望考虑换用不同材料的电极对电势的影响.%
+事实上,“组成电池并测量电动势”这一步操作就消除了上述影响.\\
+\indent 我们在\tbf{6C.1.3}中已经说明对电势差的测定实际上测定的是两点的电化学势之差.%
+同样地,电池的电动势事实上就是两个电极的电化学势之差.%
+因此,知道电极的电化学势,就可以知道它们组合成的电池的电动势.
+\begin{definition}[6C.1.4 电极电势]
+    
+\end{definition}
 \end{document}

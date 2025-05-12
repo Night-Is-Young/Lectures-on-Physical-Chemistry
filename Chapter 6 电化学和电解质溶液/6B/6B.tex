@@ -49,6 +49,7 @@
 这和我们在讨论可逆膨胀/压缩时得出的结论是类似的,只是能量转化的形式不同.\\
 \indent 我们在\tbf{6A.2}中所说的改进版的\ce{Zn-Cu}电池就可以视作可逆电池.\vspace{12pt}\\
 \Section{6B.2 Nernst方程}
+\Part{Nernst方程}
 \indent 现在,我们来推导可逆电池的电动势.
 \begin{derivation}
     假定反应体系的组成一定.根据\tbf{5B.1.1},反应的摩尔Gibbs自由能变$\Delta_\r G_\m=\pa{G}{\xi}{T,p}$.%
@@ -56,36 +57,49 @@
     根据\tbf{3E.2.2},体系能做的最大非膨胀功(在此时即电功)为系统Gibbs自由能的变化$\di G$,于是
     \[\delta W_e=\di G=\Delta_\r G_\m\di\xi\]
     并且要求电池以可逆的方式完成此过程.\\
-    假定半反应中电子的计量系数为$n$,那么就有物质的量为$n\di\xi$的电子从阳极转移到阴极.%
-    由于一个电子的电荷量为$-e$,因此转移电子的总电荷量$\di Q=-ne\NA\di\xi$.%
+    假定半反应中电子的计量系数为$\nu$,那么就有物质的量为$\nu\di\xi$的电子从阳极转移到阴极.%
+    由于一个电子的电荷量为$-e$,因此转移电子的总电荷量$\di Q=-\nu\e\NA\di\xi$.%
     这一过程需要对电子做的功为
-    \[\delta W_e=E\di Q=-nEe\NA\di\xi=-nFE\di\xi\]
+    \[\delta W_e=E\di Q=-\nu Ee\NA\di\xi=-\nu FE\di\xi\]
     其中Faraday常数$F=e\NA$,即$1\mol$电子的电荷量的绝对值.\\
     结合上述两式,我们就有
-    \[\Delta_\r G_\m=-nFE\]
+    \[\Delta_\r G_\m=-\nu FE\]
     这就联系了反应Gibbs自由能变和电池的电动势.\\
     我们再考虑\tbf{5B.1.2}中标准反应Gibbs自由能变$\Delta_\r G^\ominus$和$\Delta_\r G$的关系,即
     \[\Delta_\r G_\m=\Delta_\r G^\ominus_\m+RT\ln Q\]
     代入上式可得
-    \[E=-\dfrac{\Delta_\r G_\m^\ominus}{nF}-\dfrac{RT}{nF}\ln Q\]
+    \[E=-\dfrac{\Delta_\r G_\m^\ominus}{\nu F}-\dfrac{RT}{\nu F}\ln Q\]
     将有关标准反应Gibbs自由能变$\Delta_\r G_\m^\ominus$的一项定义为\tbf{标准电池电动势}$E^\ominus$,即
-    \[E^\ominus=-\dfrac{\Delta_\r G_\m^\ominus}{nF}\]
+    \[E^\ominus=-\dfrac{\Delta_\r G_\m^\ominus}{\nu F}\]
     就有
-    \[E=E^\ominus-\dfrac{RT}{nF}\ln Q\]
+    \[E=E^\ominus-\dfrac{RT}{\nu F}\ln Q\]
     这就是著名的Nernst方程.
 \end{derivation}
 \begin{theorem}[6B.2.1 Nernst方程]
     在等温等压下,某一组成时电池的电动势满足
-    \[E=E^\ominus-\dfrac{RT}{nF}\ln Q\]
+    \[E=E^\ominus-\dfrac{RT}{\nu F}\ln Q\]
     其中\tbf{标准电池电动势}$E^\ominus$定义为
-    \[E^\ominus=-\dfrac{\Delta_\r G_\m^\ominus}{nF}=\dfrac{RT\ln K^\ominus}{nF}\]
-    其中$\Delta_\r G_\m^\ominus$为电池反应的标准摩尔反应Gibbs自由能变,$K^\ominus$为反应的标准平衡常数.
+    \[E^\ominus=-\dfrac{\Delta_\r G_\m^\ominus}{\nu F}=\dfrac{RT\ln K^\ominus}{\nu F}\]
+    其中$\nu$为反应转移的电子的计量数,$\Delta_\r G_\m^\ominus$为电池反应的标准摩尔反应Gibbs自由能变,$K^\ominus$为反应的标准平衡常数.
 \end{theorem}
 Nernst方程揭示了电池电动势与反应商$Q$之间的关联.需要注意的是,尽管反应物和产物可能被盐桥等导电物质隔离,%
 反应商依然是存在的,并不要求它们混合.%
 回忆我们在\tbf{5B.1.4}中的推导,是从化学势推出反应商$Q$这一概念,%
 而溶质的化学势与其它溶质存在与否并无关联,只与溶质本身的浓度相关.%
-这也启示我们可以把阴极和阳极分开考虑,我们将在\tbf{6C}中详细讨论这一点.\vspace{12pt}\\
+这也启示我们可以把阴极和阳极分开考虑,我们将在\tbf{6C}中详细讨论这一点.\vspace{4pt}\\
+\Part{热力学函数的测定}
+\indent 根据Nernst方程可以将$E$与$\Delta_\r G_\m$联系起来,而电动势的测定是可以做到比较精准的%
+(至少比一般的量热计要精确得多),因此测量$E$也可以间接地推定反应的热力学数据.
+\begin{derivation}
+    我们知道$\pa GTp=-S$,因此
+    \[\pa{\Delta_\r G_\m}Tp=-\Delta_\r S_\m\]
+    将Nernst方程$\Delta_\r G_\m=-\nu EF$代入可得
+    \[\Delta_\r S_\m=\nu F\pa ETp\]
+    又因为$\Delta_\r H_\m=\Delta_\r G_\m+T\Delta_\r S_\m$,于是
+    \[\Delta_\r H_\m=-\nu FE+\nu FT\pa ETp\]
+    保持压强一定,测定$E$随温度$T$的变化关系,就可以求出对应温度下的$\Delta_\r H_\m$与$\Delta_\r S_\m$.%
+    需要注意的是此时测得的数据是对应于特定组成的电池的,并不是反应的标准焓变或熵变.
+\end{derivation}
 \Section{6B.3 电池电动势的产生原理}
 \indent 一个电池总的电动势的产生是比较复杂的.我们现在来分别介绍几种主要的电动势及其产生原因.\vspace{4pt}\\
 \Part{电极与电解质溶液界面电势}

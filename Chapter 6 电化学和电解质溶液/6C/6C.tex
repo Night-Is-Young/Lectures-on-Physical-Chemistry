@@ -70,27 +70,47 @@
 而只能给出电子的电化学势之差.\\
 \indent 由此,我们可以更明确地定义电极电势的概念.\vspace{12pt}\\
 \Section{6C.2 电极电势}
-\Part{标准电极电势}
+\Part{电极电势}
 \indent 正如\tbf{6C.1.3}所述,只要知道电极的电化学势,%
 就可以知道它们组合形成的电池的电动势,进而与我们在\tbf{6B}的内容联系起来.\\
 \indent 然而,化学势和电势的绝对值都是无法得知的,这意味着电化学势亦不能被直接量度,%
 只能通过具体电池的电动势间接地推定.如果确定一个\tbf{标准电极},%
 就能由电极与这一标准电极所组成电池的电动势衡量其电极的电化学势,即\tbf{电极电势}.
-\begin{definition}[6C.2.1 标准电极电势]
-    电极的\tbf{标准电极电势}即与标准电极组成电池的电动势.%
-    以标准电极为阳极,该电极的标准电极电势与组成电池电动势符号一致.
+\begin{definition}[6C.2.1 电极电势]
+    电极的\tbf{电极电势}即与标准电极组成电池的电动势.%
+    以标准电极为阳极,该电极的电极电势与组成电池电动势符号一致.
 \end{definition}
 按照IUPAC于1953年的建议,采用\tbf{标准氢电极(SHE)}作为标准电极,这一建议得到了广泛地承认和应用.%
 SHE的由镀铂黑的铂完全浸入活度$a=1$的\ce{H^+}溶液,然后不断向其表面鼓入分压为$p^\ominus$的\ce{H2}所制成的电极%
 \footnote{选择铂黑是因为\ce{H2}不导电,需要用合适的金属将其吸附后再建立\ce{2H^+ + 2e^- <=> H2}的平衡,%
 而最佳的材料为镀有铂黑的铂.}.\\
-\indent 以\ce{Cu^2+/Cu}电极为例,电极由\ce{Cu}单质浸入活度$a=1$的\ce{Cu^2+}溶液,其标准电极电势
+\indent 以\ce{Cu^2+/Cu}电极为例,电极由\ce{Cu}单质浸入活度$a=1$的\ce{Cu^2+}溶液,其电极电势
 \[\varphi_{\ce{Cu^2+/Cu}}=0.334\text{ V}\]
 即用此电极与SHE构成的电池的电动势为$0.334\text{ V}$.\\
-\indent 对于任意两个电极形成的电池,其电动势即两个电极的标准电极电势之差.\vspace{4pt}\\
+\indent 对于任意两个电极形成的电池,其电动势即两个电极的电极电势之差.\vspace{4pt}\\
 \Part{电极反应的Nernst方程}
-\indent 既然电动势能被写作两个电极的电极电势之差,那么电动势的Nernst方程也应当对应电极电势的Nernst方程.%
-这可以从电化学势的概念进行推导.
+\indent 既然电动势能被写作两个电极的电极电势之差,那么电动势的Nernst方程也应当对应电极电势的Nernst方程.
+\begin{derivation}
+    考虑氧化还原电极,假定电极半反应为\ce{Ox(aq) + $\nu$e^- <=> Red(aq)}.假定此电极作为阴极,%
+    根据Nernst方程,它与SHE形成的电池电动势满足
+    \[E=E^\ominus+\dfrac{RT}{\nu F}\ln\dfrac{a_{\ce{Ox}}a_{\ce{H2}}^{\frac\nu2}}{a_{\ce{Red}}a_{\ce{H^+}}^\nu}
+    =E^\ominus+\dfrac{RT}{\nu F}\ln\dfrac{a_{\ce{Ox}}}{a_{\ce{Red}}}\]
+    这是因为SHE中\ce{H2}和\ce{H^+}的活度均为$1$.由于上述$E$和$E^\ominus$均是相对SHE的电动势,因此就是电极电势.我们把上式改写为
+    \[\varphi_{\ce{Ox/Red}}=\varphi^\ominus_{\ce{Ox/Red}}+\dfrac{RT}{\nu F}\ln\dfrac{a_{\ce{Ox}}}{a_{\ce{Red}}}\]
+    这就是电极反应的Nernst方程.
+\end{derivation}
+\begin{theorem}[6C.2.2 电极反应的Nernst方程]
+    对于氧化还原对\ce{Ox/Red}构成的电极,若其半反应为\ce{Ox + $\nu$e^- <=> Red},则电极电势满足
+    \[\varphi_{\ce{Ox/Red}}=\varphi^\ominus_{\ce{Ox/Red}}+\dfrac{RT}{\nu F}\ln\dfrac{a_{\ce{Ox}}}{a_{\ce{Red}}}\]
+    其中$a_{\ce{Ox}}$和$a_{\ce{Red}}$为两种物质的活度.
+\end{theorem}
+\begin{definition}[6C.2.3 标准电极电势]
+    对于氧化还原对\ce{Ox/Red}构成的电极,其\tbf{标准电极电势}$\varphi^\ominus_{\ce{Ox/Red}}$即%
+    半反应中所有物质处于标准态时的电极电势,也满足
+    \[\varphi^\ominus_{\ce{Ox/Red}}=-\dfrac{\Delta_\r G_\m^\ominus}{\nu F}\]
+    这里的$\Delta_\r G_\m^\ominus$是\ce{Ox}作为氧化剂氧化\ce{H2}得到\ce{H^+}和\ce{Red}的标准反应Gibbs自由能变.
+\end{definition}
+从电化学势的角度考虑这一问题,亦可以导出相同的结论.
 \begin{derivation}\setcounter{equation}{0}
     我们考虑氧化还原电极.假定电极半反应为\ce{Ox(aq) + $\nu$e^- <=> Red(aq)}.\\
     由于电荷总是守恒的,因此半反应前后粒子的电势能不变,因此电化学势仅与化学势有关.%
@@ -135,21 +155,29 @@ SHE的由镀铂黑的铂完全浸入活度$a=1$的\ce{H^+}溶液,然后不断向
     将(6)(8)代入(7)中可得
     \begin{equation}
         \varphi_{\ce{Ox/Red}}
-        =\dfrac{1}{F}\left(\dfrac{\mu_{\ce{H2}}-2\mu_{\ce{H^+}}}{2}+\dfrac{\mu_{\ce{Red}}^{\ominus}-\mu_{\ce{Ox}}^\ominus}{\nu}+\dfrac{RT}{\nu}\ln\dfrac{a_{\ce{Ox}}}{a_{\ce{Red}}}\right)
+        =\dfrac{1}{F}\left(\dfrac{\mu_{\ce{H2}}-2\mu_{\ce{H^+}}}{2}
+        +\dfrac{\mu_{\ce{Ox}}^{\ominus}-\mu_{\ce{Red}}^\ominus}{\nu}
+        +\dfrac{RT}{\nu}\ln\dfrac{a_{\ce{Ox}}}{a_{\ce{Red}}}
+        +\dfrac{RT}{2}\ln\dfrac{a_{\ce{H2}}}{a_{\ce{H^+}}^2}
+        \right)
     \end{equation}
-    由于SHE的\ce{H2}和\ce{}
+    由于SHE的\ce{H2}和\ce{H^+}均处于标准态,因此(9)中
+    \begin{equation}
+        \mu_{\ce{H2}}=\mu^\ominus_{\ce{H2}}\ \ \ \ \ \mu_{\ce{H^+}}=\mu_{\ce{H^+}}^\ominus\ \ \ \ \ a_{\ce{H2}}=a_{\ce{H^+}}=1
+    \end{equation}
+    因此(9)可以改写为
+    \begin{equation}
+        \varphi_{\ce{Ox/Red}}
+        =-\dfrac{1}{\nu F}\left(\mu_{\ce{Red}}^\ominus+\nu^\ominus_{\ce{H^+}}-\mu_{\ce{Ox}}^{\ominus}-\dfrac{\nu}{2}\mu^\ominus_{\ce{H2}}\right)
+        +\dfrac{1}{\nu F}\ln\dfrac{a_{\ce{Ox}}}{a_{\ce{Red}}}
+    \end{equation}
+    (11)的第一项的括号内即为\ce{Ox}氧化\ce{H2}得到\ce{H^+}和\ce{Red}这一反应的$\Delta_\r G_\m^\ominus$.%
+    因此,第一项整体即为我们所定义的标准电极电势$\varphi_{\ce{Ox/Red}}^\ominus$,于是就有
+    \begin{equation}
+        \varphi_{\ce{Ox/Red}}=\varphi^\ominus_{\ce{Ox/Red}}+\dfrac{RT}{\nu F}\ln\dfrac{a_{\ce{Ox}}}{a_{\ce{Red}}}
+    \end{equation}
+    我们得到了与前面完全一致的结论.
 \end{derivation}
-\Part{电极电势}
-\indent 类比电子在两种不同的金属形成的界面附近的分布,%
-我们可以考虑电极和电解质溶液之间各种带电粒子的电化学势.
-可以看到,电极与电解质溶液之间总是存在一定的电势$\varphi$,它与氧化还原电对\ce{Ox/Red}中各物质的化学势有关,%
-也与电子在电极中的化学势$\mu_\e^\s$有关.\\
-\indent 显然,我们更关心氧化还原电对\ce{Ox/Red}对这一电势的贡献,而不希望考虑换用不同材料的电极对电势的影响.%
-事实上,“组成电池并测量电动势”这一步操作就消除了上述影响.\\
-\indent 我们在\tbf{6C.1.3}中已经说明对电势差的测定实际上测定的是两点的电化学势之差.%
-同样地,电池的电动势事实上就是两个电极的电化学势之差.%
-因此,知道电极的电化学势,就可以知道它们组合成的电池的电动势.
-\begin{definition}[6C.1.4 电极电势]
-    
-\end{definition}
+\vspace{8pt}
+\Section{6C.3 标准电极电势的应用}
 \end{document}

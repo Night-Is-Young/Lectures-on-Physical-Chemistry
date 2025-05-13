@@ -2,16 +2,16 @@
 \usepackage{PhysicalChemistryNote}
 
 \begin{document}\pagestyle{plain}
-\noindent\tbf{\LARGE 6C 电化学势与电极电势}\vspace{15pt}\\
+\noindent\tbf{\LARGE 6D 电化学势与电极电势}\vspace{15pt}\\
 \indent 氧化还原反应中的半反应和电池的电极让我们可以单独地对一个氧化还原电对进行研究.%
 正如物质有其氧化性强弱之分,电极的电势也有高低之分.在研究电极的电势之前,%
 我们需要引入电化学势这一概念对电极作更深刻的了解.\vspace{12pt}\\
-\Section{6C.1 电化学势}
+\Section{6D.1 电化学势}
 \Part{电化学势}
 \indent 一直以来,我们研究的系统中所有组分均为电中性的.而在电池中,大部分粒子都是带电粒子,%
 这意味着它们的转移与变化不仅与它在某一处化学势$\mu$有关,也与该处的电势$\phi$有关.%
 因此,我们需要综合考虑上述两种情形,并由此定义\tbf{电化学势}.
-\begin{definition}[6C.1.1 电化学势]
+\begin{definition}[6D.1.1 电化学势]
     带电粒子$i$在$\alpha$处的\tbf{电化学势}$\overline{\mu}_i^\alpha$,定义为$i$在此处的摩尔电势能与化学势之和,即
     \[\overline{\mu}_i^\alpha=\mu_i^\alpha+z_iF\phi^\alpha\]
     其中$\mu_i^\alpha$为$i$在$\alpha$处的化学势,$z_i$为$i$的电荷数,$F$为Faraday常数,$\phi^\alpha$为$\alpha$处的电势.
@@ -30,13 +30,13 @@
     我们可以用电化学势代替原来的化学势对系统的热力学性质进行研究.
 \end{derivation}
 由此,我们可以得出与\tbf{4B.3.4}相似的结论.
-\begin{definition}[6C.1.2 含带电粒子的多组分体系自发变化的方向]
+\begin{definition}[6D.1.2 含带电粒子的多组分体系自发变化的方向]
     等温等压下的多组分封闭体系中,任意组分总是从电化学势大的地方转移至电化学势小的地方,%
     直到该组分在系统各处的电化学势相等.
 \end{definition}
 我们现在再次考虑两种金属接触时产生接触电势的现象.尽管我们已经知道,%
 两种金属的界面两侧确实存在电势差,但电压表测得的数据却是$0$.对于这一点,我们给出以下结论.
-\begin{theorem}[6C.1.3 电压的实际测定值]
+\begin{theorem}[6D.1.3 电压的实际测定值]
     电压表(包括其它用电路方法测定电压的手段)实际上测定的是两点之间电子的电化学势之差,%
     两者之间成正比例关系,比例系数为Faraday常数$F$.
 \end{theorem}
@@ -69,14 +69,14 @@
 此时尽管$\phi^{\ce{Ti}}<\phi^{\ce{Au}}$,电压表却无法给出这一电势的具体值,%
 而只能给出电子的电化学势之差.\\
 \indent 由此,我们可以更明确地定义电极电势的概念.\vspace{12pt}\\
-\Section{6C.2 电极电势}
+\Section{6D.2 电极电势}
 \Part{电极电势}
-\indent 正如\tbf{6C.1.3}所述,只要知道电极的电化学势,%
-就可以知道它们组合形成的电池的电动势,进而与我们在\tbf{6B}的内容联系起来.\\
+\indent 正如\tbf{6D.1.3}所述,只要知道电极的电化学势,%
+就可以知道它们组合形成的电池的电动势,进而与我们在\tbf{6C}的内容联系起来.\\
 \indent 然而,化学势和电势的绝对值都是无法得知的,这意味着电化学势亦不能被直接量度,%
 只能通过具体电池的电动势间接地推定.如果确定一个\tbf{标准电极},%
 就能由电极与这一标准电极所组成电池的电动势衡量其电极的电化学势,即\tbf{电极电势}.
-\begin{definition}[6C.2.1 电极电势]
+\begin{definition}[6D.2.1 电极电势]
     电极的\tbf{电极电势}即与标准电极组成电池的电动势.%
     以标准电极为阳极,该电极的电极电势与组成电池电动势符号一致.
 \end{definition}
@@ -86,8 +86,9 @@ SHE的由镀铂黑的铂完全浸入活度$a=1$的\ce{H^+}溶液,然后不断向
 而最佳的材料为镀有铂黑的铂.}.\\
 \indent 以\ce{Cu^2+/Cu}电极为例,电极由\ce{Cu}单质浸入活度$a=1$的\ce{Cu^2+}溶液,其电极电势
 \[\varphi_{\ce{Cu^2+/Cu}}=0.334\text{ V}\]
-即用此电极与SHE构成的电池的电动势为$0.334\text{ V}$.\\
-\indent 对于任意两个电极形成的电池,其电动势即两个电极的电极电势之差.\vspace{4pt}\\
+即用此电极与SHE构成的电池的电动势为$0.334\text{ V}$.%
+对于任意两个电极形成的电池,其电动势即两个电极的电极电势之差.%
+我们将在\tbf{6D.3}中证明这一点.\vspace{4pt}\\
 \Part{电极反应的Nernst方程}
 \indent 既然电动势能被写作两个电极的电极电势之差,那么电动势的Nernst方程也应当对应电极电势的Nernst方程.
 \begin{derivation}
@@ -99,12 +100,12 @@ SHE的由镀铂黑的铂完全浸入活度$a=1$的\ce{H^+}溶液,然后不断向
     \[\varphi_{\ce{Ox/Red}}=\varphi^\ominus_{\ce{Ox/Red}}+\dfrac{RT}{\nu F}\ln\dfrac{a_{\ce{Ox}}}{a_{\ce{Red}}}\]
     这就是电极反应的Nernst方程.
 \end{derivation}
-\begin{theorem}[6C.2.2 电极反应的Nernst方程]
+\begin{theorem}[6D.2.2 电极反应的Nernst方程]
     对于氧化还原对\ce{Ox/Red}构成的电极,若其半反应为\ce{Ox + $\nu$e^- <=> Red},则电极电势满足
     \[\varphi_{\ce{Ox/Red}}=\varphi^\ominus_{\ce{Ox/Red}}+\dfrac{RT}{\nu F}\ln\dfrac{a_{\ce{Ox}}}{a_{\ce{Red}}}\]
     其中$a_{\ce{Ox}}$和$a_{\ce{Red}}$为两种物质的活度.
 \end{theorem}
-\begin{definition}[6C.2.3 标准电极电势]
+\begin{definition}[6D.2.3 标准电极电势]
     对于氧化还原对\ce{Ox/Red}构成的电极,其\tbf{标准电极电势}$\varphi^\ominus_{\ce{Ox/Red}}$即%
     半反应中所有物质处于标准态时的电极电势,也满足
     \[\varphi^\ominus_{\ce{Ox/Red}}=-\dfrac{\Delta_\r G_\m^\ominus}{\nu F}\]
@@ -142,7 +143,7 @@ SHE的由镀铂黑的铂完全浸入活度$a=1$的\ce{H^+}溶液,然后不断向
         \overline{\mu}_{\e}^\s=\overline{\mu}_{\e}^\l=\dfrac{\mu_{\ce{Red}}^{\ominus}-\mu_{\ce{Ox}}^\ominus}{\nu}
         +\dfrac{RT}{\nu}\ln\dfrac{a_{\ce{Red}}}{a_{\ce{Ox}}}-F\phi^\l
     \end{equation}
-    上标$\s$代表固相电极.根据\tbf{6C.1.3},该电极的标准电极电势$\varphi_{\ce{Ox/Red}}$(即与SHE形成电池的电动势)满足
+    上标$\s$代表固相电极.根据\tbf{6D.1.3},该电极的标准电极电势$\varphi_{\ce{Ox/Red}}$(即与SHE形成电池的电动势)满足
     \begin{equation}
         \varphi_{\ce{Ox/Red}}
         =\phi^{\ce{Ox/Red},\s}-\phi^{\ce{SHE},\s}
@@ -179,15 +180,89 @@ SHE的由镀铂黑的铂完全浸入活度$a=1$的\ce{H^+}溶液,然后不断向
     我们得到了与前面完全一致的结论.
 \end{derivation}
 \vspace{8pt}
-\Section{6C.3 标准电极电势与Nernst方程的应用}
-\Part{判断反应进行的方向}
+\Section{6D.3 标准电极电势与Nernst方程的应用}
+\Part{由电极电势计算电池电动势并判断反应方向}
 \indent 由$\varphi^\ominus_{\ce{Ox/Red}}$可以计算反应的标准电动势,%
 进而得出反应的平衡常数,并判断反应的进行方向.
-\begin{exercise}[E.6C.1]
+\begin{exercise}[E.6D.1]
     已知$T=298.15\K$下有
     \[\varphi^\ominus_{\ce{MnO4^-/Mn^2+}}=+1.51\text{ V}\ \ \ \ \ 
     \varphi^\ominus_{\ce{CO2/H2C2O4}}=-0.49\text{ V}\]
-    求反应\ce{2MnO4^- + 5H2C2O4 + 6H^+ <=> 2Mn^2+ + 10CO2 + 8H2O}的标准平衡常数$K^\ominus$.
+    \begin{enumerate}[topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt,label=\tbf{\arabic*},leftmargin=*]
+        \item 求\ce{CO2/H2C2O4}作为阳极,\ce{MnO4^-/Mn^2+}作为阴极组成原电池的标准电池电动势.
+        \item 求反应\ce{2MnO4^- + 5H2C2O4 + 6H^+ <=> 2Mn^2+ + 10CO2 + 8H2O}的标准平衡常数$K^\ominus$.
+    \end{enumerate}   
 \end{exercise}
-为了解决这一问题,我们先需要明确\ce{H^+}的状态.事实上,\tbf{E.6C.1}中的两个
+为了解决这一问题,我们先需要明确电极反应中\ce{H^+}的状态.事实上,\tbf{E.6D.1}中的两个反应均是在酸性条件下进行的,%
+为了符合\tbf{6D.2.3}中所有物质处于标准态的定义,这里的\ce{H^+}也应当处于标准态,尽管它在氧化还原电对中并没有出现.%
+一般而言,如果可以判断半反应发生的酸碱条件,则半反应中对应的\ce{H^+}或\ce{OH^-}也处于标准态.%
+在其它情况下,也会特别注明给出的标准电极电势是酸性条件下还是碱性条件下的.\\
+\indent 我们现在先来解决第一个问题,即求电池的标准电动势.
+\begin{solution}
+    根据\tbf{6D.2.3},$\varphi^\ominus_{\ce{MnO4^-/Mn^2+}}=+1.51\text{ V}$意味着\ce{MnO4^-/Mn^2+}与SHE构成的电池的标准电动势为$E_1^\ominus=1.51\text{ V}$.%
+    根据\tbf{6C.2.1}Nernst方程,反应
+    \begin{tightcenter}
+        \ce{2MnO4^- + 5H2 + 6H^+ -> 2Mn^2+ + 8H2O}
+    \end{tightcenter}
+    的$\Delta_\r G_{\m,1}^\ominus=-\nu_1 FE_1^\ominus=-\nu_1F\varphi_{\text{right}}^\ominus$.%
+    下标right表示这一电极作为阴极(在电池表示中写在右边),$\nu_1$为这一反应转移的电子的计量数.\\
+    同样地,$\varphi^\ominus_{\ce{CO2/H2C2O4}}=-0.49\text{ V}$意味着反应
+    \begin{tightcenter}
+        \ce{2CO2 + H2 -> H2C2O4}
+    \end{tightcenter}
+    的$\Delta_\r G_{\m,2}^\ominus=-\nu_2 FE_2^\ominus=-\nu_2F\varphi_{\text{left}}^\ominus$.\\
+    因此对于题设的反应,根据Hess定律可得
+    \[\begin{aligned}
+        \Delta_\r G_\m^\ominus
+        &= \dfrac{\nu}{\nu_1}\Delta_\r G_{\m,1}^\ominus-\dfrac{\nu}{\nu_2}\Delta_\r G_{\m,2}^\ominus \\
+        &= \nu F\left(\varphi_{\text{left}}^\ominus-\varphi_{\text{right}}^\ominus\right)
+    \end{aligned}\]
+    再根据Nernst方程,这一电池的标准电动势
+    \[E^\ominus=-\dfrac{\Delta_\r G_\m^\ominus}{\nu F}=\varphi_{\text{right}}^\ominus-\varphi_{\text{left}}^\ominus\]
+    代入题中的数据可得
+    \[E^\ominus=2.00\text{ V}\]
+
+\end{solution}
+上面的推导过程对任意两个电极组成的电池都是适用的.由此,我们可以得出下面的结论.
+\begin{theorem}[6D.3.1 任意电池的电动势]
+    任意电池的标准电池电动势等于其阴极与阳极的标准电极电势之差,即
+    \[E^\ominus=\varphi_{\text{right}}^\ominus-\varphi_{\text{left}}^\ominus\]
+    推而广之,任意电池的电动势等于其阴极和阳极的电极电势之差,即
+    \[E=\varphi_{\text{right}}-\varphi_{\text{left}}\]
+
+\end{theorem}
+后面的推广也是易证的,只需在上面的推导过程中把$\varphi^\ominus$换成对应组成下的$\varphi$,%
+$\Delta_\r G_\m^\ominus$换成对应组成下的$\Delta_\r G_\m$即可.不论是否是标准态,Hess定律和Nernst方程都成立.\\
+\indent 知道标准电池电动势后,计算对应反应的热力学数据就十分容易了.
+\begin{solution}
+    根据\tbf{6C.2.1}有
+    \[K^\ominus=\exp\left(\dfrac{\nu FE^\ominus}{RT}\right)=1.2\times10^{338}\]
+    反应的平衡常数十分大,这意味着这个反应进行得很彻底.
+\end{solution}
+\begin{hint}
+    如果在普通的计算器上直接计算上式,则会由于数据太大而报错.%
+    因此,我们需要将科学计数法的底数和指数分开计算.\\
+    我们假定最终的答案为$a\times10^{b}$,其中$1\leqslant a<10$,$b$是整数.于是
+    \[\exp\left(\dfrac{\nu FE^\ominus}{RT}\right)=a\cdot10^b\]
+    两边对$10$取对数即可得
+    \[\dfrac{\nu FE^\ominus}{RT}\cdot\lg\e=b+\lg a\]
+    因此,$b$就等于左边的式子向下取整,$\lg a$就等于左边的式子与$b$之差.\\
+    简单的计算表明此时左边的式子等于$338.07$,因此
+    \[a=10^{0.07}=1.2\ \ \ \ \ b=338\]
+    于是就可以得出最终的答案.
+\end{hint}
+上述这一反应实际上就是\ce{MnO4^-}氧化\ce{H2C2O4}的反应,而前者对应的电极电势高于后者,%
+因此反应正向进行的程度非常大——这也意味着\ce{MnO4^-}(在酸性条件下)的氧化性强于\ce{CO2}%
+(对应的还原产物为\ce{H2C2O4}).%
+因此,电极电势也可以作为氧化性的量度.
+\begin{theorem}[6D.3.2 电极电势与氧化性]
+    物质作为氧化剂对应的半反应的电极电势越高,该物质的氧化性越强.\\
+    物质作为还原剂对应的半反应的电极电势越低,该物质的还原性越强.
+\end{theorem}
+这一结论可以容易地由\tbf{6D.3.1}和\tbf{6C.2.1}推知.$\varphi$越高,%
+一种物质作为阴极(即作为氧化剂)与其它物质组成电池的电动势$E^\ominus$越大,$\Delta_\r G_\m^\ominus$就越大,%
+表明这一氧化反应容易发生,即该物质的氧化性强.还原性亦是同理.\\
+\indent 上面的结论启示我们可以通过列表来方便地判断各物质氧化性或还原性的大小.%
+这就是各种化学书附录中常见的\tbf{标准电极电势表}(一般分为酸性和碱性两张表).%
+查阅此表,不仅能获知各种电极的标准电极电势,还能根据它们的顺序方便地比较各物质氧化性和还原性.
 \end{document}

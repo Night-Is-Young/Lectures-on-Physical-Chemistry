@@ -149,7 +149,7 @@ Kohlrausch发现对于强电解质而言,在浓度较低时$\varLambda_\m$与$\s
     \[t_{\text{ion}}=\dfrac{I_{\text{ion}}}{I}\]
 
 \end{definition}
-我们现在来推导迁移数与离子电迁移率之间的关系.
+我们现在来推导迁移数与离子电迁移率之间的关系.\footnotetext[3]{下面式子中的$F$为Faraday常数,即$1\mol$元电荷所带的电量.我们将在后面的Faraday电解定律中正式地提到它.}
 \begin{derivation}
     继续我们对电流的考虑,在电解质溶液的垂直于电场线的截面$S$(例如在圆柱形的容器两侧用圆金属板封装,在其中加满电解质溶液,%
     取平行于圆柱底面的截面)上有
@@ -160,12 +160,154 @@ Kohlrausch发现对于强电解质而言,在浓度较低时$\varLambda_\m$与$\s
     (这和我们在\tbf{1B.4.4}中讨论气体的碰撞频率时的方法有些类似).%
     设$S$的面积为$A$,通过$S$的ion的总数
     \[N_{\text{ion}}=c_{\text{ion}}V\NA=c_{\text{ion}}Av_{\text{ion}}t\NA\]
-    ion运载的电流
+    ion运载的电流\footnotemark
     \[\begin{aligned}
         I_{\text{ion}}
-        &= \dfrac{Q_{\text{ion}}}{t}=\dfrac{\nu_{\text{ion}}eN_{\text{ion}}}{t} \\
-        &= \dfrac{c_{\text{ion}}\nu_{\text{ion}}Av_{\text{ion}}te\NA}{t} \\
-        &= \nu_{\text{ion}}c_{\text{ion}}v_{\text{ion}}F
+        &= \dfrac{Q_{\text{ion}}}{t}=\dfrac{\nu_{\text{ion}}eN_{\text{ion}}}{t} = \dfrac{c_{\text{ion}}\nu_{\text{ion}}Av_{\text{ion}}te\NA}{t} \\
+        &= \nu_{\text{ion}}c_{\text{ion}}v_{\text{ion}}AF=\nu_{\text{ion}}c_{\text{ion}}u_{\text{ion}}EAF
     \end{aligned}\]
+    由此可得总电流
+    \[I=\sum_{\text{ion}}I_{\text{ion}}=EAF\sum_{\text{ion}}\nu_{\text{ion}}c_{\text{ion}}u_{\text{ion}}\]
+    于是ion的迁移数
+    \[t_{\text{ion}}=\dfrac{I_{\text{ion}}}{I}=\dfrac{\nu_{\text{ion}}c_{\text{ion}}u_{\text{ion}}}{\displaystyle\sum_{\text{ion}}\nu_{\text{ion}}c_{\text{ion}}u_{\text{ion}}}\]
+    特别地,如果溶液中只有一种电解质\ce{M_{$\nu_-$}Z_{$\nu_+$}},由\ce{M^{$\nu_+$}}和\ce{Z^{$\nu_-$}}构成,浓度为$c$,那么
+    \[c_+=\alpha\nu_-c\ \ \ \ \ c_-=\alpha\nu_+c\]
+    其中$\alpha$为电解质的解离度.从而
+    \[t_+=\dfrac{u_+}{u_++u_-}\ \ \ \ \ t_-=\dfrac{u_-}{u_++u_-}\]
+    
 \end{derivation}
+从上面的过程进一步推导,还可以得出摩尔电导率与电迁移率的关系.
+\begin{derivation}\setcounter{equation}{0}
+    我们已经知道
+    \begin{equation}
+        I=\sum_{\text{ion}}I_{\text{ion}}=EAF\sum_{\text{ion}}\nu_{\text{ion}}c_{\text{ion}}u_{\text{ion}}
+    \end{equation}
+    对于一种电解质,设其解离度为$\alpha$,则(1)可以写成
+    \begin{equation}
+        I=\sum_{\text{ion}}I_{\text{ion}}=EAF\nu_+\nu_-c\alpha\left(u_++u_-\right)
+    \end{equation}
+    仍然考虑前面的圆柱形的容器,其中的电场应当是匀强的.设其长度为$l$,则有
+    \begin{equation}
+        E=\dfrac{U}{l}
+    \end{equation}
+    根据欧姆定律和电导率的定义可得此时溶液的电导率
+    \begin{equation}
+        \kappa=\dfrac{1}{\rho}=\dfrac{1}{R}\dfrac{l}{A}=\dfrac{I}{U}\dfrac{l}{A}
+    \end{equation}
+    将(2)和(3)代入(4)可得
+    \begin{equation}
+        \kappa=F\nu_+\nu_-c\alpha\left(u_++u_-\right)
+    \end{equation}
+    于是摩尔电导率$\varLambda_\m$为
+    \begin{equation}
+        \varLambda_\m=\dfrac{\kappa}{c}=\alpha\nu_+\nu_-\left(u_++u_-\right)F
+    \end{equation}
+    无限稀释时电解质完全解离,$\alpha=1$,则有
+    \begin{equation}
+        \varLambda_\m^\infty=\dfrac{\kappa}{c}=\nu_+\nu_-\left(u_++u_-\right)F
+    \end{equation}
+    因此有
+    \begin{equation}
+        \dfrac{\varLambda_\m}{\varLambda_\m^\infty}=\alpha
+    \end{equation}
+    即我们在推导\tbf{6A.1.6}时所做的假设.
+\end{derivation}
+\Part{离子迁移数的测定}
+\indent 从上面的理论推导可以看出,测定迁移数可以得出许多不易测定的物理量.%
+而迁移数本身的测定也需要一些巧妙的方法.我们在这里介绍两种方法.\\
+\indent\tbf{Hittorf法}:该方法的装置是一个电解装置的改进版本.%
+在阳极溶液和阴极溶液之间额外增加一个中间管,%
+在中间管内装已知浓度的电解质溶液,接通电源,使很小的电流通过电解质溶液,%
+这时正,负离子分别向阴,阳两极迁移,同时在电极上有反应发生,%
+致使电极附近的溶液浓度不断改变,而中部溶液的浓度基本不变.%
+通电一段时间后,对阳极(或阴极)的电极和溶液称重和分析,%
+从而根据阴极部(或阳极部)溶液中电解质含量的变化及串联在电路中的电量计上测出的通过的总电量算出离子的迁移数.\\
+\indent 我们以一个简单的例子来理解Hittorf法的原理.
+\begin{exercise}[E.6A.1]
+    在Hittorf法的装置中用\ce{Cu}电极电解\ce{CuSO4}溶液.控制电路的电流恒定为$10.0\text{ mA}$,电解时间为$4.73\times10^{-3}\text{ s}$,%
+    阴极(即\ce{Cu^2+}被还原的一侧)溶液中的\ce{CuSO4}的质量由电解前$1.1694\text{ g}$变为$1.1451\text{ g}$.求\ce{Cu^2+}和\ce{SO4^2-}的迁移数.
+\end{exercise}
+在解决这个问题之前,我们需要知道电解溶液的一条基本定律.这是由Michael Faraday研究电解实验的结果得出的.
+\begin{theorem}[6A.2.3 Faraday电解定律]
+    当电流通过电解质溶液时,在电极(即导体与电解质溶液的界面)上发生化学反应的物质\ce{X}的物质的量与通入的电量成正比.
+    若几个电解池串联通入一定的电量后,各个电极上发生化学反应的物质\ce{X}的物质的量相同.\\
+    我们用Faraday常数$F$换算电子的电量$Q$与物质的量$n$,它定义为$F=e\NA$,即$1\mol$元电荷(一个电子具有的电量的绝对值)的电量.%
+    这样就有$Q=nF$.
+\end{theorem}
+我们可以简单地理解Faraday电解定律:一个回路中各处的电流相同,因而一段时间内通过的电子数目是相等的.%
+特别地,在发生化学反应的界面上,电子由化学反应传递,因此反应的产物的物质的量与通过电子的物质的量成正比,%
+即与通入的电量成正比.\\
+\indent 对于上面的例子,在阴极上发生反应\ce{Cu^2+ + 2e^- -> Cu},通过$2\mol$电子就生成$1\mol$ \ce{Cu}.
+\begin{solution}
+    在了解Faraday电解定律之后,我们来考虑上述装置中的变化.%
+    阴极中\ce{Cu^2+}的数量的改变主要是由\ce{Cu^2+}的迁入和在电极上的还原.%
+    于是可以写出
+    \[\Delta n_{\ce{Cu^2+}}=n_{\ce{Cu^2+},\text{mi}}-n_{\ce{Cu^2+},\text{re}}\]
+    这里下标mi代表migration,意为迁移;下标re代表reaction,意为反应.\\
+    根据反应前后\ce{CuSO4}质量变化可得
+    \[\Delta n_{\ce{Cu^2+}}
+    =\dfrac{\Delta m_{\ce{CuSO4}}}{M(\ce{CuSO4})}
+    =\dfrac{1.1451-1.1694}{159.62}\text{mol}
+    =-1.52\times10^{-4}\mol\]
+    根据Faraday电解定律可得
+    \[n_{\ce{Cu^2+},\text{re}}
+    =\dfrac12n_{\ce{e^-}}
+    =\dfrac12\dfrac{Q}{F}
+    =\dfrac{It}{2F}
+    =\dfrac{10.0\times10^{-3}\times4.73\times10^{3}}{2\times96485}\text{mol}
+    =2.45\times10^{-4}\mol\]
+    于是
+    \[n_{\ce{Cu^2+},\text{mi}}
+    =\Delta n_{\ce{Cu^2+}}+n_{\ce{Cu^2+},\text{re}}
+    =9.3\times10^{-5}\mol\]
+    于是\ce{Cu^2+}承载的电流
+    \[I_{\ce{Cu^2+}}
+    =\dfrac{Q_{\ce{Cu^2+}}}{t}
+    =\dfrac{2n_{\ce{Cu^2+},\text{mi}}F}{t}
+    =\dfrac{2\times9.3\times10^{-5}\times96485}{4.73\times10^3}\text{A}
+    =3.8\times10^{-3}\text{ A}\]
+    于是\ce{Cu^2+}的迁移数
+    \[t_{\ce{Cu^2+}}=\dfrac{I_{\ce{Cu^2+}}}{I}=0.38\]
+    根据前面提到的溶液中只有一种电解质时两种离子的迁移数的关系,可得
+    \[t_{\ce{SO4^2-}}=1-t_{\ce{Cu^2+}}=0.62\]
+    总结来看,只要通过物质的量守恒求出一段时间内迁移到阴极(或阳极)的离子的数目,%
+    就可以求出其承担的电流,进而求出迁移率.
+\end{solution}
+虽然Hittorf法的装置和原理比较简单,%
+但由于实际操作中很难避免溶液的对流,扩散,振动等引起的离子的额外迁移,因此不易获得很准确的结果.%
+下面这种方法相对Hittorf法则更加准确.\\
+\indent\tbf{界面移动法}:将两种含有共同阴离子(或阳离子)的溶液按顺序小心地装入竖直放置的细管中,%
+由于两种溶液的折射率不同而在中间形成明显的界面.对细管通电,使得离子发生迁移,根据界面迁移的距离就可以求出离子的迁移数.\\
+\indent 同样地,我们以一个简单的例子来理解界面移动法的原理.
+\begin{exercise}[E.6A.2]
+    向下端为\ce{Cd}电极,上端为\ce{Pt}电极的细管中加入一定量的\ce{CdCl2}溶液,再小心加入\ce{HCl}溶液充满细管.%
+    记两种溶液界面为$S$,细管的横截面积$A=1.0\times10^{-5}\text{ m}^2$,\ce{HCl}的浓度为$10.0\text{ mmol}\cdot\text{L}^{-1}$.%
+    以\ce{Cd}作为阳极,对细管通$11.4\text{ mA}$的电流,持续$258\text{ s}$,界面向上移动了$0.25\text{ m}$.求\ce{H^+}的迁移数.
+\end{exercise}
+\begin{solution}
+    需要说明的是,尽管\ce{Cd^2+}和\ce{H^+}都会向上迁移,但由于\ce{Cd^2+}的迁移速率比\ce{H^+}略慢,%
+    因此仍会保持清晰的界面.实际测量中,也要选取比待测离子移动得更慢的离子作为指示溶液.\\
+    我们现在考虑新的界面$S'$.在电解时,$S$与$S'$之间的所有\ce{H^+}都会通过$S'$界面,于是\ce{H^+}迁移的电荷量为
+    \[Q_{\ce{H^+}}=c_{\ce{H^+}}VF\ \ \ \ \ V=Al\]
+    于是\ce{H^+}的迁移数
+    \[t_{\ce{H^+}}=\dfrac{Q_{\ce{H^+}}}{Q_{\text{tot}}}
+    =\dfrac{c_{\ce{H^+}}\cdot Al\cdot F}{It}
+    =\dfrac{10.0\times10^{-3}\times1.0\times10^{-5}\times0.25\times96485}{11.4\times10^{-3}\times258}
+    =0.82\]
+
+\end{solution}
+\vspace{8pt}
+\Section{6A.3 离子活度的计算公式\footnote{这一节的内容比较简略,你可以自行查阅相关资料以加深对离子活度的了解.}}
+\indent 在\tbf{4C.1}中我们提到电解质溶液与理想稀溶液有较大的偏离.%
+这一偏离主要来源于电解质溶解后的解离,以及解离后的离子之间存在静电作用.%
+对于离子而言就有
+\[\mu_{\text{ion}}=\mu_{\text{ion}}^\ominus+RT\ln a_{\text{ion}}=\mu_{\text{ion}}^\ominus+RT\ln \gamma_{\text{ion}}\dfrac{c_{\text{ion}}}{c^\ominus}\]
+\indent $\gamma_{\text{ion}}$的值可由Debye-Hückel\footnote{Debye-Hückel理论用复杂而严谨的推导证明了这一公式.如果你对证明过程感兴趣,可以自行查阅.}公式计算.
+\begin{theorem}[6A.3.2 Debye-Hückel公式]
+    稀溶液中的离子$i$的活度系数$\gamma_i$可由
+    \[-\lg\gamma_i=\dfrac{A\nu_i^2\sqrt{I}}{1+B\mathring{a}\sqrt{I}}\]
+    求算,其中$A$和$B$为常数,$\nu_i$为$i$的电荷数,$\mathring{a}$为$i$的离子半径(需考虑溶剂合),$I$为溶液的离子强度,可由
+    \[I=\sum_{\text{ion}}c_i\nu_i^2\]
+    求算,其中$c_i$和$\nu_i$分别为溶液中各离子的浓度与电荷数.
+\end{theorem}
 \end{document}

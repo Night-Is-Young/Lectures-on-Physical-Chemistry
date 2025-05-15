@@ -1,0 +1,35 @@
+\documentclass{standalone}
+\usepackage{PhysicalChemistryNote}
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        width = 8cm,
+        height = 8cm,
+        legend style={at={(1.05,0.5)},anchor=west},
+        xlabel = {$\sqrt{c}$},
+        ylabel = {$\varLambda_\m$},
+        axis lines = left,
+        x label style={at={(axis description cs:0.5,0.05)},anchor=north},
+        y label style={at={(axis description cs:0.175,0.5)},rotate=0,anchor=south},
+        ymax = 0.5,
+        ymin = 0,
+        xmax = 0.6,
+        ymin = 0,
+        samples = 400,
+        xticklabels={},
+        yticklabels={}
+    ]
+    \addplot [thick, red, domain=0:0.6] {e^(-x-3)-e^(-3)+0.45};
+    \addlegendentry{\small{\ce{HCl}}}
+    \addplot [thick, cyan, domain=0:0.6] {e^(-x-1)-e^(-1)+0.45};
+    \addlegendentry{\small{\ce{H2SO4}}}
+    \addplot [thick, blue, domain=0:0.6] {e^(-x-2)-e^(-2)+0.2};
+    \addlegendentry{\small{\ce{Na2SO4}}}
+    \addplot [thick, violet, domain=0:0.6] {0.4/(1+100*x)};
+    \addlegendentry{\small{\ce{AcOH}}}
+    \addplot [domain=0:0.6,dashed] {-e^(-3)*x+0.45};
+    \addplot [domain=0:0.6,dashed] {-e^(-1)*x+0.45};
+    \addplot [domain=0:0.6,dashed] {-e^(-2)*x+0.2};
+    \end{axis}
+\end{tikzpicture}
+\end{document}

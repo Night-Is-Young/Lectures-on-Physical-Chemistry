@@ -2,7 +2,7 @@
 \usepackage{PhysicalChemistryNote}
 
 \begin{document}\pagestyle{plain}
-\noindent\tbf{\LARGE 6D 电化学势与电极电势}\vspace{15pt}\\
+\noindent\tbf{\LARGE 6E 电化学势与电极电势}\vspace{15pt}\\
 \indent 氧化还原反应中的半反应和电池的电极让我们可以单独地对一个氧化还原电对进行研究.%
 正如物质有其氧化性强弱之分,电极的电势也有高低之分.在研究电极的电势之前,%
 我们需要引入电化学势这一概念对电极作更深刻的了解.\vspace{12pt}\\
@@ -303,76 +303,11 @@ $\Delta_\r G_\m^\ominus$换成对应组成下的$\Delta_\r G_\m$即可.不论是
 \Part{Latimer图和Frost图}
 \indent 一种元素可能具有多个氧化态,这些不同氧化态的物质相互转化时对应的的电极电势也有所不同.%
 \tbf{Latimer图}把同种元素不同氧化态间的标准电极电势按照氧化数由高到低的顺序排成图,可以方便地分析元素处于各氧化态时的氧化还原性质.\\
-\indent 我们以\ce{Mn}在酸性条件下的Latimer图为例介绍其用法.
+\indent 我们以\ce{Mn}在碱性条件下的Latimer图为例介绍其用法.
 \begin{figure}[H]
     \centering\input{picture/Mn-Latimer.tex}
 \end{figure}
-\begin{theorem}[6D.3.3 Latimer图的画法]
-    绘制Latimer图按照以下规则.
-    \begin{enumerate}[topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt,leftmargin=*,label=\tbf{\arabic*.}]
-        \item 各个物质按照目标元素的氧化数从高到低依次从左向右排列.
-        \item 箭头上的电位表示含有该箭头两端物质对应半反应的标准电极电势,如上图中\ce{MnO4^-}指向\ce{Mn^2+}的箭头上的$1.507\text{ V}$代表半反应
-            \begin{tightcenter}
-                \ce{MnO4^- + 8H^+ + 5e^- -> Mn^2+ + 4H2O}
-            \end{tightcenter}
-            的标准电极电势为$1.507\text{ V}$.
-        \item Latimer图有酸式和碱式的区别,分别对应酸性条件下和碱性条件下的标准电极电势.%
-            除了电极电势会因pH改变而改变外,对应氧化态的物种也会因酸碱性的改变而改变.%
-            例如,碱性条件下\ce{Mn}的Latimer图中\ce{Mn^{II}}对应的物种是\ce{Mn(OH)2}而非\ce{Mn^2+}.
-    \end{enumerate}
-\end{theorem}
-我们现在来简要介绍,Latimer图除了查阅标准电极电势以外的其它功能.
-\begin{theorem}[6D.3.4 Latimer图的功能]
-    Latimer图有以下功能.
-    \begin{enumerate}[topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt,leftmargin=*,label=\tbf{\arabic*.}]
-        \item \tbf{直观判断氧化性强弱}.电极电势越低,低价态的物质越容易被氧化;电极电势越高,高价态的物质越容易被还原.%
-            这与\tbf{6D.3.2}的结论一致.
-        \item \tbf{从相邻电对的电极电势求另一电对的电极电势}.我们以\ce{MnO4-/MnO2}的电极电势为例,考虑反应
-            \begin{tightcenter}
-                \tbf{1.} \ce{MnO4^- + 5/2H2 + 3H^+ -> Mn^2+ + 4H2O}\\
-                \tbf{2.} \ce{MnO4^- + 1/2H2 -> MnO4^2- + H^+}\\
-                \tbf{3.} \ce{MnO4^2- + 2H2 + 4H^+ -> Mn^2+ + 4H2O}
-            \end{tightcenter}
-            可以看到$\tbf{1}=\tbf{2}+\tbf{3}$,即$\Delta_\r G_{\m,1}^\ominus=\Delta_\r G_{\m,2}^\ominus+\Delta_\r G_{\m,1}^\ominus$.于是有
-            \[\varphi_1^\ominus=-\dfrac{\Delta_\r G_{\m,1}^\ominus}{\nu_1F}
-            =-\dfrac{\Delta_\r G_{\m,2}^\ominus+\Delta_\r G_{\m,3}^\ominus}{\nu_1F}
-            =\dfrac{\nu_2\varphi_2^\ominus+\nu_3\varphi_3^\ominus}{\nu_2+\nu_3}\]
-            代入数据即可求得.一般地,对于指向同样起始物质和终点物质的箭头(一个或数个),都有$\displaystyle\sum\nu_i\varphi_i^\ominus$为定值.%
-            其中$\nu_i$为各个箭头对应反应转移电子的计量数(需要注意目标元素守恒),$\varphi_i^\ominus$则为对应的标准电极电势.
-        \item \tbf{判断歧化/归中反应的可能性}.对于一个物种\ce{X},记它左边的电势为$\varphi_{\text{left}}^\ominus$,$\varphi_{\text{right}}^\ominus$.%
-            如果$\varphi_{\text{left}}^\ominus>\varphi_{\text{right}}^\ominus$,那么左右两边的物质会发生归中反应生成\ce{X};%
-            如果$\varphi_{\text{left}}^\ominus<\varphi_{\text{right}}^\ominus$,那么\ce{X}会发生歧化反应生成两边的物质.\\
-            以上图为例,不难发现在此条件下\ce{MnO4^2-}会歧化生成\ce{MnO2}和\ce{MnO4^-},而\ce{Mn^3+}和\ce{Mn}则会归中生成\ce{Mn^2+}.
-    \end{enumerate}
-\end{theorem}
-为了更直观地判断各氧化态物质的稳定性,我们也可以采用\tbf{Frost图}.%
-我们仍以\ce{Mn}在酸性条件下的Frost图为例介绍其用法.
-\begin{figure}[H]
-    \centering\input{picture/Mn-Frost.tex}
-\end{figure}
-\begin{theorem}[6D.3.5 Frost图的画法]
-    绘制Frost图按照以下规则.
-    \begin{enumerate}[topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt,leftmargin=*,label=\tbf{\arabic*.}]
-        \item 稳定单质(0价状态)处于横纵轴的原点处.
-        \item 横轴为氧化数,从左至右增大(这与Latimer图正好相反).
-        \item 纵轴为氧化数$\nu$与该物质和0价单质的电极电势$\varphi^\ominus$的乘积.
-    \end{enumerate}
-\end{theorem}
-Frost图事实上可以看作Latimer图的图形版.我们现在简要介绍其功能.
-\begin{theorem}[6D.3.6 Frost图的功能]
-    Frost图有以下功能.
-    \begin{enumerate}[topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt,leftmargin=*,label=\tbf{\arabic*.}]
-        \item \tbf{直观判断氧化性强弱}.标准电极电势越高,连接两个物质的直线的斜率越大;标准电极电势越小,连接两个物质的直线的斜率(可以为负值)越小.\\
-            这一点可以由Frost图的定义和简单的Nernst方程的应用而得出.
-        \item \tbf{判断歧化/归中反应的可能性}.图线上凸处的物质易发生歧化,下凹处的物质的两边易发生归中而得到该物质.\\
-            这一点可以由\tbf{1.}和\tbf{6D.3.4}中的\tbf{3.}共同得出.
-    \end{enumerate}
-\end{theorem}
-\Part{电势-pH图(Pourbaix图)}
-\indent 我们在前面已经提到,大多数半反应的电极电势与pH密切相关.如果把这些反应的电极电势与pH绘制成图,%
-就可以方便地判断一定的pH条件下各种电极反应进行的顺序.\\
-\indent 我们以\ce{Fe-H2O}体系为例.首先是\ce{H2O}本身对应的两个电极反应,即
-\begin{tightcenter}
+\begin{theorem}[]
     
-\end{tightcenter}
+\end{theorem}
 \end{document}

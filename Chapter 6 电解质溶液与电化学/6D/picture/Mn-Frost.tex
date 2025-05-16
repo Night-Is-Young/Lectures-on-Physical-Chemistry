@@ -1,0 +1,18 @@
+\documentclass{standalone}
+\usepackage{PhysicalChemistryNote}
+\begin{document}
+\begin{tikzpicture}
+    \draw[step=1,help lines,dashed] (0,-3) grid (7,6);
+    \draw[thick,-latex] (0,-3)--(7.25,-3);
+    \draw[thick,-latex] (0,-3)--(0,6);
+    \draw[-] (0,0)--(2,-2.37)--(3,-0.829)--(4,0.078)--(6,4.608)--(7,5.166);
+    \draw[fill=white,draw=blue] (0,0) circle(0.05) node[above right]{\ce{Mn}};
+    \draw[fill=white,draw=blue] (2,-2.37) circle(0.05) node[below]{\ce{Mn^2+}};
+    \draw[fill=white,draw=blue] (3,-0.829) circle(0.05) node[below right]{\ce{Mn^3+}};
+    \draw[fill=white,draw=blue] (4,0.078) circle(0.05) node[below right]{\ce{MnO2}};
+    \draw[fill=white,draw=blue] (6,4.608) circle(0.05) node[left]{\ce{MnO4^2-}};
+    \draw[fill=white,draw=blue] (7,5.166) circle(0.05) node[above]{\ce{MnO4^-}};
+    \node[below] at (3.5,-3) {Oxidation State};
+    \node[above] at (0,6) {$\nu\varphi^\ominus$};
+\end{tikzpicture}
+\end{document}

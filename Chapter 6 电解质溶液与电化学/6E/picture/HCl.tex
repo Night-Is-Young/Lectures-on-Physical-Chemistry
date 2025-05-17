@@ -1,0 +1,12 @@
+\documentclass{standalone}
+\usepackage{PhysicalChemistryNote}
+\begin{document}
+\begin{tikzpicture}
+    \draw[-latex] (0,0)--(5,0) node[right] {$U$};
+    \draw[-latex] (0,0)--(0,5) node[left] {$I$};
+    \draw[thick,blue,domain=0:2.5] plot[smooth] (\x,{\x^2/4});
+    \draw[thick,blue,domain=2.5:5] plot[smooth] (\x,{1.25*\x-1.25*1.25});
+    \draw[dashed,domain=1.25:2.5] plot[smooth] (\x,{1.25*\x-1.25*1.25});
+    \node[below] at (1.25,0) {$E_{\text{b},\max}$};
+\end{tikzpicture}
+\end{document}

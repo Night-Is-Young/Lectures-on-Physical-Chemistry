@@ -66,7 +66,7 @@
     \tbf{电化学极化}是指由于电化学反应过程中电子得失不够快速,反应在电极表面受阻而导致电极电位偏离平衡电位的现象.
 \end{definition}
 因此,电化学极化实际上与我们将在\tbf{Chapter 7}中讲到的化学反应动力学有密切的联系.\vspace{12pt}\\
-\Section{6E.2 超电势的量化表出}
+\Section{6E.2 电极反应动力学}
 \Part{Butler-Volmer方程\footnote{本小节内容不必掌握,仅作参考.作为提示,你可以在学习\tbf{Chapter 7}后再来学习此方程的推导.}}
 \indent 根据基本的电化学知识和化学动力学知识,我们可以推导出超电势$\eta$与电流密度$i$之间的关系.
 \begin{derivation}
@@ -74,13 +74,91 @@
     \begin{tightcenter}
         \ce{Ox + e^- <=>T[$k_f$][$k_b$] Red}
     \end{tightcenter}
-    依照过渡态理论,我们可以简单地把这一过程的Gibbs自由能曲线与反应坐标的关系表示如下.
+    依照过渡态理论,我们可以简单地把这一过程的能量(如果你与读了前面的电化学势一节,就会知道这里的能量事实上指电化学势能)曲线与反应坐标的关系表示如下.
     \begin{center}
-        \input{picture/Butler-Volmer.tex}
+        \input{picture/Butler-Volmer-1.tex}
     \end{center}
-    其中蓝线为理论电势下\ce{Ox}与\ce{e^-}的Gibbs自由能,%
-    橙线为实际电势下\ce{Ox}与\ce{e^-}的Gibbs自由能.%
+    其中蓝线为理论电势(这里的理论电势是\ce{Ox}和\ce{Red}浓度一定时的理论电极电势,并非标准状态对应的电极电势.)下\ce{Ox}与\ce{e^-}的能量,%
+    橙线为实际电解的电势下\ce{Ox}与\ce{e^-}的能量.%
     显然,在理论电势下,反应的历程为蓝线-红线,而在实际电势下,反应的历程为橙线-红线.\\
-    我们现在将临近过渡态的区域放大,得到下图.
+    我们可以将\ce{e^-}的电势能并入自由能一项,并用处理一般体系的动力学方法处理此体系.\\
+    现在将临近过渡态的区域放大,得到下图.
+    \begin{center}
+        \input{picture/Butler-Volmer-2.tex}
+    \end{center}
+    在电势为$\varphi_0$和电势为$\varphi$时的,每摩尔电子的能量差为
+    \[E_{\varphi_0}-E_{\varphi}=\NA\cdot(-\e)\Delta\varphi=F\left(\varphi-\varphi_0\right)\]
+    从上图中可以发现即使反应物的能量降低了$F\left(\varphi-\varphi_0\right)$,活化能却并不降低相同的值.%
+    定义\tbf{转移系数}$\alpha$衡量活化能附近反应物和生成物在过渡态附近的斜率(我们将在后面提到其真正的物理定义).%
+    当两边斜率相同时,$\alpha=\dfrac12$.%
+    这一系数也被称为\tbf{对称因子}.因此,根据Eyring方程有
+    \[k_{f0}=A_f\exp\left(-\dfrac{\Delta G_{0f}^\ddagger}{RT}\right)\]
+    \[k_{b0}=A_b\exp\left(-\dfrac{\Delta G_{0b}^\ddagger}{RT}\right)\]
+    其中$A_f,A_b$分别为两个反应的指前因子.我们认为指前因子不随电势发生变化.\\
+    考虑两张图中不同电势下正逆反应的活化能的差值,有
+    \[\Delta G_{f}^\ddagger=\Delta G_{0f}^\ddagger+F\left(\varphi-\varphi_0\right)-(1-\alpha)F\left(\varphi-\varphi_0\right)
+    =\Delta G_{0f}^\ddagger+\alpha F\left(\varphi-\varphi_0\right)\]
+    \[\Delta G_{b}^\ddagger=\Delta G_{0b}^\ddagger-(1-\alpha)F\left(\varphi-\varphi_0\right)\]
+    于是再根据Eyring方程有
+    \[k_f=A_f\exp\left(-\dfrac{\Delta G_{0f}^\ddagger}{RT}\right)\exp\left(-\dfrac{\alpha F\left(\varphi-\varphi_0\right)}{RT}\right)
+    =k_{f0}\exp\left(-\dfrac{\alpha F\left(\varphi-\varphi_0\right)}{RT}\right)\]
+    \[k_b=A_f\exp\left(-\dfrac{\Delta G_{0b}^\ddagger}{RT}\right)\exp\left(\dfrac{(1-\alpha)F\left(\varphi-\varphi_0\right)}{RT}\right)
+    =k_{b0}\exp\left(\dfrac{(1-\alpha)F\left(\varphi-\varphi_0\right)}{RT}\right)\]
+    理想情况下,在\ce{Ox}和\ce{Red}浓度一定时,如果$\varphi=\varphi_0$,则电极反应达到平衡,此时有
+    \[k_{f0}c_{\ce{Ox}}=k_{b0}c_{\ce{Red}}\]
+    由于电极反应发生在电极的表面上,因此反应速率应当正比于电极的表面积.因此,这里的速率是指单位面积上的反应速率,速率常数$k_f$和$k_b$亦如此.%
+    在此时,尽管净电流为$0$,但电子的转移仍在电极上发生,其电流密度
+    \[j_0=\dfrac{I_0}{A}=\dfrac{F\Delta n_{\e^-,0}}{At}=F\dfrac{v_{\text{eq}}}{A}=Fk_{f0}c_{\ce{Ox}}=Fk_{b0}c_{\ce{Red}}\]
+    这样,实际的电流密度即为
+    \[\begin{aligned}
+        j
+        &= \dfrac{I}{A}=\dfrac{F\Delta n_{\ce{e^-}}}{At}=F\left(k_fc_{\ce{Ox}}-k_bc_{\ce{Red}}\right) \\
+        &= F\left[k_{f0}c_{\ce{Ox}}\exp\left(-\dfrac{\alpha F\left(\varphi-\varphi_0\right)}{RT}\right)-k_{b0}c_{\ce{Red}}\exp\left(\dfrac{(1-\alpha)F\left(\varphi-\varphi_0\right)}{RT}\right)\right] \\
+        &= j_0\left[\exp\left(-\dfrac{\alpha F\left(\varphi-\varphi_0\right)}{RT}\right)-\exp\left(\dfrac{(1-\alpha)F\left(\varphi-\varphi_0\right)}{RT}\right)\right]
+    \end{aligned}\]
+    而$\varphi-\varphi_0$就是我们定义的超电势$\eta$,因此上式即
+    \[j=j_0\left[\exp\left(-\dfrac{\alpha F\eta}{RT}\right)-\exp\left(\dfrac{(1-\alpha)F\eta}{RT}\right)\right]\]
+    这就是电极反应动力学中一个重要的方程——Butler-Volmer方程.
 \end{derivation}
+以上的结论都是在忽略浓差极化时推得的.由此,就有
+\begin{theorem}[6E.2.1 Butler-Volmer方程]
+    在参与电极反应的物质的浓度一定时,电极的电流密度$j$与超电势$\eta$满足
+    \[j=j_0\left[\exp\left(-\dfrac{\alpha F\eta}{RT}\right)-\exp\left(\dfrac{(1-\alpha)F\eta}{RT}\right)\right]\]
+    其中$j_0$为\tbf{交换电流密度},即电极反应平衡时的电流密度.$\alpha$为\tbf{转移系数},其物理意义将在下面进一步说明.
+\end{theorem}
+转移系数的物理定义如下.
+\begin{definition}[6E.2.2 转移系数]
+    \tbf{转移系数}$\alpha$,定义为还原反应活化能$\Delta G_{f}^\ddagger$对电势$\varphi$在$\varphi=\varphi_0$处的偏导数与Faraday常数之比的负值,即
+    \[\alpha=-\dfrac{1}{F}\left.\left(\dfrac{\p\Delta G_{f}^\ddagger}{\p\varphi}\right)\right|_{\varphi=\varphi_0}\]
+
+\end{definition}
+转移系数的几何意义已经在前面的推导与图示中说明了.对于一般的反应,$\alpha$在$0.3$到$0.7$左右.\\
+\indent 当超电势$\eta\to0$时,根据近似$\e^x\sim 1+x$,可将\tbf{6E.2.1}简化为
+\[j=-\dfrac{j_0\alpha F\alpha}{RT}\]
+这里的负号是由于超电势$\eta>0$时将发生与原电池电流方向相反的电解过程,因此令此时的电流密度为负值.这也可以由前面的推导看出.\vspace{4pt}\\
+\Part{Tafel公式\footnote{Tafel公式是应当记忆的结论,但是其推导则如前面一样也不做要求.}}
+\indent 1905年,Tafel研究氢电极的超电势,得出了Tafel公式.
+\begin{theorem}[6E.2.3 Tafel公式]
+    超电势$\eta$与电流密度$j$满足
+    \[\eta=a+b\ln j\]
+    其中$a$和$b$在一定温度下为常数.
+\end{theorem}
+这也可以由Butler-Volmer方程近似得到.
+\begin{proof}
+    首先需要注意的是,氢电极在电解时作为阴极,其超电势$\eta$为负值(有时也用$\eta_{\text{Cat}}$表示).%
+    对于Butler-Volmer方程,当$\eta$是较大的负值时,可以将第二项忽略,从而有
+    \[j=j_0\exp\left(-\dfrac{\alpha F\eta}{RT}\right)\]
+    两边取对数可得
+    \[\ln j=\ln j_0-\dfrac{\alpha F\eta}{RT}\]
+    于是
+    \[-\eta=-\dfrac{RT}{\alpha F}\ln j_0+\dfrac{RT}{\alpha F}\ln j\]
+    令
+    \[a=-\dfrac{RT}{\alpha F}\ln j_0\ \ \ \ \ b=\dfrac{RT}{\alpha F}\]
+    即可得到Tafel公式.由于$\alpha$的值一般在$0.5$左右,因此$b$的值在一定温度下对于各种反应相差都不大,而$a$则主要取决于具体的反应和电极类型.\\
+    阳极的Tafel公式的推导也是类似的,在这里就不再赘述了.
+\end{proof}
+我们再一次声明,以上的结论都是在忽略浓差极化时推得的.%
+对于反应迅速的反应过程,大过电位下将直接到达浓差极化为主的阶段,%
+没有明显的Tafel现象.而对于反应动力学缓慢,具有较大的活化能的反应,可以观察到很好的Tafel关系,此时逆反应几乎可以忽略,也反映了反应的完全不可逆性.%
+氢电极就是这样的一种电极,Tafel公式对其符合得较好.
 \end{document}

@@ -1,0 +1,162 @@
+\documentclass{ctexart}
+\usepackage{PhysicalChemistryNote}
+
+\begin{document}\pagestyle{plain}
+\noindent\tbf{\LARGE Ex6 习题}\vspace{15pt}\\
+\indent 相比于电化学复杂的理论知识,其应用反而比较简单,主要是Nernst方程的应用.
+\setcounter{Pcounter}{0}
+\stepcounter{Pcounter}
+\begin{problem}[P.6.\arabic{Pcounter}]
+    浓差电池是电化学电池中的一种，其电动势取决于物质的浓度差。某铝离子的浓差电池为
+    \begin{tightcenter}
+        \ce{Al(s)$\vert$Al3+(aq)($x\text{ mol}\cdot\text{L}^{-1}$)$\vert\vert$Al3+(aq)($0.200\text{ mol}\cdot\text{L}^{-1}$)$\vert$Al(s)}
+    \end{tightcenter}
+    测得该电池的电动势$E=0.0132\V$.已知$\varphi_{\ce{Al^3+/Al}}^\ominus=-1.662V$.本题的计算结果均保留三位有效数字.
+    \begin{enumerate}[label=\tbf{\arabic{Pcounter}-\arabic*},topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt]
+        \item 计算$x$的取值.
+        \item 若两极溶液的体积均为$10.0\text{ mL}$,计算电池放出$50\text{ C}$电量时两极溶液中各自的\ce{Al^3+}的浓度.
+        \item 往电池负极溶液中加入过量的\ce{NaOH}固体,然后用pH计测得负极溶液中$\text{pH}=9.00$,用电压表测得电池的电动势$E=0.275\V$.%
+            试计算\ce{Al(OH)4^-}的稳定常数$K_{\text{稳}}\left(\ce{Al(OH)4^-}\right)$.
+        \item 假设\ce{Al3+}与\ce{F-}形成的配合物只有\ce{AlF6^3-},现在向\tbf{\arabic{Pcounter}-3}的正极溶液中加入一定量的\ce{KF}固体,%
+            使\ce{HF}的分析浓度为$1.50\text{mol}\cdot\text{L}^{-1}$,并且此时溶液$\text{pH}=4.00$.计算该电池在室温下的理论电动势.已知
+            \[\lg K_{\text{稳}}\left(\ce{AlF6^3-}\right)=19.84\ \ \ \ \ K_a\left(\ce{HF}\right)=6.6\times10^{-4}\]
+
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{enumerate}[label=\tbf{\arabic{Pcounter}-\arabic*},topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt]
+        \item 我们在之前所述的电池都是涉及氧化还原反应的,而这里的浓差电池却并不如此.从净结果上看,%
+            只是离子从浓度高的电极移动到了浓度低的电极.究其原因,是两边电极的电势不同,%
+            $\con{Al^3+}$高的电极电势高,$\con{Al^3+}$低的电极电势低,从而在前者上发生\ce{Al^3+}的还原,后者上发生\ce{Al}的氧化.\\
+            对于题中的电池而言,右侧是阴极,其电极电势
+            \[\varphi_{\text{right}}=\varphi_{\ce{Al^3+/Al}}^\ominus+\dfrac{RT}{3F}\ln\con{Al^3+}_{\text{right}}\]
+            左侧是阳极,其电极电势
+            \[\varphi_{\text{left}}=\varphi_{\ce{Al^3+/Al}}^\ominus+\dfrac{RT}{3F}\ln\con{Al^3+}_{\text{left}}\]
+            总的电动势即为
+            \[E=\varphi_{\text{right}}-\varphi_{\text{left}}=\dfrac{RT}{3F}\ln\dfrac{0.200}{x}=0.0132\V\]
+            代入数据,解得
+            \[x=0.0428\]
+            如果我们把整个过程看作反应
+            \begin{tightcenter}
+                \ce{Al^3+($0.200\text{ mol}\cdot\text{L}^{-1}$) -> Al^3+($x\text{ mol}\cdot\text{L}^{-1}$)}
+            \end{tightcenter}
+            这一反应的$\Delta_\r G_\m$为
+            \[\Delta_\r G_\m=\mu_{\text{left}}-\mu_{\text{right}}=RT\ln\dfrac{x}{0.200}\]
+            再根据Nernst方程有
+            \[\Delta_\r G_\m=-\nu FE\]
+            同样可以得到
+            \[x=0.0428\]
+            总结地来看,无论是分别计算浓差电池的各个电极的电势,还是整体地考虑电池电动势,%
+            都能得到一致的结果.
+        \item 反应传递的电子的物质的量
+            \[n(\ce{e^-})=\dfrac{Q}{F}=\dfrac{50}{96485}\text{mol}=5.18\times10^{-4}\mol\]
+            对应的\ce{Al^3+}浓度的变化
+            \[\Delta c(\ce{Al^3+})=\dfrac{n(\ce{e^-})}{3V}=\dfrac{5.18\times10^{-4}}{3\times10.0\times10^{-3}}=0.0173\mol\cdot\text{L}^{-1}\]
+            阳极发生氧化反应,\ce{Al^3+}浓度增加,于是阳极的\ce{Al^3+}浓度为
+            \[c_{\text{left}}(\ce{Al^3+})=0.0601\mol\cdot\text{L}^{-1}\]
+            阴极则发生还原反应,\ce{Al^3+}浓度减少,于是阴极的\ce{Al^3+}浓度为
+            \[c_{\text{right}}(\ce{Al^3+})=0.183\mol\cdot\text{L}^{-1}\]
+        \item 不妨设负极此时\ce{Al^3+}的浓度为$\con{Al^3+}$,于是与\tbf{\arabic{Pcounter}-1}同理有
+            \[\dfrac{RT}{3F}\ln\dfrac{0.200}{\con{Al^3+}}=0.275\V\]
+            解得
+            \[\con{Al^3+}=2.26\times10^{-15}\mol\cdot\text{L}^{-1}\]
+            因此体系中的\ce{Al}几乎全部以$\ce{Al(OH)4^-}$的形式存在,即
+            \[\con{Al(OH)4^-}=0.0428\mol\cdot\text{L}^{-1}\]
+            而$\text{pH}=9$对应$\con{OH^-}=10^{-5}\mol\cdot\text{L}^{-1}$,于是
+            \[\begin{aligned}
+                K_{\text{稳}}\left(\ce{Al(OH)4^-}\right)
+                &= \dfrac{\con{Al(OH)4^-}}{\con{Al^3+}\con{OH^-}^4} \\
+                &= \dfrac{0.0428}{2.26\times10^{-15}\times\left(10^{-5}\right)^4} \\
+                &= 1.89\times10^{33}
+            \end{aligned}\]
+        \item 由于\ce{AlF_6^3-}的$K_{\text{稳}}$很大,因此可以认为\ce{Al}几乎全部以\ce{AlF_6^3-}形式存在,%
+            且由于\tbf{\arabic{Pcounter}-3}中加入过量\ce{NaOH},因此认为\ce{F^-}不水解.于是游离的\ce{HF}的分析浓度
+            \[c({\ce{HF}})=c_0(\ce{HF})-6\con{AlF6^3-}=(1.50-0.200\times6)\mol\cdot\text{L}^{-1}=0.300\mol\cdot\text{L}^{-1}\]
+            于是
+            \[\con{F^-}=\dfrac{K_ac({\ce{HF}})}{K_a+\con{H^+}}
+            =\dfrac{6.6\times10^{-4}}{6.6\times10^{-4}+10^{-4.00}}\times0.300\mol\cdot\text{L}^{-1}=0.261\mol\cdot\text{L}^{-1}\]
+            这样就有
+            \[\begin{aligned}
+                \con{Al^3+}
+                &= \dfrac{\con{AlF6^3-}}{K_{\text{稳}}\left(\ce{AlF6^3-}\right)\con{F^-}^6} \\
+                &= \dfrac{0.200}{10^{19.84}\times(0.261)^6}\mol\cdot\text{L}^{-1} \\
+                &= 9.14\times10^{-18}\mol\cdot\text{L}^{-1}
+            \end{aligned}\]
+            于是电池现在的电动势为
+            \[\begin{aligned}
+                E
+                &= \dfrac{RT}{3F}\ln\dfrac{\con{Al^3+}_{\text{right}}}{\con{Al^3+}_{\text{left}}} \\
+                &= \dfrac{298.15\times8.314}{3\times96485}\ln\dfrac{9.14\times10^{-18}}{2.26\times10^{-15}} \\
+                &= -0.0472\V
+            \end{aligned}\]
+            电动势变成负值,表明电池的电流方向在此时发生改变.
+    \end{enumerate}
+\end{solution}
+\stepcounter{Pcounter}
+\begin{problem}[P.6.\arabic{Pcounter}]
+    \begin{enumerate}[label=\tbf{\arabic{Pcounter}-\arabic*},topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt]
+        \item 氢电极的超电势被广泛地研究与讨论.迟缓放电理论认为电化学反应步骤是整个析氢过程的速率控制步,%
+            根据这一理论可以推导出表示超电势与电极电流密度之间关系的Tafel公式
+            \[\eta=a+b\ln j\]
+            其中$\eta$为氢超电势(用电极实际电势减去理论电势表示,下同),$a,b$均为常数,$j$为电极电流密度.%
+            现有一金属\tbf{M},通过设计\tbf{M}与稀酸反应的原电池,测量其不同电流密度下的氢超电势,拟确定其在Tafel公式中$a,b$的值.
+            \vspace{-5pt}\begin{table}[H]\centering
+            \begin{tabular}{|c|c|c|c|c|c|}
+            \hline $\eta/\text{V}$ 
+            & $-0.0741$ & $-0.126$  & $-0.162$  & $-0.182$  & $-0.221$ \\
+            \hline $j/\left(\text{A}\cdot\m^{-2}\right)$
+            & $1720$    & $4600$    & $9130$    & $13100$   & $27500$ \\\hline
+            \end{tabular}
+            \end{table}\vspace{-15pt}
+            直接给出金属\tbf{M}的$a,b$的值.若另一金属\tbf{N}的$a$值为$0.414\V$,%
+            预测\tbf{M},\tbf{N}与稀盐酸反应的速率快慢(只考虑析氢反应).
+        \item 过氧化锂电池有着超高的理论能量密度,但其充放电过程中氧还原/氧析出反应导致电池具有较大的超电势,且能量密度降低.%
+            南开大学化学学院团队为提高过氧化锂电池的能量效率,设计了光促的可逆过氧化锂电池.%
+            其采用氮化碳\ce{C3N4}作为光正极,利用光促显著提升氧还原/氧析出反应的速率,%
+            有效促进放电产物\ce{Li2O2}的形成与分解.%
+            (\tbf{注意}:本题中对光促电池模型作出了一定简化,假设\tbf{A},\tbf{B},\tbf{C},\tbf{D}能量相对值均对应电池中单个电子转移.)
+            \begin{enumerate}[label=\tbf{\arabic{Pcounter}-2-\arabic*},topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt,leftmargin=10pt]
+                \item 正极\ce{C3N4}吸收$717.7\text{ nm}$波长的光后由能量基态(记为\tbf{A})转化为激发态(记为\tbf{B}).%
+                    计算\tbf{B}与\tbf{A}之间的能量差(单位用eV表示),忽略能量损失.
+                \item 此光促电池成功将电池放电电压提升至$3.22\V$,将电池充电电压降低至$3.38\V$.%
+                    已知该电池理论平衡电位为$2.96\V$,假设放电过程中氧电极的超电势为$-0.50\V$,%
+                    记完全充电体系状态为\tbf{C},完全放电体系状态为\tbf{D}.%
+                    若将\tbf{A}状态能量定为基准$0.00\text{ eV}$,给出状态\tbf{C},\tbf{D}的能量%
+                    (单位用eV表示),并给出充电过程中氧电极的超电势值.(提示:\tbf{D}状态可以通过吸收光能转化为\tbf{B}状态.)
+            \end{enumerate}
+        \item 中国科学院长春应用化学研究所提出并论证了通过\ce{Li-N2}可充电电池固氮的可能性,%
+            设计了可用于固氮的\ce{Li-N2}电池.其以金属\ce{Li}作为负极,碳布作为正极,\ce{LiOTf}的醚溶液作为电解液.
+            \begin{enumerate}[label=\tbf{\arabic{Pcounter}-3-\arabic*},topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt,leftmargin=10pt]
+                \item 写出该\ce{Li-N2}电池放电时正负极的电极反应方程式.
+                \item 已知\ce{Li-N2}电池的理论放电电压为$0.54\V$,%
+                    碱性水溶液中\ce{Li-O2-H2O}电池的理论放电电压为$3.4\V$.%
+                    分别计算\ce{Li-N2}电池和\ce{Li-O2-H2O}电池的比容量(电池能储存的最大电荷量与放电产物质量的比值,单位用$\text{mA}\cdot\text{h}/\text{g}$表示)%
+                    与能量密度(电池能储存的最大能量与放电产物质量的比值,单位用$\text{mW}\cdot\text{h}/\text{g}$表示).
+            \end{enumerate}
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{enumerate}[label=\tbf{\arabic{Pcounter}-\arabic*},topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt]
+        \item 按照题中数据和Tafel公式线性回归可得
+            \[a=0.320\ \ \ \ \ b=-0.0529\]
+            回忆我们在电极反应动力学中的推导,可以知道超电势的大小实际上衡量了电极反应速率的快慢,%
+            其绝对值越大则说明反应速率越慢.%
+            这里发生金属的氧化反应,对应的超电势应为负值.%
+            由于\tbf{N}的$a$值比\tbf{M}更大,因此在相同的电流密度下\tbf{N}的超电势更小,反应的速率更快.
+        \begin{enumerate}[label=\tbf{\arabic{Pcounter}-2-\arabic*},topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt,leftmargin=10pt]
+            \item 这一题是结构化学中的经典题目.我们只需计算在给定波长下单个光子的能量即可,有
+                \[\begin{aligned}
+                    E
+                    &= \dfrac{hc}{\lambda}=\dfrac{6.626\times10^{-34}\times2.998\times10^{8}}{717.7\times10^{-9}}\text{ J} \\
+                    &= 2.77\times10^{-19}\text{ J} = 1.73\text{ eV}
+                \end{aligned}\]
+                需要注意的是,国际单位制下$\dfrac{hc}{\lambda}$的单位为J,%
+                代表一个光子的能量.如果要求换算为电子伏特eV,就将上面的值除以元电荷e;%
+                如果要求换算为$\text{J}\cdot\text{mol}^{-1}$,就将上面的值乘以$\NA$.
+            \item 
+                
+                
+        \end{enumerate}
+    \end{enumerate}
+\end{solution}
+\end{document}

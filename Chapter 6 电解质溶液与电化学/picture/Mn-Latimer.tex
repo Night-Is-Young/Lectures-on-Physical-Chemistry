@@ -1,0 +1,31 @@
+\documentclass{standalone}
+\usepackage{PhysicalChemistryNote}
+\begin{document}
+\begin{tikzpicture}[scale=0.8]
+    \node[scale=0.8] at (0,0) {\ce{MnO4-}};
+    \node[scale=0.8] at (3,0) {\ce{MnO4^2-}};
+    \node[scale=0.8] at (6,0) {\ce{MnO2}};
+    \node[scale=0.8] at (9,0) {\ce{Mn^3+}};
+    \node[scale=0.8] at (12,0) {\ce{Mn^2+}};
+    \node[scale=0.8] at (15,0) {\ce{Mn}};
+    \draw[-] (0,0.3)--(0,1)--(12,1);
+    \draw[-] (0,-0.3)--(0,-1)--(5.8,-1);
+    \draw[-] (6.2,-0.3)--(6.2,-1)--(12,-1);
+    \draw[-latex] (12,1)--(12,0.3);
+    \draw[-latex] (5.8,-1)--(5.8,-0.3);
+    \draw[-latex] (12,-1)--(12,-0.3);
+    \draw[-latex] (0.65,0)--(2.25,0);
+    \draw[-latex] (3.65,0)--(5.25,0);
+    \draw[-latex] (6.65,0)--(8.25,0);
+    \draw[-latex] (9.65,0)--(11.25,0);
+    \draw[-latex] (12.65,0)--(14.25,0);
+    \node[scale=0.8] at (6,1.3) {$1.507\text{ V}$};
+    \node[scale=0.8] at (3,-0.7) {$1.696\text{ V}$};
+    \node[scale=0.8] at (9,-0.7) {$1.224\text{ V}$};
+    \node[scale=0.8] at (1.5,0.3) {$0.558\text{ V}$};
+    \node[scale=0.8] at (4.5,0.3) {$2.265\text{ V}$};
+    \node[scale=0.8] at (7.5,0.3) {$0.907\text{ V}$};
+    \node[scale=0.8] at (10.5,0.3) {$1.541\text{ V}$};
+    \node[scale=0.8] at (13.5,0.3) {$-1.185\text{ V}$};
+\end{tikzpicture}
+\end{document}

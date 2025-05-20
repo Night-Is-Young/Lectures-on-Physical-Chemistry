@@ -1,0 +1,47 @@
+\documentclass{standalone}
+\usepackage{PhysicalChemistryNote}
+\begin{document}
+\begin{tikzpicture}[scale=0.5]
+    \draw[thick] (-2,-10)--(14,-10)--(14,14)--(-2,14)--(-2,-10);
+
+    \draw[thick,dashed] (-2,1.1832)--(14,-8.2824);
+    \draw[thick,dashed] (-2,13.4732)--(14,4.0076);
+
+    \draw[thick,red] (-2,7.71)--(2.82,7.71);
+    \draw[thick,red] (-2,-4.47)--(8.34,-4.47);
+
+    \draw[thick,blue] (2.82,7.71)--(2.82,14);
+    \draw[thick,blue] (8.34,-4.47)--(8.34,-2.0939);
+
+    \draw[thick,violet] (2.82,7.71)--(8.34,-2.0939);
+    \draw[thick,violet] (8.34,-2.0939)--(14,-5.4424);
+    \draw[thick,violet] (8.34,-4.47)--(14,-7.8184);
+
+    \node at (0.41,10.8) {\ce{Fe^3+}};
+    \node at (2,3) {\ce{Fe^2+}};
+    \node at (10,3) {\ce{Fe(OH)3}};
+    \node at (11.4,-5) {\ce{Fe(OH)2}};
+    \node at (6,-7.5) {\ce{Fe}};
+    \node at (3.5,-1.2) {\ce{H2O}};
+    \node at (2.5,-2.2) {\ce{H2}};
+    \node at (8,6.6) {\ce{H2O}};
+    \node at (9,7.6) {\ce{O2}};
+
+
+    \draw (0,-9.8)--(0,-10) node[below]{$0$};
+    \draw (2,-9.8)--(2,-10) node[below]{$2$};
+    \draw (4,-9.8)--(4,-10) node[below]{$4$};
+    \draw (6,-9.8)--(6,-10) node[below]{$6$};
+    \draw (8,-9.8)--(8,-10) node[below]{$8$};
+    \draw (10,-9.8)--(10,-10) node[below]{$10$};
+    \draw (12,-9.8)--(12,-10) node[below]{$12$};
+    \node[below] at (14,-10) {$14$};
+    \draw (-1.8,0)--(-2,0) node[left]{$0$};
+    \draw (-1.8,5)--(-2,5) node[left]{$0.5$};
+    \draw (-1.8,-5)--(-2,-5) node[left]{$-0.5$};
+    \draw (-1.8,10)--(-2,10) node[left]{$1.0$};
+    \draw (-1.8,-10)--(-2,-10) node[left]{$1.0$};
+    \node[rotate=90] at (-4,2) {$\varphi/\text{V}$};
+    \node at (6,-12) {pH};
+\end{tikzpicture}
+\end{document}

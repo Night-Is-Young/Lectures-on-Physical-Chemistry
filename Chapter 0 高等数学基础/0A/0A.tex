@@ -2,9 +2,97 @@
 \usepackage{PhysicalChemistryNote}
 
 \begin{document}\pagestyle{plain}
-\noindent\tbf{\LARGE 0A 多元函数的微积分}\vspace{15pt}\\
-\indent 相信你对简单的一元函数的微积分已经有所了解.%
-然而,现实世界中的函数关系往往是由多个变量共同决定的.%
-了解微积分在这样的多元函数上的应用也对我们学习物理化学十分重要\vspace{12pt}\\
-
+\noindent\tbf{\LARGE 0A 导数与微分}\vspace{15pt}\\
+\indent 发展微积分的最初灵感之一来自试图去理解运动物体的速度,距离和时间的关系.%
+人们经过数百年的探索建立了微积分这一学科,而这也是我们学习物理化学所必须掌握的数学基础知识.\vspace{12pt}\\
+\Section{0A.1 导数}
+\Part{导数的简单定义}
+\indent 出于简单考虑,我们不准备介绍极限的定义和严格定义导数的方法\footnote{尽管这一概念是高等数学的基础.}.%
+或者更确切地说,这一章节的内容都是为了让你对微积分有一个简单的,偏向直观的了解,而非与那些性质古怪的函数打交道.
+\begin{hint}
+    本书所考虑的所有函数几乎都是光滑的.这在图像上表现为一条“看起来”光滑的曲线,没有间断的地方,没有粗糙的折点.%
+    一个函数光滑意味着它具有良好的性质,我们可以不加考虑地对它进行求导,无需担心可能出现的差错或意外.
+\end{hint}
+正如前言中所说,人们是从物体的运动状态开始研究微积分的.在初中时,你应当学过简单的运动学知识:在一段时间$t$内,物体运动的距离\footnote{准确而言应当是位移.此处我们假定物体做直线运动,因而位移就与距离的数值相同.}%
+$x$与$t$之比就是它在这段时间内的平均速度$v$,即
+\[v=\dfrac xt\]
+我们让这段时间从某一时间点$t_0$开始,并结束于$t_0+\Delta t$,在这段时间内物体运动的距离为$\Delta x$.于是这段时间内的平均速度为
+\[\bar{v}=\dfrac{\Delta x}{\Delta t}\]
+现在让$\Delta t$越来越小.在此过程中,物体的平均速度$\bar{v}$应当\tbf{趋近}于某一定值,这就是某一时间$t_0$时该物体的瞬时速度$v_0$,可以记为
+\[v_0=\lim_{\Delta t\to 0}\dfrac{\Delta x}{\Delta t}\]
+这就是导数的定义.上面的$\lim$代表limit,意为“极限”.由于本书并不打算涉及极限的定义,因此上述式子只需意会即可:%
+某一时间$t_0$的瞬时速度$v_0$等于当$\Delta t$趋近于$0$时$\left(t_0,t_0+\Delta t\right)$时间段内的运动距离$\Delta x$与$\Delta t$之比值.\\
+\indent 我们知道,速度即为运动距离对时间的变化率.上面的叙述就可以引出导数的(浅显而形象的)定义.
+\begin{definition}[0A.1.1 导数]
+    函数$y=f(x)$在$x=x_0$处的导数定义为
+    \[f'\left(x_0\right)=\lim_{\Delta x\to 0}\dfrac{f\left(x+\Delta x\right)-f(x)}{\Delta x}\]
+    在各点处的$f'\left(x_0\right)$亦可以构成一个新的函数,这一函数$f'(x)$记为$f(x)$的导函数.%
+    今后,我们说某一函数的导数,一般就指其导函数.
+\end{definition}
+至此,基础的介绍就已经完结了\footnote{上述内容似有听君一席话如听一席话的感受,这实在是由于笔者不才而不能很好地介绍导数所致.}.%
+如果你想对高等数学的内容有更加深入的了解,笔者建议你阅读普林斯顿微积分读本以获得对微积分的初步认识,然后再阅读各种高等数学书籍.\vspace{4pt}\\
+\Part{常见函数的导数}
+\indent 接下来,我们将从定义出发推导一些函数的导函数\footnote{这会不可避免地引入极限的四则运算,你只需意会即可.%
+总之,尽管$\Delta x$在很多结果里都看似是$0$,但它总是不为$0$.我们需要思考的是当它接近$0$时整个式子所接近的值,%
+这和直接把$\Delta x=0$代入是有区别的,毕竟分母不可能为$0$.},首先是简单的幂函数.
+\begin{derivation}
+    我们先从最简单的$f(x)=x$入手.我们有
+    \[f'(x)=\lim_{\Delta x\to0}\dfrac{f(x+\Delta x)-f(x)}{\Delta x}
+    =\lim_{\Delta x\to0}\dfrac{x+\Delta x-x}{\Delta x}=\lim_{\Delta x\to0}1=1\]
+    因此$f(x)=x$的导函数处处为$1$.\\
+    现在考虑$f(x)=x^2$.情况要稍微复杂一些.
+    \[\begin{aligned}
+        f'(x)
+        &= \lim_{\Delta x\to0}\dfrac{f(x+\Delta x)-f(x)}{\Delta x}=\lim_{\Delta x\to0}\dfrac{(x+\Delta x)^2-x^2}{\Delta x} \\
+        &= \lim_{\Delta x\to0}\dfrac{2x\Delta x-(\Delta x)^2}{\Delta x}=\lim_{\Delta x\to0}(2x+\Delta x)=2x
+    \end{aligned}\]
+    而$f(x)=\dfrac1x$也是相似的.
+    \[\begin{aligned}
+        f'(x)
+        &= \lim_{\Delta x\to0}\dfrac{f(x+\Delta x)-f(x)}{\Delta x}=\lim_{\Delta x\to0}\dfrac{\frac{1}{x+\Delta x}-\frac1x}{\Delta x} \\
+        &= \lim_{\Delta x\to0}\dfrac{1}{\Delta x}\cdot\dfrac{x-(x+\Delta x)}{x(x+\Delta x)} \\
+        &= -\lim_{\Delta x\to0}\dfrac{1}{x^2+x\Delta x} \\
+        &= -\dfrac1{x^2}
+    \end{aligned}\]
+    现在再来考虑$f(x)=\sqrt{x}$.我们有
+    \[\begin{aligned}
+        f'(x)
+        &= \lim_{\Delta x\to0}\dfrac{f(x+\Delta x)-f(x)}{\Delta x}=\lim_{\Delta x\to0}\dfrac{\sqrt{x+\Delta x}-\sqrt{x}}{\Delta x} \\
+        &= \lim_{\Delta x\to0}\dfrac{(x+\Delta x)-x}{\left(\sqrt{x+\Delta x}+\sqrt{x}\right)\Delta x} \\
+        &= \lim_{\Delta x\to0}\dfrac{1}{\sqrt{x+\Delta x}+\sqrt{x}} \\
+        &= \dfrac{1}{2\sqrt{x}}
+    \end{aligned}\]
+    我们可以归纳出以下结论:幂函数$f(x)=x^a$的导函数为$f'(x)=ax^{a-1}$.这一结论的严格证明过程请查阅资料.
+\end{derivation}
+\begin{theorem}[0A.1.2 幂函数的导数]
+    幂函数$f(x)=x^a(a\in\R)$的导函数为$f'(x)=ax^{a-1}$.
+\end{theorem}
+接下来是常见的三角函数.在推到之前,我们需要知道一个重要极限.
+\begin{theorem}[0A.1.3 重要极限I]
+    我们有重要极限
+    \[\lim_{x\to0}\dfrac{\sin x}{x}=1\]
+    你可以自行查阅这一极限的证明方法.
+\end{theorem}
+\begin{derivation}
+    先考虑$f(x)=\sin x$.我们有
+    \[\begin{aligned}
+        f'(x)
+        &= \lim_{\Delta x\to0}\dfrac{f(x+\Delta x)-f(x)}{\Delta x}=\lim_{\Delta x\to0}\dfrac{\sin(x+\Delta x)-\sin{x}}{\Delta x} \\
+        &= \lim_{\Delta x\to0}\dfrac{\sin x\cos\Delta x+\sin\Delta x\cos x-\sin x}{\Delta x} \\
+        &= \lim_{\Delta x\to0}\dfrac{\sin x(1-\cos\Delta x)}{\Delta x}+\lim_{\Delta x\to0}\dfrac{\cos x\sin\Delta x}{\Delta x} \\
+        &= 0+\cos x=\cos x
+    \end{aligned}\]
+    其中
+\end{derivation}
+\Part{导(函)数的运算法则}
+\indent 导函数的运算法则是十分重要且基础的工具.
+\begin{theorem}[0A.1.2]
+    导函数的运算法则主要有以下几条.
+    \begin{enumerate}[label=\tbf{\roman*.},topsep=0pt,parsep=0pt,itemsep=0pt,partopsep=0pt]
+        \item \tbf{导数的加减法}\\如果$h(x)=f(x)\pm g(x)$,那么$h'(x)=f'(x)\pm g'(x)$.
+        \item \tbf{导数的乘法}\\如果$h(x)=f(x)g(x)$,那么$h'(x)=f'(x)g(x)+f(x)g'(x)$.
+        \item \tbf{导数的除法}\\如果$h(x)=f(x)$
+        \item 如果$h(x)=f(g(x))$,那么$h'(x)$
+    \end{enumerate}
+\end{theorem}
 \end{document}

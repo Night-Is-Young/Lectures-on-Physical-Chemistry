@@ -2,9 +2,97 @@
 \usepackage{PhysicalChemistryNote}
 
 \begin{document}\pagestyle{plain}
-\noindent\tbf{\LARGE 0A 导数与微分}\vspace{15pt}\\
+\noindent\tbf{\LARGE 0A 极限,导数与微分}\vspace{15pt}\\
 \indent 发展微积分的最初灵感之一来自试图去理解运动物体的速度,距离和时间的关系.%
 人们经过数百年的探索建立了微积分这一学科,而这也是我们学习物理化学所必须掌握的数学基础知识.\vspace{12pt}\\
+\Section{0A.1 极限\footnote{本节主要介绍的是函数极限.}}
+\Part{极限的定义}
+\indent 出于简单考虑,我们并不要求你了解极限的严格定义(即著名的$\ep-\delta$语言),而是通过一些更形象的方式理解极限的意义.%
+尤其是考虑到我们遇见的函数大多具有良好的性质,因此直观的理解并不会出太多差错.\\
+\indent 你也许遇到过这样的一些函数,它们在某些地方没有定义,但其值却会随着自变量向此处靠近而越来越接近某一值.例如下面的这个函数,$f(x)=x+1(x\in\R\backslash\left\{0\right\})$.
+\begin{tightcenter}
+    \input{picture/x.tex}
+\end{tightcenter}
+
+\indent 尽管$f(x)$在$x=0$处没有定义,但你可以从图像上发现当$x$逐渐接近$0$时,$f(x)$也逐渐接近$1$.%
+因此,尽管$f(x)$在$x=0$处没有定义,我们也可以获知$x$逐渐接近于$0$时$f(x)$的变化情况.因此,我们可以尝试用自然语言描述极限的定义.
+\begin{definition}[0A.1.1 函数极限]
+    当自变量$x$\tbf{无限接近}某一点$a$时,如果函数$f(x)$能\tbf{无限接近}于某一定值$l$,则称$f(x)$在$x=a$处的极限为$l$,记作
+    \[\lim_{x\to a}f(x)=l\]
+    这个定义的核心是描述函数在某个点附近的\tbf{趋势},而不是该点的具体值.
+\end{definition}
+定义中的无限接近是由$\ep-\delta$语言保证的,但你并不需要了解这一点,只需对极限有一个直观认识即可.
+\begin{hint}
+    值得注意的是,$f(x)$在$x=0$附近对$1$的接近是任意的:对于任意$\ep>0$,总存在$x=0$附近的一个区间$(-\delta,\delta)\backslash\{0\}$%
+    使得这一区间内的所有$x$都满足$\left|f(x)-1\right|<\ep$.这就是极限的$\ep-\delta$语言.
+\end{hint}
+\Part{连续函数}
+\indent 你也许听说过\tbf{连续}这一概念.想象用笔在纸上画一条曲线.%
+如果你在绘制的过程中笔尖始终接触纸面,线条不间断,那么从直觉来说你应该画出了一条连续的曲线.%
+反之,如果你在绘制的过程中笔尖离开了纸面,从而出现了跳跃或间断点,那么这条曲线就应当是不连续的.%
+我们可以观察下面的几个函数.
+\begin{tightcenter}
+    \input{picture/x_1.tex}
+\end{tightcenter}
+
+\indent $f_1(x)$在$x=0$处没有定义,即出现了一个间断点,应当是不连续的.%
+$f_2(x)$虽然在$x=0$处有定义,但其在$x=0$处的左侧极限和右侧极限不相等,也与$f_2(0)$不相等,函数出现了跳跃,也是不连续的.%
+只有$f_3(x)$满足在$x=0$处有定义,且左侧极限和右侧极限均与定义的函数值相等,这在图像上表现为一段连续不断的曲线.%
+这就是连续函数的定义.
+\begin{definition}[0A.1.2 连续与连续函数]
+    如果函数$f(x)$在$x=a$处有定义,并且在$x=a$处的两侧的极限均等于$f(a)$,即
+    \[\lim_{x\to a}f(x)=f(a)\]
+    那么就称$f(x)$在$x=a$处\tbf{连续}.\\
+    如果$f(x)$在其定义域上的每一点都连续,那么就称$f(x)$为其定义域上的\tbf{连续函数}.
+\end{definition}
+常见的函数,例如多项式函数,三角函数,指对数函数等初等函数均在其定义域上连续.这一性质同样对初等函数的复合函数也成立.\vspace{4pt}\\
+\Part{夹逼准则与极限的运算\footnote{本节仅作介绍,不必要求掌握.了解本节的内容有助于理解导数的计算过程.}}
+\indent 我们先来介绍夹逼准则.
+\begin{theorem}[0A.1.3 夹逼准则]
+    对于函数$f_1(x),f_2(x),f_3(x)$和给定的$a$,如果在包含$a$的区间上总有$f_1(x)\leqslant f_2(x)\leqslant f_3(x)$,并且
+    \[\lim_{x\to a}f_1(x)=\lim_{x\to a}f_3(x)=l\]
+    那么一定有
+    \[\lim_{x\to a}f_2(x)=l\]
+    
+\end{theorem}
+直观地说,因为$f_1(x)$和$f_3(x)$都趋近于$l$,因此被夹在它们中间的$f_2(x)$也只能被迫趋近于$l$.%
+我们以一个简单的例子对其进行直观理解.
+\begin{problem}[P.0A.1]
+    求极限$\displaystyle\lim_{x\to0}x\sin\dfrac1x$.
+\end{problem}
+\begin{solution}
+    目标函数$f(x)=x\sin\dfrac1x$在$x=0$处没有定义,因此不能使用连续函数的性质解决问题.然而,我们可以注意到
+    \[-1\leqslant \sin\dfrac1x\leqslant 1\]
+    对所有$x\in\R\backslash\{0\}$成立,因此有
+    \[-x<x\sin\dfrac1x<x\]
+    而
+    \[\lim_{x\to0}(-x)=\lim_{x\to0}x=0\]
+    这是由连续函数的性质决定的.因此,我们可以得出
+    \[\lim_{x\to0}x\sin\dfrac1x=0\]
+    观察图像,可以发现$f(x)=x\sin\dfrac1x$被夹在$g(x)=x$和$h(x)=-x$之间,而后两个函数在$x$趋近于$0$时都趋近于$0$.%
+    自然,$f(x)$也被迫趋向于$0$.夹逼准则可以解决许多难以计算的极限问题.
+    \begin{tightcenter}
+        \input{picture/xsin1x.tex}
+    \end{tightcenter}
+    
+\end{solution}
+除了使用夹逼准则以外,我们还可以利用极限的四则运算和复合来计算复杂函数的极限.
+\begin{theorem}[0A.1.4 极限的四则运算]
+    如果$f(x)$和$g(x)$满足
+    \[\lim_{x\to a}f(x)=l_1\ \ \ \ \ \lim_{x\to a}g(x)=l_2\]
+    那么我们有
+    \[\lim_{x\to a}f(x)\pm g(x)=\l_1\pm l_2\]
+    \[\lim_{x\to a}f(x)\cdot g(x)=l_1l_2\]
+    \[\lim_{x\to a}\dfrac{f(x)}{g(x)}=\dfrac{l_1}{l_2}\left(l_2\neq0\right)\]
+    即如果两个函数在某处的极限均存在,那么这两个函数的四则运算所得的函数在此处的极限亦存在,并且其值等于各自的极限值进行相应的四则运算的结果.
+\end{theorem}
+\begin{theorem}[0A.1.5 复合函数的极限]
+    如果$\displaystyle\lim_{x\to a}f(x)=l$,而$g(x)$在$x=l$及其附近的区间上连续,那么
+    \[\lim_{x\to a}g(f(x))=g(l)\]
+    这就是说,如果复合函数的外部连续(这一条件是容易满足的),就可以先对内部求极限后代入外部函数从而得到总体的极限值.
+\end{theorem}
+上面两个定理的证明较为繁琐,因此你不必掌握它们的证明方法.总之,极限运算(在我们目前能接触到的函数中)%
+是十分符合常理的.
 \Section{0A.1 导数}
 \Part{导数的简单定义}
 \indent 出于简单考虑,我们不准备介绍极限的定义和严格定义导数的方法\footnote{尽管这一概念是高等数学的基础.}.%

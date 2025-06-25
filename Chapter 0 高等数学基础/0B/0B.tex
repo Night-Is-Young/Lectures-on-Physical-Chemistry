@@ -1,0 +1,155 @@
+\documentclass{ctexart}
+\usepackage{PhysicalChemistryNote}
+
+\begin{document}\pagestyle{plain}
+\noindent\tbf{\LARGE 0B 多元函数微分学}\vspace{15pt}\\
+\indent 本节的内容相当重要.一方面,这应当是你第一次接触多元函数这一概念,%
+它比我们一直以来所学习的一元函数更加复杂,;%
+另一方面,在物理化学的学习中遍布多元函数,它们之间也有相当复杂的关系,而传统的物理化学书籍中并没有对这些数学关系以及方法进行介绍.%
+因此,笔者希望你能在阅读本节的内容后有所收获.\vspace{12pt}\\
+\Section{0B.1 多元函数}
+\Part{多元函数的定义}
+\indent 不同于一元函数,多元函数接受多个自变量的值,并将其映射为一个因变量.例如平面上一点$P(x,y)$到原点$O(0,0)$的距离$d$%
+就是以$x,y$为自变量的多元函数
+\[d=f(x,y)=\sqrt{x^2+y^2}\]
+在定义多元函数之前,我们需要一种合适的方法描述这些自变量.不难想到,有序的数组
+\[\left(\li x,n\right)\]
+就是一个合适的方法.特别的,这也可以作为$n$维空间中一个点的坐标.
+\begin{definition}[0B.1.1 记号:$\R^n$]
+    全体$n$元有序实数组构成的集合记为$\R^n$,即
+    \[\R^n=\left\{\left(\li x,n\right):\li x,n\in\R\right\}\]
+    正如实数集$R$可以代表数轴上的所有点一样,在几何上,$R^n$包含了$n$维空间中的所有点.
+\end{definition}
+我们给出多元函数的正式定义.
+\begin{definition}[0B.1.2 多元函数]
+    设集合$D\subseteq\R^n$.如果对于$D$中任意的有序实数组$\left(\li x,n\right)$,%
+    按照一定的规则$f$,都有唯一的$u\in\R$与之对应,则称$f$是定义在$D$上的$n$元函数.
+\end{definition}
+\Part{二元函数的极限\footnote{由于多元函数的性质都是类似的,因此在本节中我们以二元函数为例进行学习.}}
+\indent 与一元函数类似,多元函数也有极限的概念.我们以二元函数为例定义其极限.
+\begin{definition}[0B.1.3 二元函数的极限]
+    当自变量$(x,y)$无限接近某一定点$\left(x_0,y_0\right)$时,如果二元函数$f(x,y)$能无限接近于某一定值$l$,%
+    则称$f(x,y)$在点$\left(x_0,y_0\right)$处的极限为$l$,记作
+    \[\lim_{(x,y)\to\left(x_0,y_0\right)}f(x,y)=l\]
+
+\end{definition}
+可以看出,我们只不过把$x$趋近于$a$替换成了$(x,y)$趋近于$\left(x_0,y_0\right)$,%
+而其余的定义均与一元函数的极限保持一致.
+\begin{hint}
+    严谨地说,这里的\tbf{无限接近}实际上应当是\tbf{以任意路径无限接近}.%
+    不同于数轴上只能以一种方式接近,在多维空间中接近一个点可以有多种路径和方式,%
+    而多元函数极限的存在要求这些接近方式所得出的极限值都相等,才能保证总体极限的存在.\\
+    不过,我们遇到的函数大多性质良好,不会出现这样的情况.因此,你无需担心这一点,%
+    同样地对二元函数的极限有简单认识即可.
+\end{hint}
+同样地,我们可以由极限的概念推出连续的概念.
+\begin{definition}[0B.1.4 连续函数]
+    如果二元函数$f(x,y)$在某一点$\left(x_0,y_0\right)$有定义,并且
+    \[\lim_{(x,y)\to\left(x_0,y_0\right)}f(x,y)=f\left(x_0,y_0\right)\]
+    则称$f(x,y)$在$\left(x_0,y_0\right)$处连续.特别地,如果$f(x,y)$在定义域上每一点都连续,则称其为定义域上的\tbf{连续函数}.
+\end{definition}
+二元函数的极限运算法则与一元函数的极限完全相同,在此就不作介绍了.\vspace{12pt}\\
+\Section{0B.2 偏导数与全微分}
+\Part{偏导数与偏微分}
+\indent 研究多元函数的一个自然的想法是研究各个变量分别对函数值的影响.所谓分别,应当固定其余变量不变,只研究函数值与某一个变量的变化关系(即变化率).由此,我们可以采取与一元函数的导数类似的方法定义多元函数的偏导数.
+\begin{definition}[0B.2.1 二元函数的偏导数]
+    设二元函数$z=f(x,y)$在点$\left(x_0,y_0\right)$附近有定义.固定$y=y_0$,则称极限(假定其存在)
+    \[\lim_{\Delta x\to0}\dfrac{f\left(x_0+\Delta x,y_0\right)-f\left(x_0,y_0\right)}{\Delta x}\]
+    为$z=f(x,y)$在点$\left(x_0,y_0\right)$处对$x$的偏导数,记作
+    \[f_x\left(x_0,y_0\right)\ \ \ \ \ \dfrac{\p f\left(x_0,y_0\right)}{\p x}\]
+    符号$\p$意为partial,你可以自行选择一种方式识读它.\\
+    类似地,如果在定义域上的任意一点都存在对$x$的偏导数,那么可以定义对$x$的偏导函数,记作
+    \[f_x(x,y)\ \ \text{或} \ \ \dfrac{\p f(x,y)}{\p x}\]
+
+\end{definition}
+可以看出,偏导数的本质仍然是一元函数的导函数,只需将其它变量视作常数,目标变量视作自变量后运用一元函数的求导方法即可得出多元函数的偏导数.\\
+\indent 对偏导函数(本质上仍然是一个二元函数)求导,即可得到二元函数的二阶偏导数.
+\begin{definition}[0B.2.2 二元函数的二阶偏导函数]
+    二元函数$f(x,y)$的二阶偏导函数有如下几种情形.
+    \[f_{xx}(x,y)=\dfrac{\p f_x(x,y)}{\p x}=\dfrac{\p^2f(x,y)}{\p x^2}\]
+    \[f_{yy}(x,y)=\dfrac{\p f_y(x,y)}{\p y}=\dfrac{\p^2f(x,y)}{\p y^2}\]
+    \[f_{xy}(x,y)=\dfrac{\p f_x(x,y)}{\p y}=\dfrac{\p^2f(x,y)}{\p y\p x}\]
+    \[f_{yx}(x,y)=\dfrac{\p f_y(x,y)}{\p x}=\dfrac{\p^2f(x,y)}{\p x\p y}\]
+
+\end{definition}
+上面的后两个函数区别在于求偏导的顺序不同.事实上,我们有如下定理联系两者的关系.
+\begin{definition}[0B.2.3 二阶混合偏导函数]
+    如果在某一区域$D$上,$f(x,y)$的两个二阶偏导函数$f_{xy}(x,y)$和$f_{yx}(x,y)$存在且连续,那么它们在$D$上必然相等,即
+    \[f_{xy}(x,y)=f_{yx}(x,y)\ \ \ \forall(x,y)\in D\]
+
+\end{definition}
+定理的证明较为繁琐,因此略去.上述的函数存在且连续的要求在我们讨论的范畴内很容易满足,因此可以广泛地应用这一结论.这一定理在我们后面的学习中十分重要.\vspace{4pt}\\
+\Part{全微分}
+\indent 我们已经在微分一节中讨论了无穷小量之间的关系.在那时我们说在定点$x=x_0$附近的因变量增量$\Delta y$与自变量增量$\Delta x$满足线性关系$\Delta y=f'\left(x_0\right)\Delta x$.同样地,我们也希望将多元函数$z=f(x,y)$在某一定点$\left(x_0,y_0\right)$附近的增量$\Delta z$表示成两个因变量增量$\Delta x$和$\Delta y$的线性组合.这就引出了全微分的概念.
+\begin{definition}[0B.2.4 二元函数的全微分]
+    设函数$z=f(x,y)$在某一定点$\left(x_0,y_0\right)$附近有定义.如果$z=f(x,y)$的增量
+    \[\Delta z=f\left(x_0+\Delta x,y_0+\Delta y\right)-f\left(x_0,y_0\right)\]
+    满足
+    \[\Delta z=A\Delta x+B\Delta y+o(\rho)\ \ \ \rho=\sqrt{\left(\Delta x\right)^2+\left(\Delta y\right)^2}\to0\]
+    其中$A,B$为常数,那么$z=f(x,y)$在$\left(x_0,y_0\right)$处\tbf{可微},并将$A\Delta x+B\Delta y$称作$z=f(x,y)$在此处的全微分,记作
+    \[\di z=A\Delta x+B\Delta y\]
+    与一元函数的微分类似,上式更常见的被写作$\di z=A\di x+B\di y$.
+\end{definition}
+同样地,全微分和偏导数也存在联系.
+\begin{theorem}[0B.2.5 全微分与偏导数的关系]
+    二元函数$z=f(x,y)$的全微分满足
+    \[\di z=\dfrac{\p f(x,y)}{\p x}\di x+\dfrac{\p f(x,y)}{\p y}\di y\]
+    即\tbf{0B.2.4}中的$A,B$分别等于函数在$\left(x_0,y_0\right)$处对$x$和对$y$的偏导数.
+\end{theorem}
+对于初等函数而言,在定义域内只要偏导数存在就一定可微.\tbf{0B.2.5}将各个自变量对因变量的贡献联系在一起,是一个十分重要的式子.\vspace{4pt}\\
+\Part{复合函数微分法}
+\indent 我们现在给出对二元复合函数求偏导数的方法.
+\begin{theorem}[0B.2.6 复合函数求偏导法]
+    设函数$u=\phi(x,y),v=\psi(x,y)$以及$z=f(u,v)$,则复合函数$z=f(\phi(x,y),\psi(x,y))$满足\footnotemark
+    \[\dfrac{\p z}{\p x}=\dfrac{\p f}{\p u}\cdot\dfrac{\p u}{\p x}+\dfrac{\p f}{\p v}\cdot\dfrac{\p v}{\p x}\]
+    \[\dfrac{\p z}{\p y}=\dfrac{\p f}{\p u}\cdot\dfrac{\p u}{\p y}+\dfrac{\p f}{\p v}\cdot\dfrac{\p v}{\p y}\]
+
+\end{theorem}\footnotetext{假定相应的偏导数均存在.}
+\begin{proof}
+    我们仍采用较为容易理解的方式阐述上述定理.考虑$x$的增量$\Delta x$,那么相应的$u$的增量满足
+    \[\Delta u\approx\dfrac{\p u}{\p x}\Delta x\]
+    同样地,$v$的增量满足
+    \[\Delta v\approx\dfrac{\p v}{\p x}\Delta x\]
+    而$u,v$的增量引起$z$的增量为
+    \[\Delta z\approx\dfrac{\p f}{\p u}\Delta u+\dfrac{\p f}{\p v}\Delta v\]
+    将前面的两个式子代入其中就有
+    \[\Delta z=\left(\dfrac{\p f}{\p u}\cdot\dfrac{\p u}{\p x}+\dfrac{\p f}{\p v}\cdot\dfrac{\p v}{\p x}\right)\Delta x\]
+    这就可以得出
+    \[\dfrac{\p z}{\p x}=\dfrac{\p f}{\p u}\cdot\dfrac{\p u}{\p x}+\dfrac{\p f}{\p v}\cdot\dfrac{\p v}{\p x}\]
+    对$y$亦是同理.在不引起混淆的情况下,$\dfrac{\p f}{\p u}$也可以写作$\dfrac{\p z}{\p u}$.
+
+\end{proof}
+所谓不引起混淆的情况,可以由下面这个例子进行说明.
+\begin{problem}[P.0B.1]
+    设函数$u=\phi(x,y)$和$z=f(u,y)$.求复合函数$z=f(\phi(x,y),y)$对$y$的偏导数$\dfrac{\p z}{\p y}$.
+\end{problem}
+\begin{solution}
+    乍一看,我们可以令$v=y$从而代入\tbf{0B.2.6}的公式,得到
+    \[\dfrac{\p z}{\p y}=\dfrac{\p z}{\p u}\cdot\dfrac{\p u}{\p y}+\dfrac{\p z}{\p v}\cdot\dfrac{\p v}{\p y}
+    =\dfrac{\p z}{\p u}\cdot\dfrac{\p u}{\p y}+\dfrac{\p z}{\p y}\]
+    这显然是有问题的:等式的左右两端消去$\dfrac{\p z}{\p y}$竟然可以得到$\dfrac{\p z}{\p u}\cdot\dfrac{\p u}{\p y}=0$.问题出在哪里呢?\\
+    事实上,左边的$\dfrac{\p z}{\p y}$表示$z$以$x,y$作为自变量时$z$对$y$的偏导数.%
+    考虑偏导数的定义,在对$y$求偏导时将$x$视作定值,因此可以表示为
+    \[\pa zyx\]
+    而右边的$\dfrac{\p z}{\p y}$表示$z$以$u,v$为自变量时$z$对$v$的偏导数.由于$v=y$,%
+    于是这实际上是$z$以$u,y$为自变量时$z$对$y$的偏导数.求此偏导数时,将$u$视作定值,因此可以表示为
+    \[\pa zyu\]
+    这样就可以得到
+    \[\pa zyx=\pa zuy\pa uyx+\pa zyu\]
+    这一结论在之后也将经常用到.
+\end{solution}
+\begin{definition}[0B.2.7 偏导数的另一种记号]
+    在变量之间具有复杂的复合函数关系时,求偏导数时需要注明固定的自变量.例如
+    \[\pa zxy\]
+    表示固定$y$时$z$对$x$的偏导数,亦即因变量为$z$,自变量为$(x,y)$时构成的函数$z=f(x,y)$对$x$的偏导数.
+\end{definition}
+\Part{一阶全微分的形式不变性}
+\indent 与一阶微分具有的形式不变性相似的,我们还有一阶全微分的形式不变性.
+\begin{theorem}[0B.2.8 一阶全微分的形式不变性]
+    设函数$z=f(u,v),u=\phi(x,y),v=\psi(x,y)$有连续的一阶偏导数,则复合函数
+    \[z=f(\phi(x,y),\psi(x,y))\]
+    在给定点$(x,y)$处的微分仍然满足
+    \[\di z=f_u\di u+f_v\di v\]
+    而不论$u,v$作为中间变量还是自变量.
+\end{theorem}
+\end{document}

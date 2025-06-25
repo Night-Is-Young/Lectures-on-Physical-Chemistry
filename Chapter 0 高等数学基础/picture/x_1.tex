@@ -1,0 +1,25 @@
+\documentclass{standalone}
+\usepackage{PhysicalChemistryNote}
+\begin{document}
+\begin{tikzpicture}
+	\draw[->] (-2,0)--(2,0) node[right]{$x$};
+	\draw[->] (0,-2)--(0,2) node[above]{$f_1(x)$};
+	\draw[-,thick,blue] (-1.5,-1)--(1.5,2);
+	\draw[fill=white] (0,0.5) circle (1.5pt);
+\end{tikzpicture}
+\begin{tikzpicture}
+	\draw[->] (-2,0)--(2,0) node[right]{$x$};
+	\draw[->] (0,-2)--(0,2) node[above]{$f_2(x)$};
+	\draw[-,thick,blue] (-1.5,-2)--(0,-0.5);
+	\draw[-,thick,blue] (0,0.5)--(1.5,2);
+	\draw[fill=white] (0,0.5) circle (1.5pt);
+	\draw[fill=white] (0,-0.5) circle (1.5pt);
+	\fill (0,0) circle (1.5pt);
+\end{tikzpicture}
+\begin{tikzpicture}
+	\draw[->] (-2,0)--(2,0) node[right]{$x$};
+	\draw[->] (0,-2)--(0,2) node[above]{$f_3(x)$};
+	\draw[-,thick,blue] (-1.5,-1)--(1.5,2);
+\end{tikzpicture}
+\end{document}
+\end{document}
